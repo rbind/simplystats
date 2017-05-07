@@ -1,0 +1,75 @@
+baseurl = "http://simplystatistics.org/"
+languageCode = "en-us"
+title = "Simply Statistics"
+theme = "blackburn"
+author = "Rafa Irizarry, Roger Peng, and Jeff Leek"
+copyright = "&copy; 2011 - 2017. All rights reserved."
+paginate = 10
+
+[permalinks]
+  post = "/:year:/:month:/:day:/:slug:/"
+
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+  # Shown in the home page
+  subtitle = "A statistics blog by Rafa Irizarry, Roger Peng, and Jeff Leek"
+  brand = "![Simply Statistics Logo](/img/sslogo.png)"
+  googleAnalytics = "UA-73968959-1"
+  disqus = "simplystatsgithub"
+  # CSS name for highlight.js
+  highlightjs = "androidstudio"
+  dateFormat = "2006/01/02"
+
+[menu]
+  # Shown in the side menu.
+  [[menu.main]]
+    name = "Home"
+    pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 1
+    identifier = "home"
+    url = "/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
+  [[menu.main]]
+    name = "Archive"
+    pre = "<i class='fa fa-list fa-fw'></i>"
+    weight = 3
+    identifier = "post"
+    url = "/post/"
+  [[menu.main]]
+    name = "Conferences"
+    pre = "<i class='fa fa-comments fa-fw'></i>"
+    weight = 4
+    url = "/conferences/"
+  [[menu.main]]
+    name = "Courses"
+    pre = "<i class='fa fa-book fa-fw'></i>"
+    weight = 5
+    url = "/courses/"
+  [[menu.main]]
+    name = "Interviews"
+    pre = "<i class='fa fa-microphone fa-fw'></i>"
+    weight = 6
+    url = "/interviews/"
+  [[menu.main]]
+    name = "Contributing"
+    pre = "<i class='fa fa-code-fork fa-fw'></i>"
+    weight = 7
+    url = "/newposts/"
+
+[social]
+  # Link your social networking accouns to the side menu
+  # by entering your username or ID.
+  twitter = "simplystats"
+  facebook = ""
+  instagram = ""
+  github = "simplystats"
+  stackoverflow = ""
+  linkedin = ""
