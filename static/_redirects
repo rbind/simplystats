@@ -1,0 +1,2 @@
+/feed/     /index.xml
+/page*     /page/:splat
