@@ -7,7 +7,7 @@ copyright = "&copy; 2011 - 2017. All rights reserved."
 paginate = 10
 
 [permalinks]
-  post = "/:year:/:month:/:day:/:slug:/"
+  post = "/:year/:month/:day/:slug/"
 
 [indexes]
   tag = "tags"
