@@ -1,7 +1,9 @@
 ---
 title: Will Machine Learning and AI Ever Solve the Last Mile?
+date: 2017-05-07
 author: roger
-layout: post
+comments: true
+slug: last-mile
 ---
 
 Facebook just recently announced that they were hiring 3,000 people (on top of an existing 4,500) people to review images, videos, and posts for inappropriate content. From [Popular Science](http://www.popsci.com/Facebook-hiring-3000-content-monitors):
