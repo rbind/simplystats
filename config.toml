@@ -1,4 +1,4 @@
-baseurl = "http://simplystatistics.org/"
+baseurl = "https://simplystatistics.org/"
 languageCode = "en-us"
 title = "Simply Statistics"
 theme = "blackburn"
