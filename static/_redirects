@@ -1,2 +1,4 @@
 /feed/     /index.xml
 /page*     /page/:splat
+https://simplystats.netlify.com/*  https://simplystats.org/:splat  301!
+http://simplystats.netlify.com/*   https://simplystats.org/:splat  301!
