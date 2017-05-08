@@ -1,6 +1,10 @@
 <div class="post-meta">
 
   <div>
+    {{ with .Params.author }}
+    <i class="fa fa-user fa-fw"></i>
+    <span>{{ . }}</span>
+    {{ end }}
     <i class="fa fa-calendar fa-fw"></i>
     <time>{{ with .Site.Params.dateFormat }}{{ $.Date.Format . }}{{ else }}{{ .Date.Format "02 Jan 2006, 15:04" }}{{ end }}</time>
   </div>
