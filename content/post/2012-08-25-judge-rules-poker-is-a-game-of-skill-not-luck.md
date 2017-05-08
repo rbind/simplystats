@@ -2,7 +2,7 @@
 id: 92
 title: Judge Rules Poker Is A Game Of Skill, Not Luck
 date: 2012-08-25T17:04:57+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30179005977/judge-rules-poker-is-a-game-of-skill-not-luck
 tumblr_simplystatistics_id:

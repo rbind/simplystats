@@ -2,7 +2,7 @@
 id: 122
 title: How important is abstract thinking for graduate students in statistics?
 date: 2012-07-27T13:57:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28125455811/how-important-is-abstract-thinking-for-graduate
 tumblr_simplystatistics_id:

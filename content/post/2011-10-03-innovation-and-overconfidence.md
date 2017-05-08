@@ -2,7 +2,7 @@
 id: 431
 title: Innovation and overconfidence
 date: 2011-10-03T20:08:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10989030989/innovation-and-overconfidence
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 297
 title: An example of how sending a paper to a statistics journal can get you scooped
 date: 2012-02-09T14:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17317636444/an-example-of-how-sending-a-paper-to-a-statistics
 tumblr_simplystatistics_id:

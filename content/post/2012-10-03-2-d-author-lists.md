@@ -2,7 +2,7 @@
 id: 45
 title: 2-D author lists
 date: 2012-10-03T14:00:14+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32803537492/2-d-author-lists
 tumblr_simplystatistics_id:

@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 27 - Special Guest Amelia McNamara
 slug: "nssd-episode-27"
 date: 2016-11-30

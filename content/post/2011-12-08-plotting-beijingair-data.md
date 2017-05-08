@@ -2,7 +2,7 @@
 id: 347
 title: Plotting BeijingAir Data
 date: 2011-12-08T01:05:44+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13897994725/plotting-beijingair-data
 tumblr_simplystatistics_id:

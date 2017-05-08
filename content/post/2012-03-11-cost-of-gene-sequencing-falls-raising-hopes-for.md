@@ -2,7 +2,7 @@
 id: 253
 title: Cost of Gene Sequencing Falls, Raising Hopes for Medical Advances
 date: 2012-03-11T16:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19121993341/cost-of-gene-sequencing-falls-raising-hopes-for
 tumblr_simplystatistics_id:

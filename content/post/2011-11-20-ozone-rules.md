@@ -2,7 +2,7 @@
 id: 368
 title: Ozone rules
 date: 2011-11-20T18:35:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13070086642/ozone-rules
 tumblr_simplystatistics_id:

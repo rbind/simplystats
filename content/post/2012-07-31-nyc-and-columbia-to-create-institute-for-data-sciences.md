@@ -2,7 +2,7 @@
 id: 113
 title: 'NYC and Columbia to Create Institute for Data Sciences &#038; Engineering'
 date: 2012-07-31T17:57:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28421619889/nyc-and-columbia-to-create-institute-for-data-sciences
 tumblr_simplystatistics_id:

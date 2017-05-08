@@ -2,7 +2,7 @@
 id: 381
 title: Expected Salary by Major
 date: 2011-11-10T15:04:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12599452125/expected-salary-by-major
 tumblr_simplystatistics_id:

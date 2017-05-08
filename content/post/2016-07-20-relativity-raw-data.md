@@ -1,6 +1,6 @@
 ---
 title: The relativity of raw data
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "relativity-raw-data"
 date: 2016-07-20

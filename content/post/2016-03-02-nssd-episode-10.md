@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 10 - It's All Counterexamples
-author: Roger
+author: Roger Peng
 comments: true
 slug: "nssd-episode-10"
 date: 2016-03-02

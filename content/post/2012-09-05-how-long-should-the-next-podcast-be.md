@@ -2,7 +2,7 @@
 id: 78
 title: How long should the next podcast be?
 date: 2012-09-05T13:53:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30932797861/how-long-should-the-next-podcast-be
 tumblr_simplystatistics_id:

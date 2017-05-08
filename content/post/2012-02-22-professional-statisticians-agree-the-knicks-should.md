@@ -2,7 +2,7 @@
 id: 275
 title: 'Professional statisticians agree: the knicks should start Steve Novak over Carmelo Anthony'
 date: 2012-02-22T16:07:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18073361454/professional-statisticians-agree-the-knicks-should
 tumblr_simplystatistics_id:

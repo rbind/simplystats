@@ -2,7 +2,7 @@
 id: 384
 title: Is Statistics too darn hard?
 date: 2011-11-07T15:33:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12469660993/is-statistics-too-darn-hard
 tumblr_simplystatistics_id:

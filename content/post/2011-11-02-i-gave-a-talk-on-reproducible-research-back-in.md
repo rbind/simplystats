@@ -1,7 +1,7 @@
 ---
 id: 389
 date: 2011-11-02T16:05:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12243614318/i-gave-a-talk-on-reproducible-research-back-in
 tumblr_simplystatistics_id:

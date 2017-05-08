@@ -2,7 +2,7 @@
 id: 131
 title: "Facebook's Real Big Data Problem"
 date: 2012-07-23T18:00:38+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27845304458/facebooks-real-big-data-problem
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 357
 title: New S.E.C. Tactics Yield Actions Against Hedge Funds
 date: 2011-12-03T14:07:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13677732208/new-s-e-c-tactics-yield-actions-against-hedge-funds
 tumblr_simplystatistics_id:

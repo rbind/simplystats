@@ -2,7 +2,7 @@
 id: 136
 title: Risks in Big Data Attract Big Law Firms
 date: 2012-07-21T19:49:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27712704139/risks-in-big-data-attract-big-law-firms
 tumblr_simplystatistics_id:

@@ -1,6 +1,6 @@
 ---
 title: Information and VC Investing
-author: roger
+author: Roger Peng
 comments: true
 slug: "the-information-vc"
 date: 2016-10-03

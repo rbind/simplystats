@@ -1,6 +1,6 @@
 ---
 title: Learning about Machine Learning with an Earthquake Example
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "ml-earthquakes"
 date: 2017-02-23

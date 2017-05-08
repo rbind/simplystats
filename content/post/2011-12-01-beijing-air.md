@@ -2,7 +2,7 @@
 id: 360
 title: Beijing Air
 date: 2011-12-01T21:16:35+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13601935082/beijing-air
 tumblr_simplystatistics_id:

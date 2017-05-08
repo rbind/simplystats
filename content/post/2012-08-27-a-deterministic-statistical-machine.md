@@ -2,7 +2,7 @@
 id: 90
 title: A deterministic statistical machine
 date: 2012-08-27T14:00:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30315018436/a-deterministic-statistical-machine
 tumblr_simplystatistics_id:

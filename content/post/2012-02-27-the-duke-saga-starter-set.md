@@ -2,7 +2,7 @@
 id: 270
 title: The Duke Saga Starter Set
 date: 2012-02-27T14:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18378666076/the-duke-saga-starter-set
 tumblr_simplystatistics_id:

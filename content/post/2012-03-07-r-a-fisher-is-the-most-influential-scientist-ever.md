@@ -2,7 +2,7 @@
 id: 257
 title: R.A. Fisher is the most influential scientist ever
 date: 2012-03-07T16:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18903448428/r-a-fisher-is-the-most-influential-scientist-ever
 tumblr_simplystatistics_id:

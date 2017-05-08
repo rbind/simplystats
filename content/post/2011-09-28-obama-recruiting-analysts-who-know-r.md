@@ -2,7 +2,7 @@
 id: 440
 title: Obama recruiting analysts who know R
 date: 2011-09-28T19:41:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10774878590/obama-recruiting-analysts-who-know-r
 tumblr_simplystatistics_id:

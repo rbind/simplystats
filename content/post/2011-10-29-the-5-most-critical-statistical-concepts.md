@@ -2,7 +2,7 @@
 id: 395
 title: The 5 Most Critical Statistical Concepts
 date: 2011-10-29T16:05:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12076163379/the-5-most-critical-statistical-concepts
 tumblr_simplystatistics_id:

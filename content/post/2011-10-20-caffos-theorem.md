@@ -2,7 +2,7 @@
 id: 405
 title: "Caffo's Theorem"
 date: 2011-10-20T02:35:03+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11680016879/caffos-theorem
 tumblr_simplystatistics_id:

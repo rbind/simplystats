@@ -2,7 +2,7 @@
 id: 88
 title: Genes Now Tell Doctors Secrets They Can’t Utter
 date: 2012-08-28T17:59:19+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30396033722/genes-now-tell-doctors-secrets-they-cant-utter
 tumblr_simplystatistics_id:

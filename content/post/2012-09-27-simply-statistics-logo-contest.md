@@ -2,7 +2,7 @@
 id: 51
 title: Simply statistics logo contest
 date: 2012-09-27T13:52:02+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32393283732/simply-statistics-logo-contest
 tumblr_simplystatistics_id:

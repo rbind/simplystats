@@ -2,7 +2,7 @@
 id: 222
 title: 'Interview with Drew Conway - Author of "Machine Learning for Hackers"'
 date: 2012-04-13T13:31:21+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21022420761/interview-with-drew-conway-author-of-machine
 tumblr_simplystatistics_id:

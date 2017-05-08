@@ -1,6 +1,6 @@
 ---
 title: Time Series Analysis in Biomedical Science - What You Really Need to Know
-author: roger
+author: Roger Peng
 comments: true
 date: 2016-05-05
 slug: "timeseries-biomedical"

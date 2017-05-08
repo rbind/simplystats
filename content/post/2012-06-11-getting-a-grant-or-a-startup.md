@@ -2,7 +2,7 @@
 id: 181
 title: Getting a grant...or a startup
 date: 2012-06-11T12:47:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24880964035/getting-a-grant-or-a-startup
 tumblr_simplystatistics_id:

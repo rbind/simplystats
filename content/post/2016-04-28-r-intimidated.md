@@ -1,6 +1,6 @@
 ---
 title: High school student builds interactive R class for the intimidated with the JHU DSL
-author: jeff
+author: Jeff Leek
 date: 2016-04-27
 comments: true
 slug: "r-intimidated"

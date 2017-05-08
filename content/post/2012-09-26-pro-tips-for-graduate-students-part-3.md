@@ -2,7 +2,7 @@
 id: 52
 title: Pro-tips for graduate students (Part 3)
 date: 2012-09-26T14:00:11+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32327301604/pro-tips-for-graduate-students-part-3
 tumblr_simplystatistics_id:

@@ -1,6 +1,6 @@
 ---
 title: Model building with time series data
-author: roger
+author: Roger Peng
 slug: "time-series-model"
 date: 2017-03-07
 ---

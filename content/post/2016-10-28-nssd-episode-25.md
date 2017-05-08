@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 25 - How Exactly Do You Pronounce SQL?
 slug: "nssd-episode-25"
 date: 2016-10-28

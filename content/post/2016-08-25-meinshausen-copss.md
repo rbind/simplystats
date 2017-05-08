@@ -1,5 +1,5 @@
 ---
-author: jeff
+author: Jeff Leek
 date: 2016-08-24
 title: Interview with COPSS award winner Nicolai Meinshausen.
 slug: "meinshausen-copss"

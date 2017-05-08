@@ -2,7 +2,7 @@
 id: 341
 title: 'In Greece, a statistician faces life in prison for doing his job: calculating and reporting a statistic'
 date: 2011-12-16T20:00:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14318537784/in-greece-a-statistician-faces-life-in-prison-for
 tumblr_simplystatistics_id:

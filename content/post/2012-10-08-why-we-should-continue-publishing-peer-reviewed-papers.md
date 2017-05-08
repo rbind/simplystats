@@ -2,7 +2,7 @@
 id: 38
 title: Why we should continue publishing peer-reviewed papers
 date: 2012-10-08T14:29:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33159695574/why-we-should-continue-publishing-peer-reviewed-papers
 tumblr_simplystatistics_id:

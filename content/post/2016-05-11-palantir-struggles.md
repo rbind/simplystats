@@ -1,6 +1,6 @@
 ---
 title: The Real Lesson for Data Science That is Demonstrated by Palantir's Struggles
-author: roger
+author: Roger Peng
 comments: true
 slug: "palantir-struggles"
 date: 2016-05-11

@@ -2,7 +2,7 @@
 id: 465
 title: When overconfidence is good
 date: 2011-09-15T15:40:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10241004305/when-overconfidence-is-good
 tumblr_simplystatistics_id:

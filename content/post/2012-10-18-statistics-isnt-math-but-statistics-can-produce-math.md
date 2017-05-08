@@ -2,7 +2,7 @@
 id: 31
 title: "Statistics isn't math but statistics can produce math"
 date: 2012-10-18T20:29:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33851640186/statistics-isnt-math-but-statistics-can-produce-math
 tumblr_simplystatistics_id:

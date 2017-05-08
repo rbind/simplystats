@@ -2,7 +2,7 @@
 id: 244
 title: Supreme court unanimously rules against personalized medicine patent!
 date: 2012-03-20T14:31:35+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19626747057/supreme-court-unanimously-rules-against-personalized
 tumblr_simplystatistics_id:

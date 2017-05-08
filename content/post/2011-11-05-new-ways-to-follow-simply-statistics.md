@@ -2,7 +2,7 @@
 id: 386
 title: New ways to follow Simply Statistics
 date: 2011-11-05T16:11:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12373153423/new-ways-to-follow-simply-statistics
 tumblr_simplystatistics_id:

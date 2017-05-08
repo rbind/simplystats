@@ -2,7 +2,7 @@
 id: 387
 title: Interview with Victoria Stodden
 date: 2011-11-04T16:06:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12328728291/interview-with-victoria-stodden
 tumblr_simplystatistics_id:

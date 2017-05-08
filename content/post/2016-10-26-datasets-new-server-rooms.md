@@ -1,6 +1,6 @@
 ---
 title: Are Datasets the New Server Rooms?
-author: roger
+author: Roger Peng
 comments: false
 slug: "datasets-new-server-rooms"
 date: 2016-10-26

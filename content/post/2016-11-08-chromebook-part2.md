@@ -1,6 +1,6 @@
 ---
 title: Data scientist on a chromebook take two
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "chromebook-part2"
 date: 2016-11-08

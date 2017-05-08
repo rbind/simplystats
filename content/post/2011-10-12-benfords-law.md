@@ -2,7 +2,7 @@
 id: 414
 title: "Benford's law"
 date: 2011-10-12T13:44:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11353219992/benfords-law
 tumblr_simplystatistics_id:

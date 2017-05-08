@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Ultimate AI battle - Apple vs. Google
 slug: "ultimate-ai-battle"

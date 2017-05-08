@@ -2,7 +2,7 @@
 id: 95
 title: Science Exchange starts Reproducibility Initiative
 date: 2012-08-23T14:46:17+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30035351286/science-exchange-starts-reproducibility-initiative
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 163
 title: Motivating statistical projects
 date: 2012-06-28T12:33:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26068033590/motivating-statistical-projects
 tumblr_simplystatistics_id:

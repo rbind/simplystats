@@ -2,7 +2,7 @@
 id: 130
 title: "I.B.M. Is No Longer a Tech Bellwether (It's too busy doing statistics)"
 date: 2012-07-24T02:29:50+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27879889412/i-b-m-is-no-longer-a-tech-bellwether-its-too-busy
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 291
 title: At MSNBC, a Professor as TV Host
 date: 2012-02-13T12:22:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17548569260/at-msnbc-a-professor-as-tv-host
 tumblr_simplystatistics_id:

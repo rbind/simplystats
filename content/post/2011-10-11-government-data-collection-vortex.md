@@ -2,7 +2,7 @@
 id: 417
 title: Government data collection vortex
 date: 2011-10-11T11:50:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11313853197/government-data-collection-vortex
 tumblr_simplystatistics_id:

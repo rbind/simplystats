@@ -1,6 +1,6 @@
 ---
 comments: true
-author: roger
+author: Roger Peng
 title: Sometimes there's friction for a reason
 slug: "somtimes-theres-friction-for-a-reason"
 date: 2016-05-24

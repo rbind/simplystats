@@ -2,7 +2,7 @@
 id: 99
 title: Recommended updates from Google Scholar
 date: 2012-08-21T00:53:19+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29864160221/recommended-updates-from-google-scholar
 tumblr_simplystatistics_id:

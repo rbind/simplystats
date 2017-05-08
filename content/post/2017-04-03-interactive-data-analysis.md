@@ -1,7 +1,7 @@
 ---
 title: The Importance of Interactive Data Analysis for Data-Driven Discovery
 date: 2017-04-03
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "interactive-data-analysis"
 ---

@@ -1,6 +1,6 @@
 ---
 title: The future of biostatistics
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "the-future-of-biostatistics"
 date: 2016-03-24

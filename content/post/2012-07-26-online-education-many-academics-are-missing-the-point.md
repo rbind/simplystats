@@ -2,7 +2,7 @@
 id: 124
 title: 'Online education: many academics are missing the point'
 date: 2012-07-26T13:45:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28053129018/online-education-many-academics-are-missing-the-point
 tumblr_simplystatistics_id:

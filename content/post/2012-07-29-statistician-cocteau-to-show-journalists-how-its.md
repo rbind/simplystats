@@ -2,7 +2,7 @@
 id: 116
 title: "Statistician (@cocteau) to show journalists how it's done"
 date: 2012-07-29T17:57:33+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28274413950/statistician-cocteau-to-show-journalists-how-its
 tumblr_simplystatistics_id:

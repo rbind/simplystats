@@ -2,7 +2,7 @@
 id: 402
 title: Interview With Chris Barr
 date: 2011-10-21T11:13:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11729003971/interview-with-chris-barr
 tumblr_simplystatistics_id:

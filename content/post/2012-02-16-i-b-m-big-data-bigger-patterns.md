@@ -2,7 +2,7 @@
 id: 283
 title: 'I.B.M.: Big Data, Bigger Patterns'
 date: 2012-02-16T12:40:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17708717928/i-b-m-big-data-bigger-patterns
 tumblr_simplystatistics_id:

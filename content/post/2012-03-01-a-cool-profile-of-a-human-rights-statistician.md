@@ -2,7 +2,7 @@
 id: 265
 title: A cool profile of a human rights statistician
 date: 2012-03-01T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18550426982/a-cool-profile-of-a-human-rights-statistician
 tumblr_simplystatistics_id:

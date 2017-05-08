@@ -2,7 +2,7 @@
 id: 339
 title: On Hard and Soft Money
 date: 2011-12-19T13:10:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14454324191/on-hard-and-soft-money
 tumblr_simplystatistics_id:

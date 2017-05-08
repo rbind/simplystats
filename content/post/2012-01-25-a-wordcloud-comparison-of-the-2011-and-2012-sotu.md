@@ -2,7 +2,7 @@
 id: 312
 title: 'A wordcloud comparison of the 2011 and 2012 #SOTU'
 date: 2012-01-25T04:02:39+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16448577464/a-wordcloud-comparison-of-the-2011-and-2012-sotu
 tumblr_simplystatistics_id:

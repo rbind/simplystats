@@ -2,7 +2,7 @@
 id: 188
 title: View my Statistics for Genomics lectures on Youtube and ask questions on facebook/twitter
 date: 2012-05-29T17:12:51+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24003521577/view-my-statistics-for-genomics-lectures-on-youtube-and
 tumblr_simplystatistics_id:

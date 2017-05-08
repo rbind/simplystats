@@ -1,7 +1,7 @@
 ---
 id: 149
 date: 2012-07-13T13:53:50+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27122717647/this-is-not-about-statistics-but-its-about
 tumblr_simplystatistics_id:

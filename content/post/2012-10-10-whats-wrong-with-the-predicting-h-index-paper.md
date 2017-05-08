@@ -2,7 +2,7 @@
 id: 37
 title: "What's wrong with the predicting h-index paper."
 date: 2012-10-10T13:47:04+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33297620511/whats-wrong-with-the-predicting-h-index-paper
 tumblr_simplystatistics_id:

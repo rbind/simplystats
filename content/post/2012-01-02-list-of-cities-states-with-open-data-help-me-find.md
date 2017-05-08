@@ -2,7 +2,7 @@
 id: 336
 title: 'List of cities/states with open data - help me find more!'
 date: 2012-01-02T14:30:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15182715327/list-of-cities-states-with-open-data-help-me-find
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 474
 title: Data Science = Hot Career Choice
 date: 2011-09-08T15:00:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9954726952/data-science-hot-career-choice
 tumblr_simplystatistics_id:

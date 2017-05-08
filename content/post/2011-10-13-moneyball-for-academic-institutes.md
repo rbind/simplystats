@@ -2,7 +2,7 @@
 id: 413
 title: Moneyball for Academic Institutes
 date: 2011-10-13T13:26:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11394010642/moneyball-for-academic-institutes
 tumblr_simplystatistics_id:

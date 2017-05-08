@@ -2,7 +2,7 @@
 id: 408
 title: Caffo + Ninjas = Awesome
 date: 2011-10-18T13:10:12+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11611102993/caffo-ninjas-awesome
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 388
 title: Free access publishing is awesome...but expensive. How do we pay for it?
 date: 2011-11-03T16:05:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12286350206/free-access-publishing-is-awesome-but-expensive-how
 tumblr_simplystatistics_id:

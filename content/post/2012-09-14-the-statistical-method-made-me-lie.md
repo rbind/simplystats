@@ -2,7 +2,7 @@
 id: 63
 title: The statistical method made me lie
 date: 2012-09-14T13:58:31+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31521890605/the-statistical-method-made-me-lie
 tumblr_simplystatistics_id:

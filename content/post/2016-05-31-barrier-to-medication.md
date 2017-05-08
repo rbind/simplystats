@@ -1,6 +1,6 @@
 ---
 title: Sometimes the biggest challenge is applying what we already know
-author: roger
+author: Roger Peng
 comments: true
 slug: "barrier-to-medication"
 date: 2016-05-31

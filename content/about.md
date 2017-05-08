@@ -2,7 +2,7 @@
 id: 6
 title: About
 date: 2011-10-09T00:13:34+00:00
-author: admin
+author: Admin
 dsq_thread_id:
   - 933317180
 pe_theme_meta:

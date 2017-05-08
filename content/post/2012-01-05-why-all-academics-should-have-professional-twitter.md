@@ -2,7 +2,7 @@
 id: 333
 title: 'Why all #academics should have professional @twitter accounts'
 date: 2012-01-05T16:24:14+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15348632030/why-all-academics-should-have-professional-twitter
 tumblr_simplystatistics_id:

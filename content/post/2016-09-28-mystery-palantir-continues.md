@@ -1,6 +1,6 @@
 ---
 title: The Mystery of Palantir Continues
-author: roger
+author: Roger Peng
 slug: "mystery-palantir-continues"
 date: 2016-09-28
 ---

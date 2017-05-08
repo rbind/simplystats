@@ -2,7 +2,7 @@
 id: 480
 title: First things first
 date: 2011-09-07T03:25:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9906171134/first-things-first
 tumblr_simplystatistics_id:

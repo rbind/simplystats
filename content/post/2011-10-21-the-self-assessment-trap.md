@@ -2,7 +2,7 @@
 id: 401
 title: The self-assessment trap
 date: 2011-10-21T14:35:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11732716036/the-self-assessment-trap
 tumblr_simplystatistics_id:

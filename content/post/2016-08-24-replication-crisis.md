@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 date: 2016-08-24
 title: A Simple Explanation for the Replication Crisis in Science
 slug: "replication-crisis"

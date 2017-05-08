@@ -2,7 +2,7 @@
 id: 219
 title: Replication, psychology, and big science
 date: 2012-04-18T15:29:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21326470429/replication-psychology-and-big-science
 tumblr_simplystatistics_id:

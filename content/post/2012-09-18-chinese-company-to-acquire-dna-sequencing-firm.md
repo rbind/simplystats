@@ -2,7 +2,7 @@
 id: 60
 title: Chinese Company to Acquire DNA Sequencing Firm
 date: 2012-09-18T10:30:45+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31789636832/chinese-company-to-acquire-dna-sequencing-firm
 tumblr_simplystatistics_id:

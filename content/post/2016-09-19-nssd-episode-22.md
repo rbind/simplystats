@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 22 - Number 1 Side Project
 slug: "nssd-episode-22"
 date: 2016-09-19

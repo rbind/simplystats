@@ -2,7 +2,7 @@
 id: 446
 title: 25 minute seminars
 date: 2011-09-26T13:32:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10686092687/25-minute-seminars
 tumblr_simplystatistics_id:

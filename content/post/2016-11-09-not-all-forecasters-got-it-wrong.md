@@ -1,7 +1,7 @@
 ---
 title: 'Not all forecasters got it wrong: Nate Silver does it again (again)'
 date: 2016-11-09
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "not-all-forecasters-got-it-wrong"
 ---

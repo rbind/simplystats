@@ -1,7 +1,7 @@
 ---
 id: 289
 date: 2012-02-13T14:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17550711561/duke-clinical-trials-saga-on-60-minutes-first
 tumblr_simplystatistics_id:

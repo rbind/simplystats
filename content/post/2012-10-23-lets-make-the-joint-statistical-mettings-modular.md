@@ -2,7 +2,7 @@
 id: 24
 title: "Let's make the Joint Statistical Mettings modular"
 date: 2012-10-23T13:08:51+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34164145481/lets-make-the-joint-statistical-mettings-modular
 tumblr_simplystatistics_id:

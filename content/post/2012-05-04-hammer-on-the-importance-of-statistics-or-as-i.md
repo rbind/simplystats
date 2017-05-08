@@ -1,7 +1,7 @@
 ---
 id: 207
 date: 2012-05-04T12:52:39+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22379910309/hammer-on-the-importance-of-statistics-or-as-i
 tumblr_simplystatistics_id:

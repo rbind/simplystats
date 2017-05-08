@@ -2,7 +2,7 @@
 id: 473
 title: Data analysis companies getting gobbled up
 date: 2011-09-08T12:36:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9955104326/data-analysis-companies-getting-gobbled-up
 tumblr_simplystatistics_id:

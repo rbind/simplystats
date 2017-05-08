@@ -1,6 +1,6 @@
 ---
 title: My Podcasting Setup
-author: roger
+author: Roger Peng
 slug: "podcasting-setup"
 date: 2017-02-20
 ---

@@ -2,7 +2,7 @@
 id: 343
 title: Dear editors/associate editors/referees, Please reject my papers quickly
 date: 2011-12-14T16:36:41+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14218411483/dear-editors-associate-editors-referees-please-reject
 tumblr_simplystatistics_id:

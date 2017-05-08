@@ -2,7 +2,7 @@
 id: 346
 title: Interview w/ Mario Marazzi, Puerto Rico Institute of Statistics Director, on the importance of Government Statisticians
 date: 2011-12-09T01:14:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13945953822/interview-w-mario-marazzi-puerto-rico-institute-of
 tumblr_simplystatistics_id:

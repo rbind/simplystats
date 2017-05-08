@@ -2,7 +2,7 @@
 id: 449
 title: Getting email responses from busy people
 date: 2011-09-23T15:39:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10558246695/getting-email-responses-from-busy-people
 tumblr_simplystatistics_id:

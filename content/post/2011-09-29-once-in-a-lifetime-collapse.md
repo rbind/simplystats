@@ -2,7 +2,7 @@
 id: 439
 title: Once in a lifetime collapse
 date: 2011-09-29T13:28:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10805255044/once-in-a-lifetime-collapse
 tumblr_simplystatistics_id:

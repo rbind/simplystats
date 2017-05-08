@@ -2,7 +2,7 @@
 id: 342
 title: Interview with Nathan Yau of FlowingData
 date: 2011-12-16T12:51:35+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14306548598/interview-with-nathan-yau-of-flowingdata
 tumblr_simplystatistics_id:

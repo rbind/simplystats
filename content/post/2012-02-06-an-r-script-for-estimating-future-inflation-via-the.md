@@ -2,7 +2,7 @@
 id: 301
 title: An R script for estimating future inflation via the Treasury market
 date: 2012-02-06T13:34:04+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_id:
   - 17152281502
 tumblr_simplystatistics_permalink:

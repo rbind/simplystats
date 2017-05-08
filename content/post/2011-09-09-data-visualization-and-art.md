@@ -2,7 +2,7 @@
 id: 470
 title: Data visualization and art
 date: 2011-09-09T23:58:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10013120929/data-visualization-and-art
 tumblr_simplystatistics_id:

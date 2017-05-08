@@ -2,7 +2,7 @@
 id: 18
 title: The Year of the MOOC
 date: 2012-11-03T17:06:55+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34909562751/the-year-of-the-mooc
   - http://simplystatistics.tumblr.com/post/34909562751/the-year-of-the-mooc

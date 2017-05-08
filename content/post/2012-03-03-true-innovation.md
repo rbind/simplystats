@@ -2,7 +2,7 @@
 id: 262
 title: True Innovation
 date: 2012-03-03T16:05:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18665758972/true-innovation
 tumblr_simplystatistics_id:

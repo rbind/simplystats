@@ -1,6 +1,6 @@
 ---
 title: Distributed Masochism as a Pedagogical Model
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "distributed-masochism-as-a-pedagogical-model"
 date: 2016-10-20

@@ -2,7 +2,7 @@
 id: 87
 title: Increasing the cost of data analysis
 date: 2012-08-29T14:00:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30452945357/increasing-the-cost-of-data-analysis
 tumblr_simplystatistics_id:

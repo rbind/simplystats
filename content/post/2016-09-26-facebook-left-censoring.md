@@ -1,6 +1,6 @@
 ---
 title: Facebook and left censoring
-author: roger
+author: Roger Peng
 slug: "facebook-left-censoring"
 date: 2016-09-26
 ---

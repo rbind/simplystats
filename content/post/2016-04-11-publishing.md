@@ -1,6 +1,6 @@
 ---
 title: Junior scientists - you don't have to publish in open access journals to be an open scientist.
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "publishing"
 date: 2016-04-11

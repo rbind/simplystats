@@ -2,7 +2,7 @@
 id: 350
 title: "Beijing Air (cont'd)"
 date: 2011-12-06T13:49:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13825457957/beijing-air-contd
 tumblr_simplystatistics_id:

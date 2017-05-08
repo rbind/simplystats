@@ -1,6 +1,6 @@
 ---
 title: When do we need interpretability?
-author: roger
+author: Roger Peng
 slug: "when-do-we-need-interpretability"
 date: 2017-03-08
 ---

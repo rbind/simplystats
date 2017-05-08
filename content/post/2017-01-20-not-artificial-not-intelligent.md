@@ -1,6 +1,6 @@
 ---
 title: An example that isn't that artificial or intelligent
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "not-artificial-not-intelligent"
 date: 2017-01-20

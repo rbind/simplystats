@@ -2,7 +2,7 @@
 id: 245
 title: 'Interview with Amy Heineike - Director of Mathematics at Quid'
 date: 2012-03-19T14:00:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19572022804/interview-with-amy-heineike-director-of-mathematics
 tumblr_simplystatistics_id:

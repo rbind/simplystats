@@ -1,6 +1,6 @@
 ---
 title: Data Scientists Clashing at Hedge Funds
-author: roger
+author: Roger Peng
 slug: "Data-Scientists-Clashing-at-Hedge-Funds"
 date: 2017-02-15
 ---

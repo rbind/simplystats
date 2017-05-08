@@ -2,7 +2,7 @@
 id: 206
 title: New National Academy of Sciences Members
 date: 2012-05-04T14:46:18+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22383779139/new-national-academy-of-sciences-members
 tumblr_simplystatistics_id:

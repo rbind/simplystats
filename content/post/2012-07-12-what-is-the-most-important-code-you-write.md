@@ -2,7 +2,7 @@
 id: 151
 title: What is the most important code you write?
 date: 2012-07-12T13:50:40+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27049611121/what-is-the-most-important-code-you-write
 tumblr_simplystatistics_id:

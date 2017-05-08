@@ -2,7 +2,7 @@
 id: 29
 title: 'Simply Statistics Podcast #4: Interview with Rebecca Nugent'
 date: 2012-10-19T13:33:39+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33892683645/interview-with-rebecca-nugent-of-carnegie-mellon
 tumblr_simplystatistics_id:

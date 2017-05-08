@@ -2,7 +2,7 @@
 id: 367
 title: Data Scientist vs. Statistician
 date: 2011-11-22T12:41:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13155804487/data-scientist-vs-statistician
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 115
 title: "Why I'm Staying in Academia"
 date: 2012-07-30T13:45:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28335633068/why-im-staying-in-academia
 tumblr_simplystatistics_id:

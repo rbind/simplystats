@@ -2,7 +2,7 @@
 id: 310
 title: When should statistics papers be published in Science and Nature?
 date: 2012-01-26T14:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16520282447/when-should-statistics-papers-be-published-in-science
 tumblr_simplystatistics_id:

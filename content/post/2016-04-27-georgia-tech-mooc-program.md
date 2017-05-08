@@ -1,6 +1,6 @@
 ---
 title: An update on Georgia Tech's MOOC-based CS degree 
-author: roger
+author: Roger Peng
 date: 2016-04-27
 comments: true
 slug: "georgia-tech-mooc-program"

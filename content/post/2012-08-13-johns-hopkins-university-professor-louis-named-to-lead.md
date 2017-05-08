@@ -2,7 +2,7 @@
 id: 102
 title: Johns Hopkins University Professor Louis Named to Lead Census Bureau Research Directorate
 date: 2012-08-13T22:48:13+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29364950957/johns-hopkins-university-professor-louis-named-to-lead
 tumblr_simplystatistics_id:

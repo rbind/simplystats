@@ -2,7 +2,7 @@
 id: 98
 title: NSF recognizes math and statistics are not the same thing...kind of
 date: 2012-08-21T15:19:38+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29899900125/nsf-recognizes-math-and-statistics-are-not-the-same
 tumblr_simplystatistics_id:

@@ -13,7 +13,6 @@ dsq_thread_id:
   - 2872676224
 categories:
   - Uncategorized
-author: rafa
 slug: "academic-statisticians-there-is-no-shame-in-developing-statistical-solutions-that-solve-just-one-problem"
 ---
 <p dir="ltr">

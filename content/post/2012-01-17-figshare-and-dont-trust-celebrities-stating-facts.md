@@ -2,7 +2,7 @@
 id: 318
 title: "figshare and don't trust celebrities stating facts"
 date: 2012-01-17T17:48:58+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16013107549/figshare-and-dont-trust-celebrities-stating-facts
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 419
 title: An R function to determine if you are a data scientist
 date: 2011-10-10T13:05:54+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11271228367/datascientist
 tumblr_simplystatistics_id:

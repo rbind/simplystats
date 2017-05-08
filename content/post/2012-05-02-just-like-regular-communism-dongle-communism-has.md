@@ -2,7 +2,7 @@
 id: 209
 title: Just like regular communism, dongle communism has failed
 date: 2012-05-02T17:09:37+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22261595068/just-like-regular-communism-dongle-communism-has
 tumblr_simplystatistics_id:

@@ -1,6 +1,6 @@
 ---
 title: Interview with Al Sommer - Effort Report Episode 23
-author: roger
+author: Roger Peng
 slug: "effort-report-episode-23"
 date: 2017-01-17
 ---

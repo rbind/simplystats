@@ -2,7 +2,7 @@
 id: 249
 title: A proposal for a really fast statistics journal
 date: 2012-03-14T13:53:20+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19289280474/a-proposal-for-a-really-fast-statistics-journal
 tumblr_simplystatistics_id:

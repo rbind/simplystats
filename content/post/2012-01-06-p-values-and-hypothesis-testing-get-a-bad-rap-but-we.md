@@ -2,7 +2,7 @@
 id: 332
 title: 'P-values and hypothesis testing get a bad rap - but we sometimes find them useful.'
 date: 2012-01-06T16:54:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15402808730/p-values-and-hypothesis-testing-get-a-bad-rap-but-we
 tumblr_simplystatistics_id:

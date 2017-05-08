@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Not So Standard Deviations Episode 17 - Diurnal High Variance
 slug: "nssd-episode-17"

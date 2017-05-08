@@ -1,7 +1,7 @@
 ---
 id: 479
 date: 2011-09-07T03:28:02+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9906251027/seek-simplicity-and-distrust-it
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 340
 title: New features on Simply Statistics
 date: 2011-12-18T20:42:51+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14418176890/new-features-on-simply-statistics
 tumblr_simplystatistics_id:

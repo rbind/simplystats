@@ -2,7 +2,7 @@
 id: 337
 title: 'Grad students in (bio)statistics - do a postdoc!'
 date: 2011-12-28T19:25:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14929329755/grad-students-in-bio-statistics-do-a-postdoc
 tumblr_simplystatistics_id:

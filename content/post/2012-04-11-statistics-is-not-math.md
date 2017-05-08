@@ -2,7 +2,7 @@
 id: 224
 title: Statistics is not math...
 date: 2012-04-11T13:52:42+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20902656344/statistics-is-not-math
 tumblr_simplystatistics_id:

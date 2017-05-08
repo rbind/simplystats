@@ -2,7 +2,7 @@
 id: 420
 title: Excuse our mess...
 date: 2011-10-10T01:09:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11253460087/excuse-our-mess
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 426
 title: R Workshop
 date: 2011-10-06T12:58:32+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11099046888/r-workshop
 tumblr_simplystatistics_id:

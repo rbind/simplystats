@@ -2,7 +2,7 @@
 id: 441
 title: The Open Data Movement
 date: 2011-09-28T14:11:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10766696449/the-open-data-movement
 tumblr_simplystatistics_id:

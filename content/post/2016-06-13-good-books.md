@@ -1,6 +1,6 @@
 ---
 title: Good list of good books
-author: roger
+author: Roger Peng
 comments: true
 slug: "good-books"
 date: 2016-06-13

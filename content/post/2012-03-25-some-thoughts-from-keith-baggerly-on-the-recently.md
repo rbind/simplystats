@@ -2,7 +2,7 @@
 id: 239
 title: Some thoughts from Keith Baggerly on the recently released IOM report on translational omics
 date: 2012-03-25T01:44:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19867976281/some-thoughts-from-keith-baggerly-on-the-recently
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 455
 title: MacArthur Fellow Shwetak Patel
 date: 2011-09-20T18:24:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10447922152/macarthur-fellow-shwetak-patel
 tumblr_simplystatistics_id:

@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 30 - Philately and Numismatology
 slug: "nssd-episode-30"
 date: 2017-01-09

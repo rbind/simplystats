@@ -2,7 +2,7 @@
 id: 43
 title: Should we stop publishing peer-reviewed papers?
 date: 2012-10-04T13:54:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32871552079/should-we-stop-publishing-peer-reviewed-papers
 tumblr_simplystatistics_id:

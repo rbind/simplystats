@@ -2,7 +2,7 @@
 id: 295
 title: Data says Jeremy Lin is for real
 date: 2012-02-11T21:53:59+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17448036437/data-says-jeremy-lin-is-for-real
 tumblr_simplystatistics_id:

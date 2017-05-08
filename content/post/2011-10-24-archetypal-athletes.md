@@ -2,7 +2,7 @@
 id: 399
 title: Archetypal Athletes
 date: 2011-10-24T13:37:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11863497648/archetypal-athletes
 tumblr_simplystatistics_id:

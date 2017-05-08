@@ -3,7 +3,7 @@ id: 304
 title: |
   Cleveland's (?) 2001 plan for redefining statistics as "data science"
 date: 2012-02-02T12:36:58+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16917509786/clevelands-2001-plan-for-redefining-statistics-as
 tumblr_simplystatistics_id:

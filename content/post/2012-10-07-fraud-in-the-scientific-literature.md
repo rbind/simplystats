@@ -2,7 +2,7 @@
 id: 40
 title: Fraud in the Scientific Literature
 date: 2012-10-07T00:28:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33044925382/fraud-in-the-scientific-literature
 tumblr_simplystatistics_id:

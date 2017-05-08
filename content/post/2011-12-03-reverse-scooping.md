@@ -2,7 +2,7 @@
 id: 356
 title: Reverse scooping
 date: 2011-12-03T15:46:53+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13680729270/reverse-scooping
 tumblr_simplystatistics_id:

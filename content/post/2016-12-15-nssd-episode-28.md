@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 28 - Writing is a lot Harder than Just Talking
 slug: "nssd-episode-28"
 date: 2016-12-15

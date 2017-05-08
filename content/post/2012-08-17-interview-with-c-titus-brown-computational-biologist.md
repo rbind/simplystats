@@ -2,7 +2,7 @@
 id: 100
 title: 'Interview with C. Titus Brown - Computational biologist and open access champion'
 date: 2012-08-17T13:45:57+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_id:
   - 29620679415
 tumblr_simplystatistics_permalink:

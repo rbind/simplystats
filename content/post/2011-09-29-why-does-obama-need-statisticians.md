@@ -2,7 +2,7 @@
 id: 437
 title: Why does Obama need statisticians?
 date: 2011-09-29T16:21:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10809464773/why-does-obama-need-statisticians
 tumblr_simplystatistics_id:

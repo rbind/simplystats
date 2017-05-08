@@ -1,6 +1,6 @@
 ---
 title: Should I make a chatbot or a better FAQ? 
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "chatabot-or-faq"
 date: 2016-10-14

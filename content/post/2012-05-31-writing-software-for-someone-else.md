@@ -2,7 +2,7 @@
 id: 186
 title: Writing software for someone else
 date: 2012-05-31T12:27:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24125653872/writing-software-for-someone-else
 tumblr_simplystatistics_id:

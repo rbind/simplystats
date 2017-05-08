@@ -2,7 +2,7 @@
 id: 21
 title: Computing for Data Analysis (Simply Statistics Edition)
 date: 2012-10-29T14:00:26+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34563838584/computing-for-data-analysis-simply-statistics-edition
 tumblr_simplystatistics_id:

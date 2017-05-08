@@ -1,7 +1,7 @@
 ---
 id: 372
 date: 2011-11-17T17:13:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12929084691/the-history-of-nonlinear-principal-components
 tumblr_simplystatistics_id:

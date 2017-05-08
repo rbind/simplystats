@@ -2,7 +2,7 @@
 id: 331
 title: 'Make us a part of your day - add Simply Statistics to your RSS feed'
 date: 2012-01-08T00:56:34+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15480298059/make-us-a-part-of-your-day-add-simply-statistics-to
 tumblr_simplystatistics_id:

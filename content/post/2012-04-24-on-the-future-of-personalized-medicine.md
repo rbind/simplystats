@@ -2,7 +2,7 @@
 id: 217
 title: On the future of personalized medicine
 date: 2012-04-24T13:04:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21712449283/on-the-future-of-personalized-medicine
 tumblr_simplystatistics_id:

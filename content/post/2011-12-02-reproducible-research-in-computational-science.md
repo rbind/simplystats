@@ -2,7 +2,7 @@
 id: 358
 title: Reproducible Research in Computational Science
 date: 2011-12-02T14:12:59+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13633695297/reproducible-research-in-computational-science
 tumblr_simplystatistics_id:

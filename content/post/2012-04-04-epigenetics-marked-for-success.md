@@ -2,7 +2,7 @@
 id: 229
 title: 'Epigenetics: Marked for success'
 date: 2012-04-04T12:22:30+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20463440569/epigenetics-marked-for-success
 tumblr_simplystatistics_id:

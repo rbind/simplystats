@@ -2,7 +2,7 @@
 id: 164
 title: The price of skepticism
 date: 2012-06-27T20:25:48+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26020538368/the-price-of-skepticism
 tumblr_simplystatistics_id:

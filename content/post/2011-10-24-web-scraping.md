@@ -2,7 +2,7 @@
 id: 398
 title: Web-scraping
 date: 2011-10-24T16:05:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11867043817/web-scraping
 tumblr_simplystatistics_id:

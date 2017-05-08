@@ -2,7 +2,7 @@
 id: 69
 title: The pebbles of academia
 date: 2012-09-10T19:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31281359451/the-pebbles-of-academia
 tumblr_simplystatistics_id:

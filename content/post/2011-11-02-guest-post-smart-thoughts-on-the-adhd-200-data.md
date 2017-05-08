@@ -2,7 +2,7 @@
 id: 391
 title: 'Guest Post: SMART thoughts on the ADHD 200 Data Analysis Competition'
 date: 2011-11-02T15:37:42+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12242790356/guest-post-smart-thoughts-on-the-adhd-200-data
 tumblr_simplystatistics_id:

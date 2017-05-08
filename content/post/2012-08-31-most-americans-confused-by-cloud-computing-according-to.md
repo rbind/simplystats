@@ -2,7 +2,7 @@
 id: 82
 title: Most Americans Confused By Cloud Computing According to National Survey
 date: 2012-08-31T18:00:21+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30596133559/most-americans-confused-by-cloud-computing-according-to
 tumblr_simplystatistics_id:

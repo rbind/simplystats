@@ -2,7 +2,7 @@
 id: 383
 title: Coarse PM and measurement error paper
 date: 2011-11-08T17:05:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_id:
   - 12516490222
 tumblr_simplystatistics_permalink:

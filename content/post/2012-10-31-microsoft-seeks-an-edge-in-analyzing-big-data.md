@@ -2,7 +2,7 @@
 id: 19
 title: Microsoft Seeks an Edge in Analyzing Big Data
 date: 2012-10-31T00:19:43+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34669262618/microsoft-seeks-an-edge-in-analyzing-big-data
 tumblr_simplystatistics_id:

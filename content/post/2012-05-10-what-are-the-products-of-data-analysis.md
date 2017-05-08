@@ -2,7 +2,7 @@
 id: 200
 title: What are the products of data analysis?
 date: 2012-05-10T12:55:41+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22776960880/what-are-the-products-of-data-analysis
 tumblr_simplystatistics_id:

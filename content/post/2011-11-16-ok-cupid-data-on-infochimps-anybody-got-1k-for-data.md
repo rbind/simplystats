@@ -2,7 +2,7 @@
 id: 376
 title: 'OK Cupid data on Infochimps - anybody got $1k for data?'
 date: 2011-11-16T12:55:04+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12879648954/ok-cupid-data-on-infochimps-anybody-got-1k-for-data
 tumblr_simplystatistics_id:

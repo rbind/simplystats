@@ -1,6 +1,6 @@
 ---
 title: Statistical vitriol
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "statistical-vitriol"
 date: 2016-09-29

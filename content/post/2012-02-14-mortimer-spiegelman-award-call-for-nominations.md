@@ -2,7 +2,7 @@
 id: 287
 title: 'Mortimer Spiegelman Award: Call for Nominations. Deadline is April 1, 2012'
 date: 2012-02-14T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17606356307/mortimer-spiegelman-award-call-for-nominations
 tumblr_simplystatistics_id:

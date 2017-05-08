@@ -2,7 +2,7 @@
 id: 305
 title: Evidence-based Music
 date: 2012-02-01T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16863248312/evidence-based-music
 tumblr_simplystatistics_id:

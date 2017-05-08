@@ -2,7 +2,7 @@
 id: 406
 title: Do we really need applied statistics journals?
 date: 2011-10-19T16:05:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11655593971/do-we-really-need-applied-statistics-journals
 tumblr_simplystatistics_id:

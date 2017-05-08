@@ -2,7 +2,7 @@
 id: 137
 title: 'Interview with Lauren Talbot - Quantitative analyst for the NYC Financial Crime Task Force'
 date: 2012-07-20T13:24:49+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27625049610/interview-with-lauren-talbot-quantitative-analyst-for
 tumblr_simplystatistics_id:

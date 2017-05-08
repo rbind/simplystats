@@ -2,7 +2,7 @@
 id: 407
 title: Spectacular Plots Made Entirely in R
 date: 2011-10-18T16:05:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11614784508/spectacular-plots-made-entirely-in-r
 tumblr_simplystatistics_id:

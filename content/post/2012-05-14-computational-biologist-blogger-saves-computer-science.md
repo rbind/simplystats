@@ -2,7 +2,7 @@
 id: 197
 title: Computational biologist blogger saves computer science department
 date: 2012-05-14T15:01:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_id:
   - 23039501015
 tumblr_simplystatistics_permalink:

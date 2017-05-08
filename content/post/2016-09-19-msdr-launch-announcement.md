@@ -1,6 +1,6 @@
 ---
 title: Mastering Software Development in R
-author: roger
+author: Roger Peng
 slug: "msdr-launch-announcement"
 date: 2016-09-19
 ---

@@ -2,7 +2,7 @@
 id: 123
 title: "Smartphones, Big Data Help Fix Boston's Potholes"
 date: 2012-07-26T17:57:32+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28065270040/smartphones-big-data-help-fix-bostons-potholes
 tumblr_simplystatistics_id:

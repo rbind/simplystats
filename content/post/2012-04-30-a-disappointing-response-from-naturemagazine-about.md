@@ -2,7 +2,7 @@
 id: 212
 title: A disappointing response from @NatureMagazine about folks with statistical skills
 date: 2012-04-30T15:02:56+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22124036383/a-disappointing-response-from-naturemagazine-about
 tumblr_simplystatistics_id:

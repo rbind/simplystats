@@ -2,7 +2,7 @@
 id: 458
 title: Statistician Profiles
 date: 2011-09-20T12:14:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10440058465/statistician-profiles
 tumblr_simplystatistics_id:

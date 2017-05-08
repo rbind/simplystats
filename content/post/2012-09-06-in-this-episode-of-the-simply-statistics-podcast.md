@@ -2,7 +2,7 @@
 id: 76
 title: 'Simply Statistics Podcast #2'
 date: 2012-09-06T13:58:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30994374540/in-this-episode-of-the-simply-statistics-podcast
 tumblr_simplystatistics_id:

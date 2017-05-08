@@ -2,7 +2,7 @@
 id: 35
 title: 'A statistician loves the #insurancepoll...now how do we analyze it?'
 date: 2012-10-15T15:12:56+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33642139146/a-statistician-loves-the-insurancepoll-now-how-do-we
 tumblr_simplystatistics_id:

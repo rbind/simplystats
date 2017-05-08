@@ -2,7 +2,7 @@
 id: 108
 title: A non-exhaustive list of things I have failed to accomplish
 date: 2012-08-09T19:07:37+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29067196398/a-non-exhaustive-list-of-things-i-have-failed-to
 tumblr_simplystatistics_id:

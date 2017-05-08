@@ -2,7 +2,7 @@
 id: 365
 title: 'Apple this is ridiculous - you gotta upgrade to upgrade!?'
 date: 2011-11-27T19:34:11+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13412260027/apple-this-is-ridiculous-you-gotta-upgrade-to
 tumblr_simplystatistics_id:

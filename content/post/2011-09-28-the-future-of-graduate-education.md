@@ -2,7 +2,7 @@
 id: 442
 title: The future of graduate education
 date: 2011-09-28T11:49:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10764298034/the-future-of-graduate-education
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 159
 title: 'Computing and Sustainability: What Can Be Done?'
 date: 2012-07-02T14:20:25+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26345934797/computing-and-sustainability-what-can-be-done
 tumblr_simplystatistics_id:

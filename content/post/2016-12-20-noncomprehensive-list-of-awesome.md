@@ -1,6 +1,6 @@
 ---
 title: A non-comprehensive list of awesome things other people did in 2016
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "noncomprehensive-list-of-awesome"
 date: 2016-12-20

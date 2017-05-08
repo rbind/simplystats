@@ -2,7 +2,7 @@
 id: 41
 title: Not just one statistics interview...John McGready is the Jon Stewart of statistics
 date: 2012-10-05T14:20:54+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32938228102/not-just-one-statistics-interview-john-mcgready-is
 tumblr_simplystatistics_id:

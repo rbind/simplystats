@@ -2,7 +2,7 @@
 id: 62
 title: Statistical analysis suggests the Washington Nationals were wrong to shut down Stephen Strasburg
 date: 2012-09-15T23:36:42+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31619559894/statistical-analysis-suggests-the-washington-nationals
 tumblr_simplystatistics_id:

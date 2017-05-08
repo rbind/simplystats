@@ -2,7 +2,7 @@
 id: 158
 title: 'Replication and validation in -omics studies - just as important as reproducibility'
 date: 2012-07-03T12:57:29+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26416719285/replication-and-validation-in-omics-studies-just-as
 tumblr_simplystatistics_id:

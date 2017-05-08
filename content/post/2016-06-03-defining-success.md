@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Defining success - Four secrets of a successful data science experiment
 slug: "defining-success"

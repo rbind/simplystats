@@ -2,7 +2,7 @@
 id: 259
 title: Characteristics of my favorite statistics talks
 date: 2012-03-05T16:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18792698723/characteristics-of-my-favorite-statistics-talks
 tumblr_simplystatistics_id:

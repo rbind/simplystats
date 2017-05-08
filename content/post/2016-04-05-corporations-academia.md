@@ -1,6 +1,6 @@
 ---
 title: Companies are Countries, Academia is Europe
-author: roger
+author: Roger Peng
 comments: true
 slug: "corporations-academia"
 date: 2016-04-05

@@ -2,7 +2,7 @@
 id: 12
 title: 'Interview with Tom Louis - New Chief Scientist at the Census Bureau'
 date: 2012-11-09T15:53:02+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the
   - http://simplystatistics.tumblr.com/post/35340796766/interview-with-tom-louis-new-chief-scientist-at-the

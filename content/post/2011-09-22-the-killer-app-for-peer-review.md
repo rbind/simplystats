@@ -2,7 +2,7 @@
 id: 452
 title: The Killer App for Peer Review
 date: 2011-09-22T16:10:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10521062620/the-killer-app-for-peer-review
 tumblr_simplystatistics_id:

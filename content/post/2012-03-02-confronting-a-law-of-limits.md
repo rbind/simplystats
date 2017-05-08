@@ -2,7 +2,7 @@
 id: 263
 title: Confronting a Law Of Limits
 date: 2012-03-02T16:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18608487313/confronting-a-law-of-limits
 tumblr_simplystatistics_id:

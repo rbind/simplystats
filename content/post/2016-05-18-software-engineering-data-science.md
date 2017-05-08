@@ -1,6 +1,6 @@
 ---
 title: What is software engineering for data science?
-author: roger
+author: Roger Peng
 comments: true
 slug: "software-engineering-data-science"
 date: 2016-05-18

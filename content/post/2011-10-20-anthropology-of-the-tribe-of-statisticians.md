@@ -2,7 +2,7 @@
 id: 403
 title: Anthropology of the Tribe of Statisticians
 date: 2011-10-20T20:58:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11704528154/anthropology-of-the-tribe-of-statisticians
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 400
 title: Graduate student data analysis inspired by a high-school teacher
 date: 2011-10-22T13:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11770724755/graduate-student-data-analysis-inspired-by-a
 tumblr_simplystatistics_id:

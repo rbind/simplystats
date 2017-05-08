@@ -2,7 +2,7 @@
 id: 329
 title: Where do you get your data?
 date: 2012-01-08T16:30:18+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15513091261/where-do-you-get-your-data
 tumblr_simplystatistics_id:

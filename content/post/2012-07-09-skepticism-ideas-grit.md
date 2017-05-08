@@ -2,7 +2,7 @@
 id: 156
 title: Skepticism+Ideas+Grit
 date: 2012-07-09T12:32:12+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26828197575/skepticism-ideas-grit
 tumblr_simplystatistics_id:

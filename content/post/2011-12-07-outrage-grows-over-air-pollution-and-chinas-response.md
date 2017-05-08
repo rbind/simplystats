@@ -2,7 +2,7 @@
 id: 349
 title: Outrage Grows Over Air Pollution and China’s Response
 date: 2011-12-07T14:12:45+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13872622287/outrage-grows-over-air-pollution-and-chinas-response
 tumblr_simplystatistics_id:

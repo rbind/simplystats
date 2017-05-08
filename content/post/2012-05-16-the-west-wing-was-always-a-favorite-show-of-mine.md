@@ -1,7 +1,7 @@
 ---
 id: 193
 date: 2012-05-16T14:49:15+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/23166481613/the-west-wing-was-always-a-favorite-show-of-mine
 tumblr_simplystatistics_id:

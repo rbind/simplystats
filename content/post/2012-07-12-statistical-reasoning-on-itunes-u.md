@@ -2,7 +2,7 @@
 id: 152
 title: Statistical Reasoning on iTunes U
 date: 2012-07-12T12:38:19+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27046976568/statistical-reasoning-on-itunes-u
 tumblr_simplystatistics_id:

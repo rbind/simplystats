@@ -2,7 +2,7 @@
 id: 237
 title: "R and the little data scientist's predicament"
 date: 2012-03-26T15:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19954347499/r-and-the-little-data-scientists-predicament
 tumblr_simplystatistics_id:

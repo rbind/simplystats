@@ -2,7 +2,7 @@
 id: 103
 title: Big-Data Investing Gets Its Own Supergroup
 date: 2012-08-13T19:48:24+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29352856409/big-data-investing-gets-its-own-supergroup
 tumblr_simplystatistics_id:

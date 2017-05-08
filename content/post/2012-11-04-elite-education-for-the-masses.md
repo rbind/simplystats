@@ -2,7 +2,7 @@
 id: 17
 title: Elite education for the masses
 date: 2012-11-04T14:00:34+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34975704582/elite-education-for-the-masses
   - http://simplystatistics.tumblr.com/post/34975704582/elite-education-for-the-masses

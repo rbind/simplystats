@@ -1,5 +1,5 @@
 ---
-author: jeff
+author: Jeff Leek
 comments: true
 title: How to create a free distributed data collection "app" with R and Google Sheets
 slug: "googlesheets"

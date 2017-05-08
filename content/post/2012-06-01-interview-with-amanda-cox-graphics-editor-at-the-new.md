@@ -2,7 +2,7 @@
 id: 185
 title: 'Interview with Amanda Cox - Graphics Editor at the New York Times'
 date: 2012-06-01T14:57:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24196201238/interview-with-amanda-cox-graphics-editor-at-the-new
 tumblr_simplystatistics_id:

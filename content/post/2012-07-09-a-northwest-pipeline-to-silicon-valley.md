@@ -2,7 +2,7 @@
 id: 155
 title: A Northwest Pipeline to Silicon Valley
 date: 2012-07-09T12:39:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26828382118/a-northwest-pipeline-to-silicon-valley
 tumblr_simplystatistics_id:

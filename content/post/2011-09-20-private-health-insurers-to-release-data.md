@@ -2,7 +2,7 @@
 id: 456
 title: Private health insurers to release data
 date: 2011-09-20T13:37:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10441403664/private-health-insurers-to-release-data
 tumblr_simplystatistics_id:

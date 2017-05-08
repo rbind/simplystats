@@ -2,7 +2,7 @@
 id: 363
 title: Contributions to the R source
 date: 2011-11-29T14:10:03+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13499734759/contributions-to-the-r-source
 tumblr_simplystatistics_id:

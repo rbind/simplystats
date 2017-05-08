@@ -2,7 +2,7 @@
 id: 273
 title: 'Prediction: the Lasso vs. just using the top 10 predictors'
 date: 2012-02-23T16:07:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18132467723/prediction-the-lasso-vs-just-using-the-top-10
 tumblr_simplystatistics_id:

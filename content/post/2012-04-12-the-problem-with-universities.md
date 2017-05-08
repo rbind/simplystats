@@ -2,7 +2,7 @@
 id: 223
 title: The Problem with Universities
 date: 2012-04-12T14:49:04+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20965455651/the-problem-with-universities
 tumblr_simplystatistics_id:

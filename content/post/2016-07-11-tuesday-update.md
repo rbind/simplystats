@@ -1,6 +1,6 @@
 ---
 title: Tuesday update
-author: roger
+author: Roger Peng
 comments: true
 slug: "tuesday-update"
 date: 2016-07-11

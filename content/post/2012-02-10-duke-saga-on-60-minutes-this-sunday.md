@@ -2,7 +2,7 @@
 id: 296
 title: Duke Saga on 60 Minutes this Sunday
 date: 2012-02-10T14:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17370909057/duke-saga-on-60-minutes-this-sunday
 tumblr_simplystatistics_id:

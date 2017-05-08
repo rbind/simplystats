@@ -2,7 +2,7 @@
 id: 345
 title: "The Supreme Court's interpretation of statistical correlation may determine the future of personalized medicine"
 date: 2011-12-12T23:02:40+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14135999782/the-supreme-courts-interpretation-of-statistical
 tumblr_simplystatistics_id:

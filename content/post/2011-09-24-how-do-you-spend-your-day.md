@@ -2,7 +2,7 @@
 id: 448
 title: How do you spend your day?
 date: 2011-09-24T20:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10609667035/how-do-you-spend-your-day
 tumblr_simplystatistics_id:

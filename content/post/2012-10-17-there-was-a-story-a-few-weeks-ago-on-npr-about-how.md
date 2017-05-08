@@ -2,7 +2,7 @@
 id: 32
 title: Comparing Hospitals
 date: 2012-10-17T13:05:38+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33772001130/there-was-a-story-a-few-weeks-ago-on-npr-about-how
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 157
 title: The power of power
 date: 2012-07-04T13:54:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26490595333/the-power-of-power
 tumblr_simplystatistics_id:

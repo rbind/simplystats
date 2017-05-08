@@ -2,7 +2,7 @@
 id: 298
 title: 'Statisticians and Clinicians: Collaborations Based on Mutual Respect'
 date: 2012-02-08T17:09:34+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17268708473/statisticians-and-clinicians-collaborations-based-on
 tumblr_simplystatistics_id:

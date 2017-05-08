@@ -2,7 +2,7 @@
 id: 111
 title: In which Brian debates abstraction with T-Bone
 date: 2012-08-06T16:09:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28840726358/in-which-brian-debates-abstraction-with-t-bone
 tumblr_simplystatistics_id:

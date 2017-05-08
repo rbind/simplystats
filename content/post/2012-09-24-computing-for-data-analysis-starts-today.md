@@ -2,7 +2,7 @@
 id: 54
 title: Computing for Data Analysis starts today!
 date: 2012-09-24T14:54:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32198195275/computing-for-data-analysis-starts-today
 tumblr_simplystatistics_id:

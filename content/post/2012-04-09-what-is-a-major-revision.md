@@ -2,7 +2,7 @@
 id: 226
 title: What is a major revision?
 date: 2012-04-09T15:01:34+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20780016411/what-is-a-major-revision
 tumblr_simplystatistics_id:

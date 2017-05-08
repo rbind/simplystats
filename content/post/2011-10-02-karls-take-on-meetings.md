@@ -2,7 +2,7 @@
 id: 433
 title: "Karl's take on meetings"
 date: 2011-10-02T21:47:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10952374827/karls-take-on-meetings
 tumblr_simplystatistics_id:

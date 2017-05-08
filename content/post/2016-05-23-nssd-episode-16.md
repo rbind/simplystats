@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 16 - The Silicon Valley Episode
-author: roger
+author: Roger Peng
 comments: true
 slug: "nssd-episode-16"
 date: 2016-05-23

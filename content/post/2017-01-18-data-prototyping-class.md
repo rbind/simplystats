@@ -1,6 +1,6 @@
 ---
 title: Got a data app idea? Apply to get it prototyped by the JHU DSL!
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "data-prototyping-class"
 date: 2017-01-18

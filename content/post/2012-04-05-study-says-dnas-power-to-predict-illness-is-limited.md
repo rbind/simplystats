@@ -2,7 +2,7 @@
 id: 228
 title: Study Says DNA’s Power to Predict Illness Is Limited
 date: 2012-04-05T14:10:43+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20526121450/study-says-dnas-power-to-predict-illness-is-limited
 tumblr_simplystatistics_id:

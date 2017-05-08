@@ -2,7 +2,7 @@
 id: 534
 title: Logo Contest Winner
 date: 2012-11-16T15:00:32+00:00
-author: simplystatistics
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner
   - http://simplystatistics.tumblr.com/post/35842154215/logo-contest-winner

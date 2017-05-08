@@ -2,7 +2,7 @@
 id: 79
 title: Online universities blossom in Asia
 date: 2012-09-03T17:21:23+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30807753177/online-universities-blossom-in-asia
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 369
 title: "Show 'em the data!"
 date: 2011-11-20T01:59:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13039939507/show-em-the-data
 tumblr_simplystatistics_id:

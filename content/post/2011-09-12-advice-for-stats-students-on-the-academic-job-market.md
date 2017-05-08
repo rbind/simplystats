@@ -2,7 +2,7 @@
 id: 467
 title: Advice for stats students on the academic job market
 date: 2011-09-12T13:34:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10124797490/advice-for-stats-students-on-the-academic-job-market
 tumblr_simplystatistics_id:

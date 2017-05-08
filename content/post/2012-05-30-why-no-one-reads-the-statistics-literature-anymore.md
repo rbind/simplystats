@@ -2,7 +2,7 @@
 id: 187
 title: Why "no one reads the statistics literature anymore"
 date: 2012-05-30T12:54:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24060354412/why-no-one-reads-the-statistics-literature-anymore
 tumblr_simplystatistics_id:

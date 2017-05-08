@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 12 - The New Bayesian vs. Frequentist
-author: roger
+author: Roger Peng
 comments: true
 slug: "nssd-episode-12"
 date: 2016-03-26

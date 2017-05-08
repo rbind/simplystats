@@ -2,7 +2,7 @@
 id: 466
 title: Dissecting the genomics of trauma
 date: 2011-09-14T16:13:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10204192286/dissecting-the-genomics-of-trauma
 tumblr_simplystatistics_id:

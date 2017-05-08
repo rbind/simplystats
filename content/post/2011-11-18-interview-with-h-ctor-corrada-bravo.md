@@ -2,7 +2,7 @@
 id: 370
 title: Interview with Héctor Corrada Bravo
 date: 2011-11-18T17:52:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12972916931/interview-with-h-ctor-corrada-bravo
 tumblr_simplystatistics_id:

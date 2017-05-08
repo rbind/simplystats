@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 24 - 50 Minutes of Blathering
 slug: "nssd-episode-24"
 date: 2016-10-16

@@ -2,7 +2,7 @@
 id: 271
 title: "Graham &#038; Dodd's Security Analysis: Moneyball for...Money"
 date: 2012-02-27T01:51:40+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18354897367/graham-dodds-security-analysis-moneyball
 tumblr_simplystatistics_id:

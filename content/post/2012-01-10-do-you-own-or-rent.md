@@ -2,7 +2,7 @@
 id: 326
 title: Do you own or rent?
 date: 2012-01-10T12:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15615939541/do-you-own-or-rent
 tumblr_simplystatistics_id:

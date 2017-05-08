@@ -2,7 +2,7 @@
 id: 214
 title: "People in positions of power that don't understand statistics are a big problem for genomics"
 date: 2012-04-27T15:16:29+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21914291274/people-in-positions-of-power-that-dont-understand
 tumblr_simplystatistics_id:

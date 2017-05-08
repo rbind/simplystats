@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 13 - It's Good that Someone is Thinking About Us
-author: roger
+author: Roger Peng
 comments: true
 slug: "nssd-episode-13"
 date: 2016-04-07

@@ -2,7 +2,7 @@
 id: 267
 title: Statistics project ideas for students
 date: 2012-02-29T13:50:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18493330661/statistics-project-ideas-for-students
 tumblr_simplystatistics_id:

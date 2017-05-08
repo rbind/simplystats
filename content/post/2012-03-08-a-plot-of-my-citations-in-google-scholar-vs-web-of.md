@@ -2,7 +2,7 @@
 id: 256
 title: A plot of my citations in Google Scholar vs. Web of Science
 date: 2012-03-08T16:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18950350459/a-plot-of-my-citations-in-google-scholar-vs-web-of
 tumblr_simplystatistics_id:

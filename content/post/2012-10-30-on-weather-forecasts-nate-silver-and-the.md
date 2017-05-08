@@ -2,7 +2,7 @@
 id: 20
 title: On weather forecasts, Nate Silver, and the politicization of statistical illiteracy
 date: 2012-10-30T14:00:35+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34635539704/on-weather-forecasts-nate-silver-and-the
 tumblr_simplystatistics_id:

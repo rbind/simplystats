@@ -2,7 +2,7 @@
 id: 436
 title: Battling Bad Science
 date: 2011-09-30T17:16:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10852070603/battling-bad-science
 tumblr_simplystatistics_id:

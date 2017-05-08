@@ -2,7 +2,7 @@
 id: 215
 title: Nature is hiring a data editor...how will they make sense of the data?
 date: 2012-04-26T13:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21845976361/nature-is-hiring-a-data-editor-how-will-they-make
 tumblr_simplystatistics_id:

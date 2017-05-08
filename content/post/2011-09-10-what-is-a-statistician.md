@@ -2,7 +2,7 @@
 id: 469
 title: What is a Statistician?
 date: 2011-09-10T03:07:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10021164565/what-is-a-statistician
 tumblr_simplystatistics_id:

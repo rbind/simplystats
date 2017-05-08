@@ -1,6 +1,6 @@
 ---
 title: What is artificial intelligence? A three part definition
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "what-is-artificial-intelligence"
 date: 2017-01-19

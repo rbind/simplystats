@@ -2,7 +2,7 @@
 id: 409
 title: Colors in R
 date: 2011-10-17T16:05:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11573348494/colors-in-r
 tumblr_simplystatistics_id:

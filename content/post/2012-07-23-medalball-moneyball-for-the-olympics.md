@@ -2,7 +2,7 @@
 id: 132
 title: 'Medalball: Moneyball for the olympics'
 date: 2012-07-23T16:10:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27839066468/medalball-moneyball-for-the-olympics
 tumblr_simplystatistics_id:

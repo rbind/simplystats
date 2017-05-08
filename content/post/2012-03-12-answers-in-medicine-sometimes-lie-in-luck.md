@@ -2,7 +2,7 @@
 id: 252
 title: Answers in Medicine Sometimes Lie in Luck
 date: 2012-03-12T15:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19180300749/answers-in-medicine-sometimes-lie-in-luck
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 428
 title: Submitting scientific papers is too time consuming
 date: 2011-10-05T13:46:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11059923583/submitting-scientific-papers-is-too-time-consuming
 tumblr_simplystatistics_id:

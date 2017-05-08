@@ -2,7 +2,7 @@
 id: 438
 title: Kindle Fire and Machine Learning
 date: 2011-09-29T14:05:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10806006878/kindle-fire-and-machine-learning
 tumblr_simplystatistics_id:

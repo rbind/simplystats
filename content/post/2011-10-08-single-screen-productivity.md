@@ -2,7 +2,7 @@
 id: 423
 title: Single Screen Productivity
 date: 2011-10-08T14:25:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11181229481/single-screen-productivity
 tumblr_simplystatistics_id:

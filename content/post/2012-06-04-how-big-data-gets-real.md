@@ -2,7 +2,7 @@
 id: 184
 title: How Big Data Gets Real
 date: 2012-06-04T14:24:25+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24402858218/how-big-data-gets-real
 tumblr_simplystatistics_id:

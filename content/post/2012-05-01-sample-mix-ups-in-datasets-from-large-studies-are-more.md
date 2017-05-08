@@ -2,7 +2,7 @@
 id: 211
 title: Sample mix-ups in datasets from large studies are more common than you think
 date: 2012-05-01T15:01:13+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22194127261/sample-mix-ups-in-datasets-from-large-studies-are-more
 tumblr_simplystatistics_id:

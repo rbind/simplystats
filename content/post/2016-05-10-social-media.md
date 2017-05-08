@@ -1,6 +1,6 @@
 ---
 title: A means not an end - building a social media presence as a junior scientist
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "social-media"
 date: 2016-05-10

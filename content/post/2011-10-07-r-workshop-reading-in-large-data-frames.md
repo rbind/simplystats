@@ -2,7 +2,7 @@
 id: 424
 title: 'R Workshop: Reading in Large Data Frames'
 date: 2011-10-07T15:54:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11142408176/r-workshop-reading-in-large-data-frames
 tumblr_simplystatistics_id:

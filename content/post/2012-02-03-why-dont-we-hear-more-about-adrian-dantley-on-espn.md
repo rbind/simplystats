@@ -2,7 +2,7 @@
 id: 303
 title: "Why don't we hear more about Adrian Dantley on ESPN? This graph makes me think he was as good an offensive player as Michael Jordan."
 date: 2012-02-03T14:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16974142373/why-dont-we-hear-more-about-adrian-dantley-on-espn
 tumblr_simplystatistics_id:

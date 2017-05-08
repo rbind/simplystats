@@ -2,7 +2,7 @@
 id: 354
 title: Citizen science makes statistical literacy critical
 date: 2011-12-03T17:20:13+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13684264380/citizen-science-makes-statistical-literacy-critical
 tumblr_simplystatistics_id:

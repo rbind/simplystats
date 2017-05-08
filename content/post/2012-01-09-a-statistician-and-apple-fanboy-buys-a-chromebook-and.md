@@ -2,7 +2,7 @@
 id: 327
 title: A statistician and Apple fanboy buys a Chromebook...and loves it!
 date: 2012-01-09T14:00:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15565843517/a-statistician-and-apple-fanboy-buys-a-chromebook-and
 tumblr_simplystatistics_id:

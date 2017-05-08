@@ -2,7 +2,7 @@
 id: 162
 title: Obamacare is not going to solve the health care crisis, but a new initiative, led by a statistician, may help
 date: 2012-06-29T13:00:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26138675180/obamacare-is-not-going-to-solve-the-health-care-crisis
 tumblr_simplystatistics_id:

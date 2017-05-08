@@ -2,7 +2,7 @@
 id: 468
 title: The Duke Saga
 date: 2011-09-11T04:15:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10068195751/the-duke-saga
 tumblr_simplystatistics_id:

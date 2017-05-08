@@ -1,6 +1,6 @@
 ---
 title: Help choose the Leek group color palette
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "leekgroup-colors"
 date: 2016-11-17

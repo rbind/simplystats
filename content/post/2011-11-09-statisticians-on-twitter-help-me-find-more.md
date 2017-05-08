@@ -2,7 +2,7 @@
 id: 382
 title: Statisticians on Twitter...help me find more!
 date: 2011-11-09T17:10:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_id:
   - 12560072373
 tumblr_simplystatistics_permalink:

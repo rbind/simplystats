@@ -2,7 +2,7 @@
 id: 112
 title: Samuel Kou wins COPSS Award
 date: 2012-08-06T13:55:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28835564137/samuel-kou-wins-copss-award
 tumblr_simplystatistics_id:

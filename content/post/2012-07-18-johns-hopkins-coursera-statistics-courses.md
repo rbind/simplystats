@@ -2,7 +2,7 @@
 id: 142
 title: Johns Hopkins Coursera Statistics Courses
 date: 2012-07-18T13:51:07+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27481030592/johns-hopkins-coursera-statistics-courses
 tumblr_simplystatistics_id:

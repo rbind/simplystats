@@ -2,7 +2,7 @@
 id: 317
 title: Fundamentals of Engineering Review Question Oops
 date: 2012-01-19T02:13:25+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16093626662/fundamentals-of-engineering-review-question-oops
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 202
 title: Data analysis competition combines statistics with speed
 date: 2012-05-08T00:12:20+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22619513041/data-analysis-competition-combines-statistics-with
 tumblr_simplystatistics_id:

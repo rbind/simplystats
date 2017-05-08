@@ -2,7 +2,7 @@
 id: 91
 title: Sunday data/statistics link roundup (8/26/12)
 date: 2012-08-26T13:53:15+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30240816900/sunday-data-statistics-link-roundup-8-26-12
 tumblr_simplystatistics_id:

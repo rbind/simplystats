@@ -2,7 +2,7 @@
 id: 121
 title: Congress to Examine Data Sellers
 date: 2012-07-27T17:59:02+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28137219785/congress-to-examine-data-sellers
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 67
 title: An experimental foundation for statistics
 date: 2012-09-13T13:55:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31460959187/an-experimental-foundation-for-statistics
 tumblr_simplystatistics_id:

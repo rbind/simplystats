@@ -2,7 +2,7 @@
 id: 450
 title: Dongle communism
 date: 2011-09-23T13:30:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10555655037/dongle-communism
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 46
 title: The more statistics blogs the better
 date: 2012-10-02T14:56:26+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32736839231/the-more-statistics-blogs-the-better
 tumblr_simplystatistics_id:

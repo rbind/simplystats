@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Not So Standard Deviations Episode 18 - Back on Planet Earth
 slug: "nssd-episode-18"

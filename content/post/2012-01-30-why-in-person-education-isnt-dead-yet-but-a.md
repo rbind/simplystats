@@ -2,7 +2,7 @@
 id: 307
 title: "Why in-person education isn't dead yet...but a statistician could finish it off"
 date: 2012-01-30T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16759359088/why-in-person-education-isnt-dead-yet-but-a
 tumblr_simplystatistics_id:

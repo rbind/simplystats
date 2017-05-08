@@ -1,7 +1,7 @@
 ---
 title: "Some default and debt restructuring data"
 date: 2017-05-04
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: debt-haircuts
 ---

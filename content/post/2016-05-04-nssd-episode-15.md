@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 15 - Spinning Up Logistics
-author: roger
+author: Roger Peng
 date: 2016-05-04
 comments: true
 slug: "nssd-episode-15"

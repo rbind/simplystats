@@ -1,6 +1,6 @@
 ---
 title: New class - Data App Prototyping for Public Health and Beyond
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "new-prototyping-class"
 date: 2017-01-26

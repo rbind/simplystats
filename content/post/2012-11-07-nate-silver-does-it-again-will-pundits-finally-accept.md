@@ -2,7 +2,7 @@
 id: 14
 title: Nate Silver does it again! Will pundits finally accept defeat?
 date: 2012-11-07T05:54:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept
   - http://simplystatistics.tumblr.com/post/35187901781/nate-silver-does-it-again-will-pundits-finally-accept

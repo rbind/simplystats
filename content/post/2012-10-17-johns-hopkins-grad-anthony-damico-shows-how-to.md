@@ -1,7 +1,7 @@
 ---
 id: 33
 date: 2012-10-17T12:43:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33769815125/johns-hopkins-grad-anthony-damico-shows-how-to
 tumblr_simplystatistics_id:

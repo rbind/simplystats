@@ -2,7 +2,7 @@
 id: 404
 title: Finding good collaborators
 date: 2011-10-20T16:05:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11695813030/finding-good-collaborators
 tumblr_simplystatistics_id:

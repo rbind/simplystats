@@ -2,7 +2,7 @@
 id: 430
 title: Defining data science
 date: 2011-10-04T14:27:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11021068390/defining-data-science
 tumblr_simplystatistics_id:

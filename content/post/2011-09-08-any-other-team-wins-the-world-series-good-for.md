@@ -1,7 +1,7 @@
 ---
 id: 471
 date: 2011-09-08T23:12:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9973265934/any-other-team-wins-the-world-series-good-for
 tumblr_simplystatistics_id:

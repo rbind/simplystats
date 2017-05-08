@@ -1,7 +1,7 @@
 ---
 id: 319
 date: 2012-01-16T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15945304971/a-tribute-to-one-of-the-most-popular-methods-in
 tumblr_simplystatistics_id:

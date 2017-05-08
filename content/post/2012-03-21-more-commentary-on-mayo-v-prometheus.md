@@ -2,7 +2,7 @@
 id: 242
 title: More commentary on Mayo v. Prometheus
 date: 2012-03-21T15:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19680414431/more-commentary-on-mayo-v-prometheus
 tumblr_simplystatistics_id:

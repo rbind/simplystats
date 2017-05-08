@@ -2,7 +2,7 @@
 id: 85
 title: 'Green: Will Emissions Disclosure Mean Investor Pressure on Polluters?'
 date: 2012-08-30T13:58:23+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30519944763/green-will-emissions-disclosure-mean-investor-pressure
 tumblr_simplystatistics_id:

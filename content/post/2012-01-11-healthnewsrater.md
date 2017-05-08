@@ -2,7 +2,7 @@
 id: 324
 title: Help us rate health news reporting with citizen-science powered http://www.healthnewsrater.com
 date: 2012-01-11T13:19:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15669033251/healthnewsrater
 tumblr_simplystatistics_id:

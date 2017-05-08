@@ -1,6 +1,6 @@
 ---
 title: The levels of data science class
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "evo-ds-class"
 date: 2017-03-16

@@ -2,7 +2,7 @@
 id: 23
 title: I love those first discussions about a new research project
 date: 2012-10-26T19:37:18+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34362857634/i-love-those-first-discussions-about-a-new-research
 tumblr_simplystatistics_id:

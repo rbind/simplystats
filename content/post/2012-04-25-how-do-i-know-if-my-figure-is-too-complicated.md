@@ -2,7 +2,7 @@
 id: 216
 title: How do I know if my figure is too complicated?
 date: 2012-04-25T17:01:36+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/21788747340/how-do-i-know-if-my-figure-is-too-complicated
 tumblr_simplystatistics_id:

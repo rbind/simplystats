@@ -1,7 +1,7 @@
 ---
 title: "Science really is non-partisan: facts and skepticism annoy everybody"
 date: 2017-04-24
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "march-for-science"
 ---

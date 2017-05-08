@@ -2,7 +2,7 @@
 id: 393
 title: Computing on the Language Followup
 date: 2011-11-01T16:05:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12199191487/computing-on-the-language-followup
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 177
 title: Poison gas or...air pollution?
 date: 2012-06-12T15:07:33+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24955281162/poison-gas-or-air-pollution
 tumblr_simplystatistics_id:

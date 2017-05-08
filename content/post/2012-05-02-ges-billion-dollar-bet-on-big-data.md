@@ -2,7 +2,7 @@
 id: 210
 title: "GE's Billion-Dollar Bet on Big Data"
 date: 2012-05-02T14:57:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22256738807/ges-billion-dollar-bet-on-big-data
 tumblr_simplystatistics_id:

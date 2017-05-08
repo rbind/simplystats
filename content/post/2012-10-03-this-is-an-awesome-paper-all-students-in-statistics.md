@@ -2,7 +2,7 @@
 id: 44
 title: This is an awesome paper all students in statistics should read
 date: 2012-10-03T15:24:46+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/32806594014/this-is-an-awesome-paper-all-students-in-statistics
 tumblr_simplystatistics_id:

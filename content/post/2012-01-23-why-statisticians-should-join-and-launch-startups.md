@@ -2,7 +2,7 @@
 id: 313
 title: Why statisticians should join and launch startups
 date: 2012-01-23T14:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16347982080/why-statisticians-should-join-and-launch-startups
 tumblr_simplystatistics_id:

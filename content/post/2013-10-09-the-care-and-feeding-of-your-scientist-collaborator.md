@@ -2,7 +2,7 @@
 id: 1957
 title: The Care and Feeding of Your Scientist Collaborator
 date: 2013-10-09T08:55:52+00:00
-author: roger
+author: Roger Peng
 al2fb_facebook_link_id:
   - 136171103105421_552423801480147
 al2fb_facebook_link_time:

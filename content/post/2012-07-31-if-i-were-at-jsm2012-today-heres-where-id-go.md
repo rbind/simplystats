@@ -2,7 +2,7 @@
 id: 114
 title: "If I were at #JSM2012 today, here's where I'd go."
 date: 2012-07-31T13:58:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28409892787/if-i-were-at-jsm2012-today-heres-where-id-go
 tumblr_simplystatistics_id:

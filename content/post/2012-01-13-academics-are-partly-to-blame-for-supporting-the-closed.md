@@ -2,7 +2,7 @@
 id: 323
 title: Academics are partly to blame for supporting the closed and expensive access system of publishing
 date: 2012-01-13T02:54:25+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15756182268/academics-are-partly-to-blame-for-supporting-the-closed
 tumblr_simplystatistics_id:

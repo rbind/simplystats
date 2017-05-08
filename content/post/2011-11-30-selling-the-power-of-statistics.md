@@ -2,7 +2,7 @@
 id: 362
 title: Selling the Power of Statistics
 date: 2011-11-30T14:12:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13545601315/selling-the-power-of-statistics
 tumblr_simplystatistics_id:

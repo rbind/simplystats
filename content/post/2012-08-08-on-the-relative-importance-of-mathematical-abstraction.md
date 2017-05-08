@@ -2,7 +2,7 @@
 id: 109
 title: On the relative importance of mathematical abstraction in graduate statistical education
 date: 2012-08-08T15:40:15+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28984279863/on-the-relative-importance-of-mathematical-abstraction
 tumblr_simplystatistics_id:

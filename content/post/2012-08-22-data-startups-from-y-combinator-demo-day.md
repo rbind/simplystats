@@ -2,7 +2,7 @@
 id: 96
 title: Data Startups from Y Combinator Demo Day
 date: 2012-08-22T13:54:58+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29964925728/data-startups-from-y-combinator-demo-day
 tumblr_simplystatistics_id:

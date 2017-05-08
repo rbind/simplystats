@@ -2,7 +2,7 @@
 id: 432
 title: OracleWorld Claims and Sensations
 date: 2011-10-03T12:40:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10978122797/oracleworld-claims-and-sensations
 tumblr_simplystatistics_id:

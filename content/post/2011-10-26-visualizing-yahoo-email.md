@@ -2,7 +2,7 @@
 id: 397
 title: Visualizing Yahoo Email
 date: 2011-10-26T16:23:44+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11952545381/visualizing-yahoo-email
 tumblr_simplystatistics_id:

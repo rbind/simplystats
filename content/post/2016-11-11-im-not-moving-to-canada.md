@@ -1,7 +1,7 @@
 ---
 title: 'Open letter to my lab: I am not "moving to Canada"'
 date: 2016-11-11
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "im-not-moving-to-canada"
 ---

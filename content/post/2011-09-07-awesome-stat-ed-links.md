@@ -2,7 +2,7 @@
 id: 476
 title: Awesome Stat Ed Links
 date: 2011-09-07T13:58:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9917286713/awesome-stat-ed-links
 tumblr_simplystatistics_id:

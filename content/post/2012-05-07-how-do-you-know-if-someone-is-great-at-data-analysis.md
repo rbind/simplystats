@@ -2,7 +2,7 @@
 id: 203
 title: How do you know if someone is great at data analysis?
 date: 2012-05-07T13:17:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/22585430491/how-do-you-know-if-someone-is-great-at-data-analysis
 tumblr_simplystatistics_id:

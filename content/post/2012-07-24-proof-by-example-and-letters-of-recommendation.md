@@ -2,7 +2,7 @@
 id: 129
 title: Proof by example and letters of recommendation
 date: 2012-07-24T13:58:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27907991790/proof-by-example-and-letters-of-recommendation
 tumblr_simplystatistics_id:

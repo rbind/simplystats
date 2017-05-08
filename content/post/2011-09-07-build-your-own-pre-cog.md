@@ -2,7 +2,7 @@
 id: 475
 title: Build your own pre-cog
 date: 2011-09-07T17:38:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9922780037/build-your-own-pre-cog
 tumblr_simplystatistics_id:

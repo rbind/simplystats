@@ -2,7 +2,7 @@
 id: 277
 title: Interracial Couples Who Make the Most Money
 date: 2012-02-21T14:02:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18008913231/interracial-couples-who-make-the-most-money
 tumblr_simplystatistics_id:

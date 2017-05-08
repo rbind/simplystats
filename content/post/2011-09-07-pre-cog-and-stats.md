@@ -2,7 +2,7 @@
 id: 477
 title: Pre-cog and stats
 date: 2011-09-07T13:11:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/9916412456/pre-cog-and-stats
 tumblr_simplystatistics_id:

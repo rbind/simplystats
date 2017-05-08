@@ -2,7 +2,7 @@
 id: 169
 title: A specific suggestion to help recruit/retain women faculty at Hopkins
 date: 2012-06-25T12:59:26+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25849875593/a-specific-suggestion-to-help-recruit-retain-women
 tumblr_simplystatistics_id:

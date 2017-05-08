@@ -2,7 +2,7 @@
 id: 334
 title: Will Amazon Offer Analytics as a Service?
 date: 2012-01-05T15:50:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15347605762/will-amazon-offer-analytics-as-a-service
 tumblr_simplystatistics_id:

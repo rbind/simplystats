@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Not So Standard Deviations Episode 21 - This Might be the Future!
 slug: "nssd-episode-21"

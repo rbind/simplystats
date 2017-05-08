@@ -2,7 +2,7 @@
 id: 15
 title: If we truly want to foster collaboration, we need to rethink the "independence" criteria during promotion
 date: 2012-11-05T15:00:44+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/35057298733/if-we-truly-want-to-foster-collaboration-we-need-to
   - http://simplystatistics.tumblr.com/post/35057298733/if-we-truly-want-to-foster-collaboration-we-need-to

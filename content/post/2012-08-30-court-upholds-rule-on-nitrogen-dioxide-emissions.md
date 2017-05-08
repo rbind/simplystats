@@ -2,7 +2,7 @@
 id: 84
 title: Court Upholds Rule on Nitrogen Dioxide Emissions
 date: 2012-08-30T17:59:17+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30529966269/court-upholds-rule-on-nitrogen-dioxide-emissions
 tumblr_simplystatistics_id:

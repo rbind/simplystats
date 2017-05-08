@@ -2,7 +2,7 @@
 id: 83
 title: Court Blocks E.P.A. Rule on Cross-State Pollution
 date: 2012-08-31T14:00:11+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30585685303/court-blocks-e-p-a-rule-on-cross-state-pollution
 tumblr_simplystatistics_id:

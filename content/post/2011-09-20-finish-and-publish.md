@@ -2,7 +2,7 @@
 id: 457
 title: Finish and publish
 date: 2011-09-20T12:50:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10440612965/finish-and-publish
 tumblr_simplystatistics_id:

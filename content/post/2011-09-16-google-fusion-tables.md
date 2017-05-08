@@ -2,7 +2,7 @@
 id: 462
 title: Google Fusion Tables
 date: 2011-09-16T11:37:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10273897765/google-fusion-tables
 tumblr_simplystatistics_id:

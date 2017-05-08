@@ -1,7 +1,7 @@
 ---
 title: Will Machine Learning and AI Ever Solve the Last Mile?
 date: 2017-05-07
-author: roger
+author: Roger Peng
 comments: true
 slug: last-mile
 ---

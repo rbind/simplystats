@@ -1,6 +1,6 @@
 ---
 title: Disseminating reproducible research is fundamentally a language and communication problem
-author: roger
+author: Roger Peng
 comments: true
 slug: "reproducible-research-language"
 date: 2016-05-13

@@ -2,7 +2,7 @@
 id: 371
 title: Google Scholar Pages
 date: 2011-11-17T20:31:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12935001869/google-scholar-pages
 tumblr_simplystatistics_id:

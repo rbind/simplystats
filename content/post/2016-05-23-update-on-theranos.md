@@ -1,6 +1,6 @@
 ---
 title:
-author: roger
+author: Roger Peng
 comments: true
 slug: "update-on-theranos"
 date: 2016-05-23

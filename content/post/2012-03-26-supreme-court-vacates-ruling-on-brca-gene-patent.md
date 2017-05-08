@@ -2,7 +2,7 @@
 id: 236
 title: Supreme court vacates ruling on BRCA gene patent!
 date: 2012-03-26T15:53:56+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19955854626/supreme-court-vacates-ruling-on-brca-gene-patent
 tumblr_simplystatistics_id:

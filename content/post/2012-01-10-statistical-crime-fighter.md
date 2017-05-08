@@ -2,7 +2,7 @@
 id: 325
 title: Statistical Crime Fighter
 date: 2012-01-10T19:23:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15628138349/statistical-crime-fighter
 tumblr_simplystatistics_id:

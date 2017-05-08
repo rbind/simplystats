@@ -2,7 +2,7 @@
 id: 110
 title: My worst nightmare...
 date: 2012-08-07T14:44:31+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28909621928/my-worst-nightmare
 tumblr_simplystatistics_id:

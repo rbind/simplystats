@@ -2,7 +2,7 @@
 id: 315
 title: Interview With Joe Blitzstein
 date: 2012-01-20T14:00:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16170052064/interview-with-joe-blitzstein
 tumblr_simplystatistics_id:

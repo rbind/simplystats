@@ -1,6 +1,6 @@
 ---
 title: Not So Standard Deviations Episode 11 - Start and Stop
-author: roger
+author: Roger Peng
 comments: true
 slug: "nssd-episode-11"
 date: 2016-03-14

@@ -2,7 +2,7 @@
 id: 375
 title: Preparing for tenure track job interviews
 date: 2011-11-16T15:58:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12883549461/preparing-for-tenure-track-job-interviews
 tumblr_simplystatistics_id:

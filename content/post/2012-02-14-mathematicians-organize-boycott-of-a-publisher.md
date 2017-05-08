@@ -2,7 +2,7 @@
 id: 286
 title: Mathematicians Organize Boycott of a Publisher
 date: 2012-02-14T20:21:03+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17617874492/mathematicians-organize-boycott-of-a-publisher
 tumblr_simplystatistics_id:

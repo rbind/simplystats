@@ -2,7 +2,7 @@
 id: 57
 title: "In data science - it's the problem, stupid!"
 date: 2012-09-20T17:53:32+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31929980223/in-data-science-its-the-problem-stupid
 tumblr_simplystatistics_id:

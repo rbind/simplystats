@@ -2,7 +2,7 @@
 id: 385
 title: 'Reproducible research: Notes from the field'
 date: 2011-11-06T16:13:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12421558195/reproducible-research-notes-from-the-field
 tumblr_simplystatistics_id:

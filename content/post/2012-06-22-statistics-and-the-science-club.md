@@ -2,7 +2,7 @@
 id: 171
 title: Statistics and the Science Club
 date: 2012-06-22T13:24:59+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25643791866/statistics-and-the-science-club
 tumblr_simplystatistics_id:

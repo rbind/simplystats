@@ -2,7 +2,7 @@
 id: 144
 title: Free Statistics Courses on Coursera
 date: 2012-07-17T13:22:45+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27405330688/free-statistics-courses-on-coursera
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 412
 title: Interview With Daniela Witten
 date: 2011-10-14T14:37:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11436138110/interview-with-daniela-witten
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 429
 title: Cool papers
 date: 2011-10-04T16:52:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11024349209/cool-papers
 tumblr_simplystatistics_id:

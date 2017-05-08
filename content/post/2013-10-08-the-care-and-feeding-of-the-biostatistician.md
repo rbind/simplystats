@@ -2,7 +2,7 @@
 id: 1953
 title: The Care and Feeding of the Biostatistician
 date: 2013-10-08T10:33:10+00:00
-author: roger
+author: Roger Peng
 al2fb_facebook_link_id:
   - 136171103105421_552027224853138
 al2fb_facebook_link_time:

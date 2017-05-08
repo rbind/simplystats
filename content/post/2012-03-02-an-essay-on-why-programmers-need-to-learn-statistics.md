@@ -2,7 +2,7 @@
 id: 264
 title: An essay on why programmers need to learn statistics
 date: 2012-03-02T13:24:55+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18604681236/an-essay-on-why-programmers-need-to-learn-statistics
 tumblr_simplystatistics_id:

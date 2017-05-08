@@ -2,7 +2,7 @@
 id: 179
 title: 'Green: E.P.A. Soot Rules Expected This Week'
 date: 2012-06-12T11:35:59+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24948801952/green-e-p-a-soot-rules-expected-this-week
 tumblr_simplystatistics_id:

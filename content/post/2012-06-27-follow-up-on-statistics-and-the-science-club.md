@@ -2,7 +2,7 @@
 id: 165
 title: Follow up on "Statistics and the Science Club"
 date: 2012-06-27T12:58:40+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25997239938/follow-up-on-statistics-and-the-science-club
 tumblr_simplystatistics_id:

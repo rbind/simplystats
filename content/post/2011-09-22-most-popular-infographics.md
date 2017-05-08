@@ -2,7 +2,7 @@
 id: 451
 title: Most popular infographics
 date: 2011-09-22T18:33:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10524782074/most-popular-infographics
 tumblr_simplystatistics_id:

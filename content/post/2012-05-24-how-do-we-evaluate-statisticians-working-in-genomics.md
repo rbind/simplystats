@@ -3,7 +3,7 @@ id: 191
 title: |
   "How do we evaluate statisticians working in genomics? Why don't they publish in stats journals?" Here is my answer
 date: 2012-05-24T15:57:37+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/23674712262/how-do-we-evaluate-statisticians-working-in-genomics
 tumblr_simplystatistics_id:

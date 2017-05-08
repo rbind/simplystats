@@ -2,7 +2,7 @@
 id: 176
 title: Statisticians, ASA, and Big Data
 date: 2012-06-15T20:30:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25177731588/statisticians-asa-and-big-data
 tumblr_simplystatistics_id:

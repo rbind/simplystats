@@ -2,7 +2,7 @@
 id: 233
 title: Big Data Meeting at AAAS
 date: 2012-03-29T13:56:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20115598139/big-data-meeting-at-aaas
 tumblr_simplystatistics_id:

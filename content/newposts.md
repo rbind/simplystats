@@ -1,5 +1,6 @@
 ---
 title: Writing posts
+author: Admin
 ---
 
 ## Workflow for writing posts if your name is Rafa/Jeff/Roger

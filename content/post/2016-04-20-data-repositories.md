@@ -1,6 +1,6 @@
 ---
 title: As a data analyst the best data repositories are the ones with the least features
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "data-repositories"
 date: 2016-04-20

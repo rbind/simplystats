@@ -1,6 +1,6 @@
 ---
 title: A Year at Stack Overflow
-author: roger
+author: Roger Peng
 comments: true
 slug: "stack-overflow-drob"
 date: 2016-06-28

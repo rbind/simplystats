@@ -2,7 +2,7 @@
 id: 28
 title: Free Online Education Is Now Illegal in Minnesota
 date: 2012-10-20T13:16:32+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/33956660150/free-online-education-is-now-illegal-in-minnesota
 tumblr_simplystatistics_id:

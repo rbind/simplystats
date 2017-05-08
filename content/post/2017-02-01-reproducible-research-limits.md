@@ -1,6 +1,6 @@
 ---
 title: Reproducible Research Needs Some Limiting Principles
-author: roger
+author: Roger Peng
 slug: "reproducible-research-limits"
 date: 2017-02-01
 ---

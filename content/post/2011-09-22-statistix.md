@@ -2,7 +2,7 @@
 id: 453
 title: StatistiX
 date: 2011-09-22T12:01:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10516468054/statistix
 tumblr_simplystatistics_id:

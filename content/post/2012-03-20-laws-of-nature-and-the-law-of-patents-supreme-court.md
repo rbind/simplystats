@@ -2,7 +2,7 @@
 id: 243
 title: 'Laws of Nature and the Law of Patents: Supreme Court Rejects Patents for Correlations'
 date: 2012-03-20T22:40:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19646774024/laws-of-nature-and-the-law-of-patents-supreme-court
 tumblr_simplystatistics_id:

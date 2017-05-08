@@ -2,7 +2,7 @@
 id: 352
 title: Preventing Errors through Reproducibility
 date: 2011-12-05T15:15:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13780369155/preventing-errors-through-reproducibility
 tumblr_simplystatistics_id:

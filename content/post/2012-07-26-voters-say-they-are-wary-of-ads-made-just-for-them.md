@@ -2,7 +2,7 @@
 id: 125
 title: Voters Say They Are Wary of Ads Made Just for Them
 date: 2012-07-26T13:19:35+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28051789900/voters-say-they-are-wary-of-ads-made-just-for-them
 tumblr_simplystatistics_id:

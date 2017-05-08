@@ -2,7 +2,7 @@
 id: 355
 title: "The worlds has changed from analogue to digital and it's time mathematical education makes the change too."
 date: 2011-12-03T17:17:16+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13684145814/the-worlds-has-changed-from-analogue-to-digital-and
 tumblr_simplystatistics_id:

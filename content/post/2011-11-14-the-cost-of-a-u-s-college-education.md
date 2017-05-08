@@ -2,7 +2,7 @@
 id: 378
 title: The Cost of a U.S. College Education
 date: 2011-11-14T19:44:40+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12798800763/the-cost-of-a-u-s-college-education
 tumblr_simplystatistics_id:

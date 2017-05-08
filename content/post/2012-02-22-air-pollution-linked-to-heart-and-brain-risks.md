@@ -2,7 +2,7 @@
 id: 276
 title: Air Pollution Linked to Heart and Brain Risks
 date: 2012-02-22T14:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/18069262011/air-pollution-linked-to-heart-and-brain-risks
 tumblr_simplystatistics_id:

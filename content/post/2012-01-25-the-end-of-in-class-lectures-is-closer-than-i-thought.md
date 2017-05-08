@@ -2,7 +2,7 @@
 id: 311
 title: The end of in-class lectures is closer than I thought
 date: 2012-01-25T19:18:28+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16474506346/the-end-of-in-class-lectures-is-closer-than-i-thought
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 143
 title: Universities Reshaping Education on the Web
 date: 2012-07-17T23:56:14+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27443213656/universities-reshaping-education-on-the-web
 tumblr_simplystatistics_id:

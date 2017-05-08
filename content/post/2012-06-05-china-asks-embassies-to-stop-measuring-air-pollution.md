@@ -2,7 +2,7 @@
 id: 183
 title: China Asks Embassies to Stop Measuring Air Pollution
 date: 2012-06-05T17:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/24477585545/china-asks-embassies-to-stop-measuring-air-pollution
 tumblr_simplystatistics_id:

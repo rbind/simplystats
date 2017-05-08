@@ -2,7 +2,7 @@
 id: 281
 title: Company Unveils DNA Sequencing Device Meant to Be Portable, Disposable and Cheap
 date: 2012-02-20T02:44:11+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17922584670/company-unveils-dna-sequencing-device-meant-to-be
 tumblr_simplystatistics_id:

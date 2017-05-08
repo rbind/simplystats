@@ -2,7 +2,7 @@
 id: 153
 title: My worst (recent) experience with peer review
 date: 2012-07-11T14:10:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/26977029850/my-worst-recent-experience-with-peer-review
 tumblr_simplystatistics_id:

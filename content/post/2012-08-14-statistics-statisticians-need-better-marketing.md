@@ -2,7 +2,7 @@
 id: 101
 title: Statistics/statisticians need better marketing
 date: 2012-08-14T14:02:33+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29407938554/statistics-statisticians-need-better-marketing
 tumblr_simplystatistics_id:

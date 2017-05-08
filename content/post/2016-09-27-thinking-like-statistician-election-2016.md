@@ -1,7 +1,7 @@
 ---
 title: 'Thinking like a statistician: this is not the election for progressives to vote third party'
 date: 2016-09-27
-author: rafa
+author: Rafael Irizarry
 comments: true
 categories:
   - elections

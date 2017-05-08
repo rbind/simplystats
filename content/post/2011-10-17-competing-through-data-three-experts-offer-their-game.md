@@ -2,7 +2,7 @@
 id: 410
 title: 'Competing through data: Three experts offer their game plan'
 date: 2011-10-17T01:53:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11554697718/competing-through-data-three-experts-offer-their-game
 tumblr_simplystatistics_id:

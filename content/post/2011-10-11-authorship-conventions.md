@@ -2,7 +2,7 @@
 id: 416
 title: Authorship conventions
 date: 2011-10-11T12:20:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11314293165/authorship-conventions
 tumblr_simplystatistics_id:

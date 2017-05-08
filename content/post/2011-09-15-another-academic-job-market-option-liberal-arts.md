@@ -2,7 +2,7 @@
 id: 464
 title: 'Another academic job market option: liberal arts colleges'
 date: 2011-09-15T18:30:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10245243013/another-academic-job-market-option-liberal-arts
 tumblr_simplystatistics_id:

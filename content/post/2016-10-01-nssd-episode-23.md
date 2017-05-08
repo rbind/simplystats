@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 23 - Special Guest Walt Hickey
 slug: "nssd-episode-23"
 date: 2016-10-01

@@ -2,7 +2,7 @@
 id: 415
 title: Errors in Biomedical Computing
 date: 2011-10-11T14:30:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11316653196/errors-in-biomedical-computing
 tumblr_simplystatistics_id:

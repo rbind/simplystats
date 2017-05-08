@@ -2,7 +2,7 @@
 id: 13
 title: Some academic thoughts on the poll aggregators
 date: 2012-11-08T20:11:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators
   - http://simplystatistics.tumblr.com/post/35285752046/some-academic-thoughts-on-the-poll-aggregators

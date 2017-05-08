@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 title: Not So Standard Deviations Episode 32 - You Have to Reinvent the Wheel a Few Times
 slug: "nssd-episode-32"
 date: 2017-02-13

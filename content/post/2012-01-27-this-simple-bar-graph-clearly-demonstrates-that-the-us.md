@@ -2,7 +2,7 @@
 id: 309
 title: This simple bar graph clearly demonstrates that the US can easily increase research funding
 date: 2012-01-27T15:09:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16579135058/this-simple-bar-graph-clearly-demonstrates-that-the-us
 tumblr_simplystatistics_id:

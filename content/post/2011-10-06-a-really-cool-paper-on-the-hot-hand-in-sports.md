@@ -2,7 +2,7 @@
 id: 425
 title: A Really Cool Paper on the "Hot Hand" in Sports
 date: 2011-10-06T14:23:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11100627839/a-really-cool-paper-on-the-hot-hand-in-sports
 tumblr_simplystatistics_id:

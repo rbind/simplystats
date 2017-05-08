@@ -2,7 +2,7 @@
 id: 255
 title: Mission Control, Built for Cities
 date: 2012-03-09T16:00:05+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19004325289/mission-control-built-for-cities
 tumblr_simplystatistics_id:

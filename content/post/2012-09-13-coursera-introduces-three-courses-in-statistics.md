@@ -2,7 +2,7 @@
 id: 68
 title: Coursera introduces three courses in statistics
 date: 2012-09-13T12:40:22+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31458757903/coursera-introduces-three-courses-in-statistics
 tumblr_simplystatistics_id:

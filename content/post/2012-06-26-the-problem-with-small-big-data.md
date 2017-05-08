@@ -2,7 +2,7 @@
 id: 166
 title: The problem with small big data
 date: 2012-06-26T12:56:13+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25924012903/the-problem-with-small-big-data
 tumblr_simplystatistics_id:

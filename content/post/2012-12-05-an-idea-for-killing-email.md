@@ -2,7 +2,7 @@
 id: 484
 title: 'Email is a to-do list made by other people - can someone make it more efficient?!'
 date: 2012-12-05T11:33:21+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27448744156/an-idea-for-killing-email
 tumblr_simplystatistics_id:

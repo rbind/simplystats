@@ -1,7 +1,7 @@
 ---
 title: 'What is going on with math education in the US?'
 date: 2016-12-09
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "pisa-us-math"
 ---

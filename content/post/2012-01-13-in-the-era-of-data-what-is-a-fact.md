@@ -2,7 +2,7 @@
 id: 322
 title: In the era of data what is a fact?
 date: 2012-01-13T14:00:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/15774146480/in-the-era-of-data-what-is-a-fact
 tumblr_simplystatistics_id:

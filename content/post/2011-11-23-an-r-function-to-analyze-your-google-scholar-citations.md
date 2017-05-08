@@ -2,7 +2,7 @@
 id: 366
 title: An R function to analyze your Google Scholar Citations page
 date: 2011-11-23T14:07:53+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13203811645/an-r-function-to-analyze-your-google-scholar-citations
 tumblr_simplystatistics_id:

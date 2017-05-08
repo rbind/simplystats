@@ -1,5 +1,5 @@
 ---
-author: roger
+author: Roger Peng
 comments: true
 title: Not So Standard Deviations Episode 18 - Divide by n-1, or n-2, or Whatever
 slug: "nssd-episode-19"

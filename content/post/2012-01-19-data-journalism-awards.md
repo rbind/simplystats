@@ -2,7 +2,7 @@
 id: 316
 title: Data Journalism Awards
 date: 2012-01-19T20:55:44+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16129729564/data-journalism-awards
 tumblr_simplystatistics_id:

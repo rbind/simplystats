@@ -2,7 +2,7 @@
 id: 380
 title: Cooperation between Referees and Authors Increases Peer Review Accuracy
 date: 2011-11-11T17:17:56+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12646244801/cooperation-between-referees-and-authors-increases-peer
 tumblr_simplystatistics_id:

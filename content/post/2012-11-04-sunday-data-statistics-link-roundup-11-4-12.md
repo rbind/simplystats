@@ -2,7 +2,7 @@
 id: 16
 title: Sunday Data/Statistics Link Roundup (11/4/12)
 date: 2012-11-04T14:24:48+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34976862804/sunday-data-statistics-link-roundup-11-4-12
   - http://simplystatistics.tumblr.com/post/34976862804/sunday-data-statistics-link-roundup-11-4-12

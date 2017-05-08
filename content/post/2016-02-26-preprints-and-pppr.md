@@ -1,6 +1,6 @@
 ---
 title: Preprints are great, but post publication peer review isn't ready for prime time
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "preprints-and-pppr"
 date: 2016-02-26

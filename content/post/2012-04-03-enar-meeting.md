@@ -2,7 +2,7 @@
 id: 230
 title: ENAR Meeting
 date: 2012-04-03T12:14:28+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/20404825231/enar-meeting
 tumblr_simplystatistics_id:

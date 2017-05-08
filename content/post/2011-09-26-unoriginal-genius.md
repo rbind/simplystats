@@ -2,7 +2,7 @@
 id: 445
 title: "Unoriginal genius"
 date: 2011-09-26T16:11:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10689363695/unoriginal-genius
 tumblr_simplystatistics_id:

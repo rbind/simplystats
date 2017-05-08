@@ -2,7 +2,7 @@
 id: 174
 title: Pro Tips for Grad Students in Statistics/Biostatistics (Part 1)
 date: 2012-06-18T16:21:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/25368234643/pro-tips-for-grad-students-in-statistics-biostatistics
 tumblr_simplystatistics_id:

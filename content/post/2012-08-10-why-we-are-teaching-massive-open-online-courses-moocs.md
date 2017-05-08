@@ -2,7 +2,7 @@
 id: 107
 title: Why we are teaching massive open online courses (MOOCs) in R/statistics for Coursera
 date: 2012-08-10T14:49:18+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29125357552/why-we-are-teaching-massive-open-online-courses-moocs
 tumblr_simplystatistics_id:

@@ -1,6 +1,6 @@
 ---
 title: The four eras of data
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "the-four-eras-of-data"
 date: 2016-12-16

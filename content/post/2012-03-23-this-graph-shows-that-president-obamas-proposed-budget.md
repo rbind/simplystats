@@ -2,7 +2,7 @@
 id: 240
 title: "This graph shows that President Obama's proposed budget treats the NIH even worse than G.W. Bush - Sign the petition to increase NIH funding!"
 date: 2012-03-23T12:14:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/19779782465/this-graph-shows-that-president-obamas-proposed-budget
 tumblr_simplystatistics_id:

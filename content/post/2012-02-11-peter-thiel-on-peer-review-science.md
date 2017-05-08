@@ -2,7 +2,7 @@
 id: 294
 title: Peter Thiel on Peer Review/Science
 date: 2012-02-11T23:07:07+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17452142706/peter-thiel-on-peer-review-science
 tumblr_simplystatistics_id:

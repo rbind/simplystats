@@ -2,7 +2,7 @@
 id: 454
 title: Small ball is a bad strategy
 date: 2011-09-21T11:55:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10478244664/small-ball-is-a-bad-strategy
 tumblr_simplystatistics_id:

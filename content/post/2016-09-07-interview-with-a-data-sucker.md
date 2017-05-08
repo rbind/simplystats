@@ -1,7 +1,7 @@
 ---
 title: 'Interview With a Data Sucker'
 date: 2016-09-07
-author: rafa
+author: Rafael Irizarry
 comments: true
 categories:
   - Open Science

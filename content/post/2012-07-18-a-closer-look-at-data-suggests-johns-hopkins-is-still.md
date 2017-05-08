@@ -2,7 +2,7 @@
 id: 141
 title: 'A closer look at data suggests Johns Hopkins is still the #1 US hospital'
 date: 2012-07-18T17:31:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/27491255261/a-closer-look-at-data-suggests-johns-hopkins-is-still
 tumblr_simplystatistics_id:

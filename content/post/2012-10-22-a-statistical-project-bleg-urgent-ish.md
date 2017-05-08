@@ -2,7 +2,7 @@
 id: 25
 title: A statistical project bleg (urgent-ish)
 date: 2012-10-22T14:29:01+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/34098460201/a-statistical-project-bleg-urgent-ish
 tumblr_simplystatistics_id:

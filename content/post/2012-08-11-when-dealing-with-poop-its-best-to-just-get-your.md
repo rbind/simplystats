@@ -2,7 +2,7 @@
 id: 106
 title: "When dealing with poop, it's best to just get your hands dirty"
 date: 2012-08-11T13:21:47+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/29192497043/when-dealing-with-poop-its-best-to-just-get-your
 tumblr_simplystatistics_id:

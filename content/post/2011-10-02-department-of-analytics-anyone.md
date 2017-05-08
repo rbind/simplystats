@@ -2,7 +2,7 @@
 id: 434
 title: Department of Analytics, anyone?
 date: 2011-10-02T01:51:38+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10915054266/department-of-analytics-anyone
 tumblr_simplystatistics_id:

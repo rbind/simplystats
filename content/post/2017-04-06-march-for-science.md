@@ -1,7 +1,7 @@
 ---
 title: "Redirect"
 date: 2017-04-06
-author: rafa
+author: Rafael Irizarry
 comments: true
 slug: "march-for-science"
 ---

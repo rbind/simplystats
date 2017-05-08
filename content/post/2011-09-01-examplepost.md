@@ -1,7 +1,7 @@
 ---
 title: Example post
 date: '2011-09-01'
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "examplepost"
 ---

@@ -2,7 +2,7 @@
 id: 338
 title: An R function to map your Twitter Followers
 date: 2011-12-21T17:11:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14568185310/an-r-function-to-map-your-twitter-followers
 tumblr_simplystatistics_id:

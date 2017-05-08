@@ -2,7 +2,7 @@
 id: 394
 title: Advice on promotion letters bleg
 date: 2011-11-01T01:13:56+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12181264937/advice-on-promotion-letters-bleg
 tumblr_simplystatistics_id:

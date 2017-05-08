@@ -2,7 +2,7 @@
 id: 364
 title: Reproducible Research and Turkey
 date: 2011-11-28T14:50:41+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13454027393/reproducible-research-and-turkey
 tumblr_simplystatistics_id:

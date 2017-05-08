@@ -2,7 +2,7 @@
 id: 359
 title: "Roger's perspective on reproducible research published in Science"
 date: 2011-12-01T21:32:14+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/13602648384/rogers-perspective-on-reproducible-research-published
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 189
 title: Schlep blindness in statistics
 date: 2012-05-28T14:19:24+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/23928890537/schlep-blindness-in-statistics
 tumblr_simplystatistics_id:

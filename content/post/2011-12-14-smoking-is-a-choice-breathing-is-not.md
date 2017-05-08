@@ -2,7 +2,7 @@
 id: 344
 title: Smoking is a choice, breathing is not.
 date: 2011-12-14T13:58:52+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/14214147778/smoking-is-a-choice-breathing-is-not
 tumblr_simplystatistics_id:

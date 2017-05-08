@@ -2,7 +2,7 @@
 id: 285
 title: "Harvard's Stat 110 is now a course on iTunes"
 date: 2012-02-15T14:02:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/17656447555/harvards-stat-110-is-now-a-course-on-itunes
 tumblr_simplystatistics_id:

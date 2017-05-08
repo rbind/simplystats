@@ -1,6 +1,6 @@
 ---
 title: Turning data into numbers
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "data-into-numbers"
 date: 2017-01-31

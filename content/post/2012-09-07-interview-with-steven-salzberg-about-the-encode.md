@@ -2,7 +2,7 @@
 id: 74
 title: 'Simply Statistics Podcast #3: Interview with Steven Salzberg'
 date: 2012-09-07T14:12:34+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/31056769228/interview-with-steven-salzberg-about-the-encode
 tumblr_simplystatistics_id:

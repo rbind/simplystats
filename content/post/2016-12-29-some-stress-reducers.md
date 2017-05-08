@@ -1,6 +1,6 @@
 ---
 title: Some things I've found help reduce my stress around science
-author: jeff
+author: Jeff Leek
 comments: true
 slug: "some-stress-reducers"
 date: 2016-12-29

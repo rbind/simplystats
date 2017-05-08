@@ -2,7 +2,7 @@
 id: 504
 title: Hello world!
 date: 2011-10-09T00:13:34+00:00
-author: admin
+author: Admin
 dsq_thread_id:
   - 1099478740
 categories:

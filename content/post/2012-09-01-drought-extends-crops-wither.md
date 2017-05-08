@@ -2,7 +2,7 @@
 id: 81
 title: Drought Extends, Crops Wither
 date: 2012-09-01T13:58:22+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/30652858912/drought-extends-crops-wither
 tumblr_simplystatistics_id:

@@ -2,7 +2,7 @@
 id: 392
 title: We need better marketing
 date: 2011-11-02T14:45:30+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/12241459446/we-need-better-marketing
 tumblr_simplystatistics_id:

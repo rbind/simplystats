@@ -2,7 +2,7 @@
 id: 435
 title: 'Bits: Big Data: Sorting Reality From the Hype'
 date: 2011-10-01T13:43:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/10887441867/bits-big-data-sorting-reality-from-the-hype
 tumblr_simplystatistics_id:

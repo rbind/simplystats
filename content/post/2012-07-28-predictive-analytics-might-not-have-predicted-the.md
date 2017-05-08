@@ -2,7 +2,7 @@
 id: 119
 title: Predictive analytics might not have predicted the Aurora shooter
 date: 2012-07-28T17:49:13+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/28207390938/predictive-analytics-might-not-have-predicted-the
 tumblr_simplystatistics_id:

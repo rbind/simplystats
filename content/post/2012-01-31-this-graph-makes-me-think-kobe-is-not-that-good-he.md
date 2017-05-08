@@ -2,7 +2,7 @@
 id: 306
 title: This graph makes me think Kobe is not that good, he just shoots a lot
 date: 2012-01-31T14:02:00+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/16817771482/this-graph-makes-me-think-kobe-is-not-that-good-he
 tumblr_simplystatistics_id:

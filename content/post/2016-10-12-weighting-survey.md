@@ -1,6 +1,6 @@
 ---
 title: The Dangers of Weighting Up a Sample
-author: roger
+author: Roger Peng
 slug: "weighting-survey"
 date: 2016-10-12
 ---

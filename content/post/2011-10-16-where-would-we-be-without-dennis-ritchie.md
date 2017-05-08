@@ -2,7 +2,7 @@
 id: 411
 title: Where would we be without Dennis Ritchie?
 date: 2011-10-16T16:05:06+00:00
-author: admin
+author: Admin
 tumblr_simplystatistics_permalink:
   - http://simplystatistics.tumblr.com/post/11527345087/where-would-we-be-without-dennis-ritchie
 tumblr_simplystatistics_id:
