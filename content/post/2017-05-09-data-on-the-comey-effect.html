@@ -1,0 +1,53 @@
+---
+title: 'Data on the Comey Effect'
+author: Rafa
+date: '2017-05-09'
+slug: data-on-the-comey-effect
+categories:
+  - elections
+tags:
+  - blogdown
+draft: yes
+---
+
+
+
+<p>There is currently <a href="https://twitter.com/NateSilver538/status/861611275717156868">a debate</a> about whether or not the Comey letter flipped the election. Nate Cohn makes a <a href="https://www.nytimes.com/2017/05/08/upshot/a-2016-review-theres-reason-to-be-skeptical-of-a-comey-effect.html">convincing argument</a> that the letter had little to no effect. Some time ago I looked at this myself and came to a similar conclusion. If anything, it was the ACA price hike announcement that had the biggest effect.</p>
+<p>To test out <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> (thanks <a href="https://twitter.com/rdpeng/status/861573798642012161">Yihui Xie</a>!) I decided to write this post showing the code I used for the simple analysis I performed, hoping to get others to look at the data, point out mistakes, or show me a better way to do what I did. There are many more things I can think of doing, such as account for pollster effect or try to better estimate the day the poll was actually taken.</p>
+<p>Here I read-in and wrangle the raw data prepared by 538.</p>
+<pre class="r"><code>library(tidyverse)
+##download data from 538 
+url &lt;- &quot;http://projects.fivethirtyeight.com/general-model/president_general_polls_2016.csv&quot;
+election_2016 &lt;- read_csv(url)
+election_2016$diff &lt;- with(election_2016, rawpoll_clinton-rawpoll_trump) ##define the difference
+election_2016$startdate &lt;- as.Date(election_2016$startdate,&quot;%m/%d/%Y&quot;) ##turn enddate into date
+election_2016$enddate &lt;- as.Date(election_2016$enddate,&quot;%m/%d/%Y&quot;) 
+start_day &lt;- as.Date(&quot;2016-09-01&quot;)
+election_day &lt;- as.Date(&quot;2016-11-08&quot;)
+dat &lt;- filter(election_2016, startdate &gt; start_day &amp; state==&quot;U.S.&quot;) ##after start date and national polls</code></pre>
+<p>Then I create a new data frame in which each day for each poll generates a row. I keep track of the reported difference, the number of days in the polling period, and the sample size.</p>
+<pre class="r"><code>polls &lt;- lapply(1:nrow(dat), function(i){
+  days &lt;- (election_day - dat$startdate[i]):(election_day - dat$enddate[i])
+  return(cbind( dat[i,c(&quot;pollster&quot;, &quot;diff&quot;)], days, w=1/length(days), 
+                n=dat$samplesize[i]))
+})
+polls &lt;- Reduce(rbind,polls)</code></pre>
+<p>Then I compute a weighted average of the difference for each day. Because we are interested in sharp declines, I perform no smoothing other than that imposed by the fact that poll dates span multiple days. If a day was not included in the poll period that poll had 0 weight for that day. If it was include, then the weight was <span class="math inline">\(1/\mbox{number of days in poll period}\)</span>. For example, if poll 1 ran from October 2-4 and poll 2 ran from Oct 1-7, the October 3 estimate would use weights proportional to 1/3 and 1/7 for polls 1 and 2 respectively. They are proportional because weights are scaled to add to 1 for each day. I filtered out days with wieghts less than 10 days. The sample size was not used to compute the weight.</p>
+<pre class="r"><code>res &lt;- polls %&gt;% 
+  group_by(days) %&gt;% 
+  filter(sum(w)&gt;=10) %&gt;% 
+  summarize(avg = sum(diff*w)/sum(w)) %&gt;%
+  mutate(date = election_day - days) %&gt;% 
+  arrange(date) </code></pre>
+<p>Here is the plot of these weighted averages:</p>
+<pre class="r"><code>rafalib::mypar()
+with(res, plot(date, avg, type=&quot;b&quot;, pch = 21, bg = 1, xlab = &quot;Date&quot;, ylab = &quot;Weighted Average of Clinton - Trump&quot;))
+abline(v =  as.Date(&quot;2016-10-28&quot;), col = 2, lty = 2)
+text(as.Date(&quot;2016-10-28&quot;), 3,  &quot;Comey Letter&quot;, srt= 90)
+abline(v =  as.Date(&quot;2016-10-24&quot;), col = 2, lty = 2)
+text(as.Date(&quot;2016-10-24&quot;), 2, &quot;ACA price hike&quot;, srt = 90)
+abline(v =  as.Date(&quot;2016-10-07&quot;), col = 2, lty = 2)
+text(as.Date(&quot;2016-10-07&quot;), 3, &quot;Access Hollywood&quot;, srt = 90)
+abline(v =  as.Date(&quot;2016-09-26&quot;), col = 2, lty = 2)
+text(as.Date(&quot;2016-09-26&quot;), 3, &quot;First Debate&quot;, srt = 90)</code></pre>
+<p><img src="/post/2017-05-09-data-on-the-comey-effect_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
