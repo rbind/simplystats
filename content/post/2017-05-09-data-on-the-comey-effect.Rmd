@@ -7,7 +7,6 @@ categories:
   - elections
 tags:
   - blogdown
-draft: yes
 ---
 
 
