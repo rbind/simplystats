@@ -10,7 +10,7 @@ tags:
 ---
 
 
-There is currently [a debate](https://twitter.com/NateSilver538/status/861611275717156868) about whether or not the Comey letter flipped the election. Nate Cohn makes a [convincing argument](https://www.nytimes.com/2017/05/08/upshot/a-2016-review-theres-reason-to-be-skeptical-of-a-comey-effect.html) that the letter had little to no effect. Some time ago I looked at this myself and came to a similar conclusion. If anything, it was the ACA price hike announcement that had the biggest effect. 
+There is currently [a debate](https://twitter.com/NateSilver538/status/861611275717156868) about whether or not the Comey letter flipped the election. Nate Cohn makes a [convincing argument](https://www.nytimes.com/2017/05/08/upshot/a-2016-review-theres-reason-to-be-skeptical-of-a-comey-effect.html) that the letter had little to no effect. Some time ago I looked at this myself and came to a similar conclusion. If anything, it was the ACA price hike announcement that had the bigger effect. 
 
 To test out [blogdown](https://bookdown.org/yihui/blogdown/) (thanks [Yihui Xie](https://twitter.com/rdpeng/status/861573798642012161)!) I decided to write this post showing the code I used for the simple analysis I performed, hoping to get others to look at the data, point out mistakes, or show me a better way to do what I did. There are many more things I can think of doing, such as account for pollster effect or try to better estimate the day the poll was actually taken. 
 
