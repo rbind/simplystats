@@ -20,7 +20,7 @@ paginate = 10
   googleAnalytics = "UA-73968959-1"
   disqus = "simplystatsgithub"
   # CSS name for highlight.js
-  highlightjs = "androidstudio"
+  highlightjs = "github"
   dateFormat = "2006/01/02"
 
 [menu]
