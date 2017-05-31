@@ -1,11 +1,13 @@
 ---
-title: Don't use deep learning - your data is not that big
+title: Don't use deep learning your data isn't that big
 author: Jeff Leek
-date: '2017-05-30'
-slug: dont-use-deep-learning-your-data-is-not-that-big
+date: '2017-05-31'
+slug: deeplearning-vs-leekasso
 categories: []
-tags: []
+tags:
+  - Leekasso
 ---
+
 
 The other day [Brian](https://twitter.com/tenuredbcaffo) was at a National Academies meeting and he gave one of his usual classic quotes:
 

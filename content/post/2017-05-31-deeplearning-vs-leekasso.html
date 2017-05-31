@@ -1,10 +1,11 @@
 ---
-title: Don't use deep learning - your data is not that big
+title: Don't use deep learning your data isn't that big
 author: Jeff Leek
-date: '2017-05-30'
-slug: dont-use-deep-learning-your-data-is-not-that-big
+date: '2017-05-31'
+slug: deeplearning-vs-leekasso
 categories: []
-tags: []
+tags:
+  - Leekasso
 ---
 
 
@@ -129,6 +130,6 @@ segments(ss,low,ss,upp,col=trop[2],lwd=3)
 legend(50,0.7,
        legend=c(&quot;Top 10 (Leekasso)&quot;, &quot;Deep Learning&quot;),
        col=trop[1:2],lwd=3,lty=1)</code></pre>
-<p><img src="/post/2017-05-30-dont-use-deep-learning-your-data-isnt-that-big_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="/post/2017-05-31-deeplearning-vs-leekasso_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>For low training set sample sizes it looks like the simpler method (just picking the top 10 and using a linear model) slightly outperforms the more complicated methods. As the sample size increases, we see the more complicated method catch up and have comparable test set accuracy.</p>
 <p>This is an extremely simple example but illustrates the larger point that Brian was making above. The sample size matters. If you are Google, Amazon, or Facebook and have near infinite data it makes sense to deep learn. But if you have a more modest sample size you may not be buying any accuracy - just losing interpretability. Although I guess you still get to keep the hype :).</p>
