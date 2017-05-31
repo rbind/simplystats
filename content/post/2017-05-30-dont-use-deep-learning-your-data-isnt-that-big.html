@@ -15,7 +15,11 @@ tags: []
 <p>The issue is that only a very few places actually have the data to do deep learning. Sure if you are Google and have everyone’s emails over the last decade or if you are Facebook and have billions of tagged images, then deep learning makes sense. But I’ve always thought that the major advantage of using deep learning over simpler models is that if you have a massive amount of data you can fit a massive number of parameters.</p>
 <p>When your dataset isn’t that big, doing something simpler is often both more interpretable and it works just as well due to potential overfitting. To test this idea I’m going to do an experiment on the digits data. I’m going to build a model just to predict one versus zero. I’m going to do that using logistic regression and I’m going to use a deep neural network <a href="https://kuanhoong.wordpress.com/2016/02/01/r-and-deep-learning-cnn-for-handwritten-digits-recognition/">following this post</a>. First lets load the packages we need:</p>
 <pre class="r"><code>library(readr)
-library(h2o)</code></pre>
+library(h2o)
+library(caret)
+library(dplyr)
+library(genefilter)
+library(RSkittleBrewer)</code></pre>
 <pre><code>## Loading required package: methods</code></pre>
 <pre><code>## 
 ## ----------------------------------------------------------------------
@@ -40,10 +44,8 @@ library(h2o)</code></pre>
 ##     ||, &amp;&amp;, %*%, apply, as.factor, as.numeric, colnames,
 ##     colnames&lt;-, ifelse, %in%, is.character, is.factor, is.numeric,
 ##     log, log10, log1p, log2, round, signif, trunc</code></pre>
-<pre class="r"><code>library(caret)</code></pre>
 <pre><code>## Loading required package: lattice</code></pre>
 <pre><code>## Loading required package: ggplot2</code></pre>
-<pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -52,13 +54,11 @@ library(h2o)</code></pre>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>library(genefilter)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;genefilter&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:readr&#39;:
 ## 
 ##     spec</code></pre>
-<pre class="r"><code>library(RSkittleBrewer)</code></pre>
 <p>Then load the data:</p>
 <pre class="r"><code>dat = read_csv(&quot;/home/jtleek/train.csv&quot;)
 dat = dat %&gt;% filter(label &lt; 2)</code></pre>
@@ -129,6 +129,6 @@ segments(ss,low,ss,upp,col=trop[2],lwd=3)
 legend(50,0.7,
        legend=c(&quot;Top 10 (Leekasso)&quot;, &quot;Deep Learning&quot;),
        col=trop[1:2],lwd=3,lty=1)</code></pre>
-<p><img src="/post/2017-05-30-dont-use-deep-learning-your-data-isnt-that-big_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="/post/2017-05-30-dont-use-deep-learning-your-data-isnt-that-big_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>For low training set sample sizes it looks like the simpler method (just picking the top 10 and using a linear model) slightly outperforms the more complicated methods. As the sample size increases, we see the more complicated method catch up and have comparable test set accuracy.</p>
 <p>This is an extremely simple example but illustrates the larger point that Brian was making above. The sample size matters. If you are Google, Amazon, or Facebook and have near infinite data it makes sense to deep learn. But if you have a more modest sample size you may not be buying any accuracy - just losing interpretability. Although I guess you still get to keep the hype :).</p>

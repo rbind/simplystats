@@ -17,7 +17,7 @@ The issue is that only a very few places actually have the data to do deep learn
 
 When your dataset isn't that big, doing something simpler is often both more interpretable and it works just as well due to potential overfitting. To test this idea I'm going to do an experiment on the digits data. I'm going to build a model just to predict one versus zero. I'm going to do that using logistic regression and I'm going to use a deep neural network [following this post](https://kuanhoong.wordpress.com/2016/02/01/r-and-deep-learning-cnn-for-handwritten-digits-recognition/). First lets load the packages we need: 
 
-```{r}
+```{r, eval=FALSE}
 library(readr)
 library(h2o)
 library(caret)
@@ -26,6 +26,16 @@ library(genefilter)
 library(RSkittleBrewer)
 ```
 
+
+
+```{r, echo=FALSE}
+library(readr)
+library(h2o)
+library(caret)
+library(dplyr)
+library(genefilter)
+library(RSkittleBrewer)
+```
 
 Then load the data: 
 
