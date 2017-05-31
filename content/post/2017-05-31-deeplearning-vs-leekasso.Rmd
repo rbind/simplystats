@@ -30,7 +30,7 @@ library(RSkittleBrewer)
 
 
 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 library(readr)
 library(h2o)
 library(caret)

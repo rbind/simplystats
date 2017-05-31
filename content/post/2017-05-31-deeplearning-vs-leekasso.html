@@ -21,45 +21,6 @@ library(caret)
 library(dplyr)
 library(genefilter)
 library(RSkittleBrewer)</code></pre>
-<pre><code>## Loading required package: methods</code></pre>
-<pre><code>## 
-## ----------------------------------------------------------------------
-## 
-## Your next step is to start H2O:
-##     &gt; h2o.init()
-## 
-## For H2O package documentation, ask for help:
-##     &gt; ??h2o
-## 
-## After starting H2O, you can use the Web UI at http://localhost:54321
-## For more information visit http://docs.h2o.ai
-## 
-## ----------------------------------------------------------------------</code></pre>
-<pre><code>## 
-## Attaching package: &#39;h2o&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     cor, sd, var</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     ||, &amp;&amp;, %*%, apply, as.factor, as.numeric, colnames,
-##     colnames&lt;-, ifelse, %in%, is.character, is.factor, is.numeric,
-##     log, log10, log1p, log2, round, signif, trunc</code></pre>
-<pre><code>## Loading required package: lattice</code></pre>
-<pre><code>## Loading required package: ggplot2</code></pre>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<pre><code>## 
-## Attaching package: &#39;genefilter&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:readr&#39;:
-## 
-##     spec</code></pre>
 <p>Then load the data:</p>
 <pre class="r"><code>dat = read_csv(&quot;/home/jtleek/train.csv&quot;)
 dat = dat %&gt;% filter(label &lt; 2)</code></pre>
