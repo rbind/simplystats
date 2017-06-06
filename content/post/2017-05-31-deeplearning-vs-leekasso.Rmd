@@ -17,7 +17,7 @@ When I saw that quote I was reminded of the blog post [Don't use hadoop - your d
 
 The issue is that only a very few places actually have the data to do deep learning. Sure if you are Google and have everyone's emails over the last decade or if you are Facebook and have billions of tagged images, then deep learning makes sense. But I've always thought that the major advantage of using deep learning over simpler models is that if you have a massive amount of data you can fit a massive number of parameters. 
 
-When your dataset isn't that big, doing something simpler is often both more interpretable and it works just as well due to potential overfitting. To test this idea I'm going to do an experiment on the digits data. I'm going to build a model just to predict one versus zero. I'm going to do that using logistic regression and I'm going to use a deep neural network [following this post](https://kuanhoong.wordpress.com/2016/02/01/r-and-deep-learning-cnn-for-handwritten-digits-recognition/). First lets load the packages we need: 
+When your dataset isn't that big, doing something simpler is often both more interpretable and it works just as well due to potential overfitting. To test this idea I'm going to do an experiment on the digits data. I'm going to build a model just to predict one versus zero. I'm going to do that using simple linear regression with the top ten predictors and I'm going to use a deep neural network [following this post](https://kuanhoong.wordpress.com/2016/02/01/r-and-deep-learning-cnn-for-handwritten-digits-recognition/). First lets load the packages we need: 
 
 ```{r, eval=FALSE}
 library(readr)
