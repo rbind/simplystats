@@ -57,7 +57,7 @@ plot(loc, -log10(res[2,]) , pch=16, xaxt="n", xlab="Chromosome", ylab="-log (bas
 axis(1, chr_start, seq_along(chr_start), tick=FALSE)
 abline(h=-log10(0.05/P), lty=2)
 ```
-
+ 
 Note that no variant achieves genome-wide significant (dashed line). However, we do see peaks in the plot. If we smooth the odds ratio data, these peaks become even clearer:
 
 ```{r}
