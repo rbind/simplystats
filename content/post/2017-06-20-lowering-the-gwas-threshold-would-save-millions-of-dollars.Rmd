@@ -19,7 +19,7 @@ Since, thousands of GWAS have been performed and have mostly failed to identify 
 Because current technologies permit millions of variants to be tested, current GWAS apply multiple comparison corrections after obtaining a p-value for each variant. The Bonferroni correction for an error rate of 0.05 is the standard, which implies that a p-value in the order of $10^{-8}$ is needed to reach  _genome-wide significance_.
  Because the effect sizes are so small, to obtain genome-wide significance, sample sizes in the thousands are needed. As a result, GWAS tend to be expensive relative to other research projects. Furthermore, the better the high-throughput technologies get, the more tests are run, and as a result smaller p-value are required and larger sample sizes are needed. In some cases, after a first GWAS does not yield any variant reaching significance, more samples are collected to increase power.
 
-This brings me to my question. If we know a trait is inherited, then the current hypothesis testing approach may not appropriate. In particular, controlling the family-wide error rate at 0.05 is too conservative. Why not require a false discovery rate of 0.05, 0.10 or even 0.25? For a typical GWAS how much would conclusions change if we halved the sample sizes and relaxed the significance threshold?
+This brings me to my question. If we know a trait is inherited, then the current hypothesis testing approach may not be appropriate. In particular, controlling the family-wide error rate at 0.05 is too conservative. Why not require a false discovery rate of 0.05, 0.10 or even 0.25? For a typical GWAS how much would conclusions change if we halved the sample sizes and relaxed the significance threshold?
 
 Lacking access to GWAS data (genotypes are hard to get), to illustrate my point I ran a simulation with several genomic regions having a small effect. I simulated data for 5,000 cases and 5,000 controls. A total of 468 genotypes were tested.
 ```{r}
@@ -58,7 +58,7 @@ axis(1, chr_start, seq_along(chr_start), tick=FALSE)
 abline(h=-log10(0.05/P), lty=2)
 ```
 
-Note that no variant achieves genome-wide significant (dashed line). However, we do peaks in the plot. If we smooth the odds ratio data, these peaks become even clearer:
+Note that no variant achieves genome-wide significant (dashed line). However, we do see peaks in the plot. If we smooth the odds ratio data, these peaks become even clearer:
 
 ```{r}
 logodds <- log(res[1,])
