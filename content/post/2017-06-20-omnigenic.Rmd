@@ -1,10 +1,11 @@
 ---
-title: "Lowering the GWAS threshold would save millions of dollars"
-author: "Rafael Irizarry"
+title: Lowering the GWAS threshold would save millions of dollars
+author: Rafael Irizarry
 date: '2017-06-20'
-output:
-  html_document: default
-  pdf_document: default
+slug: omnigenic
+categories: []
+tags:
+  - GWAS
 ---
 
 A recent [publication](http://www.sciencedirect.com/science/article/pii/S0092867417306293) (pay-walled) by Boyle et al. introducing the concept of  an _omnigenic_ model has generated much discussion. It reminded me of a question I've had for a while about the way genetics data is analyzed. Before getting into this, I'll briefly summarize the general issue. 
