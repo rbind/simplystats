@@ -6,7 +6,7 @@ slug: omnigenic
 tags: GWAS
 categories: []
 ---
-
+ 
 A recent [publication](http://www.sciencedirect.com/science/article/pii/S0092867417306293) (pay-walled) by Boyle et al. introducing the concept of  an _omnigenic_ model has generated much discussion. It reminded me of a question I've had for a while about the way genetics data is analyzed. Before getting into this, I'll briefly summarize the general issue. 
 
 With the completion of the human genome project, human geneticists saw much promise in the possibility of scanning the entire genome for the genes associated with a trait. Inherited diseases were of particular interest. The general idea is to genotype individuals with the disease of interest and a group to serve as controls, then test each genotype for association with disease outcome using, for example, a chi-squared test. These are referred to as genome-wide association studies (GWAS). 
