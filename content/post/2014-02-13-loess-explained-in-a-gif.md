@@ -19,6 +19,3 @@ slug: "loess-explained-in-a-gif"
 
 ![](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif)
 
-<p style="text-align: center;">
-  <a href="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif" rel="attachment wp-att-2661"><img class="size-full wp-image-2661 aligncenter" alt="loess" src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif width="480" height="480" /></a>
-</p>
