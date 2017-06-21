@@ -18,6 +18,7 @@ tags:
 ##download data from 538 
 url &lt;- &quot;http://projects.fivethirtyeight.com/general-model/president_general_polls_2016.csv&quot;
 election_2016 &lt;- read_csv(url)
+election_2016 &lt;- filter(election_2016, type==&quot;polls-only&quot;)
 election_2016$diff &lt;- with(election_2016, rawpoll_clinton-rawpoll_trump) ##define the difference
 election_2016$startdate &lt;- as.Date(election_2016$startdate,&quot;%m/%d/%Y&quot;) ##turn enddate into date
 election_2016$enddate &lt;- as.Date(election_2016$enddate,&quot;%m/%d/%Y&quot;) 
@@ -34,7 +35,7 @@ polls &lt;- Reduce(rbind,polls)</code></pre>
 <p>Then I compute a weighted average of the difference for each day. Because we are interested in sharp declines, I perform no smoothing other than that imposed by the fact that poll dates span multiple days. If a day was not included in the poll period that poll had 0 weight for that day. If it was include, then the weight was <span class="math inline">\(1/\mbox{number of days in poll period}\)</span>. For example, if poll 1 ran from October 2-4 and poll 2 ran from Oct 1-7, the October 3 estimate would use weights proportional to 1/3 and 1/7 for polls 1 and 2 respectively. They are proportional because weights are scaled to add to 1 for each day. I filtered out days with wieghts less than 10 days. The sample size was not used to compute the weight.</p>
 <pre class="r"><code>res &lt;- polls %&gt;% 
   group_by(days) %&gt;% 
-  filter(sum(w)&gt;=10) %&gt;% 
+  filter(sum(w)&gt;3) %&gt;% 
   summarize(avg = sum(diff*w)/sum(w)) %&gt;%
   mutate(date = election_day - days) %&gt;% 
   arrange(date) </code></pre>

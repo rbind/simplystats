@@ -19,6 +19,7 @@ library(tidyverse)
 ##download data from 538 
 url <- "http://projects.fivethirtyeight.com/general-model/president_general_polls_2016.csv"
 election_2016 <- read_csv(url)
+election_2016 <- filter(election_2016, type=="polls-only")
 election_2016$diff <- with(election_2016, rawpoll_clinton-rawpoll_trump) ##define the difference
 election_2016$startdate <- as.Date(election_2016$startdate,"%m/%d/%Y") ##turn enddate into date
 election_2016$enddate <- as.Date(election_2016$enddate,"%m/%d/%Y") 
@@ -44,7 +45,7 @@ If a day was not included in the poll period that poll had 0 weight for that day
 ```{r}
 res <- polls %>% 
   group_by(days) %>% 
-  filter(sum(w)>=10) %>% 
+  filter(sum(w)>3) %>% 
   summarize(avg = sum(diff*w)/sum(w)) %>%
   mutate(date = election_day - days) %>% 
   arrange(date) 
