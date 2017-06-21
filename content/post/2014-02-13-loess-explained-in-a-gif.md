@@ -18,5 +18,5 @@ slug: "loess-explained-in-a-gif"
 [Local regression](http://en.wikipedia.org/wiki/Local_regression) (loess) is one of the statistical procedures I most use. Here is a movie showing how it works
 
 <p style="text-align: center;">
-  <a href="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif" rel="attachment wp-att-2661"><img class="size-full wp-image-2661 aligncenter" alt="loess"  width="480" height="480" /></a>
+  <a href="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif" rel="attachment wp-att-2661"><img class="size-full wp-image-2661 aligncenter" alt="loess" src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif width="480" height="480" /></a>
 </p>
