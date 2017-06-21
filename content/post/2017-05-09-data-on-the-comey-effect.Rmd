@@ -19,6 +19,7 @@ library(tidyverse)
 ##download data from 538 
 url <- "http://projects.fivethirtyeight.com/general-model/president_general_polls_2016.csv"
 election_2016 <- read_csv(url)
+election_2016 <- filter(election_2016, type=="polls-only")
 election_2016$diff <- with(election_2016, rawpoll_clinton-rawpoll_trump) ##define the difference
 election_2016$startdate <- as.Date(election_2016$startdate,"%m/%d/%Y") ##turn enddate into date
 election_2016$enddate <- as.Date(election_2016$enddate,"%m/%d/%Y") 
@@ -37,14 +38,14 @@ polls <- lapply(1:nrow(dat), function(i){
 })
 polls <- Reduce(rbind,polls)
 ```
-
+ 
 Then I compute a weighted average of the difference for each day. Because we are interested in sharp declines, I perform no smoothing other than that imposed by the fact that poll dates span multiple days.
 If a day was not included in the poll period that poll had 0 weight for that day. If it was include, then the weight was $1/\mbox{number of days in poll period}$. For example, if poll 1 ran from October 2-4 and poll 2 ran from Oct 1-7, the October 3 estimate would use weights proportional to 1/3 and 1/7 for polls 1 and 2 respectively. They are proportional because weights are scaled to add to 1 for each day. I filtered out days with wieghts less than 10 days. The sample size was not used to compute the weight. 
 
 ```{r}
 res <- polls %>% 
   group_by(days) %>% 
-  filter(sum(w)>=10) %>% 
+  filter(sum(w)>3) %>% 
   summarize(avg = sum(diff*w)/sum(w)) %>%
   mutate(date = election_day - days) %>% 
   arrange(date) 
