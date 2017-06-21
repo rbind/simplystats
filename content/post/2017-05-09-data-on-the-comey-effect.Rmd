@@ -38,7 +38,7 @@ polls <- lapply(1:nrow(dat), function(i){
 })
 polls <- Reduce(rbind,polls)
 ```
-
+ 
 Then I compute a weighted average of the difference for each day. Because we are interested in sharp declines, I perform no smoothing other than that imposed by the fact that poll dates span multiple days.
 If a day was not included in the poll period that poll had 0 weight for that day. If it was include, then the weight was $1/\mbox{number of days in poll period}$. For example, if poll 1 ran from October 2-4 and poll 2 ran from Oct 1-7, the October 3 estimate would use weights proportional to 1/3 and 1/7 for polls 1 and 2 respectively. They are proportional because weights are scaled to add to 1 for each day. I filtered out days with wieghts less than 10 days. The sample size was not used to compute the weight. 
 
