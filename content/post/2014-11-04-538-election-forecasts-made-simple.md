@@ -19,7 +19,7 @@ slug: "538-election-forecasts-made-simple"
 ---
 Nate Silver does a [great job](http://fivethirtyeight.com/features/how-the-fivethirtyeight-senate-forecast-model-works/) of explaining his forecast model to laypeople. However, as a statistician I've always wanted to know more details. After preparing a "<span class="s2"><a href="http://cs109.github.io/2014/pages/homework.html">predict the midterm elections</a>" </span>homework for my [<span class="s2">data science class</span>](http://cs109.github.io/2014) I have a better idea of what is going on.
 
-[Here](http://simplystatistics.org/html/midterm2012.html) is my best attempt at explaining the ideas of 538 using formulas and data. ~~And [here](http://rafalab.jhsph.edu/simplystats/midterm2012.Rmd) is the R markdown.~~
+[Here](http://rafalab.github.io/assets/html/midterm2012.html) is my best attempt at explaining the ideas of 538 using formulas and data. ~~And [here](http://rafalab.jhsph.edu/simplystats/midterm2012.Rmd) is the R markdown.~~
 
 &nbsp;
 
