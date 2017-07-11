@@ -21,7 +21,10 @@ A substantial amount of scientific research is funded by investigator-initiated
 
 The merits of big science has been widely debated (for example [here](http://www.michaeleisen.org/blog/?p=1179) and [here](http://simplystatistics.org/2013/02/27/please-save-the-unsolicited-r01s/)). And most agree that some big projects have been successful. However, in this post I present a statistical argument highlighting the importance of investigator-initiated awards. The idea is summarized in the graph below.
 
-[<img class="alignnone size-full wp-image-4483" src="http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png" alt="Rplot" width="1112" height="551" srcset="http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-300x149.png 300w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-1024x507.png 1024w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-260x129.png 260w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png 1112w" sizes="(max-width: 1112px) 100vw, 1112px" />](http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png)
+![](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2015/12/Rplot.png)
+
+<!-- <img class="alignnone size-full wp-image-4483" src="http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png" alt="Rplot" width="1112" height="551" srcset="http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-300x149.png 300w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-1024x507.png 1024w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot-260x129.png 260w, http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png 1112w" sizes="(max-width: 1112px) 100vw, 1112px" />](http://simplystatistics.org/wp-content/uploads/2015/12/Rplot.png)
+-->
 
 The two panes above represent two different funding strategies: fund-many-R01s (left) or reduce R01s to fund several large projects (right). The grey crosses represent investigators and the gold dots represent potential paradigm-shifting geniuses. Location on the Cartesian plane represent research areas, with the blue circles denoting areas that are prime for an important scientific advance. The largest scientific contributions occur when a gold dot falls in a blue circle. Large contributions also result from the accumulation of incremental work produced by grey crosses in the blue circles.
 
@@ -29,4 +32,56 @@ Although not perfect, the peer review approach implemented by most funding agenc
 
 The simulation presented (code below) here is clearly an over simplification, but it does depict the statistical reason why I favor investigator-initiated grants.  The simulation clearly depicts that the strategy of funding many investigator-initiated grants is key for the continued success of scientific research.
 
-<tt><br /> set.seed(2)<br /> library(rafalib)<br /> thecol="gold3"<br /> mypar(1,2,mar=c(0.5,0.5,2,0.5))<br /> ###<br /> ## Start with the many R01s model<br /> ###<br /> ##generate location of 2,000 investigators<br /> N = 2000<br /> x = runif(N)<br /> y = runif(N)<br /> ## 1% are geniuses<br /> Ng = N*0.01<br /> g = rep(4,N);g[1:Ng]=16<br /> ## generate location of important areas of research<br /> M0 = 10<br /> x0 = runif(M0)<br /> y0 = runif(M0)<br /> r0 = rep(0.03,M0)<br /> ##Make the plot<br /> nullplot(xaxt="n",yaxt="n",main="Many R01s")<br /> symbols(x0,y0,circles=r0,fg="black",bg="blue",<br /> lwd=3,add=TRUE,inches=FALSE)<br /> points(x,y,pch=g,col=ifelse(g==4,"grey",thecol))<br /> points(x,y,pch=g,col=ifelse(g==4,NA,thecol))<br /> ### Generate the location of 5 big projects<br /> M1 = 5<br /> x1 = runif(M1)<br /> y1 = runif(M1)<br /> ##make initial plot<br /> nullplot(xaxt="n",yaxt="n",main="A Few Big Projects")<br /> symbols(x0,y0,circles=r0,fg="black",bg="blue",<br /> lwd=3,add=TRUE,inches=FALSE)<br /> ### Generate location of investigators attracted<br /> ### to location of big projects. There are 1000 total<br /> ### investigators<br /> Sigma = diag(2)*0.005<br /> N1 = 200<br /> Ng1 = round(N1*0.01)<br /> g1 = rep(4,N);g1[1:Ng1]=16<br /> library(MASS)<br /> for(i in 1:M1){<br /> xy = mvrnorm(N1,c(x1[i],y1[i]),Sigma)<br /> points(xy[,1],xy[,2],pch=g1,col=ifelse(g1==4,"grey",thecol))<br /> }<br /> ### generate location of investigators that ignore big projects<br /> ### note now 500 instead of 200. Note overall total<br /> ## is also less because large projects result in less<br /> ## lead investigators<br /> N = 500<br /> x = runif(N)<br /> y = runif(N)<br /> Ng = N*0.01<br /> g = rep(4,N);g[1:Ng]=16<br /> points(x,y,pch=g,col=ifelse(g==4,"grey",thecol))<br /> points(x1,y1,pch="$",col="darkgreen",cex=2,lwd=2)<br /> </tt>
+```r
+set.seed(2)
+library(rafalib)
+mypar(1,2,mar=c(0.5,0.5,2,0.5))
+## Start with the many R01s model
+###
+##generate location of 2,000 investigators
+N = 2000
+x = runif(N)
+y = runif(N)
+## 1% are geniuses
+Ng = N*0.01
+g = rep(4,N);g[1:Ng]=16
+## generate location of important areas of research
+M0 = 10
+x0 = runif(M0)
+y0 = runif(M0)
+r0 = rep(0.03,M0)
+##Make the plot
+nullplot(xaxt="n",yaxt="n",main="Many R01s")
+symbols(x0,y0,circles=r0,fg="black",bg="blue",lwd=3,add=TRUE,inches=FALSE)
+points(x,y,pch=g,col=ifelse(g==4,"grey",thecol))
+points(x,y,pch=g,col=ifelse(g==4,NA,thecol))
+### Generate the location of 5 big projects
+M1 = 5
+x1 = runif(M1)
+y1 = runif(M1)
+##make initial plot
+nullplot(xaxt="n",yaxt="n",main="A Few Big Projects")
+symbols(x0,y0,circles=r0,fg="black",bg="blue",lwd=3,add=TRUE,inches=FALSE)
+### Generate location of investigators attracted
+### to location of big projects. There are 1000 total
+### investigators<br /> Sigma = diag(2)*0.005
+N1 = 200
+Ng1 = round(N1*0.01)
+g1 = rep(4,N);g1[1:Ng1]=16
+library(MASS)
+for(i in 1:M1){
+   xy = mvrnorm(N1,c(x1[i],y1[i]),Sigma)
+   points(xy[,1],xy[,2],pch=g1,col=ifelse(g1==4,"grey",thecol))
+}
+### generate location of investigators that ignore big projects
+### note now 500 instead of 200. Note overall total
+## is also less because large projects result in less
+## lead investigators
+N = 500
+x = runif(N)
+y = runif(N)
+Ng = N*0.01
+g = rep(4,N);g[1:Ng]=16
+points(x,y,pch=g,col=ifelse(g==4,"grey",thecol))
+points(x1,y1,pch="$",col="darkgreen",cex=2,lwd=2)
+```
