@@ -35,6 +35,7 @@ The simulation presented (code below) here is clearly an over simplification, bu
 ```r
 set.seed(2)
 library(rafalib)
+thecol="gold3"
 mypar(1,2,mar=c(0.5,0.5,2,0.5))
 ## Start with the many R01s model
 ###
@@ -64,7 +65,8 @@ nullplot(xaxt="n",yaxt="n",main="A Few Big Projects")
 symbols(x0,y0,circles=r0,fg="black",bg="blue",lwd=3,add=TRUE,inches=FALSE)
 ### Generate location of investigators attracted
 ### to location of big projects. There are 1000 total
-### investigators<br /> Sigma = diag(2)*0.005
+### investigators
+Sigma = diag(2)*0.005
 N1 = 200
 Ng1 = round(N1*0.01)
 g1 = rep(4,N);g1[1:Ng1]=16
