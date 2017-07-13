@@ -67,7 +67,7 @@ I much prefer to stack histograms or density estimators vertically. So I was hap
 library(ggjoy)
 dat %>% mutate(group = reorder(group, value, median)) %>%
   ggplot(aes(x=value, y=group, height=..density..)) +
-  geom_joy(scale=1, alpha=0.5)
+  geom_joy(scale=1)
 ``` 
 
 Note how quickly we notice the bimodal plot.
