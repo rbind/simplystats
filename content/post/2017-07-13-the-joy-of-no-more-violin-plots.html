@@ -11,10 +11,10 @@ tags:
 
 
 
-<p>It’s somewhat of pet peeve but I dislike violin plots because they look like Christmas ornaments.</p>
+<p>I dislike violin plots because they look like Christmas ornaments.</p>
 <p><img src="http://fullhdwall.com/wp-content/uploads/2016/12/Beautiful-Christmas-Ornaments.jpg" style="display: block; margin: auto;" /></p>
-<p>But there is a practical reason as well. To demonstrate I created a dataset called <code>dat</code> that contains an outcome <code>value</code> for from 25 different groups.</p>
-<p>One of the first steps I take when analyzing data is to look at the distribution of my data. If there are groups, I like to stratify and look at the distributions. Histograms and smooth density estimates are my favorite tools for visualizing distributions. I have 20 groups in this data so I would start by quickly looking at a random subset:</p>
+<p>It’s a pet peeve but there is somewhat a practical reason as well. To demonstrate I created a dataset called <code>dat</code> that contains an outcome <code>value</code> for from 25 different groups.</p>
+<p>One of the first steps I take when analyzing data is to look at the distribution of my data. If there are groups, I like to stratify and look at the distributions. Histograms and smooth density estimates are my favorite tools for visualizing distributions. I have 25 groups in this data so I would start by quickly looking at a random subset:</p>
 <pre class="r"><code>dat %&gt;% filter(group %in% c(&quot;A&quot;,&quot;H&quot;,&quot;I&quot;,&quot;P&quot;)) %&gt;% 
   ggplot(aes(value)) + 
   geom_histogram(binwidth = 0.5, color=&quot;black&quot;) +
@@ -24,19 +24,21 @@ tags:
 <pre class="r"><code>dat %&gt;% mutate(group = reorder(group, value, median)) %&gt;% 
   ggplot(aes(group, value)) + geom_boxplot()</code></pre>
 <p><img src="/post/2017-07-13-the-joy-of-no-more-violin-plots_files/figure-html/boxplots-1.png" width="672" /></p>
-<p>If you look close enough you note that group G looks a bit different: larger variance. But by summarizing into only 5 numbers, the boxplot misses an important characteristic of the data. Violin points lets you see the distributions rather than these points</p>
+<p>If you look close enough you note that group G looks a bit different: larger variance. But by summarizing into only five numbers, the boxplot misses an important characteristic of the data. Violin points lets you see the distributions rather than these five points:</p>
 <pre class="r"><code>dat %&gt;% mutate(group = reorder(group, value, median)) %&gt;% 
   ggplot(aes(group, value)) + geom_violin(fill = &quot;blue&quot;)</code></pre>
 <p><img src="/post/2017-07-13-the-joy-of-no-more-violin-plots_files/figure-html/violin-1.png" width="672" /></p>
-<p>Do you see it? If you look close enough group G appears to be bimodal. But why is it hard to see?</p>
+<p>Do you see it? If you look closely group G appears to be bimodal. But why is it hard for me to see?</p>
 <ol style="list-style-type: decimal">
-<li>Adding a mirror image of the density to make them resemble boxplots in some manner makes them look like Christmas ornaments and is distracting.</li>
-<li>We are used to looking at histograms and densities with the variable in the x-axis not the y-axis.</li>
+<li>Adding a mirror image of the density to make them resemble boxplots in some manner makes them look like Christmas ornaments and distracts me.</li>
+<li>I am used to looking at histograms and densities with the variable in the x-axis not the y-axis.</li>
 </ol>
-<p>I much prefer to stack histograms or density estimators vertically. So I was happy to learn about the <a href="https://github.com/clauswilke/ggjoy">ggjoy</a> package that let’s you make a much more aesthetically pleasing version. The <code>ggjoy</code> packages let’s you do this in one line:</p>
+<p>I therefore prefer to stack histograms or density estimators vertically. So I was happy to learn about the <a href="https://github.com/clauswilke/ggjoy">ggjoy</a> package that let’s you make such a plot in one line of code and produces a much more aesthetically pleasing plot than stacking histograms using, for example, facets.</p>
 <pre class="r"><code>library(ggjoy)
 dat %&gt;% mutate(group = reorder(group, value, median)) %&gt;%
   ggplot(aes(x=value, y=group, height=..density..)) +
   geom_joy(scale=0.85)</code></pre>
 <p><img src="/post/2017-07-13-the-joy-of-no-more-violin-plots_files/figure-html/joy-1.png" width="384" style="display: block; margin: auto;" /></p>
-<p>Note how quickly we notice the bimodal plot.</p>
+<p>Note how quickly we notice the bimodal group. I am hoping people start using joy plots instead of violin plots. Try out the package:</p>
+<pre class="r"><code>library(devtools)
+install_github(&quot;clauswilke/ggjoy&quot;)</code></pre>
