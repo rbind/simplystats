@@ -29,7 +29,7 @@ z <- rbinom(p, 1, prob = c(0.7, 0.3))
 dat[7,] <- z*rnorm(N, 27, 0.5) + (1-z)*rnorm(N, 24, 1) 
 dat <- gather(data.frame(t(dat), stringsAsFactors = FALSE), group, value)
 ```
-It's a pet peeve but there is somewhat a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` for from `r p` different groups.
+It's a pet peeve but there is somewhat of a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` for from `r p` different groups.
 
 One of the first steps I take when analyzing data is to look at the distribution of my data. If there are groups, I like to stratify and look at the distributions. Histograms and smooth density estimates are my favorite tools for visualizing distributions. I have `r p` groups in this data so I would start by quickly looking at a random subset:  
 

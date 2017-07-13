@@ -13,7 +13,7 @@ tags:
 
 <p>I dislike violin plots because they look like Christmas ornaments.</p>
 <p><img src="http://fullhdwall.com/wp-content/uploads/2016/12/Beautiful-Christmas-Ornaments.jpg" style="display: block; margin: auto;" /></p>
-<p>It’s a pet peeve but there is somewhat a practical reason as well. To demonstrate I created a dataset called <code>dat</code> that contains an outcome <code>value</code> for from 25 different groups.</p>
+<p>It’s a pet peeve but there is somewhat of a practical reason as well. To demonstrate I created a dataset called <code>dat</code> that contains an outcome <code>value</code> for from 25 different groups.</p>
 <p>One of the first steps I take when analyzing data is to look at the distribution of my data. If there are groups, I like to stratify and look at the distributions. Histograms and smooth density estimates are my favorite tools for visualizing distributions. I have 25 groups in this data so I would start by quickly looking at a random subset:</p>
 <pre class="r"><code>dat %&gt;% filter(group %in% c(&quot;A&quot;,&quot;H&quot;,&quot;I&quot;,&quot;P&quot;)) %&gt;% 
   ggplot(aes(value)) + 
