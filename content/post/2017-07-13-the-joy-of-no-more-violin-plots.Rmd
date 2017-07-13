@@ -21,13 +21,13 @@ But there is a practical reason as well. To demonstrate I created a dataset call
 library(tidyverse)
 library(ggplot2)
 theme_set(theme_bw())
-set.seed(2)
+set.seed(3)
 N <- 1000
-p <- 20
+p <- 25
 dat <- matrix(rnorm(N*p, 0, 1.5), p, N) + rnorm(p, 25, 1)
 rownames(dat) <- LETTERS[1:p]
 z <- rbinom(p, 1, prob = c(0.7, 0.3))
-dat[7,] <- z*rnorm(N, 27.5, 0.5) + (1-z)*rnorm(N, 24.5, 1)
+dat[7,] <- z*rnorm(N, 27, 0.5) + (1-z)*rnorm(N, 24, 1) 
 dat <- gather(data.frame(t(dat), stringsAsFactors = FALSE), group, value)
 ```
 
@@ -63,11 +63,11 @@ I much prefer to stack histograms or density estimators vertically. So I was hap
  The `ggjoy` packages let's you do this in one line:
 
 
-```{r joy, fig.height=6}
+```{r joy, fig.height=7, fig.width=4, fig.align='center'}
 library(ggjoy)
 dat %>% mutate(group = reorder(group, value, median)) %>%
   ggplot(aes(x=value, y=group, height=..density..)) +
-  geom_joy(scale=1)
+  geom_joy(scale=0.85)
 ``` 
 
 Note how quickly we notice the bimodal plot.

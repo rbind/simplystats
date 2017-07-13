@@ -37,6 +37,6 @@ tags:
 <pre class="r"><code>library(ggjoy)
 dat %&gt;% mutate(group = reorder(group, value, median)) %&gt;%
   ggplot(aes(x=value, y=group, height=..density..)) +
-  geom_joy(scale=1)</code></pre>
-<p><img src="/post/2017-07-13-the-joy-of-no-more-violin-plots_files/figure-html/joy-1.png" width="672" /></p>
+  geom_joy(scale=0.85)</code></pre>
+<p><img src="/post/2017-07-13-the-joy-of-no-more-violin-plots_files/figure-html/joy-1.png" width="384" style="display: block; margin: auto;" /></p>
 <p>Note how quickly we notice the bimodal plot.</p>
