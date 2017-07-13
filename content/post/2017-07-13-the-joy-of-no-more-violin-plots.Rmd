@@ -9,13 +9,13 @@ tags:
   - pet peeve, joy plots
 ---
 
-It's somewhat of pet peeve but I dislike violin plots because they look like Christmas ornaments.
+I dislike violin plots because they look like Christmas ornaments.
 
 ```{r, echo=FALSE, fig.align='center', fig.height=3}
 knitr::include_graphics("http://fullhdwall.com/wp-content/uploads/2016/12/Beautiful-Christmas-Ornaments.jpg")
 ```
 
-But there is a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` for from 25 different groups.
+It's a pet peeve but there is somewhat a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` for from 25 different groups.
 
 ```{r, echo=FALSE,  message=FALSE}
 library(tidyverse)
@@ -54,14 +54,13 @@ dat %>% mutate(group = reorder(group, value, median)) %>%
   ggplot(aes(group, value)) + geom_violin(fill = "blue")
 ```
 
-Do you see it? If you look close enough group G appears to be bimodal. But why is it hard to see?
+Do you see it? If you look closely group G appears to be bimodal. But why is it hard for me to see?
 
-1. Adding a mirror image of the density to make them resemble boxplots in some manner makes them look like Christmas ornaments and is distracting.
+1. Adding a mirror image of the density to make them resemble boxplots in some manner makes them look like Christmas ornaments and distracts me.
 2. We are used to looking at histograms and densities with the variable in the x-axis not the y-axis.
 
-I much prefer to stack histograms or density estimators vertically. So I was happy to learn about the [ggjoy](https://github.com/clauswilke/ggjoy) package that let's you make a much more aesthetically pleasing version.
- The `ggjoy` packages let's you do this in one line:
-
+I therefore prefer to stack histograms or density estimators vertically. So I was happy to learn about the [ggjoy](https://github.com/clauswilke/ggjoy) package that let's you make such a plot in one line of code and produces a much more aesthetically pleasing plot than stacking histograms using, for example, facets.
+ 
 
 ```{r joy, fig.height=7, fig.width=4, fig.align='center'}
 library(ggjoy)
@@ -70,4 +69,4 @@ dat %>% mutate(group = reorder(group, value, median)) %>%
   geom_joy(scale=0.85)
 ``` 
 
-Note how quickly we notice the bimodal plot.
+Note how quickly we notice the bimodal group. I am hoping people start using joyplots instead of violin plots.
