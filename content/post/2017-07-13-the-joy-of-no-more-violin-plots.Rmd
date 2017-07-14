@@ -12,7 +12,7 @@ tags:
 I dislike violin plots because they look like Christmas ornaments.
 
 ```{r, echo=FALSE, fig.align='center', fig.height=3}
-knitr::include_graphics("http://fullhdwall.com/wp-content/uploads/2016/12/Beautiful-Christmas-Ornaments.jpg")
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/xmas-ornaments.jpeg")
 ```
 
 
