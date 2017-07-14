@@ -29,7 +29,7 @@ z <- rbinom(p, 1, prob = c(0.7, 0.3))
 dat[7,] <- z*rnorm(N, 27, 0.5) + (1-z)*rnorm(N, 24, 1) 
 dat <- gather(data.frame(t(dat), stringsAsFactors = FALSE), group, value)
 ```
-It's a pet peeve but there is somewhat of a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` for from `r p` different groups.
+It's a pet peeve but there is somewhat of a practical reason as well. To demonstrate I created a dataset called `dat` that contains an outcome `value` from `r p` different groups.
 
 One of the first steps I take when analyzing data is to look at the distribution of my data. If there are groups, I like to stratify and look at the distributions. Histograms and smooth density estimates are my favorite tools for visualizing distributions. I have `r p` groups in this data so I would start by quickly looking at a random subset:  
 
@@ -47,14 +47,14 @@ dat %>% mutate(group = reorder(group, value, median)) %>%
   ggplot(aes(group, value)) + geom_boxplot()
 ```
 
-If you look close enough you note that group G looks a bit different: larger variance. But by summarizing into only five numbers, the boxplot misses an important characteristic of the data. Violin points lets you see the distributions rather than these five points:
+If you look close enough you note that group G looks a bit different: larger variance. But by summarizing into only five numbers, the boxplot misses an important characteristic of the data. Violin plots let you see the distributions rather than these five points:
 
 ```{r violin,fig.height=2.5}
 dat %>% mutate(group = reorder(group, value, median)) %>% 
   ggplot(aes(group, value)) + geom_violin(fill = "blue")
 ```
 
-Do you see it? If you look closely group G appears to be bimodal. But why is it hard for me to see?
+Do you see it? If you look closely, group G appears to be bimodal. But why is it hard for me to see?
 
 1. Adding a mirror image of the density to make them resemble boxplots in some manner makes them look like Christmas ornaments and distracts me.
 2. I am used to looking at histograms and densities with the variable in the x-axis not the y-axis.
@@ -69,7 +69,7 @@ dat %>% mutate(group = reorder(group, value, median)) %>%
   geom_joy(scale=0.85)
 ``` 
 
-Note how quickly we notice the bimodal group. I am hoping people start using joy plots instead of violin plots. Try out the package:
+Note how quickly we notice the bimodal group. I am hoping people start using joy plots instead of violin plots. To install and try out the package use this:
 
 ```{r, eval=FALSE}
 library(devtools)
