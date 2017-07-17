@@ -7,9 +7,9 @@ slug: my-podcast-podroll
 
 As a self-interested podcaster, I'm obviously interested in getting more people to listen to more podcasts. For those who may be interested in getting into podcasts but wondering where to begin I thought I'd thought I'd make a list of what I'm currently listening to (perhaps to be updated as I acquire new ones). In no particular order:
 
-1. [Hello Internet](http://www.hellointernet.fm) - YouTubers Brady Haran and CGP Grey basically just talk, often for an hour to an hour and a half. The conversation is always entertaining. The topics are wide ranging and a bit difficult to classify.
+1. [Hello Internet](http://www.hellointernet.fm) - YouTubers Brady Haran and CGP Grey basically just talk, often for an hour to an hour and a half. The conversation is always entertaining. The topics are wide ranging and a bit difficult to classify. Brady Haran pretty much makes this podcast. 
 
-2. [The Talk Show](https://daringfireball.net/thetalkshow/) - A tech podcast by John Gruber of [Daring Fireball](https://daringfireball.net), Gruber talks to a rotating series of regular guests on each episode. Topics center around Apple-related stuff and other current tech topics. If you're the kind of person who is fussy about how they make their coffee in the morning, this is the podcast for you.
+2. [The Talk Show With John Gruber](https://daringfireball.net/thetalkshow/) - A tech podcast by John Gruber of [Daring Fireball](https://daringfireball.net), Gruber talks to a rotating series of regular guests on each episode. Topics center around Apple-related stuff and other current tech topics. If you're the kind of person who is fussy about how they make their coffee in the morning, this is the podcast for you.
 
 3. [Scriptnotes](http://scriptnotes.net) - One of my favorite podcasts and a podcast that I've used as a model for my own podcasts. John August and Craig Mazin are Hollywood screenwriters and each episode talks about the craft and business of writing movies. I don't have anything to do with movies, but I've learned a lot from this podcast.
 
@@ -27,13 +27,15 @@ As a self-interested podcaster, I'm obviously interested in getting more people 
 
 10. [Larry Wilmore: Black on the Air](https://theringer.com/larry-wilmore-black-on-the-air-podcast-d9c4bfa76be6) - Larry Wilmore, comedian, writer for *The Daily Show*, creater of *The Nightly Show with Larry Wilmore*, and producer of *Black-ish*, just started this podcast but I enjoy it a lot. The format so far is basically a short monologue where Wilmore comments on current events and then an extended interview with someone famous. 
 
-11. [Bombshell](http://bombshell.libsyn.com)
+11. [Bombshell](http://bombshell.libsyn.com) - Wonky national security podcast with Erin Simpson, Loren DeJonge Schulman, and Radha Iyengar Plumb. Much of the discussion goes behind the scenes to talk about what's actually happening in the White House, National Security Council, etc.
 
 
+12. [Sticky Notes: The Classical Music Podcast](http://stickynotespodcast.libsyn.com) - Conductor Joshua Weilerstein gives a brief tour of a major classical (usually orchestral) work, in a kind of Music 101 style. Although I'm pretty familiar with the music he covers, I've learned something in every episode. His [episode on living composers](http://stickynotespodcast.libsyn.com/episode-21-10-living-composers-you-need-to-know-about) was a really good.
 
 
+13. [Corner of the Sky](https://www.theincomparable.com/cots/) - A podcast buy [Quinn Rose](https://twitter.com/aspiringrobotfm) about musicals. Because *musicals*. This podcast comes from Jason Snell's Incomparable podcast network. 
 
-
+14. [Cortex](https://www.relay.fm/cortex) - Myke Hurley and CGP Grey talk about being independent content creators. Imagine two guys talking over lunch. 
 
 
 
