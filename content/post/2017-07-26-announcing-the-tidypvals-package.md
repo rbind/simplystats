@@ -13,7 +13,7 @@ A few years ago I helped write a paper where we proposed scraping p-values from 
 
 As I've mentioned before the p-value is the [most popular statistic ever invented](https://simplystatistics.org/2012/01/06/p-values-and-hypothesis-testing-get-a-bad-rap-but-we/) so there are _a lot_ of published p-values out there. 
 
-The tidypvals package is an effort to find previous collections of published p-values, synthesize them, and tidy them into one analyzable data set. The currently available p-value data sets in this package are: 
+The [tidypvals package](https://github.com/jtleek/tidypvals) is an effort to find previous collections of published p-values, synthesize them, and tidy them into one analyzable data set. The currently available p-value data sets in this package are: 
 
 * `jager2014` - This data set comes from the paper: [An estimate of the science-wise false discovery rate and application to the top medical literature](https://academic.oup.com/biostatistics/article/15/1/1/244509/An-estimate-of-the-science-wise-false-discovery) that first proposed p-value scraping from the medical literature for re-analysis.
 * `brodeur2016` - This data set comes from the paper [Star Wars: The empirics strike back](https://www.aeaweb.org/articles?id=10.1257/app.20150044) which collected p-values from the economics literature.
