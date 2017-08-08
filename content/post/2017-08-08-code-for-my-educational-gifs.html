@@ -15,7 +15,7 @@ categories:
 <p>Below is the code for each of the gifs I have shared roughly ordered by popularity. Remember this code was written last minute so please don’t judge me. Actually, you can critique all you want, that’s how we learn.</p>
 <div id="simpsons-paradox" class="section level1">
 <h1>Simpson’s Paradox</h1>
-<p>This gif illustrates Simpson’s paradox. We see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have strong negative correlation. However, once we stratify by a confounder <span class="math inline">\(Z\)</span>, encoded with color, the correlations flip to positive in each strata. The data is simulated, but we could see data like this if, for example, we looked at tutoring <span class="math inline">\(X\)</span> and 9-th grade test score <span class="math inline">\(Y\)</span> data and then stratified students by their 8-th grade test scores <span class="math inline">\(Z\)</span>.</p>
+<p>This gif illustrates Simpson’s paradox. We see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> have strong negative correlation. However, once we stratify by a confounder <span class="math inline">\(Z\)</span>, encoded with color, the correlations flip to positive in each strata. The data is simulated, but we could see data like this if, for example, we looked at tutoring <span class="math inline">\(X\)</span> and 9th grade test score <span class="math inline">\(Y\)</span> data and then stratified students by their 8th grade test scores <span class="math inline">\(Z\)</span>.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/simpsons-paradox.gif" style="display: block; margin: auto;" /></p>
 <p>This gif is made up of just three plots. I saved them using RStudio’s <em>Export</em> tool then used <a href="https://ezgif.com/maker">Animated GIF maker</a> to create the gif. Here is the code for the three plots:</p>
 <pre class="r"><code>library(tidyverse)
@@ -54,7 +54,7 @@ p + annotate(&quot;text&quot;, x = means$x, y = means$y, label = paste(&quot;Z=&
 </div>
 <div id="loess" class="section level1">
 <h1>Loess</h1>
-<p>The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say <span class="math inline">\(x_0\)</span>, assign positive weights to points close that value, fit a line with weighted regression, keep the fitted value for <span class="math inline">\(x_0\)</span>, move to the next point.</p>
+<p>The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say <span class="math inline">\(x_0\)</span>, assign positive weights to points close to that value, fit a line with weighted regression, keep the fitted value for <span class="math inline">\(x_0\)</span>, move to the next point.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif" style="display: block; margin: auto;" /></p>
 <p>The data here comes from a microarray experiment. The figure shows an MA-plot (log ratio versus average of logs). I use the <code>animation</code> package to save the gif.</p>
 <pre class="r"><code>rafalib::mypar()
@@ -100,9 +100,9 @@ saveGIF({
   }
 },&#39;loess.gif&#39;, interval = .15)</code></pre>
 </div>
-<div id="hans-roslings-life-expectancy-versus-fertility" class="section level1">
-<h1>Hans Rosling’s Life Expectancy versus Fertility</h1>
-<p>This gif is recreating an animation shown by <a href="https://en.wikipedia.org/wiki/Hans_Rosling">Hans Rosling’s</a> in his talk <a href="https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en">New Insights on Poverty</a>. The point of the animation is to show the power of data visualization for combating misconceptions. In this particular instance Rosling shows that the world was more dichotomous 40 years ago than it is today. Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.</p>
+<div id="life-expectancy-versus-fertility-rates" class="section level1">
+<h1>Life Expectancy versus Fertility Rates</h1>
+<p>This gif is recreating an animation shown by <a href="https://en.wikipedia.org/wiki/Hans_Rosling">Hans Rosling’s</a> in his talk <a href="https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en">New Insights on Poverty</a>. The point of the animation is to show the power of data visualization for combating misconceptions. In this particular instance Hans Rosling shows that the world was more dichotomous 40 years ago than it is today. Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif" style="display: block; margin: auto;" /></p>
 <p>The code for this plot is quite simple, thanks to the <code>gganimate</code> package.</p>
 <pre class="r"><code>library(tidyverse)
@@ -140,8 +140,8 @@ p &lt;- filter(gapminder, year%in%years &amp; !is.na(group) &amp;
 
 gganimate(p, filename = &quot;life-expectancy-vs-fertility-rate&quot;, title_frame = FALSE)</code></pre>
 </div>
-<div id="united-nations-voting-patters" class="section level1">
-<h1>United Nations Voting patters</h1>
+<div id="united-nations-voting-patterns" class="section level1">
+<h1>United Nations Voting Patterns</h1>
 <p>Here we used UN voting data provided by Erik Voeten and Anton Strezhnev to illustrate the concept of distance.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/un-dist.gif" style="display: block; margin: auto;" /></p>
 <p>Below is the code. The wrangling code was provided by <a href="https://twitter.com/drob">David Robinson</a>. You will see that we smooth the distances across time to avoid having the points jump around too much.</p>
@@ -271,9 +271,9 @@ gganimate(p, filename = &quot;un-dist.gif&quot;, interval=0.35, ani.width = 850)
 </div>
 <div id="random-forests" class="section level1">
 <h1>Random Forests</h1>
-<p>I used to find it hard to understand how Random Forests can produce smooth estimates given that they are based on trees. The gif helps illustrate how this can happen. I use 2008 presidential election data because I assume it is mostly driven by a smooth trend but with a couple of sharp edges that loess, for example, won’t catch. Note that, because we only have on predictor, the gif does not illustrate another important feature of Random Forests: how the random feature selection reduces correlation between trees.</p>
+<p>I used to find it hard to understand how Random Forests can produce smooth estimates given that they are based on trees. The gif helps illustrate how this can happen. I use 2008 presidential election data because I assume it is mostly driven by a smooth trend but with a couple of sharp edges that loess, for example, won’t catch. Note that, because we only have one predictor, the gif does not illustrate another important feature of Random Forests: how the random feature selection reduces correlation between trees.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/rf.gif" style="display: block; margin: auto;" /></p>
-<p>In the code you will see that I am using the old, not recommended way, of saving files and using a system call to covert.</p>
+<p>In the code you will see that I am using the old, not recommended way, of saving files and using a system call to convert.</p>
 <pre class="r"><code>library(tidyverse)
 library(stringr)
 library(lubridate)
