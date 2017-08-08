@@ -21,7 +21,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplysta
 ```
 
 
-## Ecological Fallacy
+# Ecological Fallacy
 
 ```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/ecological-fallacy.gif")
@@ -46,6 +46,14 @@ knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplysta
 ```{r, echo=FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
 ```
+
+
+## United Nations Voting patters
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/un-dist.gif")
+```
+
 
 ## Bayes Rule
 
@@ -285,13 +293,6 @@ p <- filter(gapminder, year%in%years & !is.na(group) &
   geom_text(aes(x=7, y=82, label=year), cex=20, color="grey") 
 
 gganimate(p, filename = "life-expectancy-vs-fertility-rate", title_frame = FALSE)
-```
-
-
-## United Nations Voting patters
-
-```{r, echo=FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/un-dist.gif")
 ```
 
 
