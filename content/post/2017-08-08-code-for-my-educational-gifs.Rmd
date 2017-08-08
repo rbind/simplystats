@@ -121,7 +121,7 @@ saveGIF({
 
 # Life Expectancy versus Fertility Rates
 
-This gif is recreating an animation shown by [Hans Rosling's](https://en.wikipedia.org/wiki/Hans_Rosling) in his talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). The point of the animation is to show the power of data visualization for combating misconceptions. In this particular instance Rosling shows that the world was more dichotomous 40 years ago than it is today.  Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.
+This gif is recreating an animation shown by [Hans Rosling's](https://en.wikipedia.org/wiki/Hans_Rosling) in his talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). The point of the animation is to show the power of data visualization for combating misconceptions. In this particular instance Hans Rosling shows that the world was more dichotomous 40 years ago than it is today.  Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.
 
 ```{r, echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
