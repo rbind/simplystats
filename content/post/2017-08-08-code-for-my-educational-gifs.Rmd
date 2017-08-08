@@ -14,10 +14,51 @@ The basic way all these figs here are made is that I make several png files then
  
 Below is the code.
 
-## Simpson's Paradox 
+# Simpson's Paradox 
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/simpsons-paradox.gif")
+```
 
 
+## Ecological Fallacy
 
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/ecological-fallacy.gif")
+```
+
+
+## Loess
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif")
+```
+
+## Random Forest
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/rf.gif")
+```
+
+## Hans Rosling's Life Expectancy versus Fertility 
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
+```
+
+## Bayes Rule
+
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/bayes.gif")
+```
+
+## Pacman
+
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif")
+```
 
 
 ```{r, message=FALSE, comment=FALSE, fig.width=8, fig.height=3}
@@ -468,37 +509,75 @@ system(paste0("cd ",path,";convert -loop 0 -delay 50 *.png rf.gif; mv rf.gif ",g
 
 ## Bayes Theorem
 
+
+```{r}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/bayes.gif")
+```
 ```{r, eval=FALSE}
 library(animation)
-set.seed(3)
+set.seed(2)
 prev <- 1/20
 acc <- 0.90
-N <- 20; M <- 80
-x<-rbinom(N*M,1,p=prev)
+N <- 20; M <- 50
+N_sick <- round(N*M*prev)
+x<-sample(c(rep(1, N_sick), rep(0, N*M - N_sick)))
 cols <- c("grey","red")
 people <- expand.grid(1:M,N:1)
-people2 <- expand.grid(1:(M/2),N:1)
+people2 <- expand.grid(1:round(M/2),N:(round(N/2)+1))
 cols1 <- cols[x+1]
-cols2 <- rep(NA,length(cols1));count2<-1
-cols3 <- rep(NA,length(cols1));count3<-1
+cols2 <- rep(NA, nrow(people2))
+count2 <- 1
+cols3 <- rep(NA, nrow(people2))
+count3 <- 1
 
+i <- 1
+maxCount <- nrow(people2) + 1
 saveGIF({
-i=1
-while(count3<=(N*M/2) & count2<=(N*M/2)){
-  test <- sample(100,1);min=round(100*acc)
-  rafalib::mypar()
-  layout(matrix(c(1,2,1,3),2,2))
-  plot(people,col=cols1,pch=16,xaxt="n",yaxt="n",xlab="",ylab="",main=paste0("Population: ",round(mean(x)*100),"% are red"))
-  if(test>min) axis(side=1,M/2,"X",col="red",tick=FALSE,cex.axis=3,line=1.5) else axis(side=1,M/2,"O",col="black",tick=FALSE,cex.axis=2,line=1.5)
-  points(people[i,],pch=1,cex=1.5)
-  if(all(is.na(cols2))) plot(people2,type="n",pch=16,xaxt="n",yaxt="n",xlab="",ylab="",main="Tested Positive") else plot(people2,col=cols2,pch=16,xaxt="n",yaxt="n",xlab="",ylab="",main=paste0("Tested Positive: ",round(mean(cols2=="red",na.rm=TRUE)*100),"% are red"))
-  if(all(is.na(cols3))) plot(people2,type="n",pch=16,xaxt="n",yaxt="n",xlab="",ylab="",main="Tested Negative") else plot(people2,col=cols3,pch=16,xaxt="n",yaxt="n",xlab="",ylab="",main=paste0("Tested Negative: ",round(mean(cols3=="red",na.rm=TRUE)*100,1),"% are red"))
-  outcome <- ifelse(x[i]==1, as.numeric(test<=min), as.numeric(test>min))
-  if(outcome==0) {cols3[count3]<-cols1[i];count3<-count3+1} else {cols2[count2]<-cols1[i];count2<-count2+1}
-  i<-i+1
-}},'bayes.gif', interval = .1, ani.width = 800, ani.height = 500)
+  while(count2<=maxCount & count3<=maxCount){
+    test <- sample(100,1)
+    min <- round(100*acc)
+    rafalib::mypar()
+    layout(matrix(c(1,2,1,3),2,2), heights = c(1.75,1))
+    plot(people, col=cols1, pch=16, xaxt="n", yaxt="n", xlab="", ylab="", 
+         main=paste0("Population: ",round(mean(x)*100),"% are red. ",
+                     "Test accuracy is ", round(acc*100),"%"))
+    if(test>min){
+      axis(side=1, M/2, paste("Test",i,"Wrong"), col="red", tick=FALSE, 
+           cex.axis=3,line=1) 
+      } else{ 
+        axis(side=1, M/2, paste("Test",i,"Right"), col="black", tick=FALSE,
+             cex.axis=2,line=1)
+      }
+    points(people[i,], pch=1, cex=1.5)
+    if(all(is.na(cols2))){
+      plot(people2, type="n", pch=16, xaxt="n", yaxt="n", xlab="", ylab="",
+           main="Tested Positive")
+      } else{
+        plot(people2, col=cols2, pch=16, xaxt="n", yaxt="n", xlab="", ylab="", 
+             main=paste0("Tested Positive: ", 
+                         round(mean(cols2=="red",na.rm=TRUE)*100),"% are red"))
+      }
+    if(all(is.na(cols3))){
+      plot(people2, type="n", pch=16, xaxt="n", yaxt="n", xlab="", ylab="", 
+           main="Tested Negative")
+      } else{ 
+        plot(people2, col=cols3, pch=16, xaxt="n", yaxt="n", xlab="", ylab="",
+             main=paste0("Tested Negative: ", 
+                         round(mean(cols3=="red",na.rm=TRUE)*100,1),
+                         "% are red"))
+      }
+    outcome <- ifelse(x[i]==1, as.numeric(test<=min), as.numeric(test>min))
+    if(outcome==0) {
+      cols3[count3] <- cols1[i]
+      count3<-count3+1
+      } else {
+        cols2[count2] <- cols1[i]
+        count2<-count2+1
+      }
+    i<-i+1
+    }
+  },'bayes.gif', interval = .1)
 ```
-
 
 ## Pacman
 
