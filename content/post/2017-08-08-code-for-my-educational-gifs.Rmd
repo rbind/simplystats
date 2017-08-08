@@ -17,7 +17,7 @@ Below is the code for each of the gifs I have shared roughly ordered by populari
 
 # Simpson's Paradox 
 
-This gif illustrates Simpson's paradox. We see that $X$ and $Y$ have strong  negative correlation. However, once we stratify by a confounder $Z$, encoded with color, the correlations flip to positive in each strata. The data is simulated, but we could see data like this if, for example, we looked at tutoring $X$ and 9-th grade test score $Y$ data and then stratified students by their 8-th grade test scores $Z$.
+This gif illustrates Simpson's paradox. We see that $X$ and $Y$ have strong  negative correlation. However, once we stratify by a confounder $Z$, encoded with color, the correlations flip to positive in each strata. The data is simulated, but we could see data like this if, for example, we looked at tutoring $X$ and 9th grade test score $Y$ data and then stratified students by their 8th grade test scores $Z$.
 
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/simpsons-paradox.gif")
@@ -65,7 +65,7 @@ p + annotate("text", x = means$x, y = means$y, label = paste("Z=", means$z), cex
 
 # Loess
 
-The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say $x_0$, assign positive weights to points close that value, fit a line with weighted regression, keep the fitted value for $x_0$, move to the next point. 
+The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say $x_0$, assign positive weights to points close to that value, fit a line with weighted regression, keep the fitted value for $x_0$, move to the next point. 
 
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif")
@@ -305,14 +305,14 @@ gganimate(p, filename = "un-dist.gif", interval=0.35, ani.width = 850)
 
 # Random Forests
 
-I used to find it hard to understand how Random Forests can produce smooth estimates given that they are based on trees. The gif helps illustrate how this can happen. I use 2008 presidential election data because I assume it is mostly driven by a smooth trend but with a couple of sharp edges that loess, for example, won't catch. Note that, because we only have on predictor, the gif does not illustrate another important feature of Random Forests: how the random feature selection reduces correlation between trees. 
+I used to find it hard to understand how Random Forests can produce smooth estimates given that they are based on trees. The gif helps illustrate how this can happen. I use 2008 presidential election data because I assume it is mostly driven by a smooth trend but with a couple of sharp edges that loess, for example, won't catch. Note that, because we only have one predictor, the gif does not illustrate another important feature of Random Forests: how the random feature selection reduces correlation between trees. 
 
 
 ```{r, echo = FALSE, fig.align='center'}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/rf.gif")
 ```
 
-In the code you will see that I am using the old, not recommended way, of saving files and using a system call to covert.
+In the code you will see that I am using the old, not recommended way, of saving files and using a system call to convert.
 
 ```{r, eval=FALSE}
 library(tidyverse)
