@@ -34,8 +34,7 @@ names(dat) &lt;- c(&quot;X&quot;, &quot;Y&quot;, &quot;Z&quot;)
 
 ## First plot
 dat %&gt;% ggplot(aes(X,Y)) + geom_point(alpha = .5) +
-  ggtitle(paste(&quot;correlation = &quot;, round(cor(dat$X, dat$Y), 2))) +  
-  theme(plot.title = element_text(size = 8, face = &quot;bold&quot;))
+  ggtitle(paste(&quot;correlation = &quot;, round(cor(dat$X, dat$Y), 2))) 
 
 ## second plot
 means &lt;- tbl_df(Reduce(rbind, means)) %&gt;% setNames(c(&quot;x&quot;,&quot;y&quot;)) %&gt;%
@@ -45,8 +44,7 @@ corrs &lt;- dat %&gt;% group_by(Z) %&gt;% summarize(cor = cor(X,Y)) %&gt;% .$cor
 
 p &lt;- dat %&gt;% ggplot(aes(X, Y, color = Z)) + 
   geom_point(show.legend = FALSE, alpha = 0.5) +
-  ggtitle(paste(&quot;correlations =&quot;,  paste(signif(corrs,2), collapse=&quot; &quot;))) +  
-  theme(plot.title = element_text(size = 8, face = &quot;bold&quot;))
+  ggtitle(paste(&quot;correlations =&quot;,  paste(signif(corrs,2), collapse=&quot; &quot;)))
 p
 
 ## third plot
@@ -350,7 +348,7 @@ system(paste0(&quot;cd &quot;,path,&quot;;convert -loop 0 -delay 50 *.png rf.gif
 </div>
 <div id="ecological-fallacy" class="section level1">
 <h1>Ecological Fallacy</h1>
-<p>After sharing the Simpson’s paradox, a couple of people asked me if it was the same thing as the ecological fallacy. These two are different. The ecological fallacy is when we extrapolate high correlation seen for the average of strata to individuals. To illustrate this I used data from <a href="http://gapminder.org">gapminder</a> included in the <code>dslabs</code> package. It shows logistic transformed infant survival rates versus log daily income. I start by showing a very high correlation at the region level and a lower correlation at the individual country level. This is because there is country to country variability within region.</p>
+<p>After sharing the Simpson’s Paradox gif, a couple of people asked me if this was the same as the ecological fallacy. These two are different. The ecological fallacy is when we extrapolate high correlation seen for the average of strata to individuals. To illustrate this I used data from <a href="http://gapminder.org">gapminder</a> included in the <code>dslabs</code> package. It shows logistic transformed infant survival rates versus log daily income. I start by showing a very high correlation at the region level and a lower correlation at the individual country level. This is because there is country to country variability within region.</p>
 <p><img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/ecological-fallacy.gif" style="display: block; margin: auto;" /></p>
 <p>The gif is just three plots. I saved them using RStudio’s <em>Export</em> tool used <a href="https://ezgif.com/maker">Animated GIF maker</a> to create the gif.</p>
 <p>The first shows the averages, the second shows the individual values for Sub-Saharan Africa so you can see how one average breaks into more variable data, and the third shows all the individual data. I highlighted a few countries that show the variability. Note that I used a colorblind friendly palette. The code is a bit complex because I have to wrangle the Gapminder data.</p>
