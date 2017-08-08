@@ -587,7 +587,7 @@ Finally, I made this plot to show the only instance in which pie charts are usef
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif")
 ```
 
-The code fits in a [tweet](https://twitter.com/rafalab/status/631243286464704512).
+The code fits in one [tweet](https://twitter.com/rafalab/status/631243286464704512).
 
 ```{r, eval=FALSE}
 saveGIF({
@@ -601,6 +601,5 @@ saveGIF({
     }
   }, "pacman.gif", interval = 0.1)
 ```
-
 
 
