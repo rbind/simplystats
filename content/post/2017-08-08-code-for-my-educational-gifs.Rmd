@@ -7,73 +7,31 @@ categories:
   - Education
 ---
 
+During preparation for class I sometimes think up of animations that will explain the concept I am teaching. I sometimes share the resulting animations on social media via [@rafalab](https://twitter.com/rafalab). 
 
-During preparation for class I sometimes think up of animation that will explain the concept I am teaching. To share the resulting animations with a wider audience I often create a gif an post it on twitter vie [@rafalab](). After seeing one of these John Storey [asked](https://twitter.com/johnstorey/status/892032669021818881) if the source code for theses gifs is publicly available. They are not. The reason is that I am not that organized and these come about during last minute preparations. But since Storey asked, I have organized the code and include it below. Remember these were done last minute so please don't judge me. Actually you can critique all you want, that's how I learn. 
+John Storey recently [asked](https://twitter.com/johnstorey/status/892032669021818881) if the source code is publicly available. Because I am not that organized, and these ideas come about during last minute preparations, the code was spread across several unrelated files. John's request motivated me to include the code in one post. 
 
-The basic way all these figs here are made is that I make several png files then convert them to an animated gif that simply pages through these. These tools I have used are `saveGIF` from the animation package, the `gganimate` from the `gganimate` package and the online [Animated GIF maker](https://ezgif.com/maker). The last one I used when only a couple of images are involved and I want phasing effect. 
- 
-Below is the code.
+All these gifs are paginated R plots. You will see in the code that I used different approaches to converting individual plots to animated gifs. The first (not recommended) was to save files then do a system call to the [ImageMagick](https://www.imagemagick.org/script/index.php) convert tool. Through a simplystats comment,  from Yihui Xie, I learned about the `saveGIF` function from the `animation` package, which is what I now use when the plots are made in R base. When using ggplot I use David Robinson's `gganimate` [package](https://github.com/dgrtwo/gganimate). Finally, if I want to add special effects, like phasing, I use the online [Animated GIF maker](https://ezgif.com/maker). 
+
+Below is the code for each of the gifs I have shared roughly ordered by popularity. Remember this code was written last minute so please don't judge me. Actually, you can critique all you want, that's how we learn. 
 
 # Simpson's Paradox 
+
+This gif illustrates Simpson's paradox. We see that $X$ and $Y$ have strong  negative correlation. However, once we stratify by a confounder $Z$, encoded with color, the correlations flip to positive in each strata. The data is simulated, but we could see data like this if, for example, we looked at tutoring $X$ and 9-th grade test score $Y$ data and then stratified students by their 8-th grade test scores $Z$.
 
 ```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/simpsons-paradox.gif")
 ```
 
-
-# Ecological Fallacy
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/ecological-fallacy.gif")
-```
+This gif is made up of just three plots. I saved them using RStudio's _Export_ tool then used  [Animated GIF maker](https://ezgif.com/maker) to create the gif. Here is the code for the three plots:
 
 
-## Loess
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif")
-```
-
-## Random Forest
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/rf.gif")
-```
-
-## Hans Rosling's Life Expectancy versus Fertility 
-
-
-```{r, echo=FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
-```
-
-
-## United Nations Voting patters
-
-```{r, echo=FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/un-dist.gif")
-```
-
-
-## Bayes Rule
-
-```{r, echo = FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/bayes.gif")
-```
-
-## Pacman
-
-
-```{r, echo=FALSE}
-knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif")
-```
-
-
-```{r, message=FALSE, comment=FALSE, fig.width=8, fig.height=3}
+```{r, message=FALSE, comment=FALSE, eval=FALSE, fig.width=8, fig.height=3}
 library(tidyverse)
-library(gridExtra)
 library(dslabs)
 ds_theme_set()
+
+## simulate data 
 N <- 100
 Sigma <- matrix(c(1,0.75,0.75, 1), 2, 2)*1.5
 means <- list(c(11,3), c(9,5), c(7,7), c(5,9), c(3,11))
@@ -82,138 +40,47 @@ dat <- lapply(means, function(mu)
 dat <- tbl_df(Reduce(rbind, dat)) %>% 
   mutate(Z = as.character(rep(seq_along(means), each = N)))
 names(dat) <- c("X", "Y", "Z")
-p1 <- dat %>% ggplot(aes(X,Y)) + geom_point(alpha = .5) +
+
+## First plot
+dat %>% ggplot(aes(X,Y)) + geom_point(alpha = .5) +
   ggtitle(paste("correlation = ", round(cor(dat$X, dat$Y), 2))) +  
   theme(plot.title = element_text(size = 8, face = "bold"))
 
+## second plot
 means <- tbl_df(Reduce(rbind, means)) %>% setNames(c("x","y")) %>%
   mutate(z = as.character(seq_along(means)))
   
 corrs <- dat %>% group_by(Z) %>% summarize(cor = cor(X,Y)) %>% .$cor 
 
-p2 <- dat %>% ggplot(aes(X, Y, color = Z)) + 
+p <- dat %>% ggplot(aes(X, Y, color = Z)) + 
   geom_point(show.legend = FALSE, alpha = 0.5) +
   ggtitle(paste("correlations =",  paste(signif(corrs,2), collapse=" "))) +  
   theme(plot.title = element_text(size = 8, face = "bold"))
+p
 
-p3 <- p2 + annotate("text", x = means$x, y = means$y, label = paste("Z=", means$z), cex = 5)  
-grid.arrange(p1, p2, p3, ncol = 3)
+## third plot
+p + annotate("text", x = means$x, y = means$y, label = paste("Z=", means$z), cex = 5)  
 ```
 
-
-## Ecollogical Fallacy 
-
-```{r, message=FALSE, comment=FALSE, fig.width=8, fig.height=3}
-library(tidyverse)
-library(ggrepel)
-library(dslabs)
-ds_theme_set()
-
-data(gapminder)
-
-west <- c("Western Europe","Northern Europe","Southern Europe",
-          "Northern America","Australia and New Zealand")
-present_year <- 2010
-
-
-gapminder <- gapminder %>%
-  mutate(dollars_per_day = gdp/population/365)
-
-gapminder <- gapminder %>%
-  mutate(group = case_when(
-    .$region %in% west ~ "The West",
-    .$region %in% "Northern Africa" ~ "Northern Africa",
-    .$region %in% c("Eastern Asia", "South-Eastern Asia") ~ "East Asia",
-    .$region == "Southern Asia"~ "Southern Asia",
-    .$region %in% c("Central America", "South America", "Caribbean") ~ "Latin America",
-    .$continent == "Africa" & .$region != "Northern Africa" ~ "Sub-Saharan Africa",
-    .$region %in% c("Melanesia", "Micronesia", "Polynesia") ~ "Pacific Islands"))
-
-logit <- function(p) log(p/(1-p))
-
-color_blind_friendly_cols <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-
-surv_income <- gapminder %>%
-  filter(year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group)) %>%
-  group_by(group) %>%
-  summarize(income = sum(gdp)/sum(population)/365,
-            infant_survival_rate = 1-sum(infant_mortality/1000*population)/sum(population))
-
-p1 <- surv_income %>% ggplot(aes(income, infant_survival_rate, label = group, color = group)) +
-  scale_x_continuous(trans = "log2", limits = c(0.25, 150)) +
-  scale_y_continuous(trans = "logit", limit = c(0.875, .9981),
-                     breaks = c(.85,.90,.95,.99,.995,.998)) +
-  geom_text_repel(size = 5, show.legend = FALSE) +
-  geom_point(size=4, show.legend = FALSE) +
-  ggtitle(paste("Correlation ≈", signif(with(surv_income,cor(log(income), logit(infant_survival_rate))),2))) +
-  xlab("Average dollars per day") +
-  ylab("Infant survival rate") +
-  scale_color_manual(values=color_blind_friendly_cols)
-
-
-highlight <- c("Sierra Leone", "Mauritius",  "Sudan", "Botswana", "Tunisia",
-"Cambodia","Singapore","Chile", "Haiti", "Bolivia",
-"United States","Sweden", "Angola", "Serbia")
- 
-tmp <- gapminder %>%
-  filter( year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group) ) %>%
-  mutate(infant_survival_rate = 1 - infant_mortality/1000)
-p2 <- tmp %>%
-  ggplot(aes(dollars_per_day, infant_survival_rate, col = group, label = country)) +
-  scale_x_continuous(trans = "log2", limits=c(0.25, 150)) +
-  scale_y_continuous(trans = "logit",limit=c(0.875, .9981),
-                     breaks=c(.85,.90,.95,.99,.995,.998)) +
-  geom_point(alpha = 0.5, size = 3, show.legend = FALSE) +
-  geom_text_repel(size = 4, show.legend = FALSE,
-                  data = filter(tmp, year %in% present_year & country %in% highlight)) +
-  ggtitle("Correlation < 1") +
-  xlab("Average dollars per day") +
-  ylab("Infant survival rate") +
-  scale_alpha_manual(values=c(1,1)) +
-  scale_color_manual(values=color_blind_friendly_cols) +
-  guides(colour = guide_legend(override.aes = list(alpha = 1)))
-
-
-
-tmp <- gapminder %>%  filter( year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group) ) %>%
-    filter(group %in% "Sub-Saharan Africa") %>%
-    mutate(infant_survival_rate = 1 - infant_mortality/1000)
-  
-p3 <- surv_income %>%
-  filter(!group %in% "Sub-Saharan Africa") %>%
-    ggplot(aes(income, infant_survival_rate, label = group, color = group)) +
-  scale_x_continuous(trans = "log2", limits = c(0.25, 150)) +
-  scale_y_continuous(trans = "logit", limit = c(0.875, .9981),
-                     breaks = c(.85,.90,.95,.99,.995,.998)) +
-  geom_text_repel(size = 5, show.legend = FALSE) +
-  geom_point(size=4, show.legend = FALSE) +
-  xlab("Average dollars per day") +
-  ylab("Infant survival rate") +
-  scale_color_manual(values=color_blind_friendly_cols) +
-  geom_point(mapping=aes(dollars_per_day, infant_survival_rate, col = group), data =tmp, alpha = 0.5, size = 3, show.legend = FALSE) +
-  geom_text_repel(mapping=aes(dollars_per_day, infant_survival_rate, col = group, label = country),
-                  size = 4, show.legend = FALSE,
-                  data = filter(tmp, year %in% present_year & country %in% highlight))+
-    ggtitle(" ")
-
-grid.arrange(p1, p2, p3, ncol =3)
-```
 
 ## Loess
 
-The first animation I shared explains how local regression works. Basically, for each point assign positive weights to points close that point, fit a line with weighted regression, keep the fitted value for the point in question, move to the next point. Here is the gif:
+The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say $x_0$, assign positive weights to points close that value, fit a line with weighted regression, keep the fitted value for $x_0$, move to the next point. 
 
-```{r, echo=FALSE, fig.align='center'}
+```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/loess.gif")
 ```
 
-The data here comes from a microarray experiment. I used the `animation` package to save the gif. 
+The data here comes from a microarray experiment. The figure shows an MA-plot (log ratio versus average of logs). I use the `animation` package to save the gif. 
 
-```{r, warning=FALSE, comment=FALSE, eval=FALSE}
-##rafalib::install_bioc("SpikeIn")
+```{r, eval = FALSE, warning=FALSE, comment=FALSE, eval=FALSE}
 rafalib::mypar()
-library(SpikeIn)
-data(SpikeIn95)
+
+## load data
+library(SpikeIn) ##to install: rafalib::install_bioc("SpikeIn")
+data(SpikeIn95) 
+
+## get M and A for two arrays
 spms <- pm(SpikeIn95)
 spd <- pData(SpikeIn95)
 i <- 10; j  <- 9 ## Pick two samples that show a non-linear relationship
@@ -227,6 +94,8 @@ m <- M[o]
 ind <- round(seq(1,length(a),len=5000)) ##don't show all the points
 a <- a[ind]
 m <- m[ind]
+
+## make gif
 centers <- seq(min(a),max(a),0.1)
 windowSize <- 1.5
 smooth <- rep(NA,length(centers))
@@ -250,14 +119,15 @@ saveGIF({
 ```
 
 
-## Hans Rosling's Life Expectancy versus Fertility 
+# Hans Rosling's Life Expectancy versus Fertility 
 
-This animation from from Hans Rosling's talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). We us
+This gif is recreating an animation shown by Hans Rosling's in his talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). The point of the animation is to show the power of data visualization. In this particular instance we showed that the world was more dichotomous 40 years ago than it is today.  Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.
 
-
-```{r}
+```{r, echo=FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
 ```
+
+The code for this plot is quite simple, thanks to the `gganimate` package.
 
 ```{r, eval=FALSE, warning=FALSE, comment = FALSE, fig.show = "animate"}
 library(tidyverse)
@@ -283,7 +153,8 @@ years <- seq(1962, 2013)
 p <- filter(gapminder, year%in%years & !is.na(group) & 
          !is.na(fertility) & !is.na(life_expectancy)) %>%
   mutate(population_in_millions = population/10^6) %>%
-  ggplot( aes(fertility, y=life_expectancy, col = group, frame = year, size = population_in_millions)) +
+  ggplot(aes(fertility, y=life_expectancy, 
+             col = group, frame = year, size = population_in_millions)) +
   geom_point(alpha = 0.8) +
   guides(size=FALSE) +
   theme(plot.title = element_blank(), legend.title = element_blank()) + 
@@ -296,6 +167,15 @@ gganimate(p, filename = "life-expectancy-vs-fertility-rate", title_frame = FALSE
 ```
 
 
+## United Nations Voting patters
+
+Here we used UN voting data provided by Erik Voeten and Anton Strezhnev to illustrate the concept of distance. 
+
+```{r, echo=FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/un-dist.gif")
+```
+
+Below is the code. tTe wrangling code was provided by [David Robinson](https://twitter.com/drob). You will see that we smooth the distances across time to avoid having the points jump around too much.
 
 ```{r, eval =FALSE}
 library(tidyverse)
@@ -423,13 +303,18 @@ p <- dat %>% ggplot(aes(frame = year)) +
 gganimate(p, filename = "un-dist.gif", interval=0.35, ani.width = 850)
 ```
 
-## Random Forrests
+# Random Forests
 
-```{r}
+I used to find it hard to understand how Random Forests can produce smooth estimates given that they are based on trees. The gif helps illustrate how this can happen. I use 2008 presidential election data because I assume it is mostly driven by a smooth trend but with a couple of sharp edges that loess, for example, won't catch. Note that, because we only have on predictor, the gif does not illustrate another important feature of Random Forests: how the random feature selection reduces correlation between trees. 
+
+
+```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/rf.gif")
 ```
 
-```{r, evale=FALSE}
+In the code you will see that I am using the old, not recommended way, of saving files and using a system call to covert.
+
+```{r, eval=FALSE}
 library(tidyverse)
 library(stringr)
 library(lubridate)
@@ -457,7 +342,6 @@ polls_2008 <- readHTMLTable(theurl,stringsAsFactors=FALSE)[[1]] %>%
 polls_2008 <-  filter(polls_2008, start_date>="2008-06-01") %>%
   group_by(X=day)  %>%
 summarize(Y=mean(diff))
-
 
 set.seed(1)
 path <- tempdir()
@@ -504,16 +388,130 @@ for(i in 1:5){
   dev.off()
 }
 system(paste0("cd ",path,";convert -loop 0 -delay 50 *.png rf.gif; mv rf.gif ",getwd(),"/"))
-
 ```
- 
 
-## Bayes Theorem
+# Ecological Fallacy
+
+After sharing the Simpson's paradox, a couple of people asked me if it was the same thing as the ecological fallacy. These two are different. The ecological fallacy is when we extrapolate high correlation seen for the average of strata to individuals. To illustrate this I used data from [gapminder](http://gapminder.org) included in the `dslabs` package. It shows logistic transformed infant survival rates versus log daily income. I start by showing a very high correlation at the region level and a lower correlation at the individual country level. This is because there is country to country variability within region.
 
 
-```{r}
+```{r, echo = FALSE}
+knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/ecological-fallacy.gif")
+```
+
+The gif is just three plots. I saved them using RStudio's _Export_ tool used  [Animated GIF maker](https://ezgif.com/maker) to create the gif.
+
+The first shows the averages, the second shows the individual values for Sub-Saharan Africa so you can see how one average breaks into more variable data, and the third shows all the individual data. I highlighted a few countries that show the variability. Note that I used a colorblind friendly palette. The code is a bit complex because I have to wrangle the Gapminder data.
+
+
+```{r, message=FALSE, comment=FALSE, eval=FALSE, fig.width=8, fig.height=3}
+library(tidyverse)
+library(ggrepel)
+library(dslabs)
+ds_theme_set()
+
+## load data
+data(gapminder)
+
+west <- c("Western Europe","Northern Europe","Southern Europe",
+          "Northern America","Australia and New Zealand")
+present_year <- 2010
+
+
+## wrangle data and summarize 
+gapminder <- gapminder %>%
+  mutate(dollars_per_day = gdp/population/365)
+
+gapminder <- gapminder %>%
+  mutate(group = case_when(
+    .$region %in% west ~ "The West",
+    .$region %in% "Northern Africa" ~ "Northern Africa",
+    .$region %in% c("Eastern Asia", "South-Eastern Asia") ~ "East Asia",
+    .$region == "Southern Asia"~ "Southern Asia",
+    .$region %in% c("Central America", "South America", "Caribbean") ~ "Latin America",
+    .$continent == "Africa" & .$region != "Northern Africa" ~ "Sub-Saharan Africa",
+    .$region %in% c("Melanesia", "Micronesia", "Polynesia") ~ "Pacific Islands"))
+
+logit <- function(p) log(p/(1-p))
+
+color_blind_friendly_cols <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+
+surv_income <- gapminder %>%
+  filter(year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group)) %>%
+  group_by(group) %>%
+  summarize(income = sum(gdp)/sum(population)/365,
+            infant_survival_rate = 1-sum(infant_mortality/1000*population)/sum(population))
+
+### First plot
+surv_income %>% ggplot(aes(income, infant_survival_rate, label = group, color = group)) +
+  scale_x_continuous(trans = "log2", limits = c(0.25, 150)) +
+  scale_y_continuous(trans = "logit", limit = c(0.875, .9981),
+                     breaks = c(.85,.90,.95,.99,.995,.998)) +
+  geom_text_repel(size = 5, show.legend = FALSE) +
+  geom_point(size=4, show.legend = FALSE) +
+  ggtitle(paste("Correlation ≈", signif(with(surv_income,cor(log(income), logit(infant_survival_rate))),2))) +
+  xlab("Average dollars per day") +
+  ylab("Infant survival rate") +
+  scale_color_manual(values=color_blind_friendly_cols)
+
+
+highlight <- c("Sierra Leone", "Mauritius",  "Sudan", "Botswana", "Tunisia",
+"Cambodia","Singapore","Chile", "Haiti", "Bolivia",
+"United States","Sweden", "Angola", "Serbia")
+
+## Third plot. I make before second because easier 
+tmp <- gapminder %>%
+  filter( year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group) ) %>%
+  mutate(infant_survival_rate = 1 - infant_mortality/1000)
+tmp %>%
+  ggplot(aes(dollars_per_day, infant_survival_rate, col = group, label = country)) +
+  scale_x_continuous(trans = "log2", limits=c(0.25, 150)) +
+  scale_y_continuous(trans = "logit",limit=c(0.875, .9981),
+                     breaks=c(.85,.90,.95,.99,.995,.998)) +
+  geom_point(alpha = 0.5, size = 3, show.legend = FALSE) +
+  geom_text_repel(size = 4, show.legend = FALSE,
+                  data = filter(tmp, year %in% present_year & country %in% highlight)) +
+  ggtitle("Correlation < 1") +
+  xlab("Average dollars per day") +
+  ylab("Infant survival rate") +
+  scale_alpha_manual(values=c(1,1)) +
+  scale_color_manual(values=color_blind_friendly_cols) +
+  guides(colour = guide_legend(override.aes = list(alpha = 1)))
+
+## second plot
+tmp <- gapminder %>%  filter( year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(group) ) %>%
+    filter(group %in% "Sub-Saharan Africa") %>%
+    mutate(infant_survival_rate = 1 - infant_mortality/1000)
+  
+surv_income %>%
+  filter(!group %in% "Sub-Saharan Africa") %>%
+    ggplot(aes(income, infant_survival_rate, label = group, color = group)) +
+  scale_x_continuous(trans = "log2", limits = c(0.25, 150)) +
+  scale_y_continuous(trans = "logit", limit = c(0.875, .9981),
+                     breaks = c(.85,.90,.95,.99,.995,.998)) +
+  geom_text_repel(size = 5, show.legend = FALSE) +
+  geom_point(size=4, show.legend = FALSE) +
+  xlab("Average dollars per day") +
+  ylab("Infant survival rate") +
+  scale_color_manual(values=color_blind_friendly_cols) +
+  geom_point(mapping=aes(dollars_per_day, infant_survival_rate, col = group), data =tmp, alpha = 0.5, size = 3, show.legend = FALSE) +
+  geom_text_repel(mapping=aes(dollars_per_day, infant_survival_rate, col = group, label = country),
+                  size = 4, show.legend = FALSE,
+                  data = filter(tmp, year %in% present_year & country %in% highlight))+
+    ggtitle(" ")
+```
+
+
+# Bayes Rule
+
+This simple animation shows, case by case, the results of applying a highly accurate diagnostic test to a population with low prevalence of disease. It helps illustrate how the posterior probability of having the disease given a positive test is lower than the accuracy of the test. You can use Bayes rule to determine the actual conditional probabilities. More details are [here](https://simplystatistics.org/2014/10/17/bayes-rule-in-a-gif/).
+
+```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/bayes.gif")
 ```
+
+Because we are not plotting data but drawing a cartoon, the code is a bit complex and hard to read.
+
 ```{r, eval=FALSE}
 library(animation)
 set.seed(2)
@@ -580,29 +578,29 @@ saveGIF({
   },'bayes.gif', interval = .1)
 ```
 
+
 ## Pacman
 
-Finally, this is not really educational. I just wanted to show that Piecharts can be useful. 
+Finally, I made this plot to show the only instance in which pie charts are useful.
 
-
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif")
 ```
 
-Here is the code. Be careful when you run it as it will erase all your 
+The code fits in a [tweet](https://twitter.com/rafalab/status/631243286464704512).
+
 ```{r, eval=FALSE}
 saveGIF({
   N=10
   for(i in 0:(N-1)){
-    x=cos(2*pi/N*i);y=x+1;z=(y-2)*22.5
-    pie(c(y,8-y),col=c("white","yellow"),init.angle=135-z,border=FALSE,labels=NA)
+    x <- cos(2*pi/N*i)
+    y <- x+1
+    z <- (y-2)*22.5
+    pie(c(y,8-y), col=c("white","yellow"), init.angle=135-z, 
+        border=FALSE, labels=NA)
     }
   }, "pacman.gif", interval = 0.1)
 ```
 
-Note the R code fits in a [tweet](https://twitter.com/rafalab/status/631243286464704512).
-
-
-It looks like this:
 
 
