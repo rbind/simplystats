@@ -6,8 +6,8 @@ slug: code-for-my-educational-gifs
 categories:
   - Education
 ---
-
-During preparation for class I sometimes think up of animations that will explain the concept I am teaching. I sometimes share the resulting animations on social media via [@rafalab](https://twitter.com/rafalab). 
+ 
+During preparation for class I sometimes think up of animations that will explain the concept I am teaching. I sometimes share the resulting animations on social media via [\@rafalab](https://twitter.com/rafalab). 
 
 John Storey recently [asked](https://twitter.com/johnstorey/status/892032669021818881) if the source code is publicly available. Because I am not that organized, and these ideas come about during last minute preparations, the code was spread across several unrelated files. John's request motivated me to include the code in one post. 
 
@@ -63,7 +63,7 @@ p + annotate("text", x = means$x, y = means$y, label = paste("Z=", means$z), cex
 ```
 
 
-## Loess
+# Loess
 
 The first educational animation I shared explains how local regression (loess) works. Basically, for each predictor value, say $x_0$, assign positive weights to points close that value, fit a line with weighted regression, keep the fitted value for $x_0$, move to the next point. 
 
@@ -121,7 +121,7 @@ saveGIF({
 
 # Hans Rosling's Life Expectancy versus Fertility 
 
-This gif is recreating an animation shown by Hans Rosling's in his talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). The point of the animation is to show the power of data visualization. In this particular instance we showed that the world was more dichotomous 40 years ago than it is today.  Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.
+This gif is recreating an animation shown by [Hans Rosling's](https://en.wikipedia.org/wiki/Hans_Rosling) in his talk [New Insights on Poverty](https://www.ted.com/talks/hans_rosling_reveals_new_insights_on_poverty?language=en). The point of the animation is to show the power of data visualization for combating misconceptions. In this particular instance Rosling shows that the world was more dichotomous 40 years ago than it is today.  Dividing the world into western rich countries with small families/long life spans and a developing world with large families/short life spans is no longer accurate.
 
 ```{r, echo=FALSE, fig.align='center'}
 knitr::include_graphics("https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/life-expectancy-versus-fertility-rate.gif")
@@ -167,7 +167,7 @@ gganimate(p, filename = "life-expectancy-vs-fertility-rate", title_frame = FALSE
 ```
 
 
-## United Nations Voting patters
+# United Nations Voting patters
 
 Here we used UN voting data provided by Erik Voeten and Anton Strezhnev to illustrate the concept of distance. 
 
@@ -579,7 +579,7 @@ saveGIF({
 ```
 
 
-## Pacman
+# Pacman
 
 Finally, I made this plot to show the only instance in which pie charts are useful.
 
