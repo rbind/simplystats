@@ -43,8 +43,7 @@ names(dat) <- c("X", "Y", "Z")
 
 ## First plot
 dat %>% ggplot(aes(X,Y)) + geom_point(alpha = .5) +
-  ggtitle(paste("correlation = ", round(cor(dat$X, dat$Y), 2))) +  
-  theme(plot.title = element_text(size = 8, face = "bold"))
+  ggtitle(paste("correlation = ", round(cor(dat$X, dat$Y), 2))) 
 
 ## second plot
 means <- tbl_df(Reduce(rbind, means)) %>% setNames(c("x","y")) %>%
@@ -54,8 +53,7 @@ corrs <- dat %>% group_by(Z) %>% summarize(cor = cor(X,Y)) %>% .$cor
 
 p <- dat %>% ggplot(aes(X, Y, color = Z)) + 
   geom_point(show.legend = FALSE, alpha = 0.5) +
-  ggtitle(paste("correlations =",  paste(signif(corrs,2), collapse=" "))) +  
-  theme(plot.title = element_text(size = 8, face = "bold"))
+  ggtitle(paste("correlations =",  paste(signif(corrs,2), collapse=" ")))
 p
 
 ## third plot
@@ -392,7 +390,7 @@ system(paste0("cd ",path,";convert -loop 0 -delay 50 *.png rf.gif; mv rf.gif ",g
 
 # Ecological Fallacy
 
-After sharing the Simpson's paradox, a couple of people asked me if it was the same thing as the ecological fallacy. These two are different. The ecological fallacy is when we extrapolate high correlation seen for the average of strata to individuals. To illustrate this I used data from [gapminder](http://gapminder.org) included in the `dslabs` package. It shows logistic transformed infant survival rates versus log daily income. I start by showing a very high correlation at the region level and a lower correlation at the individual country level. This is because there is country to country variability within region.
+After sharing the Simpson's Paradox gif, a couple of people asked me if this was the same as the ecological fallacy. These two are different. The ecological fallacy is when we extrapolate high correlation seen for the average of strata to individuals. To illustrate this I used data from [gapminder](http://gapminder.org) included in the `dslabs` package. It shows logistic transformed infant survival rates versus log daily income. I start by showing a very high correlation at the region level and a lower correlation at the individual country level. This is because there is country to country variability within region.
 
 
 ```{r, echo = FALSE, fig.align='center'}
