@@ -48,7 +48,8 @@ p &lt;- dat %&gt;% ggplot(aes(X, Y, color = Z)) +
 p
 
 ## third plot
-p + annotate(&quot;text&quot;, x = means$x, y = means$y, label = paste(&quot;Z=&quot;, means$z), cex = 5)  </code></pre>
+p + annotate(&quot;text&quot;, x = means$x, y = means$y, 
+             label = paste(&quot;Z=&quot;, means$z), cex = 5)  </code></pre>
 </div>
 <div id="loess" class="section level1">
 <h1>Loess</h1>
@@ -63,10 +64,7 @@ data(SpikeIn95)
 
 ## get M and A for two arrays
 spms &lt;- pm(SpikeIn95)
-spd &lt;- pData(SpikeIn95)
 i &lt;- 10; j  &lt;- 9 ## Pick two samples that show a non-linear relationship
-siNames &lt;- colnames(spd)
-siNames &lt;- siNames[which(spd[i,]/spd[j,]==2)] ##show probes with expected FC=2
 M &lt;- log2(spms[,i]) - log2(spms[,j])
 A &lt;- (log2(spms[,i]) + log2(spms[,j]))/2
 o &lt;- order(A)
@@ -81,7 +79,6 @@ centers &lt;- seq(min(a),max(a),0.1)
 windowSize &lt;- 1.5
 smooth &lt;- rep(NA,length(centers))
 library(animation)
-##This will generate a bunch of files and overwrite loess.gif if it exists
 saveGIF({
   for(i in seq(along=centers)){
     center &lt;- centers[i]
