@@ -1,0 +1,43 @@
+---
+title: Simple Queue Package for R
+author: Roger Peng
+date: '2017-08-28'
+slug: simple-queue-package-for-r
+---
+
+
+
+<p>I recently coded up a simple package that implements a file-based queue abstract data type. This package was needed for a different package that I’m working on involving parallel processing (more on that in the near future). Actually, this othe package is <a href="https://twitter.com/rdpeng/status/900699027108282368">a project that I started almost nine years ago</a> but was never able to get off the ground. I tried to implement a queue interface in the <a href="https://github.com/rdpeng/filehash">filehash</a> package but it never served the purpose that I needed.</p>
+<p>Recently, I came across Rich FitzJohn’s <a href="https://github.com/richfitz/thor">thor</a> package, which provides an interface to the <a href="https://github.com/LMDB/lmdb">LMDB</a> database, which is a light-weight key-value style database. When I saw this, I realized that it was exactly what I needed because it supports transactions with blocking. So if multiple processes attempt to write to the database at once, it will block the other processes untill the currently writing one is finished, and then move on to the next one.</p>
+<p>The code for the <code>queue</code> package is <a href="https://github.com/rdpeng/queue">available on GitHub</a> and can be installed in the usual way via <code>devtools</code>:</p>
+<pre class="r"><code>devtools::install_github(&quot;rdpeng/queue&quot;)</code></pre>
+<p>The package just involves four functions:</p>
+<ul>
+<li><code>enqueue()</code>: add an element to the queue</li>
+<li><code>dequeue()</code>: remove an element from the queue (and return it)</li>
+<li><code>peek()</code>: return the next element of the queue (but don’t remove it)</li>
+<li><code>is_empty()</code>: is the queue empty:</li>
+</ul>
+<p>There are also functions</p>
+<ul>
+<li><code>create_Q</code>: create the queue and associated files on the disk</li>
+<li><code>init_Q</code>: initialize a queue that has been previously created</li>
+</ul>
+<p>Everything is implemented as S3 classes and methods. Queues are just sub-directories on the filesystem that contain some metadata for the underlying LMDB database.</p>
+<p>You can create a queue with the <code>create_Q()</code> function.</p>
+<pre class="r"><code>library(queue)
+x &lt;- create_Q(&quot;testq&quot;)
+is_empty(x)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>You can then add arbitrary objects to the queue with <code>enqueue()</code>. Behind the scenes, objects are <code>serialize()</code>-ed.</p>
+<pre class="r"><code>enqueue(x, &quot;hello&quot;)
+enqueue(x, 1)
+peek(x)</code></pre>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<p>Finally, you can remove an object from the front of the queue with <code>dequeue()</code>.</p>
+<pre class="r"><code>obj &lt;- dequeue(x)
+obj</code></pre>
+<pre><code>## [1] &quot;hello&quot;</code></pre>
+<pre class="r"><code>peek(x)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>The implementation is pretty basic right now but the guts of it are there. I don’t plan to add any more features, but hopefully will round out the documentation and add some tests.</p>

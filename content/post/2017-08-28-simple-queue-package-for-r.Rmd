@@ -1,0 +1,71 @@
+---
+title: Simple Queue Package for R
+author: Roger Peng
+date: '2017-08-28'
+slug: simple-queue-package-for-r
+---
+
+
+I recently coded up a simple package that implements a file-based queue abstract data type. This package was needed for a different package that I'm working on involving parallel processing (more on that in the near future). Actually, this othe package is [a project that I started almost nine years ago](https://twitter.com/rdpeng/status/900699027108282368) but was never able to get off the ground. I tried to implement a queue interface in the [filehash](https://github.com/rdpeng/filehash) package but it never served the purpose that I needed.
+
+Recently, I came across Rich FitzJohn's [thor](https://github.com/richfitz/thor) package, which provides an interface to the [LMDB](https://github.com/LMDB/lmdb) database, which is a light-weight key-value style database. When I saw this, I realized that it was exactly what I needed because it supports transactions with blocking. So if multiple processes attempt to write to the database at once, it will block the other processes untill the currently writing one is finished, and then move on to the next one. 
+
+The code for the `queue` package is [available on GitHub](https://github.com/rdpeng/queue) and can be installed in the usual way via `devtools`:
+
+```r
+devtools::install_github("rdpeng/queue")
+```
+
+The package just involves four functions:
+
+* `enqueue()`: add an element to the queue
+* `dequeue()`: remove an element from the queue (and return it)
+* `peek()`: return the next element of the queue (but don't remove it)
+* `is_empty()`: is the queue empty:
+
+There are also functions 
+
+* `create_Q`: create the queue and associated files on the disk
+* `init_Q`: initialize a queue that has been previously created
+
+Everything is implemented as S3 classes and methods. Queues are just sub-directories on the filesystem that contain some metadata for the underlying LMDB database. 
+
+You can create a queue with the `create_Q()` function.
+
+```{r}
+library(queue)
+x <- create_Q("testq")
+is_empty(x)
+```
+
+You can then add arbitrary objects to the queue with `enqueue()`. Behind the scenes, objects are `serialize()`-ed. 
+
+```{r}
+enqueue(x, "hello")
+enqueue(x, 1)
+peek(x)
+```
+
+Finally, you can remove an object from the front of the queue with `dequeue()`. 
+
+
+```{r}
+obj <- dequeue(x)
+obj
+peek(x)
+```
+
+The implementation is pretty basic right now but the guts of it are there. I don't plan to add any more features, but hopefully will round out the documentation and add some tests.
+
+
+
+
+
+
+
+
+
+
+
+
+
