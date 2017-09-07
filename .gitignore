@@ -5,3 +5,4 @@
 blogdown
 public
 .httr-oauth
+.DS_Store
