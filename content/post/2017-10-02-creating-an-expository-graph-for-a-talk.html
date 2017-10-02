@@ -1,0 +1,158 @@
+---
+title: Creating an expository graph for a talk
+author: Jeff Leek
+date: '2017-10-02'
+slug: creating-an-expository-graph-for-a-talk
+categories: []
+tags: []
+---
+
+
+
+<p>I’m co-teaching a <a href="http://jtleek.com/advdatasci/">data science class</a> at Johns Hopkins with <a href="http://johnmuschelli.com/">John Muschelli</a>. I gave the lectures on EDA and he just gave a lecture on how to create an <a href="http://jtleek.com/advdatasci/slides/09-expository-graphs-slides.html">“expository graph”</a>. When we teach the class an exploratory graph is the kind of graph you make for yourself just to try to understand a data set. An expository graph is one where you are trying to communicate information to someone else.</p>
+<p>When you are making an exploratory graph it is usually simple, with no axes, legends, fancy colors, or other effort to make it pretty, understandable and clear. John has a <a href="https://hopstat.wordpress.com/2016/02/18/how-i-build-up-a-ggplot2-figure/">great blog post</a> on how to build up a figure that is expository.</p>
+<p>Recently I gave a <a href="https://docs.google.com/presentation/d/1hzdSDaPPSE9xUYZHhOVfQIRPPdwe0A9SdE7QDsK3bOA/edit?usp=sharing">talk at McGill University</a> and needed to create a plot for the talk. I figured one more example is always better for everything, so I thought I’d go through my process here.</p>
+<p>I wanted to show the p-value distribution from the tidy-pvals package. So first I loaded the data:</p>
+<pre class="r"><code>library(tidypvals)
+library(ggridges)</code></pre>
+<pre><code>## Loading required package: ggplot2</code></pre>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(forcats)
+data(allp)</code></pre>
+<p>I knew I wanted to use the <a href="https://cran.r-project.org/web/packages/ggridges/index.html">ggridges</a> package so I read the docs and started with the easiest version:</p>
+<pre class="r"><code>allp %&gt;% 
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges()</code></pre>
+<pre><code>## Picking joint bandwidth of 0.00413</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>Right away I saw there were some problems here. First of all, clearly a p-value greater than one shouldn’t be in there, so that was a mistake. I also don’t like that you can’t really see the values because most of the action is near zero.</p>
+<p>So let’s fix the x-axis a bit. I spent a few minutes fiddling and decided I just wanted to see the values between 0 and 0.25.</p>
+<pre class="r"><code>allp %&gt;% 
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges() + 
+  xlim(c(0,0.25))</code></pre>
+<pre><code>## Picking joint bandwidth of 0.00401</code></pre>
+<pre><code>## Warning: Removed 359521 rows containing non-finite values
+## (stat_density_ridges).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>Ok that’s better, but I don’t really like the grey background so let’s pick a different background color</p>
+<pre class="r"><code>allp %&gt;% 
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges() + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Picking joint bandwidth of 0.00401</code></pre>
+<pre><code>## Warning: Removed 359521 rows containing non-finite values
+## (stat_density_ridges).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>That’s a bit prettier, but we see that field is sometimes NA so we need to remove those values.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges() + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Picking joint bandwidth of 0.00404</code></pre>
+<pre><code>## Warning: Removed 349629 rows containing non-finite values
+## (stat_density_ridges).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>And actually the density plots are a little weird for p-values, lets see if we can turn them into something a little more like a histogram, which I think fits this data type better. To do that we have to change the parameters in <code>geom_density_ridges</code>.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges(stat = &quot;binline&quot;) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## `stat_binline()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>## Warning: Removed 349629 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Ok but I think it would look better if it was a little bit higher resolution, let’s up the number of bins</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  ggplot(aes(x = pvalue, y = field)) +
+    geom_density_ridges(stat = &quot;binline&quot;,bins=50) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Warning: Removed 349629 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Ok but as people have pointed out the spike at 0.05 is due to censoring (p-values reported like <span class="math inline">\(P &lt; 0.05\)</span>). So let’s break it down by operator.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,bins=50) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Warning: Removed 349629 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Ok there aren’t that many greater than p-values and it makes the plot messy so let’s drop those</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  filter(operator != &quot;greaterthan&quot;) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,bins=50) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Warning: Removed 332965 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>The histograms overlap a bit so let’s alpha blend the colors.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  filter(operator != &quot;greaterthan&quot;) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,
+                        bins=50,alpha=0.25) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Warning: Removed 332965 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>There is some funkiness in how the histogram bins are computed so I went to the internet and figured out I needed to set the boundary at 0 and make the bins be closed on the right.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  filter(operator != &quot;greaterthan&quot;) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,
+                        bins=50,alpha=0.25,
+                        boundary=0,closed=&quot;right&quot;) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE)</code></pre>
+<pre><code>## Warning: Removed 332965 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Now we make sure that there isn’t wasted space on the y-axis by using the expand argument.</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  filter(operator != &quot;greaterthan&quot;) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,
+                        bins=50,alpha=0.25,
+                        boundary=0,closed=&quot;right&quot;) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE) + 
+  scale_y_discrete(expand=c(0,0))</code></pre>
+<pre><code>## Warning: Removed 332965 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Remove the baseline from the plot for true ggridges coolness</p>
+<pre class="r"><code>allp %&gt;% 
+  filter(!is.na(field)) %&gt;%
+  filter(operator != &quot;greaterthan&quot;) %&gt;%
+  ggplot(aes(x = pvalue, y = field,fill=operator)) +
+    geom_density_ridges(stat = &quot;binline&quot;,
+                        bins=50,alpha=0.25,
+                        boundary=0,closed=&quot;right&quot;,
+                        draw_baseline=FALSE) + 
+  xlim(c(0,0.25)) + 
+  theme_ridges(grid = FALSE) + 
+  scale_y_discrete(expand=c(0,0))</code></pre>
+<pre><code>## Warning: Removed 332965 rows containing non-finite values (stat_binline).</code></pre>
+<p><img src="/post/2017-10-02-creating-an-expository-graph-for-a-talk_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>That’s definitely not a perfect plot, but it worked for my talk and was at least able to communicate a couple of the key points (about variation by field, variation by operator, and spikes at critical values).</p>
+<p>If I was going beyond the talk I’d probably reduce the number of fields displayed or really increase the size of the plot. I’d probably make the bin width even smaller and I’d add a title. I’d also probably clean up the “greaterthan” and “lessthan” to be “Greater than” and “Less than”.</p>
+<p>Regardless, I’m always surprised how much work it takes to go from an exploratory plot I’m just looking at myself to one I’d show to other people.</p>
