@@ -1,6 +1,7 @@
 options(
   servr.daemon = TRUE, blogdown.yaml.empty = FALSE,
-  blogdown.publishDir = '../simplystats-public'
+  blogdown.publishDir = '../simplystats-public',
+  defaultPackages = c(getOption("defaultPackages"), "blogdown")
 )
 
 local({
