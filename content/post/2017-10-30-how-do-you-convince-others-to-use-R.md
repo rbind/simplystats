@@ -14,14 +14,19 @@ The topic came up in my mind because I’ve found that I’ve had to change the 
 As part of the introduction to the topic, I talked about how I used to convince others to use R. Bear in mind, this was almost 20 years ago and the majority of people I was talking to were using SAS, Stata, SPSS, Excel, or some other commercial package. These were largely interactive packages, perhaps with graphical user interfaces, designed to do more or less traditional statistical analyses. My pitch usually involved three things:
 
 1. **Free**. R was both free as in cost and free as in [free software](http://www.fsf.org). The free cost part made it a highly accessible package and the free software part allowed for anyone to tinker with the package, inspect its code, and make improvements.
-  2. **Graphics**.  R was able to produce high quality “publication ready” graphics and it gave you detailed control over all the graphical elements. S-PLUS could also do this but S-PLUS didn’t come with the free part mentioned above.
-  3. **Programming language**. Unlike packages like SAS, Stata, or SPSS, R came with a robust and sophisticated Lisp-like programming language that was well-suited for data analysis applications. In addition, you could use it to build packages that could extend the core R system.
+
+2. **Graphics**.  R was able to produce high quality “publication ready” graphics and it gave you detailed control over all the graphical elements. S-PLUS could also do this but S-PLUS didn’t come with the free part mentioned above.
+
+3. **Programming language**. Unlike packages like SAS, Stata, or SPSS, R came with a robust and sophisticated Lisp-like programming language that was well-suited for data analysis applications. In addition, you could use it to build packages that could extend the core R system.
 
 Much has changed since those early days and I’ve varied my pitch quite a bit to focus on a few different things (that didn’t exist back then). In particular, the audience has changed—I talk to many more people who are just getting started in data analysis and therefore are a bit more open-minded about which software to use. Also, python has come on the scene as a viable alternative to R for data science and so there are even more arguments to consider. Some of the things I focus on now are
 
 1. **Reproducibility  and Reporting**. With the development of knitr and its combination with R Markdown, the writing of reproducible reports was made infinitely easier. (Markdown itself, probably deserves its own discussion, but it’s not specifically R-related.)
+
 2. **RStudio**. The development of the RStudio IDE has made getting started with R much easier. Having a powerful IDE was important to me for learning other languages and I’m glad R finally has something solid for itself. RStudio has significantly simplified the development of R packages via devtools and roxygen2. While it’s not yet perfect, these tools have changed what used to be a labor-intensive and finicky process into a more manageable and easier to learn work flow.
+
 3. **Graphics**. R still has the ability to make great data graphics and with the introduction of `ggplot2`, it has become easier to make good graphics.
+
 4. **R Packages and Community**. With over 10,000 packages on CRAN alone, [there’s pretty much a package to do anything](https://youtu.be/yhTerzNFLbo). More importantly, the people contributing those packages and the greater R community have expanded tremendously over time, bringing in new users and pushing R to be useful in more applications. Eveyr year now there are probably hundreds if not thousands of meetups, conferences, seminars, and workshops all around the world, all related to R.
 
 ## Discussion
