@@ -64,8 +64,7 @@ One famous example of how seemingly equivalent methods can diverge is [Anscombe'
 
 The scatterplots in Anscombe's Quartet allow us to reason about the data in a way that the correlation coefficient alone does not. They tell us more about what is going on with the data and aid us in interpreting the correlation coefficient. In this case, I think an analysis that includes the scatterplots is a *better data analysis* than one that does not. Of course, the scatterplots alone may not be sufficient because they don't actually give you a number, which may be needed in subsequent analyses. But there's nothing that says you can't do both.
 
-
-
+This is more than simply saying that you should make plots (although you *should*). When you run a simple linear regression, there are two contributing parts: (a) the data and (b) the assumption of linearity. Reporting the regression coefficient gives you a sense of the strength of the relationship between the predictor and the response, but does that relationship arise from the data or from the model's assumptions? Any analysis that can help the reader elicit the relative contributions of those two components is better than an analysis that doesn't.
 
 
 
