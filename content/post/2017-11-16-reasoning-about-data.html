@@ -1,0 +1,70 @@
+---
+title: Reasoning About Data
+author: Roger Peng
+date: '2017-11-16'
+slug: reasoning-about-data
+---
+
+
+
+<p>In my ongoing discussion in my mind about <a href="https://youtu.be/qFtJaq4TlqE">what makes for a good data analysis</a>, one of the ideas that keeps coming back to me is this notion of being able to “reason about the data”. The idea here is that it’s important that a data analysis allow you to understand how the <strong>data</strong>, as opposed to other aspects of an analysis like assumptions or models, played a role in producing the outputs. I think for a given problems, some kinds of analysis do a better job of that than others.</p>
+<div id="to-collect-garbage-or-not" class="section level2">
+<h2>To Collect Garbage or Not?</h2>
+<p>Programmers talk a lot about the importance of being able to “reason about code”, in part so that you can understand what’s going on and perhaps make modifications in the future. If there are two software solutions that produce equivalent results, one might prefer the one that allows you to reason about the code and about what the software is doing, even if it is less efficient. Aside from having a certain common sense logic to it, there are also important implications for maintaining the code.</p>
+<p>Along these lines, a while back I was listening to one of my favorite podcasts, the <a href="http://atp.fm">Accidental Tech Podcast</a>, when <a href="https://twitter.com/clattner_llvm">Chris Lattner</a> made a <a href="http://atp.fm/205-chris-lattner-interview-transcript/">surprise appearance</a>. Chris previously created LLVM and worked at Apple where he developed the Swift programming language. On this episode, around the 1 hour and 56 minute mark, Lattner and John Siracusa get into a discussion about memory management models for programming languages. In particular, Siracusa asks Lattner to discuss garbage collection versus automatic reference counting (ARC), a system that Lattner developed while working at Apple.</p>
+<blockquote>
+<p><strong>John Siracusa</strong>: Objective-C had garbage collection, as you mentioned. Eventually, Objective-C dropped the garbage collection and got ARC [Automatic Reference Counting], and of course, Swift doesn’t have garbage collection at all. Can you talk about the trade-offs there and why Swift is the way it is?</p>
+</blockquote>
+<p>Just as a quick summary, <a href="https://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage collection</a> is a system by which programmers can allocate memory for objects and not have to worry about de-allocating the memory when their done with it. The idea is that a separate process called the garbage collector periodically goes through all the memory that a program is using and checks to see if it still being used by some aspect of the program. If the memory is not being used, the garbage collector marks the memory as available so that it can be allocated for something else. If the garbage collector never ran, then eventually all the memory would get allocated and nothing would free up.</p>
+<p>Here’s how Siracusa sells it:</p>
+<blockquote>
+<p><strong>Siracusa</strong>: Well, the idea [is] that memory management is completely out of the hands of the programmer, and that some magical fairy behind the scenes will make it all good for you. What you’re giving up, as you mentioned before…you lack some amount of control…</p>
+</blockquote>
+<p>If you use R, you’re using an application that uses a garbage collector (originally written by <a href="https://twitter.com/LukeTierney4">Luke Tierney</a>). If you’ve ever noticed that sometimes you run an operation in R that normally takes a short amount of time and it takes an unusually long time to run, that’s often because R had to stop for a second or two to let the garbage collector run in the background. This “stutter” is the bane of all applications that use garbage collection. You can actually force the garbage collector to run in R by calling the <code>gc()</code> function (although you should never have to do that in practice). I don’t think the “stutter” is a big issue in R, but it can be a big problem for applications that demand a fluid user experience.</p>
+<p>One downside of garbage collection is that it addes a random aspect to program operation. Since you never know when the garbage collector is going to get called (that is based on runtime conditions), you never know when your program is going to be halted to allow the garbage collector to do its thing. The upside though is that programmers don’t have to worry about memory management, which is often the source of nasty bugs.</p>
+<p><a href="https://en.wikipedia.org/wiki/Automatic_Reference_Counting">Automatic reference counting</a> is essentially a fancier version of manual memory management, where programmers have to manual allocate and deallocate. But instead, with ARC the <em>compiler</em> does most of the work for you. In order to allow for this, certain restrictions must be placed on the language to allow the compiler to analyze programs and determine whether certain blocks of memory will be in use at a given time. The advantage here is that the analysis occurs at compile time, thus allowing for the running of a program to be deterministic. The downside, of course, is that the programmer has to do more deliberate thinking about memory.</p>
+<p>A key question then, as posed by Lattner is this:</p>
+<blockquote>
+<p><strong>Chris Lattner</strong>: You said GC [garbage collection] means that you don’t have to think about memory. Is that true?</p>
+</blockquote>
+<p>Frankly, before hearing the rest, I would have said “yes, it’s true”. But Lattner continues (emphasis added):</p>
+<blockquote>
+<p><strong>Lattner</strong>: The stutter problem, to me, isn’t really the issue, even though that’s what GC-haters will bring up all the time. It’s more about <strong>being able to reason about when the memory goes away</strong>. The most important aspect of that is that ARC gets rid of finalizers.</p>
+</blockquote>
+<blockquote>
+<p>If you use a garbage-collected language, you use finalizers. Finalizers are the thing that gets run when your object gets destroyed. Finalizers have so many problems that there are entire bodies of work talking about how to work around problems with finalizers.</p>
+</blockquote>
+<blockquote>
+<p>For example, the finalizer gets run on the wrong thread, it has to get run multiple times, the object can get resurrected while the finalizer’s running. It happens non-deterministically later. You can’t count on it, and so you can’t use it for resource management for database handles and things like that, for example. There are so many problems with finalizers that ARC just defines [it] away by having deterministic destruction.</p>
+</blockquote>
+<p>Even without knowing what a finalizer is, it’s clear that there’s a lot of complexity involved with using a garbage collector. Lattner’s final point is critical:</p>
+<blockquote>
+<p><strong>Lattner</strong>: There’s this question of if you’re building a large scale system, do you want people to “never think about memory?” Do you want them to think about memory all the time, like they did in Objective-C’s classic manual retain-and-release? Or do you want something in the middle?</p>
+</blockquote>
+<p>His argument is that ARC is that “something in the middle”.</p>
+<blockquote>
+<p><strong>Lattner</strong>: I think that ARC strikes a really interesting balance, whether it’s in Objective-C or Swift. I look at manual retain-and-release as being a very imperative style of memory management…where you’re telling the code, line by line…this is what you should do at this point in time.</p>
+</blockquote>
+<blockquote>
+<p>ARC then takes that model and bubbles it up a big step, and it makes it be a very declarative model…. The cool thing about that to me is that not only does it get rid of the mechanics of maintaining reference counting and define away tons of bugs by doing that, it also means that it is now explicit in your code what your intention was. That’s something that people who maintain your code benefit from.</p>
+</blockquote>
+<p>The promise of garbage collection is clear: <em>the programmer doesn’t have to think about memory</em>. Lattner’s criticism is that when building large-scale systems the programmer <em>always</em> has to think about memory, and as such, garbage collection makes it <em>harder</em> to do so. The goal of ARC is to make it easier for other people to understand your code and to allow programmers to reason clearly about memory.</p>
+</div>
+<div id="what-about-data" class="section level2">
+<h2>What About Data?</h2>
+<p>What does any of this have to do with data analysis? Well, nothing, directly. But I think there is an analogous spectrum of techniques in data analysis. In programming, one can think of garbage collection (“no thinking”) on one end of the spectrum and manual memory management (“constantly thinking”) on the other end. With data analysis, there are certain black box-type procedures proposed on one end and, well, just an uncoordinated jumble of procedures on the other end of the spectrum.</p>
+<p>When I mention “black box-type” procedures, I’m not referring to machine learning prediction models, which are often derided as “black boxes” because of their complexity. Rather, I’m thinking of a way of doing data analysis that focuses primarily on outcomes and results. With these kinds of approaches, the discussion is almost entirely focused on whether the outcomes are “correct” or not, which I think is misguided in many scientific contexts. With prediction models, at least initially, it makes sense to focus on outcomes. But with data analysis, we often want to know more about how the data are connected to those outcomes.</p>
+<p>One famous example of how seemingly equivalent methods can diverge is <a href="https://en.wikipedia.org/wiki/Anscombe&#39;s_quartet">Anscombe’s Quartet</a>. Anscombe presented four datasets that have exactly the same summary statistics but appear very different when plotted. In particular, the correlations for the four datasets are the same. My take from his paper is that computing a correlation coefficient provides a <em>result</em> and the correlation will provide you some information about the data. We could have endless discussions about whether this result is correct, whether it truly exists in the population, whether it might replicate in the next study, or whether we should have used some other correlation metric. But none of that matters once you make a scatterplot of the data. The scatterplots show you <em>how</em> the data inform the result. In this case, there are four different ways in which the data can inform a given correlation coefficient, some of which are perhaps more concerning than others.</p>
+<p>The scatterplots in Anscombe’s Quartet allow us to reason about the data in a way that the correlation coefficient alone does not. They tell us more about what is going on with the data and aid us in interpreting the correlation coefficient. In this case, I think an analysis that includes the scatterplots is a <em>better data analysis</em> than one that does not. Of course, the scatterplots alone may not be sufficient because they don’t actually give you a number, which may be needed in subsequent analyses. But there’s nothing that says you can’t do both.</p>
+</div>
+<div id="evaluating-data-analysis" class="section level2">
+<h2>Evaluating Data Analysis</h2>
+<p>Interestingly, Anscombe laid out four “myths” that he hoped to debunk:</p>
+<ol style="list-style-type: decimal">
+<li><p>Numerical calculations are exact, but graphs are rough;</p></li>
+<li><p>For any particular kind of statistical data there is just one set of calculations constituting a correct statistical analysis;</p></li>
+<li><p>Performing intricate calculations is virtuous, whereas actually looking at the data is cheating.</p></li>
+</ol>
+<p>Unfortunately, I think these three ideas are alive and well in much of the world of data analysis, especially points 2 and 3. In discussions with various people about what makes for a good data analysis, I’ve found there’s a common focus on “correctness”. For example, if a data analysis leads to a result that later replicates, then the original analysis is a good one. It’s hard to be against correctness, but I think it’s misguided. In particular, the correctness of a scientific claim cannot usually be evaluated with a single study, so this would imply that you cannot evaluate the data analysis that went into making that claim. If a replication study occurs 10 years later, that would imply that we will be waiting 10 years to determine if a data analysis is good.</p>
+<p>I think it should be possible to evaluate the quality of a data analysis once it’s done, not 10 years later when a replication study verifies a scientific claim. One way to do so is to ask whether the analysis allows us to reason about the data relative to another possible analysis. If we can answer the question, “How do the data in this study inform the result?” then I think we are in good shape.</p>
+</div>
