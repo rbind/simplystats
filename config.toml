@@ -4,6 +4,7 @@ title = "Simply Statistics"
 theme = "blackburn"
 author = "Rafa Irizarry, Roger Peng, and Jeff Leek"
 copyright = "&copy; 2011 - 2017. All rights reserved."
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 paginate = 10
 
 [permalinks]
