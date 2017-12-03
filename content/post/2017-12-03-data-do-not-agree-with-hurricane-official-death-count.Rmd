@@ -1,0 +1,86 @@
+---
+title: 'Hurricane María official death count in conflict with mortality data'
+author: Rafael Irizarry
+date: '2017-12-03'
+slug: data-do-not-agree-with-hurricane-official-death-count
+---
+
+A recent [preprint](https://osf.io/preprints/socarxiv/s7dmu) by Alexis R. Santos-Lozada and Jeffrey T. Howard concludes that
+
+>>The mortality burden may [be] higher than official counts, and may exceed the current official death toll by a factor of 10.
+
+The authors used monthly death records from the Puerto Rico Vital Statistics system from 2010 to 2016. Although data for 2017 was apparently not available, they extracted data from a statement made by Héctor Pesquera, the Secretary of Public Safety:
+
+>> The number of deaths for September 2017 is 2,838, with 95% of the deaths processed by the Puerto Rico Department of Health.”
+
+Their final conclusions rely on assumptions and methodology needed to predict October figures. But just by looking at the data, we can see that the official figure of 55 deaths appears to be way off. 
+
+```{r, echo=FALSE, message=FALSE, out.width = "100%"}
+library(tidyverse)
+library(stringr)
+library(pdftools)
+library(lubridate)
+library(ggrepel)
+library(dslabs)
+ds_theme_set()
+txt <- pdf_text("~/myDocuments/tmp/Excess_mortality_due_to_Hurricane_Maria_to_be_measured_using_a_simple_method.pdf")[4]
+tmp <- str_split(txt, "\n")[[1]][2:14] %>%
+  str_replace_all("\\s([A-Z])", "\\1") %>%
+  str_replace("\\s-\\s", "-") %>%
+  str_split("\\s+", simplify = TRUE) 
+tmp[1,1] <- "Month"
+the_names <- tmp[1,]
+tab <- tmp %>% 
+  tbl_df %>% 
+  slice(-1) %>% 
+  mutate_all(parse_guess) %>% 
+  setNames(the_names) %>%
+  select(1:9) %>%
+  gather(Year, Deaths, -Month) %>%
+  mutate(Month = factor(Month, levels = month.name),
+         Year = factor(Year, levels = c("Average", 2010:2016)))
+
+## 2017 data point
+annotate <- data_frame(x = 9, y = 2838, label = "September 2017")
+sept_avg <- tab %>% filter(Month == "September") %>% .$Deaths %>% mean()
+annotate_resid <- data_frame(x = 9, y = 2838-sept_avg, label = "September 2017")
+
+### create the plot
+tab %>% filter(Year != "Average") %>%
+  group_by(Month) %>%
+  mutate(resid = Deaths - mean(Deaths)) %>%
+  ungroup %>%
+  ggplot() +
+  geom_line(aes(as.numeric(Month), resid, 
+                lty=Year), col = "darkgrey") +
+  scale_x_continuous(breaks = 1:12, labels=levels(tab$Month))+ 
+  scale_y_continuous(breaks=seq(-300, 500, 100)) + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  xlab("Month") +
+  ylab("Deaths above monthly average") + 
+  geom_point(aes(x,y), color = "blue", data = annotate_resid) +
+  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate_resid) 
+```
+
+
+To create this plot, I downloaded the Microsoft Word version of the preprint, converted it to PDF, then scraped the data from Table 1. Because there is month-to-month variability in total deaths in Puerto Rico, I computed the difference between each data point and the average for their respective month.
+The September 2017 data point is a clear outlier, 455 deaths above average, and is well beyond 55 deaths above the largest deviation from the monthly average. Keep in mind that Hurricane María hit Puerto Rico on September 20th, so only 10 days account for the observed difference. The official figure includes September and October so it covers at least 40 days. 
+
+Below is a plot of the total deaths, which the preprint shows in Figure 2.
+```{r, echo=FALSE,  out.width = "100%"}
+tab %>% ggplot() +
+  geom_line(aes(as.numeric(Month), Deaths, 
+                lty = Year, 
+                color=I(ifelse(Year=="Average","black","grey"))))+
+  scale_x_continuous(breaks = 1:12, labels=levels(tab$Month))+ 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  xlab("Month") +
+  ylab("Total deaths") + 
+  geom_point(aes(x,y), color = "blue", data = annotate) +
+  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate) 
+```
+
+Note that 55 was the official figure at the time the preprint was written.
+
+
+
