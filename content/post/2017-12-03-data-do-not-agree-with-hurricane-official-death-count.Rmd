@@ -1,5 +1,5 @@
 ---
-title: 'Data do not agree with hurricane María official death count'
+title: 'Hurricane María official death count in conflict with mortality data'
 author: Rafael Irizarry
 date: '2017-12-03'
 slug: data-do-not-agree-with-hurricane-official-death-count
@@ -7,15 +7,15 @@ slug: data-do-not-agree-with-hurricane-official-death-count
 
 A recent [preprint](https://osf.io/preprints/socarxiv/s7dmu) by Alexis R. Santos-Lozada and Jeffrey T. Howard concludes that
 
->>The mortality burden may higher than official counts, and may exceed the current official death toll by a factor of 10.
+>>The mortality burden may [be] higher than official counts, and may exceed the current official death toll by a factor of 10.
 
-They used monthly data from death records from the Puerto Rico Vital Statistics system from 2010 to 2016. Although data for 2017 is not included, they extract data from a statement made by Héctor Pesquera, the Secretary of Public Safety:
+The authors used monthly death records from the Puerto Rico Vital Statistics system from 2010 to 2016. Although data for 2017 was apparently not available, they extracted data from a statement made by Héctor Pesquera, the Secretary of Public Safety:
 
 >> The number of deaths for September 2017 is 2,838, with 95% of the deaths processed by the Puerto Rico Department of Health.”
 
-Their conclusions rely on assumptions and methodology needed to predict October figures. But just by looking at the data we can see that the official figure of 55 deaths appears to be way off. 
+Their final conclusions rely on assumptions and methodology needed to predict October figures. But just by looking at the data, we can see that the official figure of 55 deaths appears to be way off. 
 
-```{r, echo=FALSE, message=FALSE}
+```{r, echo=FALSE, message=FALSE, out.width = "100%"}
 library(tidyverse)
 library(stringr)
 library(pdftools)
@@ -61,11 +61,13 @@ tab %>% filter(Year != "Average") %>%
   geom_point(aes(x,y), color = "blue", data = annotate_resid) +
   geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate_resid) 
 ```
-To create this plot, I downloaded the Microsoft Word version of the preprint, converted it to PDF, then scraped the data from Table 1. Because there is month-to-month variability in total deaths in Puerto Rico I computed the difference between each data point and the monthly average. 
-The September 2017 data point is a clear outlier and it is well beyond 55 deaths above the largest deviation from the montly average. 
 
-Here is a plot of the original data, which the preprint shows in Figure 2:
-```{r, echo=FALSE}
+
+To create this plot, I downloaded the Microsoft Word version of the preprint, converted it to PDF, then scraped the data from Table 1. Because there is month-to-month variability in total deaths in Puerto Rico, I computed the difference between each data point and the average for their respective month.
+The September 2017 data point is a clear outlier, 455 deaths above average, and is well beyond 55 deaths above the largest deviation from the monthly average. Keep in mind that Hurricane María hit Puerto Rico on September 20th, so only 10 days account for the observed difference. The official figure includes September and October so it covers at least 40 days. 
+
+Below is a plot of the total deaths, which the preprint shows in Figure 2.
+```{r, echo=FALSE,  out.width = "100%"}
 tab %>% ggplot() +
   geom_line(aes(as.numeric(Month), Deaths, 
                 lty = Year, 
@@ -78,7 +80,7 @@ tab %>% ggplot() +
   geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate) 
 ```
 
-
+Note that 55 was the official figure at the time the preprint was written.
 
 
 
