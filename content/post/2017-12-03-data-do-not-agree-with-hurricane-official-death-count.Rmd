@@ -57,9 +57,10 @@ tab %>% filter(Year != "Average") %>%
   scale_y_continuous(breaks=seq(-300, 500, 100)) + 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   xlab("Month") +
-  ylab("Deaths above monthly average") + 
+  ylab("Deaths above monthly average in Puerto Rico") + 
   geom_point(aes(x,y), color = "blue", data = annotate_resid) +
-  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate_resid) 
+  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate_resid) +
+  ggtitle("Death toll after Hurricane María is well above official figure of 55")
 ```
 
 
@@ -75,9 +76,10 @@ tab %>% ggplot() +
   scale_x_continuous(breaks = 1:12, labels=levels(tab$Month))+ 
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   xlab("Month") +
-  ylab("Total deaths") + 
+  ylab("Total deaths in Puerto Rico") + 
   geom_point(aes(x,y), color = "blue", data = annotate) +
-  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate) 
+  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate) +
+  ggtitle("Puerto Rico mortality data 2010-2016")
 ```
 
 Note that 55 was the official figure at the time the preprint was written.
