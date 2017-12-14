@@ -40,9 +40,9 @@ tab <- tmp %>%
   mutate(Month = factor(Month, levels = month.name),
          Year = factor(Year, levels = c("Average", 2010:2016)))
 
-## 2017 data point
+## 2017 data point 
 annotate <- data_frame(x = 9, y = 2838, label = "September 2017")
-sept_avg <- tab %>% filter(Month == "September") %>% .$Deaths %>% mean()
+sept_avg <- tab %>% filter(Year != "Average") %>% filter(Month == "September") %>% .$Deaths %>% mean()
 annotate_resid <- data_frame(x = 9, y = 2838-sept_avg, label = "September 2017")
 
 ### create the plot
