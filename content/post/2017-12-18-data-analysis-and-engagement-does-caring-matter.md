@@ -1,7 +1,7 @@
 ---
-title: Data Analysis and Engagement - Does Caring Matter?
+title: Data Analysis and Engagement - Does Caring About the Analysis Matter?
 author: Roger Peng
-date: '2017-12-11'
+date: '2017-12-18'
 slug: data-analysis-and-engagement-does-caring-matter
 ---
 
