@@ -16,6 +16,7 @@ The authors used monthly death records from the Puerto Rico Vital Statistics sys
 Their final conclusions rely on assumptions and methodology needed to predict October figures. But just by looking at the data, we can see that the official figure of 55 deaths appears to be way off. 
 
 ```{r, echo=FALSE, message=FALSE, out.width = "100%"}
+#load libraries
 library(tidyverse)
 library(stringr)
 library(pdftools)
@@ -23,7 +24,14 @@ library(lubridate)
 library(ggrepel)
 library(dslabs)
 ds_theme_set()
-txt <- pdf_text("~/myDocuments/tmp/Excess_mortality_due_to_Hurricane_Maria_to_be_measured_using_a_simple_method.pdf")[4]
+```
+
+```{r, echo=FALSE, eval=FALSE}
+### This is not evaluated
+### To run this you need to download the original word file
+### covert to a pdf, and make filename path to that file
+filename <- "~/myDocuments/tmp/Excess_mortality_due_to_Hurricane_Maria_to_be_measured_using_a_simple_method.pdf"
+txt <- pdf_text(filename)[4]
 tmp <- str_split(txt, "\n")[[1]][2:14] %>%
   str_replace_all("\\s([A-Z])", "\\1") %>%
   str_replace("\\s-\\s", "-") %>%
@@ -39,7 +47,12 @@ tab <- tmp %>%
   gather(Year, Deaths, -Month) %>%
   mutate(Month = factor(Month, levels = month.name),
          Year = factor(Year, levels = c("Average", 2010:2016)))
+save("static/data/2017-12-03-hurricane-maria-deaths.rda")
+```
 
+```{r, echo=FALSE, message=FALSE, out.width = "100%"}
+## load rda created wtih pdf in code above
+load(url("https://simplystatistics.org/data/2017-12-03-hurricane-maria-deaths.rda"))
 ## 2017 data point 
 annotate <- data_frame(x = 9, y = 2838, label = "September 2017")
 sept_avg <- tab %>% filter(Year != "Average") %>% filter(Month == "September") %>% .$Deaths %>% mean()
