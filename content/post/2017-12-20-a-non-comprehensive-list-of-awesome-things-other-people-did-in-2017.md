@@ -43,6 +43,7 @@ _Editor's note: For the last few years I have made a list of awesome things that
 * There are times when I wonder whether Emma Pierson has created multiple AI copies of herself. How can one person write [so](https://www.wired.com/2017/04/hey-computer-scientists-stop-hating-humanities/), [many](https://arxiv.org/abs/1706.05678), [awesome](https://arxiv.org/abs/1702.08536), [things](https://arxiv.org/abs/1701.08230) in one year? 
 * Ben Haibe-Kains and colleagues put together a tour-de-force in reproducibility [with PharmacoDB](https://academic.oup.com/nar/advance-article/doi/10.1093/nar/gkx911/4372597).
 * There is often talk of how academic statistics isn't supportive enough of non-standard (read: non-math) contributions. There is definitely truth there, but I love [Lance Waller](https://www.biorxiv.org/content/early/2017/01/25/103093) on navigating these non-standard paths in academics. 
+* I am so amped about the [skimr](https://ropensci.org/blog/2017/07/11/skimr/) package, especially the histograms as part of the summary statistics. 
 
 That's all I have for the moment. I'm sure I missed a ton and I'm sorry if I missed you - please add more in the comments I always love to see cool stuff! 
 
