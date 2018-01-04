@@ -20,7 +20,7 @@ slug: "data-analysis-for-the-life-sciences-a-book-completely-written-in-r-markdo
 
 The book _Data Analysis for the Life Sciences_ is now available on <a href="https://leanpub.com/dataanalysisforthelifesciences">Leanpub</a>.
 
-![](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2015/09/title_page-791x1024.jpg)
+![](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2015/09/title_page-232x300.jpg)
   
 Data analysis is now part of practically every research project in the life sciences. In this book we use data and computer code to teach the necessary statistical concepts and programming skills to become a data analyst. Following in the footsteps of <a href="https://www.stat.berkeley.edu/~statlabs/">Stat Labs</a>, instead of showing theory first and then applying it to toy examples, we start with actual applications and describe the theory as it becomes necessary to solve specific challenges. We use simulations and data analysis examples to teach statistical concepts. The book includes links to computer code that readers can use to program along as they read the book.
 
