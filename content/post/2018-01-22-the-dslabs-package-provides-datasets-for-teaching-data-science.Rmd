@@ -10,7 +10,7 @@ categories:
 
 In this post I describe the  [dslabs package](https://cran.r-project.org/web/packages/dslabs/index.html), which contains some datasets that I use in my data science courses.
 
-A much discussed topic in stats education is that computing should play a more prominent role in the curriculum. I strongly agree, but I think the main improvement will come from bringing applications to the forefront and mimicking, as best as possible, the challenges applied statisticians face in real life. I therefore try to avoid using widely used _toy examples_, such as the `mtcars` dataset, when I teach data science. However, my experience has been that finding examples that are both realistic, interesting, and appropriate for beginners is not easy. After a few years of teaching I have collected a few datasets that I think fit this criteria. To facilitate their use in introductory class I include them in the  [dslabs package](https://cran.r-project.org/web/packages/dslabs/index.html):
+A much discussed topic in stats education is that computing should play a more prominent role in the curriculum. I strongly agree, but I think the main improvement will come from bringing applications to the forefront and mimicking, as best as possible, the challenges applied statisticians face in real life. I therefore try to avoid using widely used _toy examples_, such as the `mtcars` dataset, when I teach data science. However, my experience has been that finding examples that are both realistic, interesting, and appropriate for beginners is not easy. After a few years of teaching I have collected a few datasets that I think fit this criteria. To facilitate their use in introductory classes, I include them in the  [dslabs package](https://cran.r-project.org/web/packages/dslabs/index.html):
 
 
 ```{r, eval=FALSE}
@@ -31,7 +31,7 @@ list.files(system.file("script", package = "dslabs"))
 ```
 
 
-If you want to learn more about how we use these datasets in class you can read [this paper](https://arxiv.org/abs/1612.07140) or [this online book](https://rafalab.github.io/dsbook/distributions.html). 
+If you want to learn more about how we use these datasets in class, you can read [this paper](https://arxiv.org/abs/1612.07140) or [this online book](https://rafalab.github.io/dsbook/distributions.html). 
 
 # US murders 
 
@@ -62,7 +62,7 @@ murders %>% ggplot(aes(x = population/10^6, y = total, label = abb)) +
 
 # Gapminder 
 
-This dataset includes health and income outcomes for 184 countries from 1960 to 2016. Also includes two character vectors, OECD and OPEC, with the names of OECD and OPEC countries from 2016. I use this dataset to teach data visualization and ggplot2.
+This dataset includes health and income outcomes for 184 countries from 1960 to 2016. It also includes two character vectors, OECD and OPEC, with the names of OECD and OPEC countries from 2016. I use this dataset to teach data visualization and ggplot2.
 
 ```{r gapminder}
 data("gapminder")
@@ -101,7 +101,7 @@ filter(gapminder, year%in%c(1962, 2013) & !is.na(group) &
 
 # Contagious disease data for US states
 
-This dataset contains yearly counts for Hepatitis A, Measles, Mumps, Pertussis, Polio, Rubella, and Small for US states. Original data courtesy of [Tycho Project](http://www.tycho.pitt.edu/). I use it to show ways one can plot more than 2 dimension.
+This dataset contains yearly counts for Hepatitis A, measles, mumps, pertussis, polio, rubella, and smallpox for US states. Original data courtesy of [Tycho Project](http://www.tycho.pitt.edu/). I use it to show ways one can plot more than 2 dimensions.
 
 ```{r vaccines}
 library(RColorBrewer)
@@ -122,9 +122,9 @@ us_contagious_diseases %>%
   xlab("")
 ```
 
-## Fivethirtyeight 2016 Poll Data
+# Fivethirtyeight 2016 Poll Data
 
-This data includes poll results from US 2016 presidential elections aggregated from HuffPost Pollster, RealClearPolitics, polling firms and news reports. The dataset also includes election results (popular vote) and electoral college votes in results_us_election_2016. I use this detest to teach inference.
+This data includes poll results from the US 2016 presidential elections aggregated from HuffPost Pollster, RealClearPolitics, polling firms and news reports. The dataset also includes election results (popular vote) and electoral college votes in results_us_election_2016. I use this dataset to teach inference.
 
 ```{r polls, warning=FALSE}
 data(polls_us_election_2016)
@@ -156,7 +156,7 @@ heights %>%
 ```
 
 
-These data have been highly wrangled as student's often reported heights in values other than inches. The original entries are here:
+These data have been highly wrangled as students would often reported heights in values other than inches. The original entries are here:
 
 ```{r}
 data("reported_heights")
