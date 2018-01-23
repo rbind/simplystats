@@ -1,0 +1,205 @@
+---
+title: Some datasets for teaching data science
+author: Rafael Irizarry
+date: '2018-01-22'
+slug: the-dslabs-package-provides-datasets-for-teaching-data-science
+categories:
+  - Education
+  - rstats
+---
+
+
+
+<p>In this post I describe the <a href="https://cran.r-project.org/web/packages/dslabs/index.html">dslabs package</a>, which contains some datasets that I use in my data science courses.</p>
+<p>A much discussed topic in stats education is that computing should play a more prominent role in the curriculum. I strongly agree, but I think the main improvement will come from bringing applications to the forefront and mimicking, as best as possible, the challenges applied statisticians face in real life. I therefore try to avoid using widely used <em>toy examples</em>, such as the <code>mtcars</code> dataset, when I teach data science. However, my experience has been that finding examples that are both realistic, interesting, and appropriate for beginners is not easy. After a few years of teaching I have collected a few datasets that I think fit this criteria. To facilitate their use in introductory class I include them in the <a href="https://cran.r-project.org/web/packages/dslabs/index.html">dslabs package</a>:</p>
+<pre class="r"><code>install.packages(&quot;dslabs&quot;)</code></pre>
+<p>Below I show some example of how you can use these datasets. You can see the datasets that are included here:</p>
+<pre class="r"><code>library(&quot;dslabs&quot;)
+data(package=&quot;dslabs&quot;)</code></pre>
+<p>Note that the package also includes some of the scripts used to wrangle the data from their original source:</p>
+<pre class="r"><code>list.files(system.file(&quot;script&quot;, package = &quot;dslabs&quot;))</code></pre>
+<pre><code>##  [1] &quot;make-admissions.R&quot;                   
+##  [2] &quot;make-divorce_margarine.R&quot;            
+##  [3] &quot;make-gapminder-rdas.R&quot;               
+##  [4] &quot;make-murders-rda.R&quot;                  
+##  [5] &quot;make-na_example-rda.R&quot;               
+##  [6] &quot;make-outlier_example.R&quot;              
+##  [7] &quot;make-polls_us_election_2016.R&quot;       
+##  [8] &quot;make-reported_heights-rda.R&quot;         
+##  [9] &quot;make-research_funding_rates.R&quot;       
+## [10] &quot;make-weekly_us_contagious_diseases.R&quot;
+## [11] &quot;save-gapminder-example-csv.R&quot;</code></pre>
+<p>If you want to learn more about how we use these datasets in class you can read <a href="https://arxiv.org/abs/1612.07140">this paper</a> or <a href="https://rafalab.github.io/dsbook/distributions.html">this online book</a>.</p>
+<div id="us-murders" class="section level1">
+<h1>US murders</h1>
+<p>This dataset includes gun murder data for US states in 2012. I use this dataset to introduce the basics of R program.</p>
+<pre class="r"><code>data(&quot;murders&quot;)
+library(tidyverse)
+library(ggthemes)
+library(ggrepel)
+
+r &lt;- murders %&gt;%
+  summarize(pop=sum(population), tot=sum(total)) %&gt;%
+  mutate(rate = tot/pop*10^6) %&gt;% .$rate
+
+ds_theme_set()
+murders %&gt;% ggplot(aes(x = population/10^6, y = total, label = abb)) +
+  geom_abline(intercept = log10(r), lty=2, col=&quot;darkgrey&quot;) +
+  geom_point(aes(color=region), size = 3) +
+  geom_text_repel() +
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab(&quot;Populations in millions (log scale)&quot;) +
+  ylab(&quot;Total number of murders (log scale)&quot;) +
+  ggtitle(&quot;US Gun Murders in 2010&quot;) +
+  scale_color_discrete(name=&quot;Region&quot;) </code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/us-murders-1.png" width="672" /></p>
+</div>
+<div id="gapminder" class="section level1">
+<h1>Gapminder</h1>
+<p>This dataset includes health and income outcomes for 184 countries from 1960 to 2016. Also includes two character vectors, OECD and OPEC, with the names of OECD and OPEC countries from 2016. I use this dataset to teach data visualization and ggplot2.</p>
+<pre class="r"><code>data(&quot;gapminder&quot;)
+
+west &lt;- c(&quot;Western Europe&quot;,&quot;Northern Europe&quot;,&quot;Southern Europe&quot;,
+          &quot;Northern America&quot;,&quot;Australia and New Zealand&quot;)
+
+gapminder &lt;- gapminder %&gt;%
+  mutate(group = case_when(
+    region %in% west ~ &quot;The West&quot;,
+    region %in% c(&quot;Eastern Asia&quot;, &quot;South-Eastern Asia&quot;) ~ &quot;East Asia&quot;,
+    region %in% c(&quot;Caribbean&quot;, &quot;Central America&quot;, &quot;South America&quot;) ~ &quot;Latin America&quot;,
+    continent == &quot;Africa&quot; &amp; region != &quot;Northern Africa&quot; ~ &quot;Sub-Saharan Africa&quot;,
+    TRUE ~ &quot;Others&quot;))
+gapminder &lt;- gapminder %&gt;%
+  mutate(group = factor(group, levels = rev(c(&quot;Others&quot;, &quot;Latin America&quot;, &quot;East Asia&quot;,&quot;Sub-Saharan Africa&quot;, &quot;The West&quot;))))
+
+filter(gapminder, year%in%c(1962, 2013) &amp; !is.na(group) &amp;
+         !is.na(fertility) &amp; !is.na(life_expectancy)) %&gt;%
+  mutate(population_in_millions = population/10^6) %&gt;%
+  ggplot( aes(fertility, y=life_expectancy, col = group, size = population_in_millions)) +
+  geom_point(alpha = 0.8) +
+  guides(size=FALSE) +
+  theme(plot.title = element_blank(), legend.title = element_blank()) +
+  coord_cartesian(ylim = c(30, 85)) +
+  xlab(&quot;Fertility rate (births per woman)&quot;) +
+  ylab(&quot;Life Expectancy&quot;) +
+  geom_text(aes(x=7, y=82, label=year), cex=12, color=&quot;grey&quot;) +
+  facet_grid(. ~ year) +
+  theme(strip.background = element_blank(),
+        strip.text.x = element_blank(),
+        strip.text.y = element_blank(),
+   legend.position = &quot;top&quot;)</code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/gapminder-1.png" width="672" /></p>
+</div>
+<div id="contagious-disease-data-for-us-states" class="section level1">
+<h1>Contagious disease data for US states</h1>
+<p>This dataset contains yearly counts for Hepatitis A, Measles, Mumps, Pertussis, Polio, Rubella, and Small for US states. Original data courtesy of <a href="http://www.tycho.pitt.edu/">Tycho Project</a>. I use it to show ways one can plot more than 2 dimension.</p>
+<pre class="r"><code>library(RColorBrewer)
+data(&quot;us_contagious_diseases&quot;)
+the_disease &lt;- &quot;Measles&quot;
+us_contagious_diseases %&gt;%
+  filter(!state%in%c(&quot;Hawaii&quot;,&quot;Alaska&quot;) &amp; disease ==  the_disease) %&gt;%
+  mutate(rate = count / population * 10000 * 52 / weeks_reporting) %&gt;%
+  mutate(state = reorder(state, rate)) %&gt;%
+  ggplot(aes(year, state,  fill = rate)) +
+  geom_tile(color = &quot;grey50&quot;) +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_fill_gradientn(colors = brewer.pal(9, &quot;Reds&quot;), trans = &quot;sqrt&quot;) +
+  geom_vline(xintercept=1963, col = &quot;blue&quot;) +
+  theme_minimal() +  theme(panel.grid = element_blank()) +
+  ggtitle(the_disease) +
+  ylab(&quot;&quot;) +
+  xlab(&quot;&quot;)</code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/vaccines-1.png" width="672" /></p>
+<div id="fivethirtyeight-2016-poll-data" class="section level2">
+<h2>Fivethirtyeight 2016 Poll Data</h2>
+<p>This data includes poll results from US 2016 presidential elections aggregated from HuffPost Pollster, RealClearPolitics, polling firms and news reports. The dataset also includes election results (popular vote) and electoral college votes in results_us_election_2016. I use this detest to teach inference.</p>
+<pre class="r"><code>data(polls_us_election_2016)
+polls_us_election_2016 %&gt;%
+  filter(state == &quot;U.S.&quot; &amp; enddate&gt;=&quot;2016-07-01&quot;) %&gt;%
+  select(enddate, pollster, rawpoll_clinton, rawpoll_trump) %&gt;%
+  rename(Clinton = rawpoll_clinton, Trump = rawpoll_trump) %&gt;%
+  gather(candidate, percentage, -enddate, -pollster) %&gt;% 
+  mutate(candidate = factor(candidate, levels = c(&quot;Trump&quot;,&quot;Clinton&quot;)))%&gt;%
+  group_by(pollster) %&gt;%
+  filter(n()&gt;=10) %&gt;%
+  ungroup() %&gt;%
+  ggplot(aes(enddate, percentage, color = candidate)) +  
+  geom_point(show.legend = FALSE, alpha=0.4)  + 
+  geom_smooth(method = &quot;loess&quot;, span = 0.15) +
+  scale_y_continuous(limits = c(30,50))</code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/polls-1.png" width="672" /></p>
+</div>
+</div>
+<div id="student-reported-heights" class="section level1">
+<h1>Student reported heights</h1>
+<p>These are self-reported heights in inches for males and females from data science course across several years. I use this to teach distributions and summary statistics.</p>
+<pre class="r"><code>data(&quot;heights&quot;)
+heights %&gt;% 
+  ggplot(aes(height, fill=sex)) + 
+  geom_density(alpha = 0.2)</code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/heights-1.png" width="672" /></p>
+<p>These data have been highly wrangled as student’s often reported heights in values other than inches. The original entries are here:</p>
+<pre class="r"><code>data(&quot;reported_heights&quot;)
+reported_heights %&gt;% filter(is.na(as.numeric(height))) %&gt;% select(height) %&gt;% .$height </code></pre>
+<pre><code>## Warning in evalq(is.na(as.numeric(height)), &lt;environment&gt;): NAs introduced
+## by coercion</code></pre>
+<pre><code>##  [1] &quot;5&#39; 4\&quot;&quot;                 &quot;165cm&quot;                 
+##  [3] &quot;5&#39;7&quot;                    &quot;&gt;9000&quot;                 
+##  [5] &quot;5&#39;7\&quot;&quot;                  &quot;5&#39;3\&quot;&quot;                 
+##  [7] &quot;5 feet and 8.11 inches&quot; &quot;5&#39;11&quot;                  
+##  [9] &quot;5&#39;9&#39;&#39;&quot;                  &quot;5&#39;10&#39;&#39;&quot;                
+## [11] &quot;5,3&quot;                    &quot;6&#39;&quot;                    
+## [13] &quot;6,8&quot;                    &quot;5&#39; 10&quot;                 
+## [15] &quot;Five foot eight inches&quot; &quot;5&#39;5\&quot;&quot;                 
+## [17] &quot;5&#39;2\&quot;&quot;                  &quot;5,4&quot;                   
+## [19] &quot;5&#39;3&quot;                    &quot;5&#39;10&#39;&#39;&quot;                
+## [21] &quot;5&#39;3&#39;&#39;&quot;                  &quot;5&#39;7&#39;&#39;&quot;                 
+## [23] &quot;5&#39;12&quot;                   &quot;2&#39;33&quot;                  
+## [25] &quot;5&#39;11&quot;                   &quot;5&#39;3\&quot;&quot;                 
+## [27] &quot;5,8&quot;                    &quot;5&#39;6&#39;&#39;&quot;                 
+## [29] &quot;5&#39;4&quot;                    &quot;1,70&quot;                  
+## [31] &quot;5&#39;7.5&#39;&#39;&quot;                &quot;5&#39;7.5&#39;&#39;&quot;               
+## [33] &quot;5&#39;2\&quot;&quot;                  &quot;5&#39; 7.78\&quot;&quot;             
+## [35] &quot;yyy&quot;                    &quot;5&#39;5&quot;                   
+## [37] &quot;5&#39;8&quot;                    &quot;5&#39;6&quot;                   
+## [39] &quot;5 feet 7inches&quot;         &quot;6*12&quot;                  
+## [41] &quot;5 .11&quot;                  &quot;5 11&quot;                  
+## [43] &quot;5&#39;4&quot;                    &quot;5&#39;8\&quot;&quot;                 
+## [45] &quot;5&#39;5&quot;                    &quot;5&#39;7&quot;                   
+## [47] &quot;5&#39;6&quot;                    &quot;5&#39;11\&quot;&quot;                
+## [49] &quot;5&#39;7\&quot;&quot;                  &quot;5&#39;7&quot;                   
+## [51] &quot;5&#39;8&quot;                    &quot;5&#39; 11\&quot;&quot;               
+## [53] &quot;6&#39;1\&quot;&quot;                  &quot;69\&quot;&quot;                  
+## [55] &quot;5&#39; 7\&quot;&quot;                 &quot;5&#39;10&#39;&#39;&quot;                
+## [57] &quot;5&#39;10&quot;                   &quot;5&#39;10&quot;                  
+## [59] &quot;5ft 9 inches&quot;           &quot;5 ft 9 inches&quot;         
+## [61] &quot;5&#39;2&quot;                    &quot;5&#39;11&quot;                  
+## [63] &quot;5&#39;11&#39;&#39;&quot;                 &quot;5&#39;8\&quot;&quot;                 
+## [65] &quot;708,661&quot;                &quot;5 feet 6 inches&quot;       
+## [67] &quot;5&#39;10&#39;&#39;&quot;                 &quot;5&#39;8&quot;                   
+## [69] &quot;6&#39;3\&quot;&quot;                  &quot;649,606&quot;               
+## [71] &quot;728,346&quot;                &quot;6 04&quot;                  
+## [73] &quot;5&#39;9&quot;                    &quot;5&#39;5&#39;&#39;&quot;                 
+## [75] &quot;5&#39;7\&quot;&quot;                  &quot;6&#39;4\&quot;&quot;                 
+## [77] &quot;5&#39;4&quot;                    &quot;170 cm&quot;                
+## [79] &quot;7,283,465&quot;              &quot;5&#39;6&quot;                   
+## [81] &quot;5&#39;6&quot;</code></pre>
+<p>We use this as an example to teach string processing and regex.</p>
+</div>
+<div id="margarine-and-divorce-rate" class="section level1">
+<h1>Margarine and divorce rate</h1>
+<p>Finally, here is a silly example from the website <a href="http://www.tylervigen.com/spurious-correlations">Spurious Correlations</a> that I use when teaching correlation does not imply causation.</p>
+<pre class="r"><code>the_title &lt;- paste(&quot;Correlation =&quot;,
+                round(with(divorce_margarine,
+                           cor(margarine_consumption_per_capita, divorce_rate_maine)),2))
+data(divorce_margarine)
+divorce_margarine %&gt;%
+  ggplot(aes(margarine_consumption_per_capita, divorce_rate_maine)) +
+  geom_point(cex=3) +
+  geom_smooth(method = &quot;lm&quot;) +
+  ggtitle(the_title) +
+  xlab(&quot;Margarine Consumption per Capita (lbs)&quot;) +
+  ylab(&quot;Divorce rate in Maine (per 1000)&quot;)</code></pre>
+<p><img src="/post/2018-01-22-the-dslabs-package-provides-datasets-for-teaching-data-science_files/figure-html/spurious-correlation-1.png" width="672" /></p>
+</div>
