@@ -21,9 +21,6 @@ slug: "interview-w-mario-marazzi-puerto-rico-institute-of"
   In my opinion, the importance of government statisticians is underappreciated. In the US, agencies such as the CDC, the Census Bureau, and the Bureau of Labor Statistics employ statisticians to help collect and analyze data that contribute to important policy decisions. How many students will enroll in public schools this year? Is there a type II diabetes epidemic? Is unemployment rising? How many homeless people are in Los Angeles? The answers to these questions can guide policy and spending decisions and they can’t be answered without the help of the government statisticians that collect and analyze relevant data.
 </p>
 
-<p class="MsoNormal">
-  <img align="middle" height="181" src="http://www.primerahora.com/XStatic/primerahora/images/espanol/ph20100930marazzi.jpg" width="141" />
-</p>
 
 <p class="MsoNormal">
   Until recently the Puerto Rican government had no formal mechanisms for collecting data. Puerto Rico, an unincorporated territory of the United States, has many serious economic and social problems .  With a<a href="http://www.nytimes.com/2011/06/21/us/21crime.html?pagewanted=all" target="_blank"> very high murder rate</a>, less than 50% of the working-age population in the <a href="http://grupocne.org/cneblog/?p=310" target="_blank">labor force</a>, an <a href="http://www.economist.com/blogs/dailychart/2011/01/gdp_forecasts" target="_blank">economy</a> that continues to worsen after 5 years of recession , and a <a href="http://www.elnuevodia.com/losboricuasperdemos32diasalanoentapones-1123907.html" target="_blank">substantial traffic problem</a> , Puerto Rico can certainly benefit from sound government statistics to better guide policy-making.  Better measurement, information and knowledge can only improve the situation.
