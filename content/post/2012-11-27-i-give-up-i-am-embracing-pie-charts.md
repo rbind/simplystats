@@ -17,13 +17,7 @@ Most statisticians know that pie charts are a terrible way to plot percentages. 
 > Pie charts are a very bad way of displaying information. The eye is good at judging linear measures and bad at judging relative areas. A bar chart or dot chart is a preferable way of displaying this type of data.
 
 
-I have only used the `pie` R function once and it was to make this plot (R code below):
-
-![pacman](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif)
-
-  
-So why are they ubiquitous? The best explanation I've heard is that they are easy to make in Microsoft Excel. Regardless, after years of training, lay people are probably better at interpreting pie charts than any other graph. So I'm surrendering and embracing the pie chart. Jeff's [recent post](http://simplystatistics.org/2012/11/26/the-statisticians-at-fox-news-use-classic-and-novel-graphical-techniques-to-lead-with-data/) shows we have bigger fish to fry.
-
+I have only used the `pie` R function once and it was to make this plot:
 
 ```{r}
 saveGIF({
@@ -37,4 +31,9 @@ saveGIF({
     }
   }, "pacman.gif", interval = 0.1)
 ```
+
+![pacman](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/_images/pacman.gif)
+
+  
+So why are they ubiquitous? The best explanation I've heard is that they are easy to make in Microsoft Excel. Regardless, after years of training, lay people are probably better at interpreting pie charts than any other graph. So I'm surrendering and embracing the pie chart. Jeff's [recent post](http://simplystatistics.org/2012/11/26/the-statisticians-at-fox-news-use-classic-and-novel-graphical-techniques-to-lead-with-data/) shows we have bigger fish to fry.
 
