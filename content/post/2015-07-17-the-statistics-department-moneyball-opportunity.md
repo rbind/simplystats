@@ -17,15 +17,15 @@ categories:
   - Uncategorized
 slug: "the-statistics-department-moneyball-opportunity"
 ---
-[](https://en.wikipedia.org/wiki/Moneyball) is a book and a movie about Billy Bean. It makes statisticians look awesome and I loved the movie. I loved it so much I'm putting the movie trailer right here:
+[Moneyball](https://en.wikipedia.org/wiki/Moneyball) is a book and a movie about Billy Bean.It makes statisticians look awesome and I loved the movie. I loved it so much I'm putting the movie trailer right here:
 
 
 
-The basic idea behind Moneyball was that the Oakland Athletics were able to build a very successful baseball team on a tight budget by valuing skills that many other teams undervalued. In baseball those skills were things like on-base percentage and slugging percentage. By correctly valuing these skills and their impact on a teams winning percentage, the A's were able to build one of the most successful regular season teams on a minimal budget. This graph shows what an outlier they were, from a nice [fivethirtyeight analysis](http://fivethirtyeight.com/features/billion-dollar-billy-beane/).
+The basic idea behind Moneyball was that the Oakland Athletics were able to build a very successful baseball team on a tight budget by valuing skills that many other teams undervalued. In baseball those skills were things like on-base percentage and slugging percentage. By correctly valuing these skills and their impact on a teams winning percentage, the A's were able to build one of the most successful regular season teams on a minimal budget. This graph shows what an outlier they were, from a nice [fivethirtyeight  analysis](http://fivethirtyeight.com/features/billion-dollar-billy-beane/).
 
 &nbsp;
 
-[<img class="aligncenter wp-image-4146" src="http://simplystatistics.org/wp-content/uploads/2015/07/oakland-1024x818.png" alt="oakland" width="500" height="400" srcset="http://simplystatistics.org/wp-content/uploads/2015/07/oakland-1024x818.png 1024w, http://simplystatistics.org/wp-content/uploads/2015/07/oakland-250x200.png 250w, http://simplystatistics.org/wp-content/uploads/2015/07/oakland.png 1150w" sizes="(max-width: 500px) 100vw, 500px" />](http://simplystatistics.org/wp-content/uploads/2015/07/oakland.png)
+![Oakland](https://espnfivethirtyeight.files.wordpress.com/2014/07/morris-feature-beane-1.png?w=1150&quality=90&strip=info)
 
 &nbsp;
 
