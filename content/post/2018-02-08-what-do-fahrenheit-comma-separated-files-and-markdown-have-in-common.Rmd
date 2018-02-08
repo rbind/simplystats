@@ -1,0 +1,25 @@
+---
+title: 'What do Fahrenheit, comma separated files, and markdown have in common? '
+author: Jeff Leek
+date: '2018-02-08'
+slug: what-do-fahrenheit-comma-separated-files-and-markdown-have-in-common
+categories: []
+tags: []
+draft: yes
+---
+
+Anil Dash asked people what their favorite file format was. David Robinson replied: 
+
+`r blogdown::shortcode('tweet', '961610642083012608')`
+
+His tweet reminded me a lot of this tweet from Stephen Turner
+
+`r blogdown::shortcode('tweet', '568746345919459328')`
+
+There is a spectrum for tools from the theortically optimal to the most human usable. It is almost always a tradeoff between purity/completeness and ease of human use. 
+
+For data science tools/statistical methods development there is a ton of work that needs to be done to govern edge cases. That work can either be done by the human users of the software/tool/data or it can be done on the back end by the developers of tools. Once you start looking for this tradeoff you see it everywhere - one of my favorite recent examples is [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) versus [Shiny](https://shiny.rstudio.com/). Shiny is llows for a lot of flexibility, deals directly with edge cases, and asks the user to pay attention to those cases. Flexdashboard "just works" in the sense that for most of the stuff I'm doing it seems to almost intuit what a person with minimal training would do. 
+
+I think both kinds of approaches have their place. Most of the time I just want to use the thing that reads my mind and takes minimal intellectual overhead. Same thing for when training people new to data science (or anything else). But eventually I start running into too many edge cases and want to move to something more sophisticated. 
+
+One thing I have a really hard time with is the transition from the "just works for humans" to the "theoretically optimal". Almost always that transition is hard/rough. I wish there was a way (both selfishly and as an instructor) to smooth the transition from the intuitive, easy tool to the more flexible but necessarily more complicated tool. That always feels like a cliff to me. 
