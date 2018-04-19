@@ -1,5 +1,5 @@
 ---
-title: Process versus outcome
+title: Process versus outcome productivity
 author: Jeff Leek
 date: '2018-04-19'
 slug: process-versus-outcome
