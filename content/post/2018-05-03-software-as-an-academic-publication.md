@@ -1,5 +1,5 @@
 ---
-title: Software as an Academic Publication
+title: Software as an academic publication
 author: Roger Peng
 date: '2018-05-03'
 slug: software-as-an-academic-publication
