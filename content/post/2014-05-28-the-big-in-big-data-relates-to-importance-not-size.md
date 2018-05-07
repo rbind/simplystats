@@ -19,17 +19,17 @@ slug: "the-big-in-big-data-relates-to-importance-not-size"
 ---
 In the past couple of years several non-statisticians have asked me "what is Big Data exactly?" or "How big is Big Data?". My answer has been "I think Big Data is much more about "data" than "big". I explain below.
 
-<table>
+<table border="1" align="center">
   <tr>
     <td>
-      <a href="http://simplystatistics.org/2014/05/28/the-big-in-big-data-relates-to-importance-not-size/screen-shot-2014-05-28-at-10-14-53-am/" rel="attachment wp-att-3096"><img class="alignnone size-full wp-image-3096" alt="Screen Shot 2014-05-28 at 10.14.53 AM" src="http://simplystatistics.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-28-at-10.14.53-AM.png" width="262" height="230" /></a>
+    <img src=https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/05/Screen-Shot-2014-05-28-at-10.14.53-AM.png>
     </td>
-    
     <td>
-      <a href="http://simplystatistics.org/2014/05/28/the-big-in-big-data-relates-to-importance-not-size/screen-shot-2014-05-28-at-10-15-04-am/" rel="attachment wp-att-3097"><img class="alignnone size-full wp-image-3097" alt="Screen Shot 2014-05-28 at 10.15.04 AM" src="http://simplystatistics.org/wp-content/uploads/2014/05/Screen-Shot-2014-05-28-at-10.15.04-AM.png" width="265" height="233" /></a>
+     <img src="https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/05/https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/05/Screen-Shot-2014-05-28-at-10.15.04-AM.png">
     </td>
   </tr>
-</table>
+</table>  
+
 
 Since 2011 Big Data has been all over the news. The New York Times, The Economist, Science, Nature, etc.. have told us that the Big Data Revolution is upon us (see google trends figure above). But was this really a revolution? What happened to the Massive Data Revolution (see figure above)? For this to be called a revolution, there must be some a drastic change, a discontinuity, or a quantum leap of some kind.  So has there been such a discontinuity in the rate of growth of data? Although this may be true for some fields (for example in genomics, next generation sequencing [did introduce a discontinuity around 2007](http://www.genome.gov/sequencingcosts/)), overall, data size seems to have been growing at a steady rate for decades. For example, in the  [graph below](http://www.singularity.com/charts/page80.html) (see [this paper](http://www.dtc.umn.edu/~odlyzko/doc/oft.internet.growth.pdf) for source) note the trend in internet traffic data (which btw dwarfs genomics data). There does seem to be a change of rate but during the 1990s which brings me to my main point.
 
@@ -39,6 +39,6 @@ Although several fields (including Statistics) are having to innovate to keep up
 
 In this blog we like to point out examples but let me review a few. Credit card companies started using purchase data to detect fraud. Baseball teams started scraping data and evaluating players without ever seeing them. Financial companies started analyzing  stock market data to develop investment strategies. Environmental scientists started to gather and analyze data from air pollution monitors. Molecular biologists started quantifying outcomes of interest into matrices of numbers (as opposed to looking at stains on nylon membranes) to discover new tumor types and develop diagnostics tools. Cities started using crime data to guide policing strategies. Netflix started using costumer ratings to recommend movies. Retail stores started mining bonus card data to deliver targeted advertisements. Note that all the data sets mentioned were tiny in comparison to, for example, sky survey data collected by astronomers. But, I still call this phenomenon Big Data because the percent of people using data was in fact Big.
 
-![bigdata](http://simplystatistics.org/wp-content/uploads/2014/05/IMG_5053.jpg)
+![bigdata](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/05/https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/05/IMG_5053.jpg)
 
 I borrowed the title of this talk from a [very nice presentation](http://www.slideshare.net/kuonen/big-datadatascience-may2014) by Diego Kuonen
