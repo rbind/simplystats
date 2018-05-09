@@ -17,7 +17,7 @@ Another statement that has fascinated me comes from Daryl Pregibon, who wrote in
 
 > Throughout American or even global industry, there is much advocacy of statistical process control and of understanding processes. Statisticians have a process they espouse but do not know anything about. It is the process of putting together many tiny pieces, the process called data analysis, and is not really understood.
 
-The "putting together many tiny pieces" aspect of data analysis is really key. My guess is that Pregibon was referring to putting together many statistical tools and making all the little decisions about data that one always makes. However, often those little "pieces" are in fact *people*, and getting all of those people to fit together can be an equally challenging and equally critical aspect of success.
+The "putting together many tiny pieces" aspect of data analysis is really key. My guess is that Pregibon was referring to putting together many statistical tools and making all the little decisions about data that one always makes. However, often those little "pieces" are in fact *people*, and [getting all of those people to fit together](https://simplystatistics.org/2018/04/30/relationships-in-data-analysis/) can be an equally challenging and equally critical aspect of success.
 
 Learning about how data analyses succeeds or fails (but more importantly, fails) is extremely challenging without actually going through the process yourself. I don’t think I ever learned about it except through first hand experience, which took place over the course of years. There are a few reasons for this that I have observed over time:
 
