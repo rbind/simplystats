@@ -17,7 +17,7 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 **Deadline:** Review ongoing
 
-
+===============
 
 
 
@@ -29,6 +29,7 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 **Deadline:** Until position filled
 
+===============
 
 **Job:** The Goff lab ([www.gofflab.org](http://www.gofflab.org)) has 2 open postdoc positions for a variety of projects at the intersection of computational biology and neurodevelopment, degeneration, and disease.  We develop and utilize single cell analysis techniques, including single cell RNA-Seq, to explore cell state transitions across continuous biological processes. Current funded projects include cross-model analysis of fALS, Parkinson Disease, and Kabuki Syndrome, as well as examination of cell-type-specific neuronal plasticity response, and developmental fate specification in the CNS.
 
@@ -38,7 +39,7 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 **Deadline:** 12/31/2018 or until position filled
 
-
+===============
 
 **Job:** The Hansen lab ([www.hansenlab.org](http://www.hansenlab.org)) is hiring postdocs in computational biology. We are funded to continue development of the [recount2](https://doi.org/10.1038/nbt.3838) ([preprint](https://doi.org/10.1101/068478)) project, which involves joint processing, normalization, and analysis of all publicly available human RNA-seq samples. This project combines genomics with analysis of extremely large-scale RNA-seq data. The work is in collaboration with [Jeff Leek](http://www.jtleek.com), [Ben Langmead](www.langmead-lab.org) and [Alexis Battle](battlelab.jhu.edu) at JHU.
 
@@ -48,7 +49,7 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 **Deadline:** Review ongoing
 
-
+===============
 
 **Job:** The Jaffe lab at the Lieber Institute for Brain Develpoment (affiliated with JHMI) is hiring at several different levels (research assistant, research associate, postdoc fellow)!  We work at the intersection of genomics, biostatistics, and computational biology, leveraging large human brain datasets to better understand how genomic signatures associate with brain development and subsequent dysregulation in mental illness.
 
@@ -58,6 +59,7 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 **Deadline:** Until position filled
 
+===============
 
 **Job:** The Battle lab ([battlelab.jhu.edu](battlelab.jhu.edu)) is hiring postdocs in genomics and machine learning/probabilistic modeling.  Projects include rare genetic variation, single cell genomics, time series genomics, complex human disease, large scale integrative transcriptomic/eQTL studies, and more.  
 
