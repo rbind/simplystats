@@ -51,9 +51,9 @@ Johns Hopkins is a pretty amazing place to do computational genomics right now. 
 
 ===============
 
-**Job:** The Jaffe lab at the Lieber Institute for Brain Develpoment (affiliated with JHMI) is hiring at several different levels (research assistant, research associate, postdoc fellow)!  We work at the intersection of genomics, biostatistics, and computational biology, leveraging large human brain datasets to better understand how genomic signatures associate with brain development and subsequent dysregulation in mental illness.
+**Job:** The [Jaffe lab](www.aejaffe.com) at the [Lieber Institute for Brain Development](http://www.libd.org) (affiliated with JHMI) is hiring at several different levels (research assistant, research associate, postdoc fellow)!  We work at the intersection of genomics, biostatistics, and computational biology, leveraging large human brain datasets to better understand how genomic signatures associate with brain development and subsequent dysregulation in mental illness.
 
-**Employer:** Andrew Jaffe
+**Employer:** [Andrew Jaffe](emailto:andrew.jaffe@libd.org)
 
 **To apply:** [LIBD Careers](https://libd.org/careers/)
 
