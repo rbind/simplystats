@@ -19,7 +19,7 @@ In a previous [post](http://simplystatistics.org/2014/01/17/missing-not-at-rando
 
 Assume we could summarize an individual's "righteousness<span class="star inactive">"</span> with a numerical index. I realize this is a gross oversimplification, but bear with me. Below is my view on the distribution of this index across all members of our society.
 
-[<img class="aligncenter wp-image-3409" src="http://simplystatistics.org/wp-content/uploads/2014/10/IMG_5842.jpg" alt="IMG_5842" width="442" height="463" srcset="http://simplystatistics.org/wp-content/uploads/2014/10/IMG_5842-286x300.jpg 286w, http://simplystatistics.org/wp-content/uploads/2014/10/IMG_5842-977x1024.jpg 977w, http://simplystatistics.org/wp-content/uploads/2014/10/IMG_5842.jpg 2139w" sizes="(max-width: 442px) 100vw, 442px" />](http://simplystatistics.org/wp-content/uploads/2014/10/IMG_5842.jpg)
+![internet-comment-cartoon](https://raw.githubusercontent.com/simplystats/simplystats.github.io/master/wp-content/uploads/2014/10/IMG_5842.jpg)
 
 Note that the distribution is not bimodal. This means there is no gap between good and evil, instead we have a continuum. Although there is variability, and we do have some extreme outliers on both sides of the distribution, most of us are much closer to the median than we like to believe. The offending internet commentators represent a very small proportion (the "bad" tail shown in red). But in a large population, such as internet users, this extremely small proportion can be quite numerous and gives us a biased view.
 
