@@ -83,3 +83,8 @@ If you *are* the audience, then considering the audience’s needs is a relative
 It’s entirely possible to trust an analysis but not believe the final conclusions. In particular, if this is the first analysis of it’s kind that you are seeing, there’s almost no reason to believe that the conclusions are true until you’ve seen other independent analysis. An initial analysis may only have limited preliminary data and you may need to make a decision to invest in collecting more data. Until then, there may be no way to know if the analysis is *true* or not. But the analysis may still be trustworthy in the sense that everything that should have been done was done. 
 
 Looking back at the original "presentation" given at the top, one might ask "So, is X correlated with Y?". Maybe, and there seems to be evidence that it is. However, whether I ultimately believe the result will depend on factors outside the analysis.
+
+
+*You can hear more from me and the JHU Data Science Lab by subscribing to our weekly newsletter [Monday Morning Data Science](http://jhudatascience.us16.list-manage.com/subscribe?u=5ea551600fcdf84334e5aa6b0&id=26c0b7221a)*.
+
+
