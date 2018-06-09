@@ -1,11 +1,9 @@
 ---
-title: Estimating mortality rates in Puerto Rico after hurricane Maria using newly released official death counts
+title: Estimating mortality rates in Puerto Rico after hurricane María using newly released official death counts
 author: Rafael Irizarry
 date: '2018-06-08'
 slug: a-first-look-at-recently-released-official-puerto-rico-death-count-data
 ---
-
-
 
 ```{r official-data-wrangle,message=FALSE,echo=FALSE}
 library(pdftools)
@@ -75,8 +73,8 @@ Late last Friday, the Puerto Rico Department of Health finally released monthly 
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">BREAKING: the Puerto Rico Health Department has buckled under pressure and released the number of deaths for each month, through May of 2018. In September 2017, when Hurricane Maria made landfall, there was a notable spike, followed by an even larger one in October. <a href="https://t.co/3Irw1eUOTC">pic.twitter.com/3Irw1eUOTC</a></p>&mdash; David Begnaud (@DavidBegnaud) <a href="https://twitter.com/DavidBegnaud/status/1002658303904829442?ref_src=twsrc%5Etfw">June 1, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
-The news came three days after the publication of [our paper](https://t.co/PtLHVgqDTp) describing a survey conducted to better understand what happened after hurricane. 
-We did not have access to these data and, after this announcement, we requested daily data. We received it on Tuesday. The data comes as a PDF file which we make public [here](https://github.com/c2-d2/pr_mort_official/raw/master/data/RD-Mortality-Report_2015-18-180531.pdf). The code to extract the data is long and messy so we include it at the end of post and only show the package loading part here.
+The news came three days after the publication of [our paper](https://t.co/PtLHVgqDTp) describing a survey conducted to better understand what happened after the hurricane. 
+We did not have access to these data and, after this announcement, we requested daily data. We received it on Tuesday. The data comes as a PDF file which we make public [here](https://github.com/c2-d2/pr_mort_official/raw/master/data/RD-Mortality-Report_2015-18-180531.pdf). The code to extract the data is long and messy so we include it at the end of the post and only show the package loading part here.
 
 ```{r}
 library(pdftools)
@@ -113,7 +111,7 @@ We clearly see the effects of the hurricane: there is a jump of between 25-50 de
 
 ## Adjusting for an aging population, seasonal effect, and depopulation
 
-We start by estimating the population size. We know that Puerto Rico has been [losing populati](http://www.pewresearch.org/fact-tank/2016/03/24/historic-population-losses-continue-across-puerto-rico/) for the last 10 years. [This file](https://github.com/c2-d2/pr_mort_official/raw/master/data/pr_popest_2010_17.xlsx) includes population size estimates. We also know that many people left the island after the hurricane. [Teralytics](https://www.teralytics.net/) tried to estimate this using data collected from cell phones. We extracted their estimates (by hand) from [this post](https://www.citylab.com/environment/2018/05/watch-puerto-ricos-hurricane-migration-via-mobile-phone-data/559889/). We then interpolated to generate an estimate of population for the days in our data:
+We start by estimating the population size. We know that Puerto Rico has been [losing population](http://www.pewresearch.org/fact-tank/2016/03/24/historic-population-losses-continue-across-puerto-rico/) for the last 10 years. [This file](https://github.com/c2-d2/pr_mort_official/raw/master/data/pr_popest_2010_17.xlsx) includes population size estimates. We also know that many people left the island after the hurricane. [Teralytics](https://www.teralytics.net/) tried to estimate this using data collected from cell phones. We extracted their estimates (by hand) from [this post](https://www.citylab.com/environment/2018/05/watch-puerto-ricos-hurricane-migration-via-mobile-phone-data/559889/). We then interpolated to generate an estimate of population for the days in our data:
 
 
 ```{r population}
@@ -150,7 +148,7 @@ knitr::kable(year_trend)
 
 With these estimates in place, we can now estimate a seasonal trend using 2015 and 2016 data. We do this by fitting a periodic smooth trend using loess:
 
-```{r seasonal, echo=FALSE}
+```{r seasonal}
 avg <- official %>% filter(year(date) < 2017 & !(month==2 & day == 29)) %>%
   left_join(population_by_year, by = "year") %>%
   group_by(month,day) %>%
@@ -167,7 +165,7 @@ official <- official %>% left_join(trend, by = c("month", "day"))
 
 Here is what the estimate population size and seasonal trend look like:
 
-```{r, echo=FALSE}
+```{r adjusted-rates}
 p2 <- official %>%  
   filter(date >=ymd("2017-01-01") & date < ymd("2018-01-01")) %>%
   ggplot(aes(date, trend)) +
@@ -198,7 +196,7 @@ tmp <- official %>% filter(date>=ymd("2017-01-01") & date < ymd("2018-04-15")) %
 
 Here is what the excess death rate looks like:
 
-```{r excess-death-rate,echo=FALSE}
+```{r excess-death-rate}
 tmp %>% mutate(diff = rate - year_rate - trend) %>%
   ggplot(aes(date, diff)) +
   geom_point(alpha=0.5) +
@@ -216,7 +214,7 @@ We can now clearly see that following the big spike right after the hurricane, t
 This gives us the excess death rate. To compute an excess count we need to plug in a population size and a baseline rate. If we assume all of 2017 had the same population, the pre-hurricane yearly effect and seasonal trend as other years we get the following excess deaths by date: 
 
 
-```{r excess-deaths, echo=FALSE}
+```{r excess-deaths}
 the_pop <- filter(population_by_year, year == 2016) %>% .$pop
 tmp %>%
   filter(date >=ymd("2017-09-20")) %>%
