@@ -12,7 +12,7 @@ As a lifelong Boston Celtics fan, I am supposed to hate LeBron James. But I don'
 knitr::include_graphics("http://n.sinaimg.cn/sinacn/w600h686/20180104/c476-fyqinct9321280.jpg")
 ```
 
-Of all the ridiculous stats one can rattle about LeBron, to me, the most impressive actually relate to a simple one: career totals. The graph below shows you his total points, assists, steals and rebounds as a function of time. The consistency, durability, and all-around production is simply unpresendented.
+Of all the ridiculous stats one can rattle about LeBron, to me, the most impressive actually relate to a simple one: career totals. The graph below shows you his total points, assists, steals and rebounds as a function of time. The consistency, durability, and all-around production is simply unprecedented.
 At 33, he is already top 25 **all time** in three categories: points, assists and steals. If he can keep up his current pace for five more years (I know it's a big _if_), he will be **top 3** in points, assists and steals, and top 25 in rebounds. No other player comes close.  
 
 ```{r king-james-totals, echo=FALSE, message=FALSE}
