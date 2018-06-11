@@ -11,3 +11,51 @@ slug: an-ode-to-king-james
 <p><img src="http://n.sinaimg.cn/sinacn/w600h686/20180104/c476-fyqinct9321280.jpg" width="25%" /></p>
 <p>Of all the ridiculous stats one can rattle about LeBron, to me, the most impressive actually relate to a simple one: career totals. The graph below shows you his total points, assists, steals and rebounds as a function of time. The consistency, durability, and all-around production is simply unprecedented. At 33, he is already top 25 <strong>all time</strong> in three categories: points, assists and steals. If he can keep up his current pace for five more years (I know it’s a big <em>if</em>), he will be <strong>top 3</strong> in points, assists and steals, and top 25 in rebounds. No other player comes close.</p>
 <p><img src="/post/2018-06-10-an-ode-to-king-james_files/figure-html/king-james-totals-1.png" width="672" /></p>
+<p>Here is the code that produces the graph above:</p>
+<pre class="r"><code>library(dplyr)
+library(rvest)
+url &lt;- &quot;http://www.espn.com/nba/player/stats/_/id/1966/lebron-james&quot;
+h &lt;- read_html(url)
+lebron &lt;-html_nodes(h, &quot;table&quot;) %&gt;% .[[3]] %&gt;% rvest::html_table(fill=TRUE)
+names(lebron) &lt;- lebron[2,]
+lebron &lt;-lebron[3:17,1:17]
+ind &lt;- 11:17
+lebron[ ,ind] &lt;- apply(lebron[,ind], 2, as.numeric)
+
+stats &lt;- c(&quot;pts&quot;,&quot;ast&quot;,&quot;stl&quot;,&quot;trb&quot;)
+full_stats &lt;- c(&quot;Points&quot;, &quot;Assists&quot;, &quot;Steals&quot;, &quot;Rebounds&quot;)
+urls &lt;- paste0(&quot;https://www.basketball-reference.com/leaders/&quot;,
+              stats, &quot;_career.html&quot;)
+tabs &lt;- lapply(urls, function(url){
+  tab &lt;- read_html(url) %&gt;%
+    html_nodes(&quot;table&quot;) %&gt;%
+    .[[2]] %&gt;%
+    html_table()
+   tab &lt;- tab %&gt;% mutate(Player = gsub(&quot;\\*&quot;, &quot;&quot;, Player))
+   names(tab)[3] &lt;- &quot;Value&quot;
+   tab
+})
+names(tabs) &lt;- stats
+names(lebron)[11] &lt;- &quot;TRB&quot;
+ind &lt;- match(toupper(stats), names(lebron))
+
+rafalib::mypar(2,2)
+for(i in seq_along(stats)){
+  y &lt;- lebron[[ ind[i] ]]
+  r &lt;- mean(y)
+  x &lt;- 2004:2018
+
+  YLIM &lt;- c(min(y), max(tabs[[i]]$Value))
+  YLIM[2] &lt;- YLIM[2]*(1.05)
+  XLIM &lt;- c(min(x), 2018 + 5)
+  plot(x, cumsum(y), xlim = XLIM, ylim = YLIM, xaxt=&quot;n&quot;,
+       main = full_stats[i], xlab=&quot;&quot;, ylab=&quot;Total&quot;)
+  axis(side=1, 2004:2023, 2004:2023, las =2)
+  abline(-2003*r, r, lty = 2, col = &quot;red&quot;)
+  j &lt;- c(1:3,25)
+  the_names &lt;- tabs[[i]]$Player[j]
+  the_names[4] &lt;- paste0(&quot;Top 25&quot;)
+  z &lt;-  tabs[[i]]$Value[j]
+  abline(h = z, lty = 2)
+  text(2008.5, z, the_names, pos=3, offset = 0.1, cex = 0.7)
+}</code></pre>
