@@ -1,0 +1,216 @@
+---
+title: Estimating mortality rates in Puerto Rico after hurricane María using newly released official death counts
+author: Rafael Irizarry
+date: '2018-06-08'
+slug: a-first-look-at-recently-released-official-puerto-rico-death-count-data
+---
+
+
+
+<p>Late last Friday, the Puerto Rico Department of Health finally released monthly death count data for the time period following Hurricane Maria:</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p lang="en" dir="ltr">
+BREAKING: the Puerto Rico Health Department has buckled under pressure and released the number of deaths for each month, through May of 2018. In September 2017, when Hurricane Maria made landfall, there was a notable spike, followed by an even larger one in October. <a href="https://t.co/3Irw1eUOTC">pic.twitter.com/3Irw1eUOTC</a>
+</p>
+— David Begnaud (<span class="citation">@DavidBegnaud</span>) <a href="https://twitter.com/DavidBegnaud/status/1002658303904829442?ref_src=twsrc%5Etfw">June 1, 2018</a>
+</blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>The news came three days after the publication of <a href="https://t.co/PtLHVgqDTp">our paper</a> describing a survey conducted to better understand what happened after the hurricane. We did not have access to these data and, after this announcement, we requested daily data. We received it on Tuesday. The data comes as a PDF file which we make public <a href="https://github.com/c2-d2/pr_mort_official/raw/master/data/RD-Mortality-Report_2015-18-180531.pdf">here</a>. The code to extract the data is long and messy so we include it at the end of the post and only show the package loading part here.</p>
+<pre class="r"><code>library(pdftools)
+library(tidyverse)
+library(gridExtra)
+dslabs::ds_theme_set()
+library(stringr)
+library(lubridate)</code></pre>
+<p>The wrangling produces the object <code>official</code>:</p>
+<pre class="r"><code>head(official)</code></pre>
+<pre><code>## # A tibble: 6 x 5
+##   month   day  year deaths date      
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt; &lt;date&gt;    
+## 1     1     1  2015    107 2015-01-01
+## 2     1     2  2015    101 2015-01-02
+## 3     1     3  2015     78 2015-01-03
+## 4     1     4  2015    121 2015-01-04
+## 5     1     5  2015     99 2015-01-05
+## 6     1     6  2015    104 2015-01-06</code></pre>
+<p>Here I include an analysis showing that the newly released data confirms that the official death count of 64 is a gross underestimate and that, according to these data, the current count is closer to 2,000 than 64.</p>
+<div id="the-raw-data" class="section level2">
+<h2>The raw data</h2>
+<p>Here is a plot of the daily data for 2017 and 2018:</p>
+<pre class="r"><code>official %&gt;% filter(year &gt;= 2017 &amp; deaths &gt; 0) %&gt;%
+  ggplot(aes(date, deaths)) + 
+  geom_point(alpha = 0.5) + 
+  geom_vline(xintercept = make_date(2017,09,20), lty=2, col=&quot;grey&quot;) +
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 months&quot;) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  ggtitle(&quot;Raw data for 2017 and 2018&quot;)</code></pre>
+<p><img src="/post/2018-06-08-a-first-look-at-recently-released-official-puerto-rico-death-count-data_files/figure-html/raw-data-1.png" width="672" /></p>
+<p>We clearly see the effects of the hurricane: there is a jump of between 25-50 deaths per day for about 2 weeks. It also seems that the 3-4 following months show a higher rate than expected. But this is hard to discern due to the seasonal trend: more deaths in the winter. The plot also shows that deaths have not yet been tallied for the last couple of weeks. So we restrict the analysis and exclude data from past April 15th.</p>
+</div>
+<div id="adjusting-for-an-aging-population-seasonal-effect-and-depopulation" class="section level2">
+<h2>Adjusting for an aging population, seasonal effect, and depopulation</h2>
+<p>We start by estimating the population size. We know that Puerto Rico has been <a href="http://www.pewresearch.org/fact-tank/2016/03/24/historic-population-losses-continue-across-puerto-rico/">losing population</a> for the last 10 years. <a href="https://github.com/c2-d2/pr_mort_official/raw/master/data/pr_popest_2010_17.xlsx">This file</a> includes population size estimates. We also know that many people left the island after the hurricane. <a href="https://www.teralytics.net/">Teralytics</a> tried to estimate this using data collected from cell phones. We extracted their estimates (by hand) from <a href="https://www.citylab.com/environment/2018/05/watch-puerto-ricos-hurricane-migration-via-mobile-phone-data/559889/">this post</a>. We then interpolated to generate an estimate of population for the days in our data:</p>
+<pre class="r"><code>tmp &lt;- bind_rows(data.frame(date = make_date(year = 2010:2017, month = 7, day = 2), 
+                            pop = population_by_year$pop),
+                 data.frame(date = make_date(year=c(2017,2017,2017,2017,2018,2018), 
+                                             month=c(9,10,11,12,1,2), 
+                                             day = c(19,15,15,15,15,15)),
+                            pop = c(3337000, 3237000, 3202000, 3200000, 3223000, 3278000)))
+tmp &lt;- approx(tmp$date, tmp$pop, xout=official$date, rule = 2)
+predicted_pop &lt;- data.frame(date = tmp$x, pop = tmp$y)
+p1 &lt;- qplot(date, pop, data=predicted_pop, ylab = &quot;population&quot;, geom = &quot;line&quot;)</code></pre>
+<p>To account for differences in population sizes we compute rates.</p>
+<pre class="r"><code>official &lt;- official %&gt;% left_join(predicted_pop, by = &quot;date&quot;) %&gt;%
+  mutate(rate = deaths/pop*365*1000)</code></pre>
+<p>Because the population is getting older, we also need to adjust for a year effect. To be able to compare 2017 to previous years, we use only the days before September 20 to compute a yearly median rate. Because we have no post hurricane data for 2018, we also assume that 2018 has the same rate as 2017.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">year</th>
+<th align="right">year_rate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2015</td>
+<td align="right">8.176414</td>
+</tr>
+<tr class="even">
+<td align="right">2016</td>
+<td align="right">8.387966</td>
+</tr>
+<tr class="odd">
+<td align="right">2017</td>
+<td align="right">8.749981</td>
+</tr>
+<tr class="even">
+<td align="right">2018</td>
+<td align="right">8.749981</td>
+</tr>
+</tbody>
+</table>
+<p>With these estimates in place, we can now estimate a seasonal trend using 2015 and 2016 data. We do this by fitting a periodic smooth trend using loess:</p>
+<pre class="r"><code>avg &lt;- official %&gt;% filter(year(date) &lt; 2017 &amp; !(month==2 &amp; day == 29)) %&gt;%
+  left_join(population_by_year, by = &quot;year&quot;) %&gt;%
+  group_by(month,day) %&gt;%
+  summarize(avg_rate = mean(rate - year_rate)) %&gt;%
+  ungroup()
+day &lt;- as.numeric(make_date(1970, avg$month, avg$day)) + 1
+xx &lt;- c(day - 365, day, day + 365)
+yy&lt;- rep(avg$avg_rate, 3)
+fit &lt;- loess(yy ~ xx, degree = 1, span = 0.15, family = &quot;symmetric&quot;)
+trend &lt;- fit$fitted[366:(365*2)]
+trend &lt;- data.frame(month = avg$month, day = avg$day, trend = trend)
+official &lt;- official %&gt;% left_join(trend, by = c(&quot;month&quot;, &quot;day&quot;))</code></pre>
+<p>Here is what the estimate population size and seasonal trend look like:</p>
+<pre class="r"><code>p2 &lt;- official %&gt;%  
+  filter(date &gt;=ymd(&quot;2017-01-01&quot;) &amp; date &lt; ymd(&quot;2018-01-01&quot;)) %&gt;%
+  ggplot(aes(date, trend)) +
+  geom_line() + 
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 months&quot;) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  ggtitle(&quot;Death rate trend in PR&quot;)
+grid.arrange(p1, p2, ncol=2)</code></pre>
+<p><img src="/post/2018-06-08-a-first-look-at-recently-released-official-puerto-rico-death-count-data_files/figure-html/adjusted-rates-1.png" width="672" /></p>
+</div>
+<div id="adjusted-death-rates" class="section level2">
+<h2>Adjusted Death Rates</h2>
+<p>With all this in place, we can now adjust the raw count data and compute an observed minus expected death rate. We use loess, with a break-point at September 20, 2017, to estimate a smooth version of the excess death rate as a function of time.</p>
+<pre class="r"><code>after_smooth &lt;- official %&gt;% 
+  filter(date &gt;=ymd(&quot;2017-01-01&quot;) &amp; date &lt; ymd(&quot;2017-09-20&quot;)) %&gt;%
+  mutate(y = rate - year_rate -  trend, x = as.numeric(date)) %&gt;%
+  loess(y ~ x, degree = 2, span = 2/3, data = .)
+before_smooth &lt;- official %&gt;% 
+  filter(date &gt;=ymd(&quot;2017-09-20&quot;) &amp; date &lt; ymd(&quot;2018-04-15&quot;)) %&gt;%
+  mutate(y = rate - year_rate -  trend, x = as.numeric(date)) %&gt;%
+  loess(y ~ x, degree = 2, span = 2/3, data = .)
+tmp &lt;- official %&gt;% filter(date&gt;=ymd(&quot;2017-01-01&quot;) &amp; date &lt; ymd(&quot;2018-04-15&quot;)) %&gt;%
+  mutate(smooth = c(after_smooth$fitted, before_smooth$fitted),
+         se_smooth = c(predict(before_smooth, se=TRUE)$se, predict(after_smooth, se=TRUE)$se))</code></pre>
+<p>Here is what the excess death rate looks like:</p>
+<pre class="r"><code>tmp %&gt;% mutate(diff = rate - year_rate - trend) %&gt;%
+  ggplot(aes(date, diff)) +
+  geom_point(alpha=0.5) +
+  geom_ribbon(aes(date, ymin = smooth - 1.96*se_smooth, ymax = smooth + 1.96*se_smooth), fill=&quot;blue&quot;, alpha = 0.25) +
+  geom_line(aes(date, smooth), col = &quot;blue&quot;) +
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 months&quot;) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  ggtitle(&quot;Increase in death rate&quot;) + 
+  ylab(&quot;Observed rate minus expected rate&quot;) + 
+  geom_hline(yintercept = 0, lty = 2)</code></pre>
+<p><img src="/post/2018-06-08-a-first-look-at-recently-released-official-puerto-rico-death-count-data_files/figure-html/excess-death-rate-1.png" width="672" /></p>
+<p>We can now clearly see that following the big spike right after the hurricane, the death rate continued to be higher than expected, by about 10% until past December.</p>
+<p>This gives us the excess death rate. To compute an excess count we need to plug in a population size and a baseline rate. If we assume all of 2017 had the same population, the pre-hurricane yearly effect and seasonal trend as other years we get the following excess deaths by date:</p>
+<pre class="r"><code>the_pop &lt;- filter(population_by_year, year == 2016) %&gt;% .$pop
+tmp %&gt;%
+  filter(date &gt;=ymd(&quot;2017-09-20&quot;)) %&gt;%
+  mutate(diff = rate - year_rate - trend,
+         raw_cdf = cumsum(diff*the_pop/1000/365), 
+         smooth_cdf =cumsum(smooth*the_pop/1000/365)) %&gt;%
+  ggplot() +
+  geom_step(aes(date, raw_cdf)) +
+  scale_x_date(date_labels = &quot;%b&quot;, date_breaks = &quot;1 months&quot;) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+  ggtitle(&quot;Excess deaths by date&quot;) + 
+  ylab(&quot;Excess death estimate&quot;) +
+  geom_hline(yintercept = 64, lty=2, col=&quot;grey&quot;)</code></pre>
+<p><img src="/post/2018-06-08-a-first-look-at-recently-released-official-puerto-rico-death-count-data_files/figure-html/excess-deaths-1.png" width="672" /></p>
+<p>We can see that 64 deaths were reached during the first few days and 2,000 deaths are reached around February.</p>
+<p>One could argue that these assumptions are not optimal because, for example, young people may have left at a higher rate past the hurricane making the expected rate a bit higher. I encourage others to change the assumptions and re-run the code to see how the final results change.</p>
+</div>
+<div id="code-for-wrangling-pdf" class="section level2">
+<h2>Code for wrangling PDF</h2>
+<p>Here is the code to extract the data from the PDF file:</p>
+<pre class="r"><code>library(tidyverse)
+library(stringr)
+library(lubridate)
+library(pdftools)
+filename &lt;- &quot;https://github.com/c2-d2/pr_mort_official/raw/master/data/RD-Mortality-Report_2015-18-180531.pdf&quot;
+txt &lt;- pdf_text(filename)
+dat &lt;- lapply(seq_along(txt), function(i){
+  s &lt;- str_replace_all(txt[i], &quot;\\*.*&quot;, &quot;&quot;) %&gt;%
+    str_replace_all(&quot;Fuente: Registro Demográfico - División de Calidad y Estadísticas Vitales&quot;, &quot;&quot;) %&gt;%
+    str_replace_all(&quot;Y(201\\d)\\*?&quot;, &quot;\\1&quot;) %&gt;%
+    str_replace(&quot;SEP&quot;, &quot;9&quot;) %&gt;%
+    str_replace(&quot;OCT&quot;, &quot;10&quot;) %&gt;%
+    str_replace(&quot;NOV&quot;, &quot;11&quot;) %&gt;%
+    str_replace(&quot;DEC&quot;, &quot;12&quot;) %&gt;%
+    str_replace(&quot;JAN&quot;, &quot;1&quot;) %&gt;%
+    str_replace(&quot;FEB&quot;, &quot;2&quot;) %&gt;%
+    str_replace(&quot;MAR&quot;, &quot;3&quot;) %&gt;%
+    str_replace(&quot;APR&quot;, &quot;4&quot;) %&gt;%
+    str_replace(&quot;MAY&quot;, &quot;5&quot;) %&gt;%
+    str_replace(&quot;JUN&quot;, &quot;6&quot;) %&gt;%
+    str_replace(&quot;JUL&quot;, &quot;7&quot;) %&gt;%
+    str_replace(&quot;AGO&quot;, &quot;8&quot;) %&gt;%
+    str_replace(&quot;Total&quot;, &quot;@&quot;) 
+    
+  tmp &lt;- str_split(s, &quot;\n&quot;) %&gt;% .[[1]] %&gt;% str_trim %&gt;% str_split_fixed(&quot;\\s+&quot;, 50) %&gt;% .[,1:5] %&gt;% as_tibble()
+  colnames(tmp) &lt;- tmp[2,]
+  tmp &lt;- tmp[-(1:2),]
+  j &lt;- which(tmp[,1]==&quot;@&quot;)
+   if(colnames(tmp)[1]==&quot;2&quot;) { ## deal with february 29
+    k &lt;- which(tmp==29)
+    the_number &lt;- unlist(tmp[k,-1])
+    the_number &lt;- the_number[the_number!=&quot;&quot;]
+    tmp[k, colnames(tmp)!=&quot;2016&quot; &amp; colnames(tmp)!=&quot;2&quot;] &lt;- 0
+    tmp[k, &quot;2016&quot;] &lt;- the_number
+  }
+  tmp &lt;- tmp %&gt;% slice(1:(j-1)) %&gt;% mutate_all(funs(as.numeric)) %&gt;%
+    filter(!is.na(`2015`) &amp; !is.na(`2016`) &amp; !is.na(`2017`)  &amp; !is.na(`2017`))
+  tmp &lt;- mutate(tmp, month = as.numeric(names(tmp)[1]))
+  names(tmp)[1] &lt;- &quot;day&quot;
+  tmp &lt;- tmp[,c(6,1,2,3,4,5)]
+  ones &lt;- which(tmp$day==1) ##1 2 3 4 appears due to graph... let&#39;s take it out
+  if(length(ones)&gt;1) tmp &lt;- tmp[-ones[-1],]
+  if(any(diff(tmp$day)!=1)) stop(i) ## check days are ordered
+  ##check if negative. this means a black was left and the diff between 2016 and 0 was used!
+  tmp[tmp&lt;0] &lt;- NA
+  gather(tmp, year, deaths, 3:6, convert = TRUE) 
+})
+official &lt;- do.call(rbind, dat) %&gt;% 
+  arrange(year, month, day) %&gt;% 
+  filter(!(month==2 &amp; day==29 &amp; year != 2016))
+## add date
+official &lt;-official %&gt;% mutate(date = ymd(paste(year, month, day,&quot;-&quot;)))</code></pre>
+</div>
