@@ -2,6 +2,7 @@
 title: People vs. Institutions in Data Analysis
 date: '2018-06-15'
 slug: people-vs-institutions-in-data-analysis
+author: Roger Peng
 ---
 
 In my post about [relationships in data analysis](https://simplystatistics.org/2018/04/30/relationships-in-data-analysis/) I got a little push back regarding whether human relationships would ever *not* be important in data analysis and whether that has anything to do with the "maturity" of the field. I believe human beings will always play a role in data analysis, but it’s possible that over time they will play different roles. I wanted to discuss in this post what I meant about "institutions" and "institutional knowledge" in the context of data analysis and when the specific *person* who does the analysis is critical to how the analysis is done.
