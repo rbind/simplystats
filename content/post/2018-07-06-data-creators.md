@@ -2,6 +2,7 @@
 title: What Should be Done When Data Have Creators?
 date: '2018-07-06'
 slug: data-creators
+author: Roger Peng
 ---
 
 I was listening to the podcast [The West Wing Weekly](http://thewestwingweekly.com) recently and Episode 4.17 (“Red Haven’s on Fire”) featured former staff writer [Lauren Schmidt Hissrich](https://www.imdb.com/name/nm1274355/). In introducing her, the podcast co-hosts mentioned that Hissrich was a writer for the Netflix series *Daredevil*, based on the Marvel Comics character. She is also the showrunner for a new Netflix series called *The Witcher*, which is based on a book by Andrzej Sapkowski.  
