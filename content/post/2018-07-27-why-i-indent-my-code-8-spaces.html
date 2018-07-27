@@ -33,9 +33,10 @@ slug: why-i-indent-my-code-8-spaces
                 -x
         } else if (class(x)[[1]] == &quot;logical&quot;) {
                 !x
-        } else { stop(...) }
-
-        }</code></pre>
+        } else { 
+                stop(...) 
+        }
+}</code></pre>
 <p>Although, it’s not egregious, that first line is pushing up against the 80 column limit on the right-hand side. You might not do anything about it in this case, but the purpose of the indenting system is to at least trigger a reaction.</p>
 <p>The next example from Jenny’s talk is a bit more obvious. Here she gives a lesson in excessive <code>if-else</code> statements. The original code with 2 space indent is here.</p>
 <pre class="r"><code>get_some_data &lt;- function(config, outfile) {

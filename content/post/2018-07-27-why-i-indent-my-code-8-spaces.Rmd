@@ -43,9 +43,10 @@ bizarro <- function(x) {
                 -x
         } else if (class(x)[[1]] == "logical") {
                 !x
-        } else { stop(...) }
-
+        } else { 
+                stop(...) 
         }
+}
 ```
 
 Although, it's not egregious, that first line is pushing up against the 80 column limit on the right-hand side. You might not do anything about it in this case, but the purpose of the indenting system is to at least trigger a reaction.
