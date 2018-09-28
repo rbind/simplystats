@@ -1,0 +1,263 @@
+---
+title: 'The complex process of obtaining Puerto Rico mortality data: a timeline'
+author: Rafael Irizarry
+date: '2018-09-28'
+slug: the-complex-process-of-obtaining-puerto-rico-mortality-data-a-timeline
+---
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(readxl)
+library(pdftools)
+library(stringr)
+library(lubridate)
+```
+
+Rolando Acosta and I recently posted a [manuscript](https://www.biorxiv.org/content/early/2018/09/18/407874) describing the effects of Hurricane María on bioRxiv, based on an analysis of mortality data provided by the Demographic Registry. I was also an author on a [paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) published in May based on a survey of 3,000 households. These are very different datasets. Assuming it is complete, the Demographic Registry dataset provides much more precise quantitative information. However, this dataset was not made publicly available until June 1, 2018, three days after the paper based on the survey data was released. The story of how all this happened is somewhat complex. In this post I describe this process in some detail.
+
+There is also a bit of confusion about why we performed a survey at all, as opposed to using the Demographic Registry as done by other groups. The main reason is that we were not provided the 2017 data and did not know if what was being published was official government data or not. We eventually obtained preliminary 2017 data,  after our survey was finished, but, as I show below, these data appeared to be incomplete for November and December. The complete data for 2017 was not released until June 1. 
+
+As I was looking through my emails to remind myself of the multiple ways we requested the data, I found that the entire story to be interesting and informative. So  I put together  an annotated timeline. Note that I might update this list if colleagues or other involved parties send me corrections or more information.
+
+**Sep 20**  – Hurricane María makes landfall in Puerto Rico. 
+
+**Sep 20-30** – Reports from friends and family point to a dire situation. None of them have power, few have running water, and some have no way to communicate.
+
+**Oct 03** – The president of the USA visits Puerto Rico. In a [press conference](https://www.cnn.com/2017/10/03/politics/trump-puerto-rico-katrina-deaths/index.html) the governor states that the death count is 16.
+
+>> "Every death is a horror," Trump said, "but if you look at a real catastrophe like Katrina and you look at the tremendous -- hundreds and hundreds of people that died -- and you look at what happened here with, really, a storm that was just totally overpowering ... no one has ever seen anything like this."
+**"What is your death count?" he asked as he turned to Puerto Rico Gov. Ricardo Rosselló. "17?”
+"16," Rosselló answered.**
+"16 people certified," Trump said. "Sixteen people versus in the thousands. You can be very proud of all of your people and all of our people working together. 
+
+**Oct 3 - 23** - The number 16 did not make sense to me. And if the government is incorrectly assuming things are fine, the response will not be appropriate and people will be at risk. This is when I first decide I should look for daily mortality data as we can probably get a decent estimate from studying the jump right after September 20.
+
+**Oct 23** – Dr. Caroline Buckee, the lead author of the survey paper, contacts me for the first time asking if I am interested in helping assess the situation in Puerto Rico. Based on reports from a colleague doing field work in Puerto Rico, she is "concerned that the mortality estimates in Puerto Rico following the hurricane are wildly wrong". She is already organizing a cluster survey to try to quantify the true mortality caused by the hurricane. I agree to help. We start studying the literature on this topic and thinking about who to collaborate with groups in Puerto Rico.
+
+**Oct 31** - Caroline starts contacting people in Puerto Rico asking for help with the survey.
+
+**Nov 01** - We start designing the study. For the power calculation it would be convenient to get an idea of a possible range of death rates. We start trying to find public mortality data that can help us do this.
+
+**Nov 08** - The New York times publishes an  [article](https://www.nytimes.com/2017/11/08/us/puerto-rico-deaths-fema.html) based on funeral home data confirming our suspicion that the situation in Puerto Rico is much worse than was reported on October 3. 
+
+**Nov 14** – Not having any luck finding official government data online I email the Puerto Rico Institute of Statistics (PRIS) asking for help. 
+
+**Nov 16** – PRIS replies that the Demographic Registry has this data. They email the directory of the Demographic Registry on our behalf.
+
+**Nov 20** – CNN publishes an [article](https://www.cnn.com/2017/11/20/health/hurricane-maria-uncounted-deaths-invs/index.html) describing a funeral home survey estimates. They estimate about 499 excess deaths.
+
+**Nov 21** – The Penn State University (PSU) study with the first estimate of excess deaths based on mortality data is posted on [SocArXiv](https://osf.io/preprints/socarxiv/s7dmu/)
+They estimate about 1,000 excess deaths. This estimate is based on historical data from 2010-2016 and a number provided by the Public Security Secretary in a public statement.
+
+**Nov 27** - I email the corresponding author of the PSU study asking if they have the data.
+
+**Dec 03** - I scrape the data from PSU study, as described in an earlier [post](https://simplystatistics.org/2017/12/03/data-do-not-agree-with-hurricane-official-death-count/). This data helps guide our study design. Here is a plot of the data that clearly shows that there are more deaths than expected.
+
+
+```{r deaths-above-monthly-average, echo=FALSE, message=FALSE, out.width = "75%", fig.align='center'}
+library(ggrepel)
+library(dslabs)
+ds_theme_set()
+## load rda created wtih pdf in code above
+load(url("https://simplystatistics.org/data/2017-12-03-hurricane-maria-deaths.rda"))
+## 2017 data point
+avg <- tab %>% filter(Year != "Average") %>%
+  filter(Month %in% c("September","October")) %>%
+  group_by(Month) %>%
+  summarize(avg=mean(Deaths)) %>%
+  .$avg
+annotate_resid <- data_frame(x = c(9,10),
+                             y = c(2883, 2906) - avg,
+                             label = c("September 2017", "October 2017"))
+
+ranges <- tab %>% filter(Year != "Average") %>%
+  filter(Month %in% c("September","October")) %>%
+  group_by(Month) %>%
+  summarize(min=min(Deaths), max=max(Deaths))
+
+### create the plot
+tab %>% filter(Year != "Average") %>%
+  group_by(Month) %>%
+  mutate(resid = Deaths - mean(Deaths)) %>%
+  ungroup %>%
+  ggplot() +
+  geom_line(aes(as.numeric(Month), resid,
+                lty=Year), col = "darkgrey") +
+  scale_x_continuous(breaks = 1:12, labels=levels(tab$Month))+
+  scale_y_continuous(breaks=seq(-300, 500, 100)) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  xlab("Month") +
+  ylab("Deaths above monthly average in Puerto Rico") +
+  geom_point(aes(x,y), color = "blue", data = annotate_resid) +
+  geom_text_repel(aes(x, y, label=label), color = "blue", data = annotate_resid)
+```
+
+
+**Dec 05** - We receive data from a Demographic Registry demographer, but it does not include the most important part: the 2017 data. **They claim that they "still do not have these data available".**
+
+**Dec 05** - We start finalizing the study design for a survey. Based on the limited information we have, we perform a power calculations and decide to make the sample size as large as our funds permit.
+
+**Dec 06** - PSU study author replies. But email with data appears to be lost in the mail. 
+
+**Dec 07** - Centro de Periodismo Investigative (CPI) publishes an [estimate](http://periodismoinvestigativo.com/2017/12/se-disparan-en-casi-mil-las-muertes-tras-maria/) of excess deaths based on September and October data of about 1,000. It appears they have 2017 data! 
+
+**Dec 07** – From [this](https://twitter.com/AppDemography/status/938979566282006528) tweet, it appears PSU investigator also has the data. I [ask on twitter](https://twitter.com/rafalab/status/938968534188806144) if CPI or PSU investigator have official data.
+
+**Dec 08** – I email PSU investigator asking for data.
+
+**Dec 08** - New York Times published a comprehensive  [article](https://www.nytimes.com/interactive/2017/12/08/us/puerto-rico-hurricane-maria-death-toll.html) with very nice data visualization and an estimate of 1,052. They have daily data!
+
+**Dec 08** – I email first author of New York Times article. She says it took 100 emails/calls to get the data and suggest we contact the Registry director. So now we know the Demographic Registry does in fact have the data.
+
+**Dec 08** – It appears that **the 2017 data does exist** and **three different groups were given access**. We were told, three days earlier, by the Demographic Registry that they "still do not have these data available". So I email PRIS again to see if they can help.
+
+**Dec 09** – I ask Dr. Buckee to email Registry director to check that it is not just me that is being denied the data.
+
+**Dec 11** - PRIS replies. They give us the name of a Registry demographer that gave data to others. PRIS emails Registry directory, again, on our behalf.
+
+**Dec 13** –  The official death count is about 55 now and Public Security Secretary dismisses current excess deaths estimates. He says this:
+
+>>> It should be noted that similar numbers are seen in December and January of previous years when no atmospheric phenomenom took place.
+
+Source: [https://twitter.com/julito77/status/940945756399243264](https://twitter.com/julito77/status/940945756399243264)
+
+This statement shows ignorance of the well-known fact that death rates in the winter are higher than in the fall. You can clearly see this from the Demographic Registry data:
+    
+```{r seasonal-effect, echo=FALSE, out.width = "75%", fig.align='center'}
+official_rates_by_month <- tab %>%
+  group_by(Month) %>%
+  summarize(average = mean(Deaths), sd = sd(Deaths), min = min(Deaths), max = max(Deaths))
+official_rates_by_month %>%
+  ggplot(aes(as.numeric(Month), average)) +
+  geom_ribbon(aes(ymin = min, ymax = max), fill = "grey70", alpha = 0.5) +
+  geom_line() +
+  scale_x_continuous(breaks=1:12, labels = month.abb[1:12]) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))  +
+  xlab("Month") + ylab("Average deaths by month")
+```
+    
+    
+**Comment  - At this point we become quite concerned. A high ranking government official, who has seen the reports of excess deaths around 1,000 by three different groups, ignores the warnings and instead makes a misguided statement claming what we are observing is normal. It is also concerning that the government is only selectively sharing the data.**
+
+
+**Jan 07** - The New York times shares data with us. It's in PDF! But scrapable.
+This data shows very clearly that in September and October that was a huge spike in deaths. **However, it is immediately obvious from exploratory data analysis that data for November and December is incomplete**:
+
+```{r nytimes-data, warning=FALSE, echo=FALSE, message=FALSE, out.width = "75%", fig.align='center'}
+url <- "https://github.com/c2-d2/pr_mort_official/raw/master/data/Mortalidad-RegDem-2015-17-NYT-part1.pdf"
+txt <- pdf_text(url)
+dat <- lapply(seq_along(txt), function(i){
+  s <- str_replace_all(txt[i], "12/6/2017|Registro Demográfico - División de Calidad y Estadísticas Vitales\n", "") %>%
+    str_replace_all("Registro\n|Demográfico\n|División\n|Estadísticas\n|Calidad\n|Vitales\n", "") %>%
+    str_replace_all("Y(201\\d)\\*?", "\\1") %>%
+    str_replace("SEP", "9") %>%
+    str_replace("OCT\\*", "10") %>%
+    str_replace("NOV", "11") %>%
+    str_replace("DEC", "12") %>%
+    str_replace("JAN", "1") %>%
+    str_replace("FEB", "2") %>%
+    str_replace("MAR", "3") %>%
+    str_replace("APR", "4") %>%
+    str_replace("MAY", "5") %>%
+    str_replace("JUN", "6") %>%
+    str_replace("JUL", "7") %>%
+    str_replace("AGO", "8") %>%
+    str_replace("Total", "@") 
+    
+  tmp <- str_split(s, "\n") %>% .[[1]] %>% str_trim %>% str_split_fixed("\\s+", 50) %>% .[,1:4] %>% as_tibble()
+  colnames(tmp) <- tmp[2,]
+  tmp <- tmp[-(1:2),]
+  j <- which(tmp[,1]=="@")
+  tmp <- tmp %>% slice(1:(j-1)) %>% mutate_all(funs(as.numeric)) %>% filter(!is.na(`2015`) & !is.na(`2016`) & !is.na(`2017`))
+  tmp <- mutate(tmp, month = as.numeric(names(tmp)[1]))
+  names(tmp)[1] <- "day"
+  tmp <- tmp[,c(5,1,2,3,4)]
+  ones <- which(tmp$day==1) ##1 2 3 4 appears due to graph... let's take it out
+  if(length(ones)>1) tmp <- tmp[-ones[-1],]
+  if(any(diff(tmp$day)!=1)) stop(i) ## check days are ordered
+  ##check if negative. this means a black was left and the diff between 2016 and 0 was used!
+  tmp[tmp<0] <- NA
+  gather(tmp, year, deaths, 3:5, convert = TRUE) 
+})
+dat <- do.call(rbind, dat) %>% arrange(year, month, day) %>% 
+  mutate(date = ymd(paste(year, month, day,"-")))
+
+YLIM <- range(dat$deaths,na.rm=TRUE)
+
+dat %>% 
+  mutate(hurricane_year = ifelse(year == 2017, "2017", "2015, 2016"),
+         day = make_date(2018,01,01) + yday(date) - 1) %>%
+  ggplot(aes(day, deaths, group = year, col = hurricane_year, lty = hurricane_year)) + 
+  geom_line() +
+  xlab("Day") + ylab("Deaths") + 
+  scale_color_manual(values = c("grey","blue")) +
+  scale_linetype_manual(values=c(2, 1)) +
+  scale_x_date(date_labels = "%b", date_breaks = "1 months")
+```
+    
+
+**Jan 16** - Field workers are deployed in Puerto Rico and our survey starts. 
+
+**Jan 25** - **Demographic Registry finally responds to Dr. Buckee saying "we are not authorized to provide new 2017 mortality data." **
+
+**Feb 01** - PSU investigator emails Public Security Secretary
+  asking them to make data public. 
+  
+**Feb 22** – Puerto Rico government [announces](https://www.washingtonpost.com/national/gwu-experts-tapped-to-review-hurricane-maria-death-toll-in-puerto-rico/2018/02/22/7f0a1c94-17e7-11e8-8b08-027a6ccb38eb_story.html?utm_term=.5641b7dd6d9c) that they have contracted George Washington University (GWU) to perform an independent investigation into the death toll.
+
+**Feb 24** - Our household survey is completed. We start analyzing data right away since **we want to get the paper published before June 1, the start of hurricane season**. 
+
+**Feb 28** - Latino USA publishes an [article](https://latinousa.org/2018/02/28/data-puerto-rico-institute-statistics-confirms-excess-deaths-hurricane-maria/) showing data provided to them by PRIS. I email PRIS again and they send us data that same day. We immediately see that, like the data we received from New York Times, it appears incomplete:
+
+```{r official-data, echo=FALSE, out.width = "75%", fig.align='center'}
+library(tidyverse)
+library(lubridate)
+library(readxl)
+dslabs::ds_theme_set()
+fn <- tempfile()
+url <- "https://github.com/c2-d2/pr_mort_official/raw/master/data/defunciones_2010_17.xlsx"
+download.file(url, fn)
+official <- read_excel(fn, skip = 3) %>%
+  select(1:14) %>%
+  slice(1:8) %>%
+  setNames(c("year", 1:12, "total")) %>%
+  mutate(year = parse_number(year)) %>%
+  select(-total) %>%
+  gather(month, deaths, -year, convert = TRUE) %>% 
+  mutate(deaths = parse_number(deaths)) %>% 
+  arrange(year, month)
+
+official %>%
+  mutate(hurricane_year = ifelse(year == 2017, "2017", "2010-2016")) %>%
+  ggplot(aes(month, deaths, group = year, col = hurricane_year, lty = hurricane_year)) + 
+  geom_point() + 
+  geom_line() +
+  xlab("Month") +
+  ylab("Deaths") +
+  scale_color_manual(values = c("grey","blue")) +
+  scale_linetype_manual(values=c(2, 1)) +
+  scale_x_continuous(breaks=1:12, labels = month.abb[1:12]) 
+```
+
+
+**Mar 16** - First draft of our survey paper is completed and submitted to the New England Journal of Medicine (NEJM). A particularly troubling finding is the large proportion of deaths attributed to lack of access to medical services. We also see evidence of indirect effects lasting until December 31, the end of the survey period.
+
+**May 04** - Survey paper is tentatively accepted by NEJM. 
+
+**May 25** - Official death count is still at 64. We send a draft of our paper to PR governors office.
+
+**May 29** – Our [NEJM paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) comes out and gets extensive media coverage: 410 outlets including articles in [NPR](https://www.npr.org/2018/08/03/635449562/harvard-research-fellow-estimates-puerto-rico-s-death-toll-following-hurricane-m), [Washignton Post](https://www.washingtonpost.com/national/harvard-study-estimates-thousands-died-in-puerto-rico-due-to-hurricane-maria/2018/05/29/1a82503a-6070-11e8-a4a4-c070ef53f315_story.html), [New YorkT Times](https://www.nytimes.com/2018/05/29/us/puerto-rico-deaths-hurricane.html), and [CNN](https://www.cnn.com/2018/05/29/us/puerto-rico-hurricane-maria-death-toll/index.html). Despite our best efforts in rewriting the press release, most headlines focus on the point estimate and [don't report uncertainty](https://fivethirtyeight.com/features/media-reports-about-the-death-toll-in-puerto-rico-are-needlessly-confusing/). All the data and code is made [available on GitHub](https://github.com/c2-d2/pr_mort_official).
+
+**May 31** - We post an [FAQ](https://github.com/c2-d2/pr_mort_official/blob/master/misc/faq.md) (in English and Spanish) explaining the uncertainty in our estimate and making it clear that are study does not say that 4645 (the point estimate) people died.
+
+**Jun 01** – PR Governor is [interviewed](https://www.cnn.com/videos/us/2018/06/01/puerto-rico-deaths-hurricane-maria-governor-rossello-bts-ac.cnn) by CNN's Anderson Cooper who grills him on why the government did not share the data. Governor says data was always available and that there will be "hell to pay if data not available". That afternoon. PR government makes data public. Dr. Buckee requests the data again. This time we get it almost immediately.
+
+**Jan 06** - I post my first analysis with the official mortality data [here](https://simplystatistics.org/2018/06/08/a-first-look-at-recently-released-official-puerto-rico-death-count-data/). The newly released data confirms that the data we were provided earlier were in fact incomplete.
+
+**Aug 27** - GWU study comes out with a preliminary estimate of about 3,000 deaths.
+
+**Sep 05** - Rolando Acosta and I post a [preprint](https://www.biorxiv.org/content/early/2018/09/18/407874) describing an analysis of the newly released data including a comparison to the effects of other hurricanes. We also provide a preliminary estimate of about 3,000 deaths due to indirect effects lasting until April.
+
+
+
