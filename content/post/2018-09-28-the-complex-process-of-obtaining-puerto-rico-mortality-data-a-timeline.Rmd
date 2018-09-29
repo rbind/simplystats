@@ -14,7 +14,7 @@ library(stringr)
 library(lubridate)
 ```
 
-Rolando Acosta and I recently posted a [manuscript](https://www.biorxiv.org/content/early/2018/09/18/407874) describing the effects of Hurricane María on bioRxiv, based on an analysis of mortality data provided by the Demographic Registry. I was also an author on a [paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) published in May based on a survey of 3,000 households. These are very different datasets. Assuming it is complete, the Demographic Registry dataset provides much more precise quantitative information. However, this dataset was not made publicly available until June 1, 2018, three days after the paper based on the survey data was released. The story of how all this happened is somewhat complex. In this post I describe this process in some detail.
+Rolando Acosta and I recently posted a [manuscript](https://www.biorxiv.org/content/early/2018/09/18/407874) on bioRxiv describing the effects of Hurricane María, based on an analysis of mortality data provided by the Demographic Registry. I was also an author on a [paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) published in May based on a survey of 3,000 households. These are very different datasets. Assuming it is complete, the Demographic Registry dataset provides much more precise quantitative information. However, this dataset was not made publicly available until June 1, 2018, three days after the paper based on the survey data was released. The story of how all this happened is somewhat complex. In this post I describe this process in some detail.
 
 There is also a bit of confusion about why we performed a survey at all, as opposed to using the Demographic Registry as done by other groups. The main reason is that we were not provided the 2017 data and did not know if what was being published was official government data or not. We eventually obtained preliminary 2017 data,  after our survey was finished, but, as I show below, these data appeared to be incomplete for November and December. The complete data for 2017 was not released until June 1. 
 
@@ -43,16 +43,16 @@ As I was looking through my emails to remind myself of the multiple ways we requ
 
 **Nov 14** – Not having any luck finding official government data online I email the Puerto Rico Institute of Statistics (PRIS) asking for help. 
 
-**Nov 16** – PRIS replies that the Demographic Registry has this data. They email the directory of the Demographic Registry on our behalf.
+**Nov 16** – PRIS replies that the Demographic Registry has these data. They email the directory of the Demographic Registry on our behalf.
 
 **Nov 20** – CNN publishes an [article](https://www.cnn.com/2017/11/20/health/hurricane-maria-uncounted-deaths-invs/index.html) describing a funeral home survey estimates. They estimate about 499 excess deaths.
 
 **Nov 21** – The Penn State University (PSU) study with the first estimate of excess deaths based on mortality data is posted on [SocArXiv](https://osf.io/preprints/socarxiv/s7dmu/)
-They estimate about 1,000 excess deaths. This estimate is based on historical data from 2010-2016 and a number provided by the Public Security Secretary in a public statement.
+They estimate about 1,000 excess deaths. This estimate is based on historical data from 2010-2016 and a count for September 2017 that the authors obtained from a public statement made by Puerto Rico's Public Security Secretary.
 
 **Nov 27** - I email the corresponding author of the PSU study asking if they have the data.
 
-**Dec 03** - I scrape the data from PSU study, as described in an earlier [post](https://simplystatistics.org/2017/12/03/data-do-not-agree-with-hurricane-official-death-count/). This data helps guide our study design. Here is a plot of the data that clearly shows that there are more deaths than expected.
+**Dec 03** - I scrape the data from PSU study, as described in an earlier [post](https://simplystatistics.org/2017/12/03/data-do-not-agree-with-hurricane-official-death-count/). This data helps guide our study design. Here is a plot of the data that clearly shows that there are more deaths than expected. The plot includes a count for October which is publicized later (see Dec 07 entry).
 
 
 ```{r deaths-above-monthly-average, echo=FALSE, message=FALSE, out.width = "75%", fig.align='center'}
@@ -142,7 +142,7 @@ official_rates_by_month %>%
 
 
 **Jan 07** - The New York times shares data with us. It's in PDF! But scrapable.
-This data shows very clearly that in September and October that was a huge spike in deaths. **However, it is immediately obvious from exploratory data analysis that data for November and December is incomplete**:
+This data shows very clearly that in September and October ther was a huge spike in deaths. **However, it is immediately obvious from exploratory data analysis that data for November and December are incomplete**:
 
 ```{r nytimes-data, warning=FALSE, echo=FALSE, message=FALSE, out.width = "75%", fig.align='center'}
 url <- "https://github.com/c2-d2/pr_mort_official/raw/master/data/Mortalidad-RegDem-2015-17-NYT-part1.pdf"
@@ -206,7 +206,7 @@ dat %>%
   
 **Feb 22** – Puerto Rico government [announces](https://www.washingtonpost.com/national/gwu-experts-tapped-to-review-hurricane-maria-death-toll-in-puerto-rico/2018/02/22/7f0a1c94-17e7-11e8-8b08-027a6ccb38eb_story.html?utm_term=.5641b7dd6d9c) that they have contracted George Washington University (GWU) to perform an independent investigation into the death toll.
 
-**Feb 24** - Our household survey is completed. We start analyzing data right away since **we want to get the paper published before June 1, the start of hurricane season**. 
+**Feb 24** - Our household survey is completed. We start analyzing data right away. **Our goal is to get the paper published before June 1, the start of hurricane season**. 
 
 **Feb 28** - Latino USA publishes an [article](https://latinousa.org/2018/02/28/data-puerto-rico-institute-statistics-confirms-excess-deaths-hurricane-maria/) showing data provided to them by PRIS. I email PRIS again and they send us data that same day. We immediately see that, like the data we received from New York Times, it appears incomplete:
 
@@ -247,13 +247,13 @@ official %>%
 
 **May 25** - Official death count is still at 64. We send a draft of our paper to PR governors office.
 
-**May 29** – Our [NEJM paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) comes out and gets extensive media coverage: 410 outlets including articles in [NPR](https://www.npr.org/2018/08/03/635449562/harvard-research-fellow-estimates-puerto-rico-s-death-toll-following-hurricane-m), [Washignton Post](https://www.washingtonpost.com/national/harvard-study-estimates-thousands-died-in-puerto-rico-due-to-hurricane-maria/2018/05/29/1a82503a-6070-11e8-a4a4-c070ef53f315_story.html), [New YorkT Times](https://www.nytimes.com/2018/05/29/us/puerto-rico-deaths-hurricane.html), and [CNN](https://www.cnn.com/2018/05/29/us/puerto-rico-hurricane-maria-death-toll/index.html). Despite our best efforts in rewriting the press release, most headlines focus on the point estimate and [don't report uncertainty](https://fivethirtyeight.com/features/media-reports-about-the-death-toll-in-puerto-rico-are-needlessly-confusing/). All the data and code is made [available on GitHub](https://github.com/c2-d2/pr_mort_official).
+**May 29** – Our [NEJM paper](https://www.nejm.org/doi/full/10.1056/NEJMsa1803972) comes out and gets extensive media coverage: 410 outlets including articles in [NPR](https://www.npr.org/2018/08/03/635449562/harvard-research-fellow-estimates-puerto-rico-s-death-toll-following-hurricane-m), [Washignton Post](https://www.washingtonpost.com/national/harvard-study-estimates-thousands-died-in-puerto-rico-due-to-hurricane-maria/2018/05/29/1a82503a-6070-11e8-a4a4-c070ef53f315_story.html), [New YorkT Times](https://www.nytimes.com/2018/05/29/us/puerto-rico-deaths-hurricane.html), and [CNN](https://www.cnn.com/2018/05/29/us/puerto-rico-hurricane-maria-death-toll/index.html). Despite our best efforts, including rewriting our university's press release, most headlines focus on the point estimate and [don't report uncertainty](https://fivethirtyeight.com/features/media-reports-about-the-death-toll-in-puerto-rico-are-needlessly-confusing/). All the data and code is made [available on GitHub](https://github.com/c2-d2/pr_mort_official).
 
 **May 31** - We post an [FAQ](https://github.com/c2-d2/pr_mort_official/blob/master/misc/faq.md) (in English and Spanish) explaining the uncertainty in our estimate and making it clear that are study does not say that 4645 (the point estimate) people died.
 
-**Jun 01** – PR Governor is [interviewed](https://www.cnn.com/videos/us/2018/06/01/puerto-rico-deaths-hurricane-maria-governor-rossello-bts-ac.cnn) by CNN's Anderson Cooper who grills him on why the government did not share the data. Governor says data was always available and that there will be "hell to pay if data not available". That afternoon. PR government makes data public. Dr. Buckee requests the data again. This time we get it almost immediately.
+**Jun 01** – PR Governor is [interviewed](https://www.cnn.com/videos/us/2018/06/01/puerto-rico-deaths-hurricane-maria-governor-rossello-bts-ac.cnn) by CNN's Anderson Cooper who grills him on why the government did not share the data. Governor says data was always available and that there will be "hell to pay if data not available". That afternoon, [PR government makes data public](https://twitter.com/DavidBegnaud/status/1002658303904829442). Dr. Buckee requests the data again. This time we get it almost immediately.
 
-**Jan 06** - I post my first analysis with the official mortality data [here](https://simplystatistics.org/2018/06/08/a-first-look-at-recently-released-official-puerto-rico-death-count-data/). The newly released data confirms that the data we were provided earlier were in fact incomplete.
+**Jan 06** - I post my first analysis with the official mortality data [here](https://simplystatistics.org/2018/06/08/a-first-look-at-recently-released-official-puerto-rico-death-count-data/). The newly released data confirms that the data we were provided earlier were in fact incomplete and that there was a sustained indirect effect lasting past October.
 
 **Aug 27** - GWU study comes out with a preliminary estimate of about 3,000 deaths.
 
