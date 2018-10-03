@@ -142,7 +142,7 @@ official_rates_by_month %>%
 **Comment  - At this point we become quite concerned. A high ranking government official, who has seen the reports of excess deaths around 1,000 by three different groups, ignores the warnings and instead makes a misguided statement claming what we are observing is normal. It is also concerning that the government is only selectively sharing the data.**
 
 
-**Jan 07** - The New York Times shares data with us. It's in PDF! But scrapable.
+**Jan 07** - The New York Times shares the raw data they obtained with us. It's in PDF! But scrapable.
 This data shows very clearly that in September and October ther was a huge spike in deaths. **However, it is immediately obvious from exploratory data analysis that data for November and December are incomplete**:
 
 ```{r nytimes-data, warning=FALSE, echo=FALSE, message=FALSE, out.width = "75%", fig.align='center'}
