@@ -7,7 +7,7 @@ categories: []
 tags: []
 ---
 
-_tl;dr check out [our new paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3260695) on the relationship between MOOC completion and economic outcomes!_ 
+*tl;dr check out [our new paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3260695) on the relationship between MOOC completion and economic outcomes!*
 
 Last Monday we launched our [Chromebook Data Science Program](https://leanpub.com/universities/set/jhu/chromebook-data-science) so that anyone with an internet connection, a web browser, and the ability to read and follow instructions could become a data scientist.
 
