@@ -1,6 +1,6 @@
 ---
 title: 'Guest Post: Galin Jones on criteria for promotion and tenture in (bio)statistics departments'
-author: ~
+author: Rafael Irizarry
 date: '2018-10-11'
 slug: guest-post-galin-jones-on-criteria-for-promotion-and-tenture-in-bio-statistics-departments
 categories: []

@@ -1,6 +1,6 @@
 ---
 title: The economic consequences of MOOCs
-author: ~
+author: Jeff Leek
 date: '2018-10-08'
 slug: the-economic-consequences-of-moocs
 categories: []
