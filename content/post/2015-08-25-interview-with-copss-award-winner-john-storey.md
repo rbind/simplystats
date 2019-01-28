@@ -27,11 +27,11 @@ _Editor's Note: We are again pleased to interview the COPSS President's award wi
 
 JS: For the most part I consider myself to be a statistician, but I’m also very serious about genetics/genomics, data analysis, and computation. I was trained in statistics and genetics, primarily statistics. I was also exposed to a lot of machine learning during my training since Rob Tibshirani was my [PhD advisor](http://genealogy.math.ndsu.nodak.edu/id.php?id=69303). However, I consider my research group to be a data science group. We have the [Venn diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) reasonably well covered: experimentalists, programmers, data wranglers, and developers of theory and methods; biologists, computer scientists, and statisticians.
 
-****SimplyStats:** How did you find out you had won the COPSS Presidents’ Award?**
+**SimplyStats: How did you find out you had won the COPSS Presidents’ Award?**
 
 JS: I received a phone call from the chairperson of the awards committee while I was visiting the Department of Statistical Science at Duke University to [give a seminar](https://stat.duke.edu/events/15731.html). It was during the seminar reception, and I stepped out into the hallway to take the call. It was really exciting to get the news!
 
-****SimplyStats: **One of the areas where you have had a big impact is inference in massively parallel problems. How do you feel high-dimensional inference is different from more traditional statistical inference?**
+**SimplyStats: One of the areas where you have had a big impact is inference in massively parallel problems. How do you feel high-dimensional inference is different from more traditional statistical inference?**
 
 JS: My experience is that the most productive way to approach high-dimensional inference problems is to first think about a given problem in the scenario where the parameters of interest are random, and the joint distribution of these parameters is incorporated into the framework. In other words, I first gain an understanding of the problem in a Bayesian framework. Once this is well understood, it is sometimes possible to move in a more empirical and nonparametric direction. However, I have found that I can be most successful if my first results are in this Bayesian framework.
 
@@ -39,7 +39,7 @@ As an example, Theorem 1 from [Storey (2003) Annals of Statistics](http://genomi
 
 Besides false discovery rates, this approach has been useful in my work on the [optimal discovery procedure](http://genomics.princeton.edu/storeylab/papers/Storey_JRSSB_2007.pdf) as well as [surrogate variable analysis](http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.0030161) (in particular, [Desai and Storey 2012](http://amstat.tandfonline.com/doi/abs/10.1080/01621459.2011.645777#.VdxderxVhBc) for surrogate variable analysis).  For high-dimensional inference problems, I have also found it is important to consider whether there are any plausible underlying causal relationships among variables, even if causal inference in not the goal. For example, causal model considerations provided some key guidance in a [recent paper of ours](http://www.nature.com/ng/journal/v47/n5/full/ng.3244.html) on testing for genetic associations in the presence of arbitrary population structure. I think there is a lot of insight to be gained by considering what is the appropriate approach for a high-dimensional inference problem under different causal relationships among the variables.
 
-**SimplyStats: Do you have a process when you are tackling a hard problem or working with students on a hard problem?**
+**SimplyStats: Do you have a process when you are tackling a hard problem or working with students on a hard problem?**
 
 JS: I like to work on statistics research that is aimed at answering a specific scientific problem (usually in genomics). My process is to try to understand the why in the problem as much as the how. The path to success is often found in the former. I try first to find solutions to research problems by using simple tools and ideas. I like to get my hands dirty with real data as early as possible in the process. I like to incorporate some theory into this process, but I prefer methods that work really well in practice over those that have beautiful theory justifying them without demonstrated success on real-world applications. In terms of what I do day-to-day, listening to music is integral to my process, for both concentration and creative inspiration: typically [King Crimson](https://en.wikipedia.org/wiki/King_Crimson) or some [variant of metal](http://www.metal-archives.com/) or [ambient](https://en.wikipedia.org/wiki/Brian_Eno) – which Simply Statistics co-founder](http://jtleek.com/) got to <del>endure</del> enjoy for years during his PhD in my lab.
 
@@ -51,7 +51,7 @@ What I’m most excited about is that we get to answer the question: “What’s
 
 For those who are interested, we’ll be releasing a [public version of our strategic plan](http://www.princeton.edu/strategicplan/taskforces/sml/) within about six months. We’re trying to do something unique and forward-thinking, which will hopefully make Princeton an influential member of the statistics, machine learning, and data science communities.
 
-**SimplyStats: You are organizing the Tukey conference at Princeton (to be held September 18, [details here](http://csml.princeton.edu/tukey)).** **Do you think Tukey’s influence will affect your vision for re-building statistics at Princeton?**
+**SimplyStats: You are organizing the Tukey conference at Princeton (to be held September 18, [details here](http://csml.princeton.edu/tukey)). Do you think Tukey’s influence will affect your vision for re-building statistics at Princeton?**
 
 JS: Absolutely, Tukey has been and will be a major influence in how we re-build. He made so many important contributions, and his approach was extremely forward thinking and tied into real-world problems. I strongly encourage everyone to read Tukey’s 1962 paper titled [The Future of Data Analysis](https://projecteuclid.org/euclid.aoms/1177704711). Here he’s 50 years into the future, foreseeing the rise of data science. This paper has truly amazing insights, including:
 
