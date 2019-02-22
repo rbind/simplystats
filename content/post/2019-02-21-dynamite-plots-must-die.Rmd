@@ -1,0 +1,152 @@
+---
+title: 'Open letter to journal editors: dynamite plots must die'
+author: Rafael Irizarry
+date: '2019-02-21'
+slug: dynamite-plots-must-die
+---
+ 
+Statisticians have been pointing out the problem with dynamite plots, also known as bar and line graphs, for years.
+Karl Broman lists them as one of the [top ten worst graphs](https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/). The problem has even been documneted in the peer reviewed literature. 
+For example, [this British Journal of Pharmacology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3087125/) paper titled _Show the data, don't conceal them_  was published in 2011. 
+
+However, despite all these efforts, dynamite plots continue to be ubiquitous in the scientific literature. Just open the latest issue of Nature, Science or Cell and you will likely see a few. In fact, in this [PLOS Biology paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128), Tracey Weissgerber and co-authors perform a systmetic review of "top physiology journals" and find that "85.6% of papers included at least one bar graph". They go on to recommend "training investigators in data presentation, encouraging a more complete presentation of data, and changing journal editorial policies". In my view, the training will be accelerated if editors implement a policy that requires authors to show the data or, if the dataset is too large, show the distribution of the data with boxplots, histograms or smooth density estimates.
+
+## What's wrong with dynamite plots
+
+Dynamite plots are used to compare measurements from two or more groups: cases and controls, for example. In a two group comparison, the plots are graphical representations of a grand total of 4 numbers, regardless of the sample size.   The four numbers are the average and the standard error (or the standard deviation, it's not always clear) for each group.  Here is a simulated example comparing diastolic blood pressure for patients on a drug and placebo:
+
+```{r dynamite, warning=FALSE, message=FALSE, echo=FALSE, fig.width=4}
+set.seed(0)
+n <- 10
+cases <- rnorm(n, log2(64), 0.25)
+controls <- rnorm(n, log2(64), 0.25)
+cases <- 2^(cases)
+controls <- 2^(controls)
+cases[1:2] <- c(110, 150) #introduce outliers
+dat <- data.frame(x = factor(rep(c("Controls", "Cases"), each = n), 
+                             levels = c("Controls", "Cases")),
+                             Outcome = c(controls, cases))
+
+library(dplyr)
+library(ggthemes)
+library(ggplot2)
+p1 <- dat %>% group_by(x) %>% summarize(average = mean(Outcome), se=sd(Outcome)/sqrt(n())) %>%
+  ggplot(aes(x, average)) + theme_excel() +
+  geom_errorbar(aes(ymin = average - se, ymax = average+se), width = 0.25)+
+  geom_bar(stat = "identity", width=0.5, fill=4, col = 1) +
+  annotate(geom="text", x="Cases", y=92.5, label = "*", cex = 10)+
+  xlab("") + ylab("Outcome")
+p1
+```
+
+Stars are often added to point out that the differences are statistically significant. 
+
+So what is the problem with these plots? First, if you have a print edition of your journal you are wasting ink. No need to waste all that toner just to show these four summaries:
+
+```{r, echo=FALSE}
+options(digits = 2)
+dat %>% group_by(x) %>% summarize(average = mean(Outcome),  se=sd(Outcome)/sqrt(n())) %>% as.data.frame()
+```
+
+From these numbers you compute the p-value, which in this case is just below 0.05.
+
+Second, the dynamite plot makes it appear as if there is a clear difference between the two groups. **Showing the data** reveals more information. In our example, showing the data reveals that the lowest blood pressure is actually in the treatment group. It also reveals the presence of one somewhat extreme value of almost 150. This might represent a data entry mistake. Perhaps diastolic pressure was recorded by accident? Note that without that data point, the difference is no longer significant at the 0.05 level. 
+
+```{r show-data,message=FALSE, warning=FALSE, fig.width=8, echo=FALSE}
+dslabs::ds_theme_set()
+p2 <- ggplot(dat, aes(x, Outcome)) + 
+        geom_boxplot(color = "grey", width = 0.5, outlier.shape = NA) +
+        geom_jitter(width = 0.05, alpha = 0.85) +
+  scale_y_continuous(breaks = seq(50, 150, 25)) + xlab("")
+library(gridExtra)
+grid.arrange(p1, p2, ncol = 2)
+```
+
+Note also that, as pointed out by Weissgerber, data that look quite different can result in exactly the same barplot. For instance, the two datasets below would produce the same barplot as the one shown above.
+
+```{r different-data-same-dynamite,message=FALSE, warning=FALSE, fig.width=8, echo=FALSE}
+res <- dat %>% group_by(x) %>% summarize(average = mean(Outcome),  sd=sd(Outcome))
+set.seed(2)
+n <- 3
+x <- rnorm(n,0,1); x <- scale(x)*res$sd[1]*sqrt(n/10)+res$average[1]
+y <- rnorm(n,0,1); y <- scale(y)*res$sd[2]*sqrt(n/10)+res$average[2]
+p3 <- data.frame(x = factor(rep(c("Controls", "Cases"), 
+                                each = n),
+                            levels = c("Controls", "Cases")), 
+                            Outcome = c(x,y)) %>% 
+        ggplot(aes(x, Outcome)) + 
+        geom_boxplot(color = "grey", width = 0.5, outlier.shape = NA) +
+        geom_jitter(width = 0.05, alpha = 0.85) +
+  scale_y_continuous(limits =c(50,150), breaks = seq(50, 150, 25)) + xlab("")
+ p2 <- ggplot(dat, aes(x, Outcome)) + 
+        geom_boxplot(color = "grey", width = 0.5, outlier.shape = NA) +
+        geom_jitter(width = 0.05, alpha = 0.85) +
+  scale_y_continuous(breaks = seq(50, 150, 25)) 
+grid.arrange(p2, p3, ncol = 2)
+```
+
+
+## What should we do instead?
+
+First, let's generate the data that we will use in the example R code shown below.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+set.seed(0)
+n <- 10
+cases <- rnorm(n, log2(64), 0.25)
+controls <- rnorm(n, log2(64), 0.25)
+cases <- 2^(cases)
+controls <- 2^(controls)
+cases[1:2] <- c(110, 150) #introduce outliers
+dat <- data.frame(x = factor(rep(c("Controls", "Cases"), each = n), 
+                             levels = c("Controls", "Cases")),
+                             Outcome = c(controls, cases))
+```
+
+
+One option is simply to show the data points, which you can do like this:
+
+```{r just-points}
+dat %>% ggplot(aes(x, Outcome)) + 
+        geom_jitter(width = 0.05)
+```
+
+In this case we see that the data is right skewed so we might want to remake the plot in the log scale
+
+```{r just-points-log}
+dat %>% ggplot(aes(x, Outcome)) + 
+        geom_jitter(width = 0.05) + 
+        scale_y_log10()
+```
+
+If we want to show summary statistics for the data, we can superimpose a boxplot:
+
+
+```{r points-and-boxplot}
+dat %>% ggplot(aes(x, Outcome)) + 
+        geom_boxplot() +
+        geom_jitter(width = 0.05) + 
+        scale_y_log10()
+```
+
+Although not the case here, if there are too many points, we can simply show the boxplot.
+
+```{r just-boxplot}
+dat %>% ggplot(aes(x, Outcome)) + 
+        geom_boxplot() +
+        scale_y_log10()
+```
+
+And if we are worried that five summary statistics might be hiding important characteristics of the data, we can use ridge plots.
+
+```{r ridge-plots, warning=FALSE, message=FALSE}
+library(ggridges)
+dat %>% ggplot(aes(Outcome, x)) + 
+        scale_x_log10() +
+        geom_density_ridges(scale = 1) 
+```
+
+For more recommendation and Excel templates please consult [Weissgerber et al.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128).
+
+

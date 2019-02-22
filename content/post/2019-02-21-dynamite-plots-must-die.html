@@ -1,0 +1,68 @@
+---
+title: 'Open letter to journal editors: dynamite plots must die'
+author: Rafael Irizarry
+date: '2019-02-21'
+slug: dynamite-plots-must-die
+---
+
+
+
+<p>Statisticians have been pointing out the problem with dynamite plots, also known as bar and line graphs, for years. Karl Broman lists them as one of the <a href="https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/">top ten worst graphs</a>. The problem has even been documneted in the peer reviewed literature. For example, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3087125/">this British Journal of Pharmacology</a> paper titled <em>Show the data, don’t conceal them</em> was published in 2011.</p>
+<p>However, despite all these efforts, dynamite plots continue to be ubiquitous in the scientific literature. Just open the latest issue of Nature, Science or Cell and you will likely see a few. In fact, in this <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">PLOS Biology paper</a>, Tracey Weissgerber and co-authors perform a systmetic review of “top physiology journals” and find that “85.6% of papers included at least one bar graph”. They go on to recommend “training investigators in data presentation, encouraging a more complete presentation of data, and changing journal editorial policies”. In my view, the training will be accelerated if editors implement a policy that requires authors to show the data or, if the dataset is too large, show the distribution of the data with boxplots, histograms or smooth density estimates.</p>
+<div id="whats-wrong-with-dynamite-plots" class="section level2">
+<h2>What’s wrong with dynamite plots</h2>
+<p>Dynamite plots are used to compare measurements from two or more groups: cases and controls, for example. In a two group comparison, the plots are graphical representations of a grand total of 4 numbers, regardless of the sample size. The four numbers are the average and the standard error (or the standard deviation, it’s not always clear) for each group. Here is a simulated example comparing diastolic blood pressure for patients on a drug and placebo:</p>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/dynamite-1.png" width="384" /></p>
+<p>Stars are often added to point out that the differences are statistically significant.</p>
+<p>So what is the problem with these plots? First, if you have a print edition of your journal you are wasting ink. No need to waste all that toner just to show these four summaries:</p>
+<pre><code>##          x average  se
+## 1 Controls      60 2.3
+## 2    Cases      81 9.7</code></pre>
+<p>From these numbers you compute the p-value, which in this case is just below 0.05.</p>
+<p>Second, the dynamite plot makes it appear as if there is a clear difference between the two groups. <strong>Showing the data</strong> reveals more information. In our example, showing the data reveals that the lowest blood pressure is actually in the treatment group. It also reveals the presence of one somewhat extreme value of almost 150. This might represent a data entry mistake. Perhaps diastolic pressure was recorded by accident? Note that without that data point, the difference is no longer significant at the 0.05 level.</p>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/show-data-1.png" width="768" /></p>
+<p>Note also that, as pointed out by Weissgerber, data that look quite different can result in exactly the same barplot. For instance, the two datasets below would produce the same barplot as the one shown above.</p>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/different-data-same-dynamite-1.png" width="768" /></p>
+</div>
+<div id="what-should-we-do-instead" class="section level2">
+<h2>What should we do instead?</h2>
+<p>First, let’s generate the data that we will use in the example R code shown below.</p>
+<pre class="r"><code>library(tidyverse)
+set.seed(0)
+n &lt;- 10
+cases &lt;- rnorm(n, log2(64), 0.25)
+controls &lt;- rnorm(n, log2(64), 0.25)
+cases &lt;- 2^(cases)
+controls &lt;- 2^(controls)
+cases[1:2] &lt;- c(110, 150) #introduce outliers
+dat &lt;- data.frame(x = factor(rep(c(&quot;Controls&quot;, &quot;Cases&quot;), each = n), 
+                             levels = c(&quot;Controls&quot;, &quot;Cases&quot;)),
+                             Outcome = c(controls, cases))</code></pre>
+<p>One option is simply to show the data points, which you can do like this:</p>
+<pre class="r"><code>dat %&gt;% ggplot(aes(x, Outcome)) + 
+        geom_jitter(width = 0.05)</code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/just-points-1.png" width="672" /></p>
+<p>In this case we see that the data is right skewed so we might want to remake the plot in the log scale</p>
+<pre class="r"><code>dat %&gt;% ggplot(aes(x, Outcome)) + 
+        geom_jitter(width = 0.05) + 
+        scale_y_log10()</code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/just-points-log-1.png" width="672" /></p>
+<p>If we want to show summary statistics for the data, we can superimpose a boxplot:</p>
+<pre class="r"><code>dat %&gt;% ggplot(aes(x, Outcome)) + 
+        geom_boxplot() +
+        geom_jitter(width = 0.05) + 
+        scale_y_log10()</code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/points-and-boxplot-1.png" width="672" /></p>
+<p>Although not the case here, if there are too many points, we can simply show the boxplot.</p>
+<pre class="r"><code>dat %&gt;% ggplot(aes(x, Outcome)) + 
+        geom_boxplot() +
+        scale_y_log10()</code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/just-boxplot-1.png" width="672" /></p>
+<p>And if we are worried that five summary statistics might be hiding important characteristics of the data, we can use ridge plots.</p>
+<pre class="r"><code>library(ggridges)
+dat %&gt;% ggplot(aes(Outcome, x)) + 
+        scale_x_log10() +
+        geom_density_ridges(scale = 1) </code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/ridge-plots-1.png" width="672" /></p>
+<p>For more recommendation and Excel templates please consult <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">Weissgerber et al.</a>.</p>
+</div>
