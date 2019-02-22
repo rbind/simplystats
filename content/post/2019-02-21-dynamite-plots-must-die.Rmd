@@ -144,7 +144,21 @@ And if we are worried that five summary statistics might be hiding important cha
 library(ggridges)
 dat %>% ggplot(aes(Outcome, x)) + 
         scale_x_log10() +
-        geom_density_ridges(scale = 1) 
+        geom_density_ridges(scale = 0.9) 
+```
+
+If of manageable size, you should show the data points as well:
+
+```{r ridge-plots-with-data, warning=FALSE, message=FALSE}
+library(ggridges)
+dat %>% ggplot(aes(Outcome, x)) + 
+        scale_x_log10() +
+        geom_density_ridges(scale = 0.9,
+                            jittered_points = TRUE, 
+                            position = position_points_jitter(width = 0.05,
+                                                              height = 0),
+                            point_shape = '|', point_size = 3, 
+                            point_alpha = 1, alpha = 0.7) 
 ```
 
 For more recommendation and Excel templates please consult [Weissgerber et al.](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128).

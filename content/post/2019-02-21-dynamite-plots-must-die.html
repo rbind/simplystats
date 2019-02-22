@@ -62,7 +62,18 @@ dat &lt;- data.frame(x = factor(rep(c(&quot;Controls&quot;, &quot;Cases&quot;), 
 <pre class="r"><code>library(ggridges)
 dat %&gt;% ggplot(aes(Outcome, x)) + 
         scale_x_log10() +
-        geom_density_ridges(scale = 1) </code></pre>
+        geom_density_ridges(scale = 0.9) </code></pre>
 <p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/ridge-plots-1.png" width="672" /></p>
+<p>If of manageable size, you should show the data points as well:</p>
+<pre class="r"><code>library(ggridges)
+dat %&gt;% ggplot(aes(Outcome, x)) + 
+        scale_x_log10() +
+        geom_density_ridges(scale = 0.9,
+                            jittered_points = TRUE, 
+                            position = position_points_jitter(width = 0.05,
+                                                              height = 0),
+                            point_shape = &#39;|&#39;, point_size = 3, 
+                            point_alpha = 1, alpha = 0.7) </code></pre>
+<p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/ridge-plots-with-data-1.png" width="672" /></p>
 <p>For more recommendation and Excel templates please consult <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">Weissgerber et al.</a>.</p>
 </div>
