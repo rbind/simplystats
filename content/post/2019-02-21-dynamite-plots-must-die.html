@@ -7,7 +7,7 @@ slug: dynamite-plots-must-die
 
 
 
-<p>Statisticians have been pointing out the problem with dynamite plots, also known as bar and line graphs, for years. Karl Broman lists them as one of the <a href="https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/">top ten worst graphs</a>. The problem has even been documneted in the peer reviewed literature. For example, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3087125/">this British Journal of Pharmacology</a> paper titled <em>Show the data, don’t conceal them</em> was published in 2011.</p>
+<p>Statisticians have been pointing out the problem with dynamite plots, also known as bar and line graphs, for years. Karl Broman lists them as one of the <a href="https://www.biostat.wisc.edu/~kbroman/topten_worstgraphs/">top ten worst graphs</a>. The problem has even been documented in the peer reviewed literature. For example, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3087125/">this British Journal of Pharmacology</a> paper titled <em>Show the data, don’t conceal them</em> was published in 2011.</p>
 <p>However, despite all these efforts, dynamite plots continue to be ubiquitous in the scientific literature. Just open the latest issue of Nature, Science or Cell and you will likely see a few. In fact, in this <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">PLOS Biology paper</a>, Tracey Weissgerber and co-authors perform a systmetic review of “top physiology journals” and find that “85.6% of papers included at least one bar graph”. They go on to recommend “training investigators in data presentation, encouraging a more complete presentation of data, and changing journal editorial policies”. In my view, the training will be accelerated if editors implement a policy that requires authors to show the data or, if the dataset is too large, show the distribution of the data with boxplots, histograms or smooth density estimates.</p>
 <div id="whats-wrong-with-dynamite-plots" class="section level2">
 <h2>What’s wrong with dynamite plots</h2>
@@ -19,7 +19,7 @@ slug: dynamite-plots-must-die
 ## 1 Controls      60 2.3
 ## 2    Cases      81 9.7</code></pre>
 <p>From these numbers you compute the p-value, which in this case is just below 0.05.</p>
-<p>Second, the dynamite plot makes it appear as if there is a clear difference between the two groups. <strong>Showing the data</strong> reveals more information. In our example, showing the data reveals that the lowest blood pressure is actually in the treatment group. It also reveals the presence of one somewhat extreme value of almost 150. This might represent a data entry mistake. Perhaps diastolic pressure was recorded by accident? Note that without that data point, the difference is no longer significant at the 0.05 level.</p>
+<p>Second, the dynamite plot makes it appear as if there is a clear difference between the two groups. <strong>Showing the data</strong> reveals more information. In our example, showing the data reveals that the lowest blood pressure is actually in the treatment group. It also reveals the presence of one somewhat extreme value of 150. This might represent a data entry mistake. Perhaps systolic pressure was recorded by accident? Note that without that data point, the difference is no longer significant at the 0.05 level.</p>
 <p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/show-data-1.png" width="768" /></p>
 <p>Note also that, as pointed out by Weissgerber, data that look quite different can result in exactly the same barplot. For instance, the two datasets below would produce the same barplot as the one shown above.</p>
 <p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/different-data-same-dynamite-1.png" width="768" /></p>
@@ -75,5 +75,5 @@ dat %&gt;% ggplot(aes(Outcome, x)) +
                             point_shape = &#39;|&#39;, point_size = 3, 
                             point_alpha = 1, alpha = 0.7) </code></pre>
 <p><img src="/post/2019-02-21-dynamite-plots-must-die_files/figure-html/ridge-plots-with-data-1.png" width="672" /></p>
-<p>For more recommendation and Excel templates please consult <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">Weissgerber et al.</a>.</p>
+<p>For more recommendation and Excel templates please consult <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1002128">Weissgerber et al.</a> or <a href="https://twitter.com/t_weissgerber/status/1087646461548998657?s=12">this thread</a>.</p>
 </div>
