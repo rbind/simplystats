@@ -34,6 +34,10 @@ These data are great, but they aren’t research grade. They aren’t summarized
 
 So let’s talk about how we would turn this pile of crude data into research quality data. 
 
+![](https://user-images.githubusercontent.com/1571674/58572594-f77d2080-8209-11e9-87a2-0621a13eeb03.png)
+
+_Turning raw data into research quality data._
+
 __Summarizing the data the right amount__
 
 To know how to summarize the data we need to know what are the most common types of questions we want to answer and what resolution we need to answer them. A good idea is to summarize things at the finest unit of analysis you think you will need - it is always easier to aggregate than disaggregate at the analysis level. So we might summarize at the patient and visit level. This would give us a data set where everything is indexed by patient and visit. If we want to answer something at a clinic, physician, or hospital level we can always aggregate there. 
