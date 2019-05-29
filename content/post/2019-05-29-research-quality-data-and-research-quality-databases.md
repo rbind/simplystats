@@ -88,6 +88,6 @@ So why build a research quality data set? It sure seems like a lot of work (and 
 
 __Problem Forward Data Science__
 
-If you want help planning or building a research quality data set or database, we can help at Problem Forward Data Science. Get in touch here: https://problemforward.typeform.com/to/L4h89P
+If you want help planning or building a research quality data set or database, we can help at [Problem Forward Data Science](https://simplystatistics.org/2019/05/20/i-co-founded-a-company-meet-problem-forward-data-science/). Get in touch here: https://problemforward.typeform.com/to/L4h89P
 
 
