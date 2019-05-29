@@ -1,6 +1,6 @@
 ---
 title: Research quality data and research quality databases
-author: ~
+author: Jeff Leek
 date: '2019-05-29'
 slug: research-quality-data-and-research-quality-databases
 categories: []
