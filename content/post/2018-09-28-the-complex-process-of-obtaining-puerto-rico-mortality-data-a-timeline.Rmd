@@ -211,7 +211,7 @@ dat %>%
 
 **Feb 28** - Latino USA publishes an [article](https://latinousa.org/2018/02/28/data-puerto-rico-institute-statistics-confirms-excess-deaths-hurricane-maria/) showing data provided to them by PRIS. I email PRIS again and they send us data that same day. We immediately see that, like the data we received from New York Times, it appears incomplete:
 
-```{r official-data, echo=FALSE, out.width = "75%", fig.align='center'}
+```{r official-data, echo=FALSE, out.width = "75%", fig.align='center', message=FALSE, warning=FALSE}
 library(tidyverse)
 library(lubridate)
 library(readxl)
@@ -220,13 +220,12 @@ fn <- tempfile()
 url <- "https://github.com/c2-d2/pr_mort_official/raw/master/data/defunciones_2010_17.xlsx"
 download.file(url, fn)
 official <- read_excel(fn, skip = 3) %>%
-  select(1:14) %>%
+  dplyr::select(1:14) %>%
   slice(1:8) %>%
   setNames(c("year", 1:12, "total")) %>%
   mutate(year = parse_number(year)) %>%
   select(-total) %>%
   gather(month, deaths, -year, convert = TRUE) %>% 
-  mutate(deaths = parse_number(deaths)) %>% 
   arrange(year, month)
 
 official %>%
@@ -254,9 +253,10 @@ official %>%
 
 **Jun 01** – PR Governor is [interviewed](https://www.cnn.com/videos/us/2018/06/01/puerto-rico-deaths-hurricane-maria-governor-rossello-bts-ac.cnn) by CNN's Anderson Cooper who grills him on why the government did not share the data. Governor says data was always available and that there will be "hell to pay if data not available". That afternoon, [PR government makes data public](https://twitter.com/DavidBegnaud/status/1002658303904829442). Dr. Buckee requests the data again. This time we get it almost immediately.
 
-**Jan 06** - I post my first analysis with the official mortality data [here](https://simplystatistics.org/2018/06/08/a-first-look-at-recently-released-official-puerto-rico-death-count-data/). The newly released data confirms that the data we were provided earlier were in fact incomplete and that there was a sustained indirect effect lasting past October.
+**Jun 06** - I post my first analysis with the official mortality data [here](https://simplystatistics.org/2018/06/08/a-first-look-at-recently-released-official-puerto-rico-death-count-data/). The newly released data confirms that the data we were provided earlier were in fact incomplete and that there was a sustained indirect effect lasting past October.
 
 **Aug 27** - GWU study comes out with a preliminary estimate of about 3,000 deaths.
+ 
 
 **Sep 05** - Rolando Acosta and I post a [preprint](https://www.biorxiv.org/content/early/2018/09/18/407874) describing an analysis of the newly released data including a comparison to the effects of other hurricanes. We also provide a preliminary estimate of about 3,000 deaths due to indirect effects lasting until April.
 
