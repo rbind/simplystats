@@ -1,0 +1,166 @@
+---
+title: 'More datasets for teaching data science: The expanded dslabs package'
+author: 'Amy Gill'
+date: '2019-07-19'
+slug: more-datasets-for-teaching-data-science-the-expanded-dslabs-package
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>We have expanded the <a href="https://cran.r-project.org/web/packages/dslabs/index.html">dslabs package</a>, which we <a href="https://simplystatistics.org/2018/01/22/the-dslabs-package-provides-datasets-for-teaching-data-science/">previously introduced</a> as a package containing realistic, interesting and approachable datasets that can be used in introductory data science courses.</p>
+<p>This release adds 7 new datasets on climate change, astronomy, life expectancy, and breast cancer diagnosis. They are used in improved problem sets and new projects within the <a href="https://www.edx.org/professional-certificate/harvardx-data-science">HarvardX Data Science Professional Certificate Program</a>, which teaches beginning R programming, data visualization, data wrangling, statistics, and machine learning for students with no prior coding background.</p>
+<p>You can install the <a href="https://cran.r-project.org/web/packages/dslabs/index.html">dslabs package</a> from CRAN:</p>
+<pre class="r"><code>install.packages(&quot;dslabs&quot;)</code></pre>
+<p>If you already have the package installed, you can add the new datasets by updating the package:</p>
+<pre class="r"><code>update.packages(&quot;dslabs&quot;)</code></pre>
+<p>You can load the package into your workspace normally:</p>
+<pre class="r"><code>library(dslabs)</code></pre>
+<p>Let’s preview these new datasets! To code along, use the following libraries and options:</p>
+<pre class="r"><code># install packages if necessary
+if(!require(&quot;tidyverse&quot;)) install.packages(&quot;tidyverse&quot;)
+if(!require(&quot;ggrepel&quot;)) install.packages(&quot;ggrepel&quot;)
+if(!require(&quot;matrixStats&quot;)) install.packages(&quot;matrixStats&quot;)
+
+
+# load libraries
+library(tidyverse)
+library(ggrepel)
+library(matrixStats)
+
+# set colorblind-friendly color palette
+colorblind_palette &lt;- c(&quot;black&quot;, &quot;#E69F00&quot;, &quot;#56B4E9&quot;, &quot;#009E73&quot;,
+                        &quot;#CC79A7&quot;, &quot;#F0E442&quot;, &quot;#0072B2&quot;, &quot;#D55E00&quot;)</code></pre>
+</div>
+<div id="climate-change" class="section level2">
+<h2>Climate change</h2>
+<p>Three datasets related to climate change are used to teach data visualization and data wrangling. These data produce clear plots that demonstrate an increase in temperature, greenhouse gas levels, and carbon emissions from 800,000 years ago to modern times. Students can create their own impactful visualizations with real atmospheric and ice core measurements.</p>
+<div id="modern-temperature-anomaly-and-carbon-dioxide-data-temp_carbon" class="section level3">
+<h3>Modern temperature anomaly and carbon dioxide data: <code>temp_carbon</code></h3>
+<p>The <code>temp_carbon</code> dataset includes annual global temperature anomaly measurements in degrees Celsius relative to the 20th century mean temperature from 1880-2018. The temperature anomalies over land and over ocean are reported also. In addition, it includes annual carbon emissions (in millions of metric tons) from 1751-2014. Temperature anomalies are from <a href="https://www.ncdc.noaa.gov/cag/global/time-series">NOAA</a> and carbon emissions are from <a href="https://cdiac.ess-dive.lbl.gov/trends/emis/tre_glob_2014.html">Boden et al., 2017 via CDIAC</a>.</p>
+<pre class="r"><code>data(temp_carbon)
+
+# line plot of annual global, land and ocean temperature anomalies since 1880
+temp_carbon %&gt;%
+    select(Year = year, Global = temp_anomaly, Land = land_anomaly, Ocean = ocean_anomaly) %&gt;%
+    gather(Region, Temp_anomaly, Global:Ocean) %&gt;%
+    ggplot(aes(Year, Temp_anomaly, col = Region)) +
+    geom_line(size = 1) +
+    geom_hline(aes(yintercept = 0), col = colorblind_palette[8], lty = 2) +
+    geom_label(aes(x = 2005, y = -.08), col = colorblind_palette[8], 
+               label = &quot;20th century mean&quot;, size = 4) +
+    ylab(&quot;Temperature anomaly (degrees C)&quot;) +
+    xlim(c(1880, 2018)) +
+    scale_color_manual(values = colorblind_palette) +
+    ggtitle(&quot;Temperature anomaly relative to 20th century mean, 1880-2018&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="greenhouse-gas-concentrations-over-2000-years-greenhouse_gases" class="section level3">
+<h3>Greenhouse gas concentrations over 2000 years: <code>greenhouse_gases</code></h3>
+<p>The <code>greenhouse_gases</code> data frame contains carbon dioxide (<span class="math inline">\(\mbox{CO}_2\)</span>, ppm), methane (<span class="math inline">\(\mbox{CO}_2\)</span>, ppb) and nitrous oxide (<span class="math inline">\(\mbox{N}_2\mbox{O}\)</span>, ppb) concentrations every 20 years from 0-2000 CE. The data are a subset of ice core measurements from <a href="https://www.ncdc.noaa.gov/paleo-search/study/9959">MacFarling Meure et al., 2006 via NOAA</a>. There is a clear increase in all 3 gases starting around the time of the Industrial Revolution.</p>
+<pre class="r"><code>data(greenhouse_gases)
+
+# line plots of atmospheric concentrations of the three major greenhouse gases since 0 CE
+greenhouse_gases %&gt;%
+    ggplot(aes(year, concentration)) +
+    geom_line() +
+    facet_grid(gas ~ ., scales = &quot;free&quot;) +
+    xlab(&quot;Year&quot;) +
+    ylab(&quot;Concentration (CH4/N2O ppb, CO2 ppm)&quot;) +
+    ggtitle(&quot;Atmospheric greenhouse gas concentration by year, 0-2000 CE&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Compare this pattern with manmade carbon emissions since 1751 from <code>temp_carbon</code>, which have risen in a similar way:</p>
+<pre class="r"><code># line plot of anthropogenic carbon emissions over 250+ years
+temp_carbon %&gt;%
+    ggplot(aes(year, carbon_emissions)) +
+    geom_line() +
+    xlab(&quot;Year&quot;) +
+    ylab(&quot;Carbon emissions (metric tons)&quot;) +
+    ggtitle(&quot;Annual global carbon emissions, 1751-2014&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="carbon-dioxide-levels-over-the-last-800000-years-historic_co2" class="section level3">
+<h3>Carbon dioxide levels over the last 800,000 years, <code>historic_co2</code></h3>
+<p>A common argument against the existence of anthropogenic climate change is that the Earth naturally undergoes cycles of warming and cooling governed by natural changes beyond human control. <span class="math inline">\(\mbox{CO}_2\)</span> levels from ice cores and modern atmospheric measurements at the Mauna Loa observatory demonstrate that the speed and magnitude of natural variations in greenhouse gases pale in comparison to the rapid changes in modern industrial times. While the planet has been hotter and had higher <span class="math inline">\(\mbox{CO}_2\)</span> levels in the distant past (data not shown), the current unprecedented rate of change leaves little time for planetary systems to adapt.</p>
+<pre class="r"><code>data(historic_co2)
+
+# line plot of atmospheric CO2 concentration over 800K years, colored by data source
+historic_co2 %&gt;%
+    ggplot(aes(year, co2, col = source)) +
+    geom_line() +
+    ylab(&quot;CO2 (ppm)&quot;) +
+    scale_color_manual(values = colorblind_palette[7:8]) +
+    ggtitle(&quot;Atmospheric CO2 concentration, -800,000 BCE to today&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="properties-of-stars-for-making-an-h-r-diagram-stars" class="section level2">
+<h2>Properties of stars for making an H-R diagram: <code>stars</code></h2>
+<p>In astronomy, stars are classified by several key features, including temperature, spectral class (color) and luminosity (brightness). A common plot for demonstrating the different groups of stars and their propreties is the Hertzsprung-Russell diagram, or H-R diagram. The <code>stars</code> data frame compiles information for making an H-R diagram with about approximately 100 named stars, including their temperature, spectral class and magnitude (which is inversely proportional to luminosity).</p>
+<p>The H-R diagram has the hottest, brightest stars in the upper left and coldest, dimmest stars in the lower right. Main sequence stars are along the main diagonal, while giants are in the upper right and dwarfs are in the lower left. Several aspects of data visualization can be practiced with these data.</p>
+<pre class="r"><code>data(stars)
+
+# H-R diagram color-coded by spectral class
+stars %&gt;%
+    mutate(type = factor(type, levels = c(&quot;O&quot;, &quot;B&quot;, &quot;DB&quot;, &quot;A&quot;, &quot;DA&quot;, &quot;DF&quot;, &quot;F&quot;, &quot;G&quot;, &quot;K&quot;, &quot;M&quot;)),
+           star = ifelse(star %in% c(&quot;Sun&quot;, &quot;Polaris&quot;, &quot;Betelgeuse&quot;, &quot;Deneb&quot;,
+                                     &quot;Regulus&quot;, &quot;*SiriusB&quot;, &quot;Alnitak&quot;, &quot;*ProximaCentauri&quot;),
+                         as.character(star), NA)) %&gt;%
+    ggplot(aes(log10(temp), magnitude, col = type)) +
+    geom_point() +
+    geom_label_repel(aes(label = star)) +
+    scale_x_reverse() +
+    scale_y_reverse() +
+    xlab(&quot;Temperature (log10 degrees K)&quot;) +
+    ylab(&quot;Magnitude&quot;) +
+    labs(color = &quot;Spectral class&quot;) +
+    ggtitle(&quot;H-R diagram of selected stars&quot;)</code></pre>
+<pre><code>## Warning: Removed 88 rows containing missing values (geom_label_repel).</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="united-states-period-life-tables-death_prob" class="section level2">
+<h2>United States period life tables: <code>death_prob</code></h2>
+<p>Obtained from the <a href="https://www.ssa.gov/oact/STATS/table4c6.html">US Social Security Administration</a>, the 2015 period life table lists the probability of death within one year at every age and for both sexes. These values are commonly used to calculate life insurance premiums. They can be used for exercises on probability and random variables. For example, the premiums can be calculated with a similar approach to that used for interest rates in this <a href="https://rafalab.github.io/dsbook/random-variables.html#case-study-the-big-short">case study on The Big Short</a> in Rafael Irizarry’s <a href="https://leanpub.com/datasciencebook">Introduction to Data Science textbook</a>.</p>
+</div>
+<div id="brexit-polling-data-brexit_polls" class="section level2">
+<h2>Brexit polling data: <code>brexit_polls</code></h2>
+<p><code>brexit_polls</code> contains vote percentages and spreads from the six months prior to the Brexit EU membership referendum in 2016 compiled from <a href="https://en.wikipedia.org/w/index.php?title=Opinion_polling_for_the_United_Kingdom_European_Union_membership_referendum&amp;oldid=896735054">Wikipedia</a>. These can be used to practice a variety of inference and modeling concepts, including confidence intervals, p-values, hierarchical models and forecasting.</p>
+<pre class="r"><code>data(brexit_polls)
+
+# plot of Brexit referendum polling spread between &quot;Remain&quot; and &quot;Leave&quot; over time
+brexit_polls %&gt;%
+    ggplot(aes(enddate, spread, color = poll_type)) +
+    geom_hline(aes(yintercept = -.038, color = &quot;Actual spread&quot;)) +
+    geom_smooth(method = &quot;loess&quot;, span = 0.4) +
+    geom_point() +
+    scale_color_manual(values = colorblind_palette[1:3]) +
+    xlab(&quot;Poll end date (2016)&quot;) +
+    ylab(&quot;Spread (Proportion Remain - Proportion Leave)&quot;) +
+    labs(color = &quot;Poll type&quot;) +
+    ggtitle(&quot;Spread of Brexit referendum online and telephone polls&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="breast-cancer-diagnosis-prediction-brca" class="section level2">
+<h2>Breast cancer diagnosis prediction: <code>brca</code></h2>
+<p>This is the <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29">Breast Cancer Wisconsin (Diagnostic) Dataset</a>, a classic machine learning dataset that allows classification of breast lesion biopsies as malignant or benign based on cell nucleus characteristics extracted from digitized images of fine needle aspirate cytology slides. The data are appropriate for principal component analysis and a variety of machine learning algorithms. Models can be trained to a predictive accuracy of over 95%.</p>
+<pre class="r"><code># scale x values
+x_centered &lt;- sweep(brca$x, 2, colMeans(brca$x))
+x_scaled &lt;- sweep(x_centered, 2, colSds(brca$x), FUN = &quot;/&quot;)
+
+# principal component analysis
+pca &lt;- prcomp(x_scaled) 
+
+# scatterplot of PC2 versus PC1 with an ellipse to show the cluster regions
+data.frame(pca$x[,1:2], type = ifelse(brca$y == &quot;B&quot;, &quot;Benign&quot;, &quot;Malignant&quot;)) %&gt;%
+    ggplot(aes(PC1, PC2, color = type)) +
+    geom_point() +
+    stat_ellipse() +
+    ggtitle(&quot;PCA separates breast biospies into benign and malignant clusters&quot;)</code></pre>
+<p><img src="/post/2019-07-19-more-datasets-for-teaching-data-science-the-expanded-dslabs-package_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>We hope that these additional datasets make the <a href="https://cran.r-project.org/web/packages/dslabs/index.html">dslabs package</a> even more useful for teaching data science through real-world case studies and motivating examples.</p>
+<p>Are you an R programming novice but want to learn how to do all of this and more? Check out the <a href="https://www.edx.org/professional-certificate/harvardx-data-science">Data Science Professional Certificate Program from HarvardX</a> on edX, taught by Rafael Irizarry!</p>
+</div>
