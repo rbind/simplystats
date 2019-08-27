@@ -42,9 +42,11 @@ To summarize, here’s the “free and easy” workflow that I recommend:
 And here are the pros and cons:
 
 Pros
+
 * It’s free
 
 Cons
+
 * Audio quality is acceptable but not great. Earbud type microphones are not designed for high quality and you can usually tell when someone has used them to record. Given that podcasts are all about audio, it’s hard for me to trade off audio quality.
 * Hosting limitations mean you can only get a few episodes up. But that’s a problem for down the road, right?
 * Editing is generally a third-order issue, but there is one scenario where it can be critical---when you have a bad internet connection. Bad internet connections can introduce delays and cross-talk. These problems can be mitigated when editing (I give an example [here](https://simplystatistics.org/2017/09/18/editing-podcasts-logic-pro-x/)) but only with better software.
@@ -52,7 +54,7 @@ Cons
  
 ## Beyond Free
 
-Beyond the free workflow, there are a number of upgrades that you can make and you can easily start spending a lot of money. But the only real upgrade that I think you need to make is to buy a good microphone. Surprisingly, this does not need to cost much money. The best podcasting microphone for the money out there is the [Audio Technica ATR2100 USB micrphone](https://www.amazon.com/Audio-Technica-ATR2100-USB-Cardioid-Dynamic-Microphone/dp/B004QJOZS4/ref=sr_1_3?crid=35TCYURP9DCY0&keywords=audio+technical%27s+atr2100&qid=1566911267&s=gateway&sprefix=audio+technical%27s+atr2100%2Caps%2C122&sr=8-3). This is the microphone that Elizabeth uses on the [The Effort Report](https://effortreport.libsyn.com) and Hilary uses on [Not So Standard Deviations](http://nssdeviations.com). As of this writing it’s $65 on Amazon, but I’ve seen it for as low as $40. The benefits of this microphone are:
+Beyond the free workflow, there are a number of upgrades that you can make and you can easily start spending a lot of money. But the only real upgrade that I think you need to make is to buy a good microphone. Surprisingly, this does not need to cost much money. The best podcasting microphone for the money out there is the [Audio Technica ATR2100 USB micrphone](https://www.amazon.com/Audio-Technica-ATR2100-USB-Cardioid-Dynamic-Microphone/dp/B004QJOZS4/ref=sr_1_3?crid=35TCYURP9DCY0&keywords=audio+technical%27s+atr2100&qid=1566911267&s=gateway&sprefix=audio+technical%27s+atr2100%2Caps%2C122&sr=8-3). This is the microphone that Elizabeth uses on the [The Effort Report](https://effortreport.libsyn.com) and Hilary uses on [Not So Standard Deviations](http://nssdeviations.com). As of this writing it’s \$65 on Amazon, but I’ve seen it for as low as \$40. The benefits of this microphone are:
 
 * The audio quality is high
 * It isolates vocal audio really well and doesn’t pick up a lot of background audio (good for noisy rooms like my office).
