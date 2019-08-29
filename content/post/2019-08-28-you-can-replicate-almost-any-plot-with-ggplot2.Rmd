@@ -17,7 +17,7 @@ The first example is from [this](https://abcnews.go.com/blogs/headlines/2012/12/
 
 ![](http://abcnews.go.com/images/International/homocides_g8_countries_640x360_wmain.jpg)
 
-Here is the R code for my version. Note that I copied the values by hand as the original does not seem to follow a standard palette.
+Here is the R code for my version. Note that I copied the values by hand.
 
 ```{r murder-rate-example-1, warning=FALSE, message=FALSE}
 library(tidyverse)
@@ -83,7 +83,7 @@ The next example is from the [Wall Street Journal](http://graphics.wsj.com/infec
 ![](https://rafalab.github.io/dsbook/dataviz/img/wsj-vaccines.png)
 
 
-Here is the R code for my version. Note I matched the colors by hand!
+Here is the R code for my version. Note I matched the colors by hand as the original does not seem to follow a standard palette.
 
 ```{r wsj-vaccines-example, out.width="100%", fig.height=5}
 library(dslabs)
