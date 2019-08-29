@@ -1,0 +1,202 @@
+---
+title: You can replicate almost any plot with R 
+author: Rafael Irizarry
+date: '2019-08-28'
+slug: you-can-replicate-almost-any-plot-with-ggplot2
+---
+
+
+
+<p>Although R is great for quickly turning data into plots, it is not widely used for making publication ready figures. But, with enough tinkering you can make almost any plot in R. For examples check out the <a href="https://flowingdata.com/">flowingdata blog</a> or the <a href="https://serialmentor.com/dataviz/index.html">Fundamentals of Data Visualization book</a>.</p>
+<p>Here I show five charts from the lay press that I use as examples in my data science courses. In the past I would show the originals, but I decided to replicate them in R to make it possible to generate class notes with just R code (there was a lot of googling involved).</p>
+<p>Below I show the original figures followed by R code and the version of the plot it produces. I used the <strong>ggplot2</strong> package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: <span class="citation">[@rafalab]</span>(<a href="https://twitter.com/rafalab" class="uri">https://twitter.com/rafalab</a>).</p>
+<div id="example-1" class="section level2">
+<h2>Example 1</h2>
+<p>The first example is from <a href="https://abcnews.go.com/blogs/headlines/2012/12/us-gun-ownership-homicide-rate-higher-than-other-developed-countries/">this</a> ABC news article. Here is the original:</p>
+<div class="figure">
+<img src="http://abcnews.go.com/images/International/homocides_g8_countries_640x360_wmain.jpg" />
+
+</div>
+<p>Here is the R code for my version. Note that I copied the values by hand as the original does not seem to follow a standard palette.</p>
+<pre class="r"><code>library(tidyverse)
+library(ggplot2)
+library(ggflags)
+library(countrycode)
+
+dat &lt;- tibble(country = toupper(c(&quot;US&quot;, &quot;Italy&quot;, &quot;Canada&quot;, &quot;UK&quot;, &quot;Japan&quot;, &quot;Germany&quot;, &quot;France&quot;, &quot;Russia&quot;)),
+              count = c(3.2, 0.71, 0.5, 0.1, 0, 0.2, 0.1, 0),
+              label = c(as.character(c(3.2, 0.71, 0.5, 0.1, 0, 0.2, 0.1)), &quot;No Data&quot;),
+              code = c(&quot;us&quot;, &quot;it&quot;, &quot;ca&quot;, &quot;gb&quot;, &quot;jp&quot;, &quot;de&quot;, &quot;fr&quot;, &quot;ru&quot;))
+
+dat %&gt;% mutate(country = reorder(country, -count)) %&gt;%
+  ggplot(aes(country, count, label = label)) +
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;darkred&quot;) +
+  geom_text(nudge_y = 0.2, color = &quot;darkred&quot;, size = 5) +
+  geom_flag(y = -.5, aes(country = code), size = 12) +
+  scale_y_continuous(breaks = c(0, 1, 2, 3, 4), limits = c(0,4)) +
+  geom_text(aes(6.25, 3.8, label = &quot;Source UNODC Homicide Statistics&quot;)) + 
+  ggtitle(toupper(&quot;Homicide Per 100,000 in G-8 Countries&quot;)) + 
+  xlab(&quot;&quot;) + 
+  ylab(&quot;# of gun-related homicides\nper 100,000 people&quot;) +
+  ggthemes::theme_economist() +
+  theme(axis.text.x = element_text(size = 8, vjust = -16),
+        axis.ticks.x = element_blank(),
+        axis.line.x = element_blank(),
+        plot.margin = unit(c(1,1,1,1), &quot;cm&quot;)) </code></pre>
+<p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/murder-rate-example-1-1.png" width="672" /></p>
+</div>
+<div id="example-2" class="section level2">
+<h2>Example 2</h2>
+<p>The second example from from <a href="https://everytownresearch.org">everytown.org</a>. Here is the original:</p>
+<div class="figure">
+<img src="https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png" />
+
+</div>
+<p>Here is the R code for my version. As in the previous example I copied the values by hand.</p>
+<pre class="r"><code>dat &lt;- tibble(country = toupper(c(&quot;United States&quot;, &quot;Canada&quot;, &quot;Portugal&quot;, &quot;Ireland&quot;, &quot;Italy&quot;, &quot;Belgium&quot;, &quot;Finland&quot;, &quot;France&quot;, &quot;Netherlands&quot;, &quot;Denmark&quot;, &quot;Sweden&quot;, &quot;Slovakia&quot;, &quot;Austria&quot;, &quot;New Zealand&quot;, &quot;Australia&quot;, &quot;Spain&quot;, &quot;Czech Republic&quot;, &quot;Hungry&quot;, &quot;Germany&quot;, &quot;United Kingdom&quot;, &quot;Norway&quot;, &quot;Japan&quot;, &quot;Republic of Korea&quot;)),
+              count = c(3.61, 0.5, 0.48, 0.35, 0.35, 0.33, 0.26, 0.20, 0.20, 0.20, 0.19, 0.19, 0.18, 0.16,
+                        0.16, 0.15, 0.12, 0.10, 0.06, 0.04, 0.04, 0.01, 0.01))
+
+dat %&gt;% 
+  mutate(country = reorder(country, count)) %&gt;%
+  ggplot(aes(country, count, label = count)) +   
+  geom_bar(stat = &quot;identity&quot;, fill = &quot;darkred&quot;, width = 0.5) +
+  geom_text(nudge_y = 0.2,  size = 3) +
+  xlab(&quot;&quot;) + ylab(&quot;&quot;) + 
+  ggtitle(toupper(&quot;Gun Murders per 100,000 residents&quot;)) + 
+  theme_minimal() +
+  theme(panel.grid.major =element_blank(), panel.grid.minor = element_blank(), 
+        axis.text.x = element_blank(),
+        axis.ticks.length = unit(-0.4, &quot;cm&quot;)) + 
+  coord_flip() </code></pre>
+<p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/murder-rate-example-2-1.png" width="672" /></p>
+</div>
+<div id="example-3" class="section level2">
+<h2>Example 3</h2>
+<p>The next example is from the <a href="http://graphics.wsj.com/infectious-diseases-and-vaccines/?mc_cid=711ddeb86e">Wall Street Journal</a>. The original is interactive but here is a screenshot:</p>
+<div class="figure">
+<img src="https://rafalab.github.io/dsbook/dataviz/img/wsj-vaccines.png" />
+
+</div>
+<p>Here is the R code for my version. Note I matched the colors by hand!</p>
+<pre class="r"><code>library(dslabs)
+data(us_contagious_diseases)
+the_disease &lt;- &quot;Measles&quot;
+dat &lt;- us_contagious_diseases %&gt;%
+  filter(!state%in%c(&quot;Hawaii&quot;,&quot;Alaska&quot;) &amp; disease == the_disease) %&gt;%
+  mutate(rate = count / population * 10000 * 52 / weeks_reporting) 
+
+jet.colors &lt;- colorRampPalette(c(&quot;#F0FFFF&quot;, &quot;cyan&quot;, &quot;#007FFF&quot;, &quot;yellow&quot;, &quot;#FFBF00&quot;, &quot;orange&quot;, &quot;red&quot;, &quot;#7F0000&quot;), bias = 2.25)
+
+dat %&gt;% mutate(state = reorder(state, desc(state))) %&gt;%
+  ggplot(aes(year, state, fill = rate)) +
+  geom_tile(color = &quot;white&quot;, size=0.35) +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_fill_gradientn(colors = jet.colors(16), na.value = &#39;white&#39;) +
+  geom_vline(xintercept = 1963, col = &quot;black&quot;) +
+  theme_minimal() + 
+  theme(panel.grid = element_blank()) +
+        coord_cartesian(clip = &#39;off&#39;) +
+        ggtitle(the_disease) +
+        ylab(&quot;&quot;) +
+        xlab(&quot;&quot;) +  
+        theme(legend.position = &quot;bottom&quot;, text = element_text(size = 8)) + 
+        annotate(geom = &quot;text&quot;, x = 1963, y = 50.5, label = &quot;Vaccine introduced&quot;, size = 3, hjust=0)</code></pre>
+<p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/wsj-vaccines-example-1.png" width="100%" /></p>
+</div>
+<div id="example-4" class="section level2">
+<h2>Example 4</h2>
+<p>The next example is from the <a href="https://www.nytimes.com/2011/02/19/nyregion/19schools.html">New York Times</a>. Here is the original:</p>
+<div class="figure">
+<img src="http://graphics8.nytimes.com/images/2011/02/19/nyregion/19schoolsch/19schoolsch-popup.gif" />
+
+</div>
+<p>Here is the R code for my version:</p>
+<pre class="r"><code>data(&quot;nyc_regents_scores&quot;)
+nyc_regents_scores$total &lt;- rowSums(nyc_regents_scores[,-1], na.rm=TRUE)
+nyc_regents_scores %&gt;% 
+  filter(!is.na(score)) %&gt;%
+  ggplot(aes(score, total)) + 
+  annotate(&quot;rect&quot;, xmin = 65, xmax = 99, ymin = 0, ymax = 35000, alpha = .5) +
+  geom_bar(stat = &quot;identity&quot;, color = &quot;black&quot;, fill = &quot;#C4843C&quot;) + 
+  annotate(&quot;text&quot;, x = 66, y = 28000, label = &quot;MINIMUM\nREGENTS DIPLOMA\nSCORE IS 65&quot;, hjust = 0, size = 3) +
+  annotate(&quot;text&quot;, x = 0, y = 12000, label = &quot;2010 Regents scores on\nthe five most common tests&quot;, hjust = 0, size = 3) +
+  scale_x_continuous(breaks = seq(5, 95, 5), limit = c(0,99)) + 
+  scale_y_continuous(position = &quot;right&quot;) +
+  ggtitle(&quot;Scraping By&quot;) + 
+  xlab(&quot;&quot;) + ylab(&quot;Number of tests&quot;) + 
+  theme_minimal() + 
+  theme(panel.grid.major.x = element_blank(), 
+        panel.grid.minor.x = element_blank(),
+        axis.ticks.length = unit(-0.2, &quot;cm&quot;),
+        plot.title = element_text(face = &quot;bold&quot;))</code></pre>
+<p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/regents-exams-example-1.png" width="768" /></p>
+</div>
+<div id="example-5" class="section level2">
+<h2>Example 5</h2>
+<p>This last one is from <a href="https://projects.fivethirtyeight.com/2016-election-forecast/">fivethirtyeight</a>.</p>
+<div class="figure">
+<img src="https://rafalab.github.io/dsbook/inference/img/popular-vote-538.png" />
+
+</div>
+<p>Below is the R code for my version. Note that in this example I am essentially just drawing as I don’t estimate the distributions myself. I simply estimated parameters “by eye” and used a bit of trial and error.</p>
+<pre class="r"><code>my_dgamma &lt;- function(x, mean = 1, sd = 1){
+  shape = mean^2/sd^2
+  scale = sd^2 / mean
+  dgamma(x, shape = shape, scale = scale)
+}
+
+my_qgamma &lt;- function(mean = 1, sd = 1){
+  shape = mean^2/sd^2
+  scale = sd^2 / mean
+  qgamma(c(0.1,0.9), shape = shape, scale = scale)
+}
+
+tmp &lt;- tibble(candidate = c(&quot;Clinton&quot;, &quot;Trump&quot;, &quot;Johnson&quot;), 
+              avg = c(48.5, 44.9, 5.0), 
+              avg_txt = c(&quot;48.5%&quot;, &quot;44.9%&quot;, &quot;5.0%&quot;), 
+              sd = rep(2, 3), 
+              m = my_dgamma(avg, avg, sd)) %&gt;%
+  mutate(candidate = reorder(candidate, -avg))
+
+xx &lt;- seq(0, 75, len = 300)
+
+tmp_2 &lt;- map_df(1:3, function(i){
+  tibble(candidate = tmp$candidate[i],
+         avg = tmp$avg[i],
+         sd = tmp$sd[i],
+         x = xx,
+         y = my_dgamma(xx, tmp$avg[i], tmp$sd[i]))
+})
+
+tmp_3 &lt;- map_df(1:3, function(i){
+  qq &lt;- my_qgamma(tmp$avg[i], tmp$sd[i])
+  xx &lt;- seq(qq[1], qq[2], len = 200)
+  tibble(candidate = tmp$candidate[i],
+         avg = tmp$avg[i],
+         sd = tmp$sd[i],
+         x = xx,
+         y = my_dgamma(xx, tmp$avg[i], tmp$sd[i]))
+})
+         
+tmp_2 %&gt;% 
+  ggplot(aes(x, ymax = y, ymin = 0)) +
+  geom_ribbon(fill = &quot;grey&quot;) + 
+  facet_grid(candidate~., switch=&quot;y&quot;) +
+  scale_x_continuous(breaks = seq(0, 75, 25), position = &quot;top&quot;,
+                     label= paste0(seq(0, 75, 25), &quot;%&quot;)) +
+  geom_abline(intercept = 0, slope = 0) +
+  xlab(&quot;&quot;) + ylab(&quot;&quot;) + 
+  theme_minimal() + 
+  theme(panel.grid.major.y = element_blank(), 
+        panel.grid.minor.y = element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        strip.text.y = element_text(angle = 180, size = 11, vjust = 0.2)) + 
+  geom_ribbon(data = tmp_3, mapping = aes(x = x, ymax = y, ymin = 0, fill = candidate), inherit.aes = FALSE, show.legend = FALSE) +
+  scale_fill_manual(values = c(&quot;#3cace4&quot;, &quot;#fc5c34&quot;, &quot;#fccc2c&quot;)) +
+  geom_point(data = tmp, mapping = aes(x = avg, y = m), inherit.aes = FALSE) + 
+  geom_text(data = tmp, mapping = aes(x = avg, y = m, label = avg_txt), inherit.aes = FALSE, hjust = 0, nudge_x = 1) </code></pre>
+<p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/fivethirtyeight-densities-1.png" width="80%" /></p>
+</div>
