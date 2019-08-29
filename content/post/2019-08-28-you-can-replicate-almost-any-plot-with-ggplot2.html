@@ -33,7 +33,7 @@ dat %&gt;% mutate(country = reorder(country, -count)) %&gt;%
   geom_bar(stat = &quot;identity&quot;, fill = &quot;darkred&quot;) +
   geom_text(nudge_y = 0.2, color = &quot;darkred&quot;, size = 5) +
   geom_flag(y = -.5, aes(country = code), size = 12) +
-  scale_y_continuous(breaks = c(0, 1, 2, 3, 4), limits = c(0,4)) +
+  scale_y_continuous(breaks = c(0, 1, 2, 3, 4), limits = c(0,4)) +   
   geom_text(aes(6.25, 3.8, label = &quot;Source UNODC Homicide Statistics&quot;)) + 
   ggtitle(toupper(&quot;Homicide Per 100,000 in G-8 Countries&quot;)) + 
   xlab(&quot;&quot;) + 
@@ -47,7 +47,7 @@ dat %&gt;% mutate(country = reorder(country, -count)) %&gt;%
 </div>
 <div id="example-2" class="section level2">
 <h2>Example 2</h2>
-<p>The second example from from <a href="https://everytownresearch.org">everytown.org</a>. Here is the original:</p>
+<p>The second example from <a href="https://everytownresearch.org">everytown.org</a>. Here is the original:</p>
 <div class="figure">
 <img src="https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png" />
 

@@ -35,7 +35,7 @@ dat %>% mutate(country = reorder(country, -count)) %>%
   geom_bar(stat = "identity", fill = "darkred") +
   geom_text(nudge_y = 0.2, color = "darkred", size = 5) +
   geom_flag(y = -.5, aes(country = code), size = 12) +
-  scale_y_continuous(breaks = c(0, 1, 2, 3, 4), limits = c(0,4)) +
+  scale_y_continuous(breaks = c(0, 1, 2, 3, 4), limits = c(0,4)) +   
   geom_text(aes(6.25, 3.8, label = "Source UNODC Homicide Statistics")) + 
   ggtitle(toupper("Homicide Per 100,000 in G-8 Countries")) + 
   xlab("") + 
@@ -49,7 +49,7 @@ dat %>% mutate(country = reorder(country, -count)) %>%
 
 ## Example 2
 
-The second example from from [everytown.org](https://everytownresearch.org). Here is the original:
+The second example from [everytown.org](https://everytownresearch.org). Here is the original:
 
 
 ![](https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png)
