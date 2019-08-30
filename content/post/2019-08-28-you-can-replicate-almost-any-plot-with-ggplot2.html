@@ -9,7 +9,7 @@ slug: you-can-replicate-almost-any-plot-with-ggplot2
 
 <p>Although R is great for quickly turning data into plots, it is not widely used for making publication ready figures. But, with enough tinkering you can make almost any plot in R. For examples check out the <a href="https://flowingdata.com/">flowingdata blog</a> or the <a href="https://serialmentor.com/dataviz/index.html">Fundamentals of Data Visualization book</a>.</p>
 <p>Here I show five charts from the lay press that I use as examples in my data science courses. In the past I would show the originals, but I decided to replicate them in R to make it possible to generate class notes with just R code (there was a lot of googling involved).</p>
-<p>Below I show the original figures followed by R code and the version of the plot it produces. I used the <strong>ggplot2</strong> package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: <span class="citation">[@rafalab]</span>(<a href="https://twitter.com/rafalab" class="uri">https://twitter.com/rafalab</a>).</p>
+<p>Below I show the original figures followed by R code and the version of the plot it produces. I used the <strong>ggplot2</strong> package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: <a href="https://twitter.com/rafalab">@rafalab</a>.</p>
 <div id="example-1" class="section level2">
 <h2>Example 1</h2>
 <p>The first example is from <a href="https://abcnews.go.com/blogs/headlines/2012/12/us-gun-ownership-homicide-rate-higher-than-other-developed-countries/">this</a> ABC news article. Here is the original:</p>
@@ -90,7 +90,7 @@ jet.colors &lt;- colorRampPalette(c(&quot;#F0FFFF&quot;, &quot;cyan&quot;, &quot
 
 dat %&gt;% mutate(state = reorder(state, desc(state))) %&gt;%
   ggplot(aes(year, state, fill = rate)) +
-  geom_tile(color = &quot;white&quot;, size=0.35) +
+  geom_tile(color = &quot;white&quot;, size = 0.35) +
   scale_x_continuous(expand = c(0,0)) +
   scale_fill_gradientn(colors = jet.colors(16), na.value = &#39;white&#39;) +
   geom_vline(xintercept = 1963, col = &quot;black&quot;) +
@@ -101,7 +101,7 @@ dat %&gt;% mutate(state = reorder(state, desc(state))) %&gt;%
         ylab(&quot;&quot;) +
         xlab(&quot;&quot;) +  
         theme(legend.position = &quot;bottom&quot;, text = element_text(size = 8)) + 
-        annotate(geom = &quot;text&quot;, x = 1963, y = 50.5, label = &quot;Vaccine introduced&quot;, size = 3, hjust=0)</code></pre>
+        annotate(geom = &quot;text&quot;, x = 1963, y = 50.5, label = &quot;Vaccine introduced&quot;, size = 3, hjust = 0)</code></pre>
 <p><img src="/post/2019-08-28-you-can-replicate-almost-any-plot-with-ggplot2_files/figure-html/wsj-vaccines-example-1.png" width="100%" /></p>
 </div>
 <div id="example-4" class="section level2">
@@ -182,17 +182,17 @@ tmp_3 &lt;- map_df(1:3, function(i){
 tmp_2 %&gt;% 
   ggplot(aes(x, ymax = y, ymin = 0)) +
   geom_ribbon(fill = &quot;grey&quot;) + 
-  facet_grid(candidate~., switch=&quot;y&quot;) +
+  facet_grid(candidate~., switch = &quot;y&quot;) +
   scale_x_continuous(breaks = seq(0, 75, 25), position = &quot;top&quot;,
-                     label= paste0(seq(0, 75, 25), &quot;%&quot;)) +
+                     label = paste0(seq(0, 75, 25), &quot;%&quot;)) +
   geom_abline(intercept = 0, slope = 0) +
   xlab(&quot;&quot;) + ylab(&quot;&quot;) + 
   theme_minimal() + 
   theme(panel.grid.major.y = element_blank(), 
         panel.grid.minor.y = element_blank(),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
         strip.text.y = element_text(angle = 180, size = 11, vjust = 0.2)) + 
   geom_ribbon(data = tmp_3, mapping = aes(x = x, ymax = y, ymin = 0, fill = candidate), inherit.aes = FALSE, show.legend = FALSE) +
   scale_fill_manual(values = c(&quot;#3cace4&quot;, &quot;#fc5c34&quot;, &quot;#fccc2c&quot;)) +

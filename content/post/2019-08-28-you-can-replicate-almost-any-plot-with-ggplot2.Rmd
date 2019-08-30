@@ -9,7 +9,7 @@ Although R is great for quickly turning data into plots, it is not widely used f
 
 Here I show five charts from the lay press that I use as examples in my data science courses. In the past I would show the originals, but I decided to replicate them in R to make it possible to generate class notes with just R code (there was a lot of googling involved). 
 
-Below I show the original figures followed by R code and the version of the plot it produces. I used the __ggplot2__ package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: [@rafalab](https://twitter.com/rafalab).
+Below I show the original figures followed by R code and the version of the plot it produces. I used the __ggplot2__ package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: [\@rafalab](https://twitter.com/rafalab).
 
 ## Example 1 
 
@@ -97,7 +97,7 @@ jet.colors <- colorRampPalette(c("#F0FFFF", "cyan", "#007FFF", "yellow", "#FFBF0
 
 dat %>% mutate(state = reorder(state, desc(state))) %>%
   ggplot(aes(year, state, fill = rate)) +
-  geom_tile(color = "white", size=0.35) +
+  geom_tile(color = "white", size = 0.35) +
   scale_x_continuous(expand = c(0,0)) +
   scale_fill_gradientn(colors = jet.colors(16), na.value = 'white') +
   geom_vline(xintercept = 1963, col = "black") +
@@ -108,7 +108,7 @@ dat %>% mutate(state = reorder(state, desc(state))) %>%
         ylab("") +
         xlab("") +  
         theme(legend.position = "bottom", text = element_text(size = 8)) + 
-        annotate(geom = "text", x = 1963, y = 50.5, label = "Vaccine introduced", size = 3, hjust=0)
+        annotate(geom = "text", x = 1963, y = 50.5, label = "Vaccine introduced", size = 3, hjust = 0)
 ```
 
 
@@ -194,17 +194,17 @@ tmp_3 <- map_df(1:3, function(i){
 tmp_2 %>% 
   ggplot(aes(x, ymax = y, ymin = 0)) +
   geom_ribbon(fill = "grey") + 
-  facet_grid(candidate~., switch="y") +
+  facet_grid(candidate~., switch = "y") +
   scale_x_continuous(breaks = seq(0, 75, 25), position = "top",
-                     label= paste0(seq(0, 75, 25), "%")) +
+                     label = paste0(seq(0, 75, 25), "%")) +
   geom_abline(intercept = 0, slope = 0) +
   xlab("") + ylab("") + 
   theme_minimal() + 
   theme(panel.grid.major.y = element_blank(), 
         panel.grid.minor.y = element_blank(),
-        axis.title.y=element_blank(),
-        axis.text.y=element_blank(),
-        axis.ticks.y=element_blank(),
+        axis.title.y = element_blank(),
+        axis.text.y = element_blank(),
+        axis.ticks.y = element_blank(),
         strip.text.y = element_text(angle = 180, size = 11, vjust = 0.2)) + 
   geom_ribbon(data = tmp_3, mapping = aes(x = x, ymax = y, ymin = 0, fill = candidate), inherit.aes = FALSE, show.legend = FALSE) +
   scale_fill_manual(values = c("#3cace4", "#fc5c34", "#fccc2c")) +
