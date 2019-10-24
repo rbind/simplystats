@@ -30,6 +30,6 @@ I suspect that this relationship is not unique to Kobe and the Lakers. In genera
 
 * I approximated shots taken as field goal attempts + floor(0.5 x Free Throw Attempts).
 
-Data is [here](https://simplystatistics.org/data/       kobe2.txt).
+Data is [here](https://simplystatistics.org/data/kobe2.txt).
 
 **Update**: Commentator Sidney fixed some entires in the  data file. Data and plot updated.
