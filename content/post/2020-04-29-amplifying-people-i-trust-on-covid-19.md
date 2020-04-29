@@ -38,7 +38,7 @@ While I'm not an expert in the area, I know many of the real experts professiona
 ### Policy
 
 * [Tom Ingelsby](https://twitter.com/T_Inglesby) - Professor and director of Johns Hopkins Center for Health Security has been producing solid analysis and policy recommendations on when to re-open. 
-* [Caitlyn Rivers](https://twitter.com/cmyeaton) - Professor at the Hopkins Center for Health Security, outbreak specialist, also producing solid analysis and policy recommendations. 
+* [Caitlin Rivers](https://twitter.com/cmyeaton) - Professor at the Hopkins Center for Health Security, outbreak specialist, also producing solid analysis and policy recommendations. 
 * [Andy Slavitt](https://twitter.com/ASlavitt) - Ex-Obama health care head and providing solid policy reviews and ideas. 
 * [Josh Sharfstein](https://twitter.com/drJoshS) - Professor of the Practice at Johns Hopkins Bloomberg School of Public Health, has a great public health podcast with lots of experts on it. 
 * [Keshia Pollack-Porter](https://twitter.com/DR_KMP) - Professor of Health Policy and Management at Johns Hopkins Bloomberg School of Public Health who has a great take on mobility issues associated with Covid-19. 
