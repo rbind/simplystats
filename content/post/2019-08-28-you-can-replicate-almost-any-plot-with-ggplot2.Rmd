@@ -7,7 +7,7 @@ slug: you-can-replicate-almost-any-plot-with-ggplot2
 
 Although R is great for quickly turning data into plots, it is not widely used for making publication ready figures. But, with enough tinkering you can make almost any plot in R. For examples check out the [flowingdata blog](https://flowingdata.com/) or the [Fundamentals of Data Visualization book](https://serialmentor.com/dataviz/index.html).
 
-Here I show five charts from the lay press that I use as examples in my data science courses. In the past I would show the originals, but I decided to replicate them in R to make it possible to generate class notes with just R code (there was a lot of googling involved). 
+Here I show five charts from the lay press that I use as examples in my data science courses. In the past I would show the originals, but I decided to replicate them in R to make it possible to generate class notes with just R code (there was a lot of googling involved).  
 
 Below I show the original figures followed by R code and the version of the plot it produces. I used the __ggplot2__ package but you can achieve similar results using other packages or even just with R-base. Any recommendations on how to improve the code or links to other good examples are welcomed. Please at to the comments or @ me on twitter: [\@rafalab](https://twitter.com/rafalab).
 
@@ -52,7 +52,7 @@ dat %>% mutate(country = reorder(country, -count)) %>%
 The second example from [everytown.org](https://everytownresearch.org). Here is the original:
 
 
-![](https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png)
+![](https://raw.githubusercontent.com/rafalab/dsbook/master/R/img/GunTrends_murders_per_1000.png)
 
 Here is the R code for my version. As in the previous example I copied the values by hand.
 

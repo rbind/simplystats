@@ -45,7 +45,7 @@ dat %&gt;% mutate(country = reorder(country, -count)) %&gt;%
 <div id="example-2" class="section level2">
 <h2>Example 2</h2>
 <p>The second example from <a href="https://everytownresearch.org">everytown.org</a>. Here is the original:</p>
-<p><img src="https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png" /></p>
+<p><img src="https://raw.githubusercontent.com/rafalab/dsbook/master/R/img/GunTrends_murders_per_1000.png" /></p>
 <p>Here is the R code for my version. As in the previous example I copied the values by hand.</p>
 <pre class="r"><code>dat &lt;- tibble(country = toupper(c(&quot;United States&quot;, &quot;Canada&quot;, &quot;Portugal&quot;, &quot;Ireland&quot;, &quot;Italy&quot;, &quot;Belgium&quot;, &quot;Finland&quot;, &quot;France&quot;, &quot;Netherlands&quot;, &quot;Denmark&quot;, &quot;Sweden&quot;, &quot;Slovakia&quot;, &quot;Austria&quot;, &quot;New Zealand&quot;, &quot;Australia&quot;, &quot;Spain&quot;, &quot;Czech Republic&quot;, &quot;Hungry&quot;, &quot;Germany&quot;, &quot;United Kingdom&quot;, &quot;Norway&quot;, &quot;Japan&quot;, &quot;Republic of Korea&quot;)),
               count = c(3.61, 0.5, 0.48, 0.35, 0.35, 0.33, 0.26, 0.20, 0.20, 0.20, 0.19, 0.19, 0.18, 0.16,
