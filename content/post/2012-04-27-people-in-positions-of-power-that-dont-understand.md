@@ -19,7 +19,7 @@ tags:
 slug: "people-in-positions-of-power-that-dont-understand"
 ---
 <p class="p1">
-  I finally got around to reading the <a href="http://www.iom.edu/Reports/2012/Evolution-of-Translational-Omics.aspx" target="_blank">IOM report on translational omics</a> and it is very good. The report lays out problems with current practices and how these led to undesired results such as the now infamous <a href="http://simplystatistics.tumblr.com/post/18378666076/the-duke-saga-starter-set" target="_blank">Duke trials</a> and the <a href="http://online.wsj.com/article/SB10001424052702303627104576411850666582080.html" target="_blank">growth in retractions</a> in the scientific literature. Specific recommendations are provided related to reproducibility and validation. I expect the report will improve things. Although I think bigger improvements will come as a result of retirements.
+  I finally got around to reading the <a href="http://www.iom.edu/Reports/2012/Evolution-of-Translational-Omics.aspx" target="_blank">IOM report on translational omics</a> and it is very good. The report lays out problems with current practices and how these led to undesired results such as the now infamous <a href="https://simplystatistics.org/2012/02/27/the-duke-saga-starter-set/" target="_blank">Duke trials</a> and the <a href="http://online.wsj.com/article/SB10001424052702303627104576411850666582080.html" target="_blank">growth in retractions</a> in the scientific literature. Specific recommendations are provided related to reproducibility and validation. I expect the report will improve things. Although I think bigger improvements will come as a result of retirements.
 </p>
 
 <p class="p1">
