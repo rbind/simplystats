@@ -147,7 +147,7 @@ nyc_regents_scores %>%
 
 This last one is from [fivethirtyeight](https://projects.fivethirtyeight.com/2016-election-forecast/). 
 
-![](https://rafalab.github.io/dsbook/inference/img/popular-vote-538.png)
+![](https://raw.githubusercontent.com/rafalab/dsbook/master/inference/img/popular-vote-538.png)
 
 Below is the R code for my version. Note that in this example I am essentially just drawing as I don't estimate the distributions myself. I simply estimated parameters "by eye" and used a bit of trial and error.
 
