@@ -80,7 +80,7 @@ dat %>%
 
 The next example is from the [Wall Street Journal](http://graphics.wsj.com/infectious-diseases-and-vaccines/?mc_cid=711ddeb86e). The original is interactive but here is a screenshot:
 
-![](https://rafalab.github.io/dsbook/dataviz/img/wsj-vaccines.png)
+![](https://raw.githubusercontent.com/rafalab/dsbook/master/dataviz/img/wsj-vaccines.png)
 
 
 Here is the R code for my version. Note I matched the colors by hand as the original does not seem to follow a standard palette.

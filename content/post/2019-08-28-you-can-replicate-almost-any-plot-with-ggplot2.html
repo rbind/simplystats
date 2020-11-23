@@ -13,10 +13,7 @@ slug: you-can-replicate-almost-any-plot-with-ggplot2
 <div id="example-1" class="section level2">
 <h2>Example 1</h2>
 <p>The first example is from <a href="https://abcnews.go.com/blogs/headlines/2012/12/us-gun-ownership-homicide-rate-higher-than-other-developed-countries/">this</a> ABC news article. Here is the original:</p>
-<div class="figure">
-<img src="http://abcnews.go.com/images/International/homocides_g8_countries_640x360_wmain.jpg" />
-
-</div>
+<p><img src="http://abcnews.go.com/images/International/homocides_g8_countries_640x360_wmain.jpg" /></p>
 <p>Here is the R code for my version. Note that I copied the values by hand.</p>
 <pre class="r"><code>library(tidyverse)
 library(ggplot2)
@@ -48,10 +45,7 @@ dat %&gt;% mutate(country = reorder(country, -count)) %&gt;%
 <div id="example-2" class="section level2">
 <h2>Example 2</h2>
 <p>The second example from <a href="https://everytownresearch.org">everytown.org</a>. Here is the original:</p>
-<div class="figure">
-<img src="https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png" />
-
-</div>
+<p><img src="https://rafalab.github.io/dsbook/R/img/GunTrends_murders_per_1000.png" /></p>
 <p>Here is the R code for my version. As in the previous example I copied the values by hand.</p>
 <pre class="r"><code>dat &lt;- tibble(country = toupper(c(&quot;United States&quot;, &quot;Canada&quot;, &quot;Portugal&quot;, &quot;Ireland&quot;, &quot;Italy&quot;, &quot;Belgium&quot;, &quot;Finland&quot;, &quot;France&quot;, &quot;Netherlands&quot;, &quot;Denmark&quot;, &quot;Sweden&quot;, &quot;Slovakia&quot;, &quot;Austria&quot;, &quot;New Zealand&quot;, &quot;Australia&quot;, &quot;Spain&quot;, &quot;Czech Republic&quot;, &quot;Hungry&quot;, &quot;Germany&quot;, &quot;United Kingdom&quot;, &quot;Norway&quot;, &quot;Japan&quot;, &quot;Republic of Korea&quot;)),
               count = c(3.61, 0.5, 0.48, 0.35, 0.35, 0.33, 0.26, 0.20, 0.20, 0.20, 0.19, 0.19, 0.18, 0.16,
@@ -74,10 +68,7 @@ dat %&gt;%
 <div id="example-3" class="section level2">
 <h2>Example 3</h2>
 <p>The next example is from the <a href="http://graphics.wsj.com/infectious-diseases-and-vaccines/?mc_cid=711ddeb86e">Wall Street Journal</a>. The original is interactive but here is a screenshot:</p>
-<div class="figure">
-<img src="https://rafalab.github.io/dsbook/dataviz/img/wsj-vaccines.png" />
-
-</div>
+<p><img src="https://raw.githubusercontent.com/rafalab/dsbook/master/dataviz/img/wsj-vaccines.png" /></p>
 <p>Here is the R code for my version. Note I matched the colors by hand as the original does not seem to follow a standard palette.</p>
 <pre class="r"><code>library(dslabs)
 data(us_contagious_diseases)
@@ -107,10 +98,7 @@ dat %&gt;% mutate(state = reorder(state, desc(state))) %&gt;%
 <div id="example-4" class="section level2">
 <h2>Example 4</h2>
 <p>The next example is from the <a href="https://www.nytimes.com/2011/02/19/nyregion/19schools.html">New York Times</a>. Here is the original:</p>
-<div class="figure">
-<img src="http://graphics8.nytimes.com/images/2011/02/19/nyregion/19schoolsch/19schoolsch-popup.gif" />
-
-</div>
+<p><img src="http://graphics8.nytimes.com/images/2011/02/19/nyregion/19schoolsch/19schoolsch-popup.gif" /></p>
 <p>Here is the R code for my version:</p>
 <pre class="r"><code>data(&quot;nyc_regents_scores&quot;)
 nyc_regents_scores$total &lt;- rowSums(nyc_regents_scores[,-1], na.rm=TRUE)
@@ -135,10 +123,7 @@ nyc_regents_scores %&gt;%
 <div id="example-5" class="section level2">
 <h2>Example 5</h2>
 <p>This last one is from <a href="https://projects.fivethirtyeight.com/2016-election-forecast/">fivethirtyeight</a>.</p>
-<div class="figure">
-<img src="https://rafalab.github.io/dsbook/inference/img/popular-vote-538.png" />
-
-</div>
+<p><img src="https://rafalab.github.io/dsbook/inference/img/popular-vote-538.png" /></p>
 <p>Below is the R code for my version. Note that in this example I am essentially just drawing as I don’t estimate the distributions myself. I simply estimated parameters “by eye” and used a bit of trial and error.</p>
 <pre class="r"><code>my_dgamma &lt;- function(x, mean = 1, sd = 1){
   shape = mean^2/sd^2
