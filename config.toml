@@ -6,6 +6,8 @@ author = "Rafa Irizarry, Roger Peng, and Jeff Leek"
 copyright = "&copy; 2011 - 2020. All rights reserved."
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 paginate = 10
+canonifyURLs = false
+relativeurls = true
 
 [permalinks]
   post = "/:year/:month/:day/:slug/"
