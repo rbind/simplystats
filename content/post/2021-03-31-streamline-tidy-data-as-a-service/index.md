@@ -1,6 +1,6 @@
 ---
 title: Streamline - tidy data as a service
-author: Roger Peng
+author: Jeff Leek
 date: '2021-03-31'
 slug: streamline-data-science
 ---
