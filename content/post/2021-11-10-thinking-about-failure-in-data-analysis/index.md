@@ -1,6 +1,6 @@
 ---
-title: "Thinking About Failure in Data Analysis"
-author: "Roger Peng"
+title: Thinking About Failure in Data Analysis
+author: Roger Peng
 date: '2021-11-10'
 slug: thinking-about-failure-in-data-analysis
 ---
