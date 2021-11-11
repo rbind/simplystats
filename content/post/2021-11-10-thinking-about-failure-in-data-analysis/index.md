@@ -17,6 +17,7 @@ An analysis failure, broadly speaking, is any outcome that does not meet our exp
 My taxonomy of failure falls into two large bins:
 
 * **Verification failure**: This is a narrow class a failure when an analysis produces an outcome that is counter to our expectation in any way. If we are expecting a correlation coefficient to be between 0.4 and 0.6 and we compute a correlation coefficient that is actually 0.1, then that is a verification failure. This failure indicates that there is something we don’t quite understand about the underlying correlation or the data.
+
 * **Validation failure**: This is a broader class of failure that includes considerations that are outside the data. Validation failure is typically a result of a poor design process for the analysis that results in flawed requirements. For example, if we are interested in the association between predictor X and outcome Y adjusted for Z, but we build a prediction model for Y that omits Z, then this is a validation failure. The prediction model may operate as-expected and do a good job of predicting Y, but it doesn’t answer the question of whether X and Y are associated adjusted for Z.
 
 I find a simple non-data related example can be helpful. A person can ask an architect to design a house with no roof. If the architect builds the house, then the finished house meets expectations from a verification standpoint. It is a verification success. However, when it rains and the inside of the house gets wet, that is a validation failure.
